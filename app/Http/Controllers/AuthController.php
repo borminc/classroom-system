@@ -8,32 +8,32 @@ use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 
 use App\Models\User;
-
+use App\Http\Resources\UserResource;
 
 class AuthController extends Controller
 {
-    public function register(Request $request) {
-        $request->validate([
-            'name' => 'required|string',
-            'email' => 'required|email|unique:users',
-            'password' => 'required|min:8|confirmed'
-        ]);
+    // public function register(Request $request) {
+    //     $request->validate([
+    //         'name' => 'required|string',
+    //         'email' => 'required|email|unique:users',
+    //         'password' => 'required|min:8|confirmed'
+    //     ]);
 
-        User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => Hash::make($request->password)
-        ]);
+    //     User::create([
+    //         'name' => $request->name,
+    //         'email' => $request->email,
+    //         'password' => Hash::make($request->password)
+    //     ]);
 
-        return response()->json([
-            'message' => 'Successfully created user!'
-        ], 201);
-    }
+    //     return response()->json([
+    //         'message' => 'Successfully created user!'
+    //     ], 201);
+    // }
 
     public function login(Request $request) {
         $request->validate([
             'email' => 'required|email',
-            'password' => 'required|min:8'
+            'password' => 'required'
         ]);
 
         $creds = [
@@ -59,7 +59,7 @@ class AuthController extends Controller
             'access_token' => $tokenResult->accessToken,
             'token_type' => 'Bearer',
             'expires_at' => Carbon::parse($tokenResult->token->expires_at)->toDateTimeString(),
-            'user' => $user,
+            'user' => new UserResource($user),
             'verified' => !($user->email_verified_at == null)
         ];        
     }
