@@ -25,6 +25,12 @@ class CourseUserController extends Controller
         $course = Course::findOrFail($request->course_id);
         $student = User::findOrFail($request->user_id);
 
+        if (! $student->hasRole('student')) {
+            return response()->json([
+                'message' => 'User must be a student.'
+            ], 405);
+        }
+
         if ($student->courses->contains($request->course_id)) {
             return response()->json([
                 'message' => 'Student is already enrolled in this course.'
@@ -45,6 +51,12 @@ class CourseUserController extends Controller
         ]);
 
         $user = auth()->user();
+
+        if (! $user->hasRole('student')) {
+            return response()->json([
+                'message' => 'User must be a student.'
+            ], 405);
+        }
 
         if ($user->courses->contains($request->course_id)) {
             return response()->json([

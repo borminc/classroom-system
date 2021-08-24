@@ -15,13 +15,24 @@ class UserController extends Controller
         return response()->json(new UserResource(auth()->user()), 200);
     }
 
+    public function getAllStudents(Request $request) {
+        $students = User::role('student')->get();
+        return response()->json(UserResource::collection($students), 200);
+    }
+
+    public function getAllInstructors(Request $request) {
+        $instructor = User::role('instructor')->get();
+        return response()->json(UserResource::collection($instructor), 200);
+    }
+
     // admin registers new instructor/student
     public function register(Request $request) {
         if (! auth()->user()->hasRole('admin')) {
-            return response()->json([[
+            return response()->json([
                 'message' => 'Unauthorized.'
-            ]], 401);
+            ], 401);
         }
+
         $request->validate([
             'username' => 'required|string|unique:users',
             'email' => 'required|string|unique:users',

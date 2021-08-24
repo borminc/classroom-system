@@ -18,26 +18,26 @@ use App\Http\Controllers\CourseUserController;
 |
 */
 
-// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-//     return $request->user();
-// });
-
-// Route::post('/register', [AuthController::class, 'register']);
 Route::post('login', [AuthController::class, 'login']);
 
 Route::group(['middleware' => 'auth:api'], function() {
+    // register student/instructor
     Route::post('register', [UserController::class, 'register']);
 
+    // auth
     Route::get('logout', [AuthController::class, 'logout']);
-    Route::get('user', [UserController::class, 'getUserInfo']);
 
+    // users
+    Route::get('user', [UserController::class, 'getUserInfo']);
+    Route::get('all-students', [UserController::class, 'getAllStudents']);
+    Route::get('all-instructors', [UserController::class, 'getAllInstructors']);
+
+    // courses
     Route::post('courses/create', [CourseController::class, 'create']);
     Route::get('courses/view-all', [CourseUserController::class, 'viewAll']);
     Route::get('courses/view-registered', [CourseUserController::class, 'viewRegisteredCourses']);
     Route::post('courses/register', [CourseUserController::class, 'registerSelf']);
-    
-    Route::post('register-student', [CourseUserController::class, 'registerStudent']);
-
+    Route::post('register-student', [CourseUserController::class, 'registerStudent']); 
     
 });
 
