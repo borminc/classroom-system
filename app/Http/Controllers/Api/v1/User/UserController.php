@@ -1,13 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api\v1\User;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
 use App\Models\User;
-use App\Http\Resources\UserResource;
+use App\Http\Resources\v1\UserResource;
 
 class UserController extends Controller
 {
@@ -43,8 +44,9 @@ class UserController extends Controller
             'role' => 'required|string'
         ]);
 
-        $password = Str::random(6);
-
+        // $password = Str::random(6);
+        $password = '12345678';
+        
         $user = User::create([
             'username' => $request->username,
             'email' => $request->email,

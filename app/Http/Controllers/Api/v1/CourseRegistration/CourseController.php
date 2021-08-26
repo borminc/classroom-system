@@ -1,18 +1,22 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api\v1\CourseRegistration;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Course;
+use App\Http\Resources\v1\CourseResource;
 
 class CourseController extends Controller
 {
+    // get all courses
+    public function viewAll(Request $request) {
+        $courses = Course::all();
+        return response()->json(CourseResource::collection($courses), 200);
+    }
+
     public function create(Request $request) {
-        if (! auth()->user()->hasRole('admin')) {
-            return response()->json([[
-                'message' => 'Unauthorized.'
-            ]], 401);
-        }
+        $this->authorize('create', Course::class);
 
         $request->validate([
             'name' => 'required|string',

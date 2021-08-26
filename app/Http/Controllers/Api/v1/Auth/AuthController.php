@@ -1,17 +1,19 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api\v1\Auth;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 
 use App\Models\User;
-use App\Http\Resources\UserResource;
+use App\Http\Resources\v1\UserResource;
 
 class AuthController extends Controller
 {
+    // for self-registration
     // public function register(Request $request) {
     //     $request->validate([
     //         'name' => 'required|string',

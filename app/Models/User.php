@@ -61,10 +61,10 @@ class User extends Authenticatable
         return $this->belongsToMany(Course::class, 'course_student', 'user_id', 'course_id');
     }
 
-    public function courses() {
-        if ($this->hasRole('instructor'))
-            return $this->instructor_courses();
-        return $this->student_courses();
-    }
+    // public function courses() {
+    //     if ($this->hasRole('instructor'))
+    //         return $this->instructor_courses();
+    //     return $this->student_courses();
+    // }
 
 }

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Resources;
+namespace App\Http\Resources\v1;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 use App\Models\User;
-use App\Http\Resources\UserResource;
+use App\Http\Resources\v1\UserResource;
 
 class CourseResource extends JsonResource
 {
