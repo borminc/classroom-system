@@ -21,7 +21,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":40,"username":"aosinski","full_name":"Cletus Hand","email":"aosinski@test.com","gender":"female","date_of_birth":"1986-06-07"}}'
+        content: '{"data":{"id":26,"username":"ali63","full_name":"Julianne Halvorson","email":"ali63@test.com","gender":"male","date_of_birth":"2000-01-26"}}'
         headers: []
         description: null
     responseFields: []
@@ -43,7 +43,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":41,"username":"damian11","full_name":"Camille Torp","email":"damian11@test.com","gender":"male","date_of_birth":"1987-03-29"},{"id":42,"username":"lina06","full_name":"Jessy Rutherford","email":"lina06@test.com","gender":"male","date_of_birth":"1971-01-20"}]}'
+        content: '{"data":[{"id":27,"username":"jakubowski.jena","full_name":"Kaci Gaylord","email":"jakubowski.jena@test.com","gender":"female","date_of_birth":"2002-01-06"},{"id":28,"username":"nathanial27","full_name":"Gaston Leuschke","email":"nathanial27@test.com","gender":"female","date_of_birth":"2014-09-24"}]}'
         headers: []
         description: null
     responseFields: []
@@ -65,7 +65,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":43,"username":"hintz.monserrate","full_name":"Montana Windler","email":"hintz.monserrate@test.com","gender":"male","date_of_birth":"1972-12-12"},{"id":44,"username":"schoen.vita","full_name":"Kole Rowe","email":"schoen.vita@test.com","gender":"female","date_of_birth":"1998-09-15"}]}'
+        content: '{"data":[{"id":29,"username":"myrtis78","full_name":"Cecil Olson","email":"myrtis78@test.com","gender":"female","date_of_birth":"2010-04-10"},{"id":30,"username":"ihodkiewicz","full_name":"Allison Lindgren","email":"ihodkiewicz@test.com","gender":"male","date_of_birth":"2009-11-16"}]}'
         headers: []
         description: null
     responseFields: []
@@ -88,31 +88,31 @@ endpoints:
         name: username
         description: 'A unique username'
         required: true
-        example: autem
+        example: incidunt
         type: string
       email:
         name: email
         description: 'A unique email address'
         required: true
-        example: sit
+        example: omnis
         type: string
       first_name:
         name: first_name
         description: ''
         required: true
-        example: cum
+        example: quis
         type: string
       last_name:
         name: last_name
         description: ''
         required: true
-        example: reprehenderit
+        example: quo
         type: string
       gender:
         name: gender
         description: ''
         required: true
-        example: architecto
+        example: nihil
         type: string
       date_of_birth:
         name: date_of_birth
@@ -124,7 +124,7 @@ endpoints:
         name: role
         description: 'The role of the user; options: student, instructor, admin'
         required: true
-        example: quis
+        example: modi
         type: string
     responses:
       -

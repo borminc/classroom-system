@@ -23,13 +23,13 @@ endpoints:
         name: email
         description: ''
         required: true
-        example: corporis
+        example: excepturi
         type: string
       password:
         name: password
         description: ''
         required: true
-        example: inventore
+        example: recusandae
         type: string
       remember_me:
         name: remember_me
