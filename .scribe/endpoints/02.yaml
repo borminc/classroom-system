@@ -1,0 +1,76 @@
+name: Courses
+description: |-
+
+  API endpoints for getting info about courses and creating courses
+endpoints:
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/courses/create
+    metadata:
+      title: 'Create a new course'
+      description: ''
+      authenticated: true
+    headers:
+      Authorization: 'Bearer {ACCESS_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'The name of the course'
+        required: true
+        example: sed
+        type: string
+      code:
+        name: code
+        description: 'The code of the course'
+        required: true
+        example: eaque
+        type: string
+      description:
+        name: description
+        description: 'The description of the course'
+        required: true
+        example: qui
+        type: string
+      instructor_id:
+        name: instructor_id
+        description: 'The user_id of the instructor of the course'
+        required: true
+        example: 18
+        type: integer
+    responses:
+      -
+        status: 201
+        content: |-
+          {
+           "message": "Successfully created course!"
+          }
+        headers: []
+        description: '201'
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/courses/view-all
+    metadata:
+      title: 'Get a list of all courses'
+      description: ''
+      authenticated: true
+    headers:
+      Authorization: 'Bearer {ACCESS_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"id":23,"name":"Intro to et","code":"UYp2F","description":"Eum doloribus quo necessitatibus. Quod ipsum est illum vero consequuntur veritatis. Consectetur molestias rerum aut ut rerum sed quidem.","instructor":{"id":8,"username":"i_7","full_name":"Instructor 7","email":"i_7@test.com","gender":"male","date_of_birth":"2000-02-03 14:23:36"}},{"id":24,"name":"Intro to et","code":"Bxh67","description":"Deserunt dolorem velit eaque. Delectus deleniti aut recusandae ut nesciunt ullam consequatur suscipit. Est ratione numquam dignissimos est.","instructor":{"id":5,"username":"i_4","full_name":"Instructor 4","email":"i_4@test.com","gender":"male","date_of_birth":"2000-02-03 14:23:36"}}]}'
+        headers: []
+        description: null
+    responseFields: []

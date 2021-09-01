@@ -1,0 +1,936 @@
+openapi: 3.0.3
+info:
+  title: Laravel
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost:8000'
+paths:
+  /api/v1/login:
+    post:
+      summary: 'Login users'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  access_token: eyJ0eX...
+                  token_type: Bearer
+                  expires_at: '2021-09-06 15:02:06'
+                  user:
+                    id: 2
+                    username: i_1
+                    full_name: 'Instructor 1'
+                    email: i_1@test.com
+                    gender: male
+                    date_of_birth: '2000-02-03 14:23:35'
+                  verified: true
+                properties:
+                  access_token:
+                    type: string
+                    example: eyJ0eX...
+                  token_type:
+                    type: string
+                    example: Bearer
+                  expires_at:
+                    type: string
+                    example: '2021-09-06 15:02:06'
+                  user:
+                    type: object
+                    example:
+                      id: 2
+                      username: i_1
+                      full_name: 'Instructor 1'
+                      email: i_1@test.com
+                      gender: male
+                      date_of_birth: '2000-02-03 14:23:35'
+                  verified:
+                    type: boolean
+                    example: true
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Invalid username or password.'
+                properties:
+                  message:
+                    type: string
+                    example: 'Invalid username or password.'
+      tags:
+        - Authentication
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: ''
+                  example: corporis
+                password:
+                  type: string
+                  description: ''
+                  example: inventore
+                remember_me:
+                  type: boolean
+                  description: ''
+                  example: false
+              required:
+                - email
+                - password
+                - remember_me
+      security: []
+  /api/v1/logout:
+    get:
+      summary: 'Log out users'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {ACCESS_TOKEN}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Successfully logged out'
+                properties:
+                  message:
+                    type: string
+                    example: 'Successfully logged out'
+      tags:
+        - Authentication
+  /api/v1/courses/view-student-registered:
+    get:
+      summary: 'Get students'' registered courses'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {ACCESS_TOKEN}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 25
+                      name: 'Intro to sunt'
+                      code: RI9F3
+                      description: 'Quod enim hic nihil asperiores. Error sint fuga quo quia. Doloremque reprehenderit corrupti commodi modi.'
+                      instructor:
+                        id: 7
+                        username: i_6
+                        full_name: 'Instructor 6'
+                        email: i_6@test.com
+                        gender: male
+                        date_of_birth: '2000-02-03 14:23:36'
+                    -
+                      id: 26
+                      name: 'Intro to impedit'
+                      code: ctYnc
+                      description: 'Dolor impedit illo dolor porro et illum. Sequi natus at nemo impedit qui distinctio. Ut similique qui quia est.'
+                      instructor:
+                        id: 7
+                        username: i_6
+                        full_name: 'Instructor 6'
+                        email: i_6@test.com
+                        gender: male
+                        date_of_birth: '2000-02-03 14:23:36'
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 25
+                        name: 'Intro to sunt'
+                        code: RI9F3
+                        description: 'Quod enim hic nihil asperiores. Error sint fuga quo quia. Doloremque reprehenderit corrupti commodi modi.'
+                        instructor:
+                          id: 7
+                          username: i_6
+                          full_name: 'Instructor 6'
+                          email: i_6@test.com
+                          gender: male
+                          date_of_birth: '2000-02-03 14:23:36'
+                      -
+                        id: 26
+                        name: 'Intro to impedit'
+                        code: ctYnc
+                        description: 'Dolor impedit illo dolor porro et illum. Sequi natus at nemo impedit qui distinctio. Ut similique qui quia est.'
+                        instructor:
+                          id: 7
+                          username: i_6
+                          full_name: 'Instructor 6'
+                          email: i_6@test.com
+                          gender: male
+                          date_of_birth: '2000-02-03 14:23:36'
+                    items:
+                      type: object
+      tags:
+        - 'Course Registration'
+  /api/v1/courses/view-instructor-registered:
+    get:
+      summary: 'Get instructors'' registered courses'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {ACCESS_TOKEN}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 27
+                      name: 'Intro to vitae'
+                      code: RjOIx
+                      description: 'Pariatur qui non earum molestiae omnis. Itaque molestiae quia non. Qui eum quidem aut voluptatem. Cum neque officia facilis rerum dicta.'
+                      instructor:
+                        id: 9
+                        username: i_8
+                        full_name: 'Instructor 8'
+                        email: i_8@test.com
+                        gender: male
+                        date_of_birth: '2000-02-03 14:23:36'
+                    -
+                      id: 28
+                      name: 'Intro to nostrum'
+                      code: EvXqI
+                      description: 'Perspiciatis provident itaque autem est. Aut natus explicabo laboriosam ipsam alias natus. Autem non voluptas beatae est repellat et et.'
+                      instructor:
+                        id: 7
+                        username: i_6
+                        full_name: 'Instructor 6'
+                        email: i_6@test.com
+                        gender: male
+                        date_of_birth: '2000-02-03 14:23:36'
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 27
+                        name: 'Intro to vitae'
+                        code: RjOIx
+                        description: 'Pariatur qui non earum molestiae omnis. Itaque molestiae quia non. Qui eum quidem aut voluptatem. Cum neque officia facilis rerum dicta.'
+                        instructor:
+                          id: 9
+                          username: i_8
+                          full_name: 'Instructor 8'
+                          email: i_8@test.com
+                          gender: male
+                          date_of_birth: '2000-02-03 14:23:36'
+                      -
+                        id: 28
+                        name: 'Intro to nostrum'
+                        code: EvXqI
+                        description: 'Perspiciatis provident itaque autem est. Aut natus explicabo laboriosam ipsam alias natus. Autem non voluptas beatae est repellat et et.'
+                        instructor:
+                          id: 7
+                          username: i_6
+                          full_name: 'Instructor 6'
+                          email: i_6@test.com
+                          gender: male
+                          date_of_birth: '2000-02-03 14:23:36'
+                    items:
+                      type: object
+      tags:
+        - 'Course Registration'
+  /api/v1/courses/self-register:
+    post:
+      summary: 'Self-register course by students'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {ACCESS_TOKEN}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Successfully enrolled!'
+                properties:
+                  message:
+                    type: string
+                    example: 'Successfully enrolled!'
+        405:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'You are already enrolled in this course.'
+                properties:
+                  message:
+                    type: string
+                    example: 'You are already enrolled in this course.'
+      tags:
+        - 'Course Registration'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                course_id:
+                  type: integer
+                  description: 'The id of the course'
+                  example: 15
+              required:
+                - course_id
+  /api/v1/courses/register-student:
+    post:
+      summary: 'Register students'' courses by admin'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {ACCESS_TOKEN}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Successfully registered student!'
+                properties:
+                  message:
+                    type: string
+                    example: 'Successfully registered student!'
+        405:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'User cannot take any courses.'
+                properties:
+                  message:
+                    type: string
+                    example: 'User cannot take any courses.'
+      tags:
+        - 'Course Registration'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: integer
+                  description: 'The user_id of the student to be registered'
+                  example: 7
+                course_id:
+                  type: integer
+                  description: 'The id of the course'
+                  example: 2
+              required:
+                - user_id
+                - course_id
+  /api/v1/courses/create:
+    post:
+      summary: 'Create a new course'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {ACCESS_TOKEN}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        201:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Successfully created course!'
+                properties:
+                  message:
+                    type: string
+                    example: 'Successfully created course!'
+      tags:
+        - Courses
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'The name of the course'
+                  example: sed
+                code:
+                  type: string
+                  description: 'The code of the course'
+                  example: eaque
+                description:
+                  type: string
+                  description: 'The description of the course'
+                  example: qui
+                instructor_id:
+                  type: integer
+                  description: 'The user_id of the instructor of the course'
+                  example: 18
+              required:
+                - name
+                - code
+                - description
+                - instructor_id
+  /api/v1/courses/view-all:
+    get:
+      summary: 'Get a list of all courses'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {ACCESS_TOKEN}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 23
+                      name: 'Intro to et'
+                      code: UYp2F
+                      description: 'Eum doloribus quo necessitatibus. Quod ipsum est illum vero consequuntur veritatis. Consectetur molestias rerum aut ut rerum sed quidem.'
+                      instructor:
+                        id: 8
+                        username: i_7
+                        full_name: 'Instructor 7'
+                        email: i_7@test.com
+                        gender: male
+                        date_of_birth: '2000-02-03 14:23:36'
+                    -
+                      id: 24
+                      name: 'Intro to et'
+                      code: Bxh67
+                      description: 'Deserunt dolorem velit eaque. Delectus deleniti aut recusandae ut nesciunt ullam consequatur suscipit. Est ratione numquam dignissimos est.'
+                      instructor:
+                        id: 5
+                        username: i_4
+                        full_name: 'Instructor 4'
+                        email: i_4@test.com
+                        gender: male
+                        date_of_birth: '2000-02-03 14:23:36'
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 23
+                        name: 'Intro to et'
+                        code: UYp2F
+                        description: 'Eum doloribus quo necessitatibus. Quod ipsum est illum vero consequuntur veritatis. Consectetur molestias rerum aut ut rerum sed quidem.'
+                        instructor:
+                          id: 8
+                          username: i_7
+                          full_name: 'Instructor 7'
+                          email: i_7@test.com
+                          gender: male
+                          date_of_birth: '2000-02-03 14:23:36'
+                      -
+                        id: 24
+                        name: 'Intro to et'
+                        code: Bxh67
+                        description: 'Deserunt dolorem velit eaque. Delectus deleniti aut recusandae ut nesciunt ullam consequatur suscipit. Est ratione numquam dignissimos est.'
+                        instructor:
+                          id: 5
+                          username: i_4
+                          full_name: 'Instructor 4'
+                          email: i_4@test.com
+                          gender: male
+                          date_of_birth: '2000-02-03 14:23:36'
+                    items:
+                      type: object
+      tags:
+        - Courses
+  /api/v1/user:
+    get:
+      summary: 'Get logged in user''s info'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {ACCESS_TOKEN}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 40
+                    username: aosinski
+                    full_name: 'Cletus Hand'
+                    email: aosinski@test.com
+                    gender: female
+                    date_of_birth: '1986-06-07'
+                properties:
+                  data:
+                    type: object
+                    example:
+                      id: 40
+                      username: aosinski
+                      full_name: 'Cletus Hand'
+                      email: aosinski@test.com
+                      gender: female
+                      date_of_birth: '1986-06-07'
+      tags:
+        - User
+  /api/v1/all-students:
+    get:
+      summary: 'Get all students'' info'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {ACCESS_TOKEN}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 41
+                      username: damian11
+                      full_name: 'Camille Torp'
+                      email: damian11@test.com
+                      gender: male
+                      date_of_birth: '1987-03-29'
+                    -
+                      id: 42
+                      username: lina06
+                      full_name: 'Jessy Rutherford'
+                      email: lina06@test.com
+                      gender: male
+                      date_of_birth: '1971-01-20'
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 41
+                        username: damian11
+                        full_name: 'Camille Torp'
+                        email: damian11@test.com
+                        gender: male
+                        date_of_birth: '1987-03-29'
+                      -
+                        id: 42
+                        username: lina06
+                        full_name: 'Jessy Rutherford'
+                        email: lina06@test.com
+                        gender: male
+                        date_of_birth: '1971-01-20'
+                    items:
+                      type: object
+      tags:
+        - User
+  /api/v1/all-instructors:
+    get:
+      summary: 'Get all instructors'' info'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {ACCESS_TOKEN}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 43
+                      username: hintz.monserrate
+                      full_name: 'Montana Windler'
+                      email: hintz.monserrate@test.com
+                      gender: male
+                      date_of_birth: '1972-12-12'
+                    -
+                      id: 44
+                      username: schoen.vita
+                      full_name: 'Kole Rowe'
+                      email: schoen.vita@test.com
+                      gender: female
+                      date_of_birth: '1998-09-15'
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 43
+                        username: hintz.monserrate
+                        full_name: 'Montana Windler'
+                        email: hintz.monserrate@test.com
+                        gender: male
+                        date_of_birth: '1972-12-12'
+                      -
+                        id: 44
+                        username: schoen.vita
+                        full_name: 'Kole Rowe'
+                        email: schoen.vita@test.com
+                        gender: female
+                        date_of_birth: '1998-09-15'
+                    items:
+                      type: object
+      tags:
+        - User
+  /api/v1/register-user:
+    post:
+      summary: 'Register a new user'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {ACCESS_TOKEN}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        201:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Successfully created user!'
+                  credentials:
+                    email: user@test.com
+                    password: '12345678'
+                properties:
+                  message:
+                    type: string
+                    example: 'Successfully created user!'
+                  credentials:
+                    type: object
+                    example:
+                      email: user@test.com
+                      password: '12345678'
+      tags:
+        - User
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                  description: 'A unique username'
+                  example: autem
+                email:
+                  type: string
+                  description: 'A unique email address'
+                  example: sit
+                first_name:
+                  type: string
+                  description: ''
+                  example: cum
+                last_name:
+                  type: string
+                  description: ''
+                  example: reprehenderit
+                gender:
+                  type: string
+                  description: ''
+                  example: architecto
+                date_of_birth:
+                  type: string
+                  description: ''
+                  example: '2020-12-01'
+                role:
+                  type: string
+                  description: 'The role of the user; options: student, instructor, admin'
+                  example: quis
+              required:
+                - username
+                - email
+                - first_name
+                - last_name
+                - gender
+                - date_of_birth
+                - role
+tags:
+  -
+    name: Authentication
+    description: "\nAPI endpoints for authentication such as login and registration"
+  -
+    name: 'Course Registration'
+    description: "\nAPI endpoints for registering courses"
+  -
+    name: Courses
+    description: "\nAPI endpoints for getting info about courses and creating courses"
+  -
+    name: User
+    description: "\nAPI endpoints for creating user and getting user info"
+components:
+  securitySchemes:
+    default:
+      type: http
+      scheme: bearer
+      description: ''
+security:
+  -
+    default: []

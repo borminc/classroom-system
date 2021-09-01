@@ -1,0 +1,478 @@
+{
+    "variable": [
+        {
+            "id": "baseUrl",
+            "key": "baseUrl",
+            "type": "string",
+            "name": "string",
+            "value": "localhost"
+        }
+    ],
+    "info": {
+        "name": "Laravel",
+        "_postman_id": "2fdb795e-0606-486b-ba34-8826381d02d3",
+        "description": "",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Authentication",
+            "description": "\nAPI endpoints for authentication such as login and registration",
+            "item": [
+                {
+                    "name": "Login users",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/login",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/v1\/login"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"email\":\"corporis\",\"password\":\"inventore\",\"remember_me\":false}"
+                        },
+                        "description": "",
+                        "auth": {
+                            "type": "noauth"
+                        }
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"access_token\": \"eyJ0eX...\",\n \"token_type\": \"Bearer\",\n \"expires_at\": \"2021-09-06 15:02:06\",\n \"user\": {\n     \"id\": 2,\n     \"username\": \"i_1\",\n     \"full_name\": \"Instructor 1\",\n     \"email\": \"i_1@test.com\",\n     \"gender\": \"male\",\n     \"date_of_birth\": \"2000-02-03 14:23:35\"\n },\n \"verified\": true\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 401,
+                            "body": "{\n \"message\": \"Invalid username or password.\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Log out users",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/logout",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/v1\/logout"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"message\": \"Successfully logged out\"\n}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Course Registration",
+            "description": "\nAPI endpoints for registering courses",
+            "item": [
+                {
+                    "name": "Get students' registered courses",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/courses\/view-student-registered",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/v1\/courses\/view-student-registered"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":[{\"id\":25,\"name\":\"Intro to sunt\",\"code\":\"RI9F3\",\"description\":\"Quod enim hic nihil asperiores. Error sint fuga quo quia. Doloremque reprehenderit corrupti commodi modi.\",\"instructor\":{\"id\":7,\"username\":\"i_6\",\"full_name\":\"Instructor 6\",\"email\":\"i_6@test.com\",\"gender\":\"male\",\"date_of_birth\":\"2000-02-03 14:23:36\"}},{\"id\":26,\"name\":\"Intro to impedit\",\"code\":\"ctYnc\",\"description\":\"Dolor impedit illo dolor porro et illum. Sequi natus at nemo impedit qui distinctio. Ut similique qui quia est.\",\"instructor\":{\"id\":7,\"username\":\"i_6\",\"full_name\":\"Instructor 6\",\"email\":\"i_6@test.com\",\"gender\":\"male\",\"date_of_birth\":\"2000-02-03 14:23:36\"}}]}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Get instructors' registered courses",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/courses\/view-instructor-registered",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/v1\/courses\/view-instructor-registered"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":[{\"id\":27,\"name\":\"Intro to vitae\",\"code\":\"RjOIx\",\"description\":\"Pariatur qui non earum molestiae omnis. Itaque molestiae quia non. Qui eum quidem aut voluptatem. Cum neque officia facilis rerum dicta.\",\"instructor\":{\"id\":9,\"username\":\"i_8\",\"full_name\":\"Instructor 8\",\"email\":\"i_8@test.com\",\"gender\":\"male\",\"date_of_birth\":\"2000-02-03 14:23:36\"}},{\"id\":28,\"name\":\"Intro to nostrum\",\"code\":\"EvXqI\",\"description\":\"Perspiciatis provident itaque autem est. Aut natus explicabo laboriosam ipsam alias natus. Autem non voluptas beatae est repellat et et.\",\"instructor\":{\"id\":7,\"username\":\"i_6\",\"full_name\":\"Instructor 6\",\"email\":\"i_6@test.com\",\"gender\":\"male\",\"date_of_birth\":\"2000-02-03 14:23:36\"}}]}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Self-register course by students",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/courses\/self-register",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/v1\/courses\/self-register"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"course_id\":15}"
+                        },
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"message\": \"Successfully enrolled!\"\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 405,
+                            "body": "{\n \"message\": \"You are already enrolled in this course.\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Register students' courses by admin",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/courses\/register-student",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/v1\/courses\/register-student"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"user_id\":7,\"course_id\":2}"
+                        },
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"message\": \"Successfully registered student!\"\n}",
+                            "name": ""
+                        },
+                        {
+                            "header": [],
+                            "code": 405,
+                            "body": "{\n \"message\": \"User cannot take any courses.\"\n}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Courses",
+            "description": "\nAPI endpoints for getting info about courses and creating courses",
+            "item": [
+                {
+                    "name": "Create a new course",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/courses\/create",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/v1\/courses\/create"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"sed\",\"code\":\"eaque\",\"description\":\"qui\",\"instructor_id\":18}"
+                        },
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 201,
+                            "body": "{\n \"message\": \"Successfully created course!\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Get a list of all courses",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/courses\/view-all",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/v1\/courses\/view-all"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":[{\"id\":23,\"name\":\"Intro to et\",\"code\":\"UYp2F\",\"description\":\"Eum doloribus quo necessitatibus. Quod ipsum est illum vero consequuntur veritatis. Consectetur molestias rerum aut ut rerum sed quidem.\",\"instructor\":{\"id\":8,\"username\":\"i_7\",\"full_name\":\"Instructor 7\",\"email\":\"i_7@test.com\",\"gender\":\"male\",\"date_of_birth\":\"2000-02-03 14:23:36\"}},{\"id\":24,\"name\":\"Intro to et\",\"code\":\"Bxh67\",\"description\":\"Deserunt dolorem velit eaque. Delectus deleniti aut recusandae ut nesciunt ullam consequatur suscipit. Est ratione numquam dignissimos est.\",\"instructor\":{\"id\":5,\"username\":\"i_4\",\"full_name\":\"Instructor 4\",\"email\":\"i_4@test.com\",\"gender\":\"male\",\"date_of_birth\":\"2000-02-03 14:23:36\"}}]}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "User",
+            "description": "\nAPI endpoints for creating user and getting user info",
+            "item": [
+                {
+                    "name": "Get logged in user's info",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/user",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/v1\/user"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":{\"id\":40,\"username\":\"aosinski\",\"full_name\":\"Cletus Hand\",\"email\":\"aosinski@test.com\",\"gender\":\"female\",\"date_of_birth\":\"1986-06-07\"}}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Get all students' info",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/all-students",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/v1\/all-students"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":[{\"id\":41,\"username\":\"damian11\",\"full_name\":\"Camille Torp\",\"email\":\"damian11@test.com\",\"gender\":\"male\",\"date_of_birth\":\"1987-03-29\"},{\"id\":42,\"username\":\"lina06\",\"full_name\":\"Jessy Rutherford\",\"email\":\"lina06@test.com\",\"gender\":\"male\",\"date_of_birth\":\"1971-01-20\"}]}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Get all instructors' info",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/all-instructors",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/v1\/all-instructors"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":[{\"id\":43,\"username\":\"hintz.monserrate\",\"full_name\":\"Montana Windler\",\"email\":\"hintz.monserrate@test.com\",\"gender\":\"male\",\"date_of_birth\":\"1972-12-12\"},{\"id\":44,\"username\":\"schoen.vita\",\"full_name\":\"Kole Rowe\",\"email\":\"schoen.vita@test.com\",\"gender\":\"female\",\"date_of_birth\":\"1998-09-15\"}]}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Register a new user",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/register-user",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/v1\/register-user"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"username\":\"autem\",\"email\":\"sit\",\"first_name\":\"cum\",\"last_name\":\"reprehenderit\",\"gender\":\"architecto\",\"date_of_birth\":\"2020-12-01\",\"role\":\"quis\"}"
+                        },
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 201,
+                            "body": "{\n \"message\": \"Successfully created user!\",\n \"credentials\": {\n     \"email\": \"user@test.com\",\n     \"password\": \"12345678\"\n }\n}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "bearer"
+    }
+}

@@ -1,0 +1,133 @@
+name: 'Course Registration'
+description: |-
+
+  API endpoints for registering courses
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/courses/view-student-registered
+    metadata:
+      title: 'Get students'' registered courses'
+      description: ''
+      authenticated: true
+    headers:
+      Authorization: 'Bearer {ACCESS_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"id":25,"name":"Intro to sunt","code":"RI9F3","description":"Quod enim hic nihil asperiores. Error sint fuga quo quia. Doloremque reprehenderit corrupti commodi modi.","instructor":{"id":7,"username":"i_6","full_name":"Instructor 6","email":"i_6@test.com","gender":"male","date_of_birth":"2000-02-03 14:23:36"}},{"id":26,"name":"Intro to impedit","code":"ctYnc","description":"Dolor impedit illo dolor porro et illum. Sequi natus at nemo impedit qui distinctio. Ut similique qui quia est.","instructor":{"id":7,"username":"i_6","full_name":"Instructor 6","email":"i_6@test.com","gender":"male","date_of_birth":"2000-02-03 14:23:36"}}]}'
+        headers: []
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/courses/view-instructor-registered
+    metadata:
+      title: 'Get instructors'' registered courses'
+      description: ''
+      authenticated: true
+    headers:
+      Authorization: 'Bearer {ACCESS_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"id":27,"name":"Intro to vitae","code":"RjOIx","description":"Pariatur qui non earum molestiae omnis. Itaque molestiae quia non. Qui eum quidem aut voluptatem. Cum neque officia facilis rerum dicta.","instructor":{"id":9,"username":"i_8","full_name":"Instructor 8","email":"i_8@test.com","gender":"male","date_of_birth":"2000-02-03 14:23:36"}},{"id":28,"name":"Intro to nostrum","code":"EvXqI","description":"Perspiciatis provident itaque autem est. Aut natus explicabo laboriosam ipsam alias natus. Autem non voluptas beatae est repellat et et.","instructor":{"id":7,"username":"i_6","full_name":"Instructor 6","email":"i_6@test.com","gender":"male","date_of_birth":"2000-02-03 14:23:36"}}]}'
+        headers: []
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/courses/self-register
+    metadata:
+      title: 'Self-register course by students'
+      description: ''
+      authenticated: true
+    headers:
+      Authorization: 'Bearer {ACCESS_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters:
+      course_id:
+        name: course_id
+        description: 'The id of the course'
+        required: true
+        example: 15
+        type: integer
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+           "message": "Successfully enrolled!"
+          }
+        headers: []
+        description: '200'
+      -
+        status: 405
+        content: |-
+          {
+           "message": "You are already enrolled in this course."
+          }
+        headers: []
+        description: '405'
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/courses/register-student
+    metadata:
+      title: 'Register students'' courses by admin'
+      description: ''
+      authenticated: true
+    headers:
+      Authorization: 'Bearer {ACCESS_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters:
+      user_id:
+        name: user_id
+        description: 'The user_id of the student to be registered'
+        required: true
+        example: 7
+        type: integer
+      course_id:
+        name: course_id
+        description: 'The id of the course'
+        required: true
+        example: 2
+        type: integer
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+           "message": "Successfully registered student!"
+          }
+        headers: []
+        description: '200'
+      -
+        status: 405
+        content: |-
+          {
+           "message": "User cannot take any courses."
+          }
+        headers: []
+        description: '405'
+    responseFields: []

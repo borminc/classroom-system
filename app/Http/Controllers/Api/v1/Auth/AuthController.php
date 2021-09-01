@@ -3,49 +3,95 @@
 namespace App\Http\Controllers\Api\v1\Auth;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Auth;
-use Carbon\Carbon;
-
-use App\Models\User;
 use App\Http\Resources\v1\UserResource;
+use App\Models\User;
+use Carbon\Carbon;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
+/**
+ * @group Authentication
+ *
+ * API endpoints for authentication such as login and registration
+ */
 class AuthController extends Controller
 {
-    // for self-registration
-    // public function register(Request $request) {
-    //     $request->validate([
-    //         'name' => 'required|string',
-    //         'email' => 'required|email|unique:users',
-    //         'password' => 'required|min:8|confirmed'
-    //     ]);
+    /**
+     * Self-registration of new users
+     *
+     * @param Request $request
+     * @bodyParam name required string
+     * @bodyParam email required string
+     * @bodyParam password required string
+     * @bodyParam password_confirmation required string
+     *
+     * @return Illuminate\Http\JsonResponse
+     * @response 201 {
+     *  "message": "Successfully created user!"
+     * }
+     */
+    public function register(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|min:8|confirmed',
+        ]);
 
-    //     User::create([
-    //         'name' => $request->name,
-    //         'email' => $request->email,
-    //         'password' => Hash::make($request->password)
-    //     ]);
+        User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
 
-    //     return response()->json([
-    //         'message' => 'Successfully created user!'
-    //     ], 201);
-    // }
+        return response()->json([
+            'message' => 'Successfully created user!',
+        ], 201);
+    }
 
-    public function login(Request $request) {
+    /**
+     * Login users
+     *
+     * @param Request $request
+     * @bodyParam email string required
+     * @bodyParam password string required
+     * @bodyParam remember_me boolean required
+     *
+     * @return Illuminate\Http\JsonResponse
+     * @response 200 {
+     *  "access_token": "eyJ0eX...",
+     *  "token_type": "Bearer",
+     *  "expires_at": "2021-09-06 15:02:06",
+     *  "user": {
+     *      "id": 2,
+     *      "username": "i_1",
+     *      "full_name": "Instructor 1",
+     *      "email": "i_1@test.com",
+     *      "gender": "male",
+     *      "date_of_birth": "2000-02-03 14:23:35"
+     *  },
+     *  "verified": true
+     * }
+     * @response 401 {
+     *  "message": "Invalid username or password."
+     * }
+     */
+    public function login(Request $request)
+    {
         $request->validate([
             'email' => 'required|email',
-            'password' => 'required'
+            'password' => 'required',
+            'remember_me' => 'boolean',
         ]);
 
         $creds = [
             'email' => $request->email,
-            'password' => $request->password
+            'password' => $request->password,
         ];
 
         if (!Auth::attempt($creds)) {
             return response()->json([
-                'message' => 'Invalid username or password.'
+                'message' => 'Invalid username or password.',
             ], 401);
         }
 
@@ -57,19 +103,30 @@ class AuthController extends Controller
         }
         $token->save();
 
-        return [
+        return response()->json([
             'access_token' => $tokenResult->accessToken,
             'token_type' => 'Bearer',
             'expires_at' => Carbon::parse($tokenResult->token->expires_at)->toDateTimeString(),
             'user' => new UserResource($user),
-            'verified' => !($user->email_verified_at == null)
-        ];        
+            'verified' => !($user->email_verified_at == null),
+        ], 200);
     }
 
-    public function logout(Request $request) {
+    /**
+     * Log out users
+     *
+     * @authenticated
+     * @param Request $request
+     * @return Illuminate\Http\JsonResponse
+     * @response {
+     *  "message": "Successfully logged out"
+     * }
+     */
+    public function logout(Request $request)
+    {
         $request->user()->token()->revoke();
         return response()->json([
-            'message' => 'Successfully logged out'
+            'message' => 'Successfully logged out',
         ]);
     }
 }

@@ -2,14 +2,12 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Models\Course;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
-
-use App\Models\Course;
 
 class User extends Authenticatable
 {
@@ -49,22 +47,33 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function getFullNameAttribute() {
+    /**
+     * Get full name of user
+     *
+     * @return string
+     */
+    public function getFullNameAttribute()
+    {
         return "{$this->first_name} {$this->last_name}";
     }
 
-    public function instructor_courses() {
+    /**
+     * One-to-many relationship with courses for instructor
+     *
+     * @return Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function instructor_courses()
+    {
         return $this->hasMany(Course::class, 'instructor_id');
     }
 
-    public function student_courses() {
+    /**
+     * Many-to-many relationship with courses for student
+     *
+     * @return Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function student_courses()
+    {
         return $this->belongsToMany(Course::class, 'course_student', 'user_id', 'course_id');
     }
-
-    // public function courses() {
-    //     if ($this->hasRole('instructor'))
-    //         return $this->instructor_courses();
-    //     return $this->student_courses();
-    // }
-
 }

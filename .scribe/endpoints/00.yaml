@@ -1,0 +1,91 @@
+name: Authentication
+description: |-
+
+  API endpoints for authentication such as login and registration
+endpoints:
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/login
+    metadata:
+      title: 'Login users'
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters:
+      email:
+        name: email
+        description: ''
+        required: true
+        example: corporis
+        type: string
+      password:
+        name: password
+        description: ''
+        required: true
+        example: inventore
+        type: string
+      remember_me:
+        name: remember_me
+        description: ''
+        required: true
+        example: false
+        type: boolean
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+           "access_token": "eyJ0eX...",
+           "token_type": "Bearer",
+           "expires_at": "2021-09-06 15:02:06",
+           "user": {
+               "id": 2,
+               "username": "i_1",
+               "full_name": "Instructor 1",
+               "email": "i_1@test.com",
+               "gender": "male",
+               "date_of_birth": "2000-02-03 14:23:35"
+           },
+           "verified": true
+          }
+        headers: []
+        description: '200'
+      -
+        status: 401
+        content: |-
+          {
+           "message": "Invalid username or password."
+          }
+        headers: []
+        description: '401'
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/logout
+    metadata:
+      title: 'Log out users'
+      description: ''
+      authenticated: true
+    headers:
+      Authorization: 'Bearer {ACCESS_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+           "message": "Successfully logged out"
+          }
+        headers: []
+        description: '200'
+    responseFields: []

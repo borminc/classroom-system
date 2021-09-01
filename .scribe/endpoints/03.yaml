@@ -1,0 +1,142 @@
+name: User
+description: |-
+
+  API endpoints for creating user and getting user info
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/user
+    metadata:
+      title: 'Get logged in user''s info'
+      description: ''
+      authenticated: true
+    headers:
+      Authorization: 'Bearer {ACCESS_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":40,"username":"aosinski","full_name":"Cletus Hand","email":"aosinski@test.com","gender":"female","date_of_birth":"1986-06-07"}}'
+        headers: []
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/all-students
+    metadata:
+      title: 'Get all students'' info'
+      description: ''
+      authenticated: true
+    headers:
+      Authorization: 'Bearer {ACCESS_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"id":41,"username":"damian11","full_name":"Camille Torp","email":"damian11@test.com","gender":"male","date_of_birth":"1987-03-29"},{"id":42,"username":"lina06","full_name":"Jessy Rutherford","email":"lina06@test.com","gender":"male","date_of_birth":"1971-01-20"}]}'
+        headers: []
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/all-instructors
+    metadata:
+      title: 'Get all instructors'' info'
+      description: ''
+      authenticated: true
+    headers:
+      Authorization: 'Bearer {ACCESS_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"id":43,"username":"hintz.monserrate","full_name":"Montana Windler","email":"hintz.monserrate@test.com","gender":"male","date_of_birth":"1972-12-12"},{"id":44,"username":"schoen.vita","full_name":"Kole Rowe","email":"schoen.vita@test.com","gender":"female","date_of_birth":"1998-09-15"}]}'
+        headers: []
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/register-user
+    metadata:
+      title: 'Register a new user'
+      description: ''
+      authenticated: true
+    headers:
+      Authorization: 'Bearer {ACCESS_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters:
+      username:
+        name: username
+        description: 'A unique username'
+        required: true
+        example: autem
+        type: string
+      email:
+        name: email
+        description: 'A unique email address'
+        required: true
+        example: sit
+        type: string
+      first_name:
+        name: first_name
+        description: ''
+        required: true
+        example: cum
+        type: string
+      last_name:
+        name: last_name
+        description: ''
+        required: true
+        example: reprehenderit
+        type: string
+      gender:
+        name: gender
+        description: ''
+        required: true
+        example: architecto
+        type: string
+      date_of_birth:
+        name: date_of_birth
+        description: ''
+        required: true
+        example: '2020-12-01'
+        type: string
+      role:
+        name: role
+        description: 'The role of the user; options: student, instructor, admin'
+        required: true
+        example: quis
+        type: string
+    responses:
+      -
+        status: 201
+        content: |-
+          {
+           "message": "Successfully created user!",
+           "credentials": {
+               "email": "user@test.com",
+               "password": "12345678"
+           }
+          }
+        headers: []
+        description: '201'
+    responseFields: []

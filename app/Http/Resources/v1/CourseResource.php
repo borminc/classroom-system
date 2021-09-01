@@ -2,9 +2,9 @@
 
 namespace App\Http\Resources\v1;
 
-use Illuminate\Http\Resources\Json\JsonResource;
-use App\Models\User;
 use App\Http\Resources\v1\UserResource;
+use App\Models\User;
+use Illuminate\Http\Resources\Json\JsonResource;
 
 class CourseResource extends JsonResource
 {
