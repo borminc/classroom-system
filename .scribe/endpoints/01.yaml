@@ -21,7 +21,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":8,"name":"Intro to vitae","code":"qQtLg","description":"Consectetur quos velit est. Tempore dolorem cum adipisci id ipsum consequatur. Sit saepe possimus sequi minima aut.","instructor":{"id":3,"username":"i_2","full_name":"Instructor 2","email":"i_2@test.com","gender":"male","date_of_birth":"2000-02-03 14:23:35"}},{"id":9,"name":"Intro to omnis","code":"vMlzR","description":"Iste aliquid corporis consequatur enim reiciendis. Itaque omnis est nam atque.","instructor":{"id":11,"username":"i_10","full_name":"Instructor 10","email":"i_10@test.com","gender":"male","date_of_birth":"2000-02-03 14:23:37"}}]}'
+        content: '{"data":[{"id":48,"name":"Intro to sed","code":"93WR4","description":"Omnis dolores ut officiis tenetur quos aut cumque. Quia natus reprehenderit ut velit magnam.","instructor":{"id":3,"username":"i_2","full_name":"Instructor 2","email":"i_2@test.com","gender":"male","date_of_birth":"2000-02-03 18:07:39","roles":[{"id":2,"name":"instructor"}]}},{"id":49,"name":"Intro to ad","code":"tGU5Z","description":"Ipsa quisquam voluptatem ex. Nihil voluptatem sunt molestiae. Aspernatur laboriosam enim eum sit facilis voluptate.","instructor":{"id":2,"username":"i_1","full_name":"Instructor 1","email":"i_1@test.com","gender":"male","date_of_birth":"2000-02-03 18:07:39","roles":[{"id":2,"name":"instructor"}]}}]}'
         headers: []
         description: null
     responseFields: []
@@ -43,7 +43,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":10,"name":"Intro to qui","code":"vuto8","description":"Et nobis quas hic nemo qui quaerat. Et et est facilis quas tempore velit. Laudantium et aut saepe est vel tempora. Et nam aut minima.","instructor":{"id":2,"username":"i_1","full_name":"Instructor 1","email":"i_1@test.com","gender":"male","date_of_birth":"2000-02-03 14:23:35"}},{"id":11,"name":"Intro to id","code":"rYSWJ","description":"Et voluptatem et voluptatem sed iste mollitia et. Aut error quaerat fugit inventore quaerat nobis. Cum sint quas rerum.","instructor":{"id":6,"username":"i_5","full_name":"Instructor 5","email":"i_5@test.com","gender":"male","date_of_birth":"2000-02-03 14:23:36"}}]}'
+        content: '{"data":[{"id":50,"name":"Intro to nesciunt","code":"ESm4C","description":"Odit rerum molestias voluptate qui aut et. Sit sit voluptas fuga voluptatem beatae enim sunt. Beatae ut nostrum ad provident in.","instructor":{"id":7,"username":"i_6","full_name":"Instructor 6","email":"i_6@test.com","gender":"male","date_of_birth":"2000-02-03 18:07:40","roles":[{"id":2,"name":"instructor"}]}},{"id":51,"name":"Intro to et","code":"pWOM5","description":"Aliquam consequatur ducimus quia nobis voluptas ex. Expedita minus non nam facere. Ipsum quas aliquam et nobis nisi corrupti.","instructor":{"id":4,"username":"i_3","full_name":"Instructor 3","email":"i_3@test.com","gender":"male","date_of_birth":"2000-02-03 18:07:40","roles":[{"id":2,"name":"instructor"}]}}]}'
         headers: []
         description: null
     responseFields: []
@@ -66,7 +66,7 @@ endpoints:
         name: course_id
         description: 'The id of the course'
         required: true
-        example: 17
+        example: 6
         type: integer
     responses:
       -
@@ -105,13 +105,13 @@ endpoints:
         name: user_id
         description: 'The user_id of the student to be registered'
         required: true
-        example: 4
+        example: 11
         type: integer
       course_id:
         name: course_id
         description: 'The id of the course'
         required: true
-        example: 12
+        example: 4
         type: integer
     responses:
       -

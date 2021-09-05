@@ -8,7 +8,7 @@ endpoints:
       - POST
     uri: api/v1/login
     metadata:
-      title: 'Login users'
+      title: 'Login user'
       description: ''
       authenticated: false
     headers:
@@ -21,13 +21,13 @@ endpoints:
         name: email
         description: ''
         required: true
-        example: excepturi
+        example: nam
         type: string
       password:
         name: password
         description: ''
         required: true
-        example: recusandae
+        example: qui
         type: string
       remember_me:
         name: remember_me
@@ -69,7 +69,7 @@ endpoints:
       - GET
     uri: api/v1/logout
     metadata:
-      title: 'Log out users'
+      title: 'Log out user'
       description: ''
       authenticated: true
     headers:

@@ -2,6 +2,8 @@
 
 namespace App\Http\Resources\v1;
 
+use App\Http\Resources\v1\RoleResource;
+use App\Models\User;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class UserResource extends JsonResource
@@ -21,6 +23,7 @@ class UserResource extends JsonResource
             'email' => $this->email,
             'gender' => $this->gender,
             'date_of_birth' => $this->date_of_birth,
+            'roles' => RoleResource::collection(User::findOrFail($this->id)->roles),
         ];
     }
 }

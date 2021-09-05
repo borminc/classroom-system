@@ -1,0 +1,301 @@
+name: Users
+description: |-
+
+  API endpoints for creating user and getting user info
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/all-students
+    metadata:
+      title: 'Get all students'' info'
+      description: ''
+      authenticated: true
+    headers:
+      Authorization: 'Bearer {ACCESS_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"id":73,"username":"mohr.sadye","full_name":"Savannah Grimes","email":"mohr.sadye@test.com","gender":"female","date_of_birth":"1970-03-19","roles":[]},{"id":74,"username":"taylor54","full_name":"Marcelina Corkery","email":"taylor54@test.com","gender":"female","date_of_birth":"1976-01-28","roles":[]}]}'
+        headers: []
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/all-instructors
+    metadata:
+      title: 'Get all instructors'' info'
+      description: ''
+      authenticated: true
+    headers:
+      Authorization: 'Bearer {ACCESS_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"id":75,"username":"funk.jadyn","full_name":"Yazmin Cremin","email":"funk.jadyn@test.com","gender":"female","date_of_birth":"1988-04-16","roles":[]},{"id":76,"username":"herminio64","full_name":"Dolly Feeney","email":"herminio64@test.com","gender":"male","date_of_birth":"2017-11-06","roles":[]}]}'
+        headers: []
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/my-info
+    metadata:
+      title: 'Get the logged in user''s info'
+      description: ''
+      authenticated: true
+    headers:
+      Authorization: 'Bearer {ACCESS_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":72,"username":"nola.predovic","full_name":"Orin Swaniawski","email":"nola.predovic@test.com","gender":"female","date_of_birth":"2021-02-05","roles":[]}}'
+        headers: []
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/users
+    metadata:
+      title: 'Get a list of all users'
+      description: ''
+      authenticated: true
+    headers:
+      Authorization: 'Bearer {ACCESS_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"id":77,"username":"gregorio58","full_name":"Camren Parisian","email":"gregorio58@test.com","gender":"male","date_of_birth":"1970-04-26","roles":[]},{"id":78,"username":"hmetz","full_name":"Maegan Shields","email":"hmetz@test.com","gender":"male","date_of_birth":"1985-05-31","roles":[]}]}'
+        headers: []
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/users
+    metadata:
+      title: 'Create a new user'
+      description: ''
+      authenticated: true
+    headers:
+      Authorization: 'Bearer {ACCESS_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters:
+      username:
+        name: username
+        description: 'A unique username'
+        required: true
+        example: aut
+        type: string
+      email:
+        name: email
+        description: 'A unique email address'
+        required: true
+        example: nostrum
+        type: string
+      first_name:
+        name: first_name
+        description: ''
+        required: true
+        example: officia
+        type: string
+      last_name:
+        name: last_name
+        description: ''
+        required: true
+        example: facilis
+        type: string
+      gender:
+        name: gender
+        description: ''
+        required: true
+        example: veniam
+        type: string
+      date_of_birth:
+        name: date_of_birth
+        description: ''
+        required: true
+        example: '2020-12-01'
+        type: string
+      role_ids:
+        name: role_ids
+        description: 'The role ids of the user'
+        required: true
+        example:
+          - 16
+          - 14
+        type: 'integer[]'
+    responses:
+      -
+        status: 201
+        content: |-
+          {
+           "message": "Successfully created user!",
+           "credentials": {
+               "email": "user@test.com",
+               "password": "12345678"
+           }
+          }
+        headers: []
+        description: '201'
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/users/{id}'
+    metadata:
+      title: 'Get the specified user.'
+      description: ''
+      authenticated: true
+    headers:
+      Authorization: 'Bearer {ACCESS_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the user'
+        required: true
+        example: 8
+        type: integer
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":79,"username":"spencer.cindy","full_name":"Beulah Sipes","email":"spencer.cindy@test.com","gender":"male","date_of_birth":"1981-02-03","roles":[]}}'
+        headers: []
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/v1/users/{id}'
+    metadata:
+      title: 'Update the specified user'
+      description: ''
+      authenticated: true
+    headers:
+      Authorization: 'Bearer {ACCESS_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the user'
+        required: true
+        example: 15
+        type: integer
+    queryParameters: []
+    bodyParameters:
+      username:
+        name: username
+        description: 'A unique username'
+        required: true
+        example: occaecati
+        type: string
+      email:
+        name: email
+        description: 'A unique email address'
+        required: true
+        example: sunt
+        type: string
+      first_name:
+        name: first_name
+        description: ''
+        required: true
+        example: rerum
+        type: string
+      last_name:
+        name: last_name
+        description: ''
+        required: true
+        example: beatae
+        type: string
+      gender:
+        name: gender
+        description: ''
+        required: true
+        example: velit
+        type: string
+      date_of_birth:
+        name: date_of_birth
+        description: ''
+        required: true
+        example: '2020-12-01'
+        type: string
+      role_ids:
+        name: role_ids
+        description: 'The role ids of the user'
+        required: true
+        example:
+          - 18
+          - 17
+        type: 'integer[]'
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+           "message": "Successfully updated user!"
+          }
+        headers: []
+        description: '200'
+    responseFields: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/users/{id}'
+    metadata:
+      title: 'Delete the specified user'
+      description: ''
+      authenticated: true
+    headers:
+      Authorization: 'Bearer {ACCESS_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the user'
+        required: true
+        example: 13
+        type: integer
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+           "message": "Successfully deleted user!"
+          }
+        headers: []
+        description: '200'
+    responseFields: []

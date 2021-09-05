@@ -7,8 +7,30 @@ description: |-
 endpoints:
   -
     httpMethods:
+      - GET
+    uri: api/v1/courses
+    metadata:
+      title: 'Get a list of all courses'
+      description: ''
+      authenticated: true
+    headers:
+      Authorization: 'Bearer {ACCESS_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"id":52,"name":"Intro to numquam","code":"XG7LH","description":"Consequatur ipsam minus minus hic blanditiis eos. Natus sunt atque et ea optio quae consequatur. Provident eum recusandae dolorem qui possimus.","instructor":{"id":11,"username":"i_10","full_name":"Instructor 10","email":"i_10@test.com","gender":"male","date_of_birth":"2000-02-03 18:07:41","roles":[{"id":2,"name":"instructor"}]}},{"id":53,"name":"Intro to neque","code":"2dIqw","description":"Nam aut mollitia quia eos non. Voluptatem asperiores et facilis cum nulla reprehenderit eveniet. Expedita est eligendi maiores et itaque.","instructor":{"id":10,"username":"i_9","full_name":"Instructor 9","email":"i_9@test.com","gender":"male","date_of_birth":"2000-02-03 18:07:41","roles":[{"id":2,"name":"instructor"}]}}]}'
+        headers: []
+        description: null
+    responseFields: []
+  -
+    httpMethods:
       - POST
-    uri: api/v1/courses/create
+    uri: api/v1/courses
     metadata:
       title: 'Create a new course'
       description: ''
@@ -24,25 +46,25 @@ endpoints:
         name: name
         description: 'The name of the course'
         required: true
-        example: totam
+        example: voluptatem
         type: string
       code:
         name: code
         description: 'The code of the course'
         required: true
-        example: eveniet
+        example: deserunt
         type: string
       description:
         name: description
         description: 'The description of the course'
         required: true
-        example: repellendus
+        example: nihil
         type: string
       instructor_id:
         name: instructor_id
         description: 'The user_id of the instructor of the course'
         required: true
-        example: 19
+        example: 7
         type: integer
     responses:
       -
@@ -57,22 +79,115 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/courses/view-all
+    uri: 'api/v1/courses/{id}'
     metadata:
-      title: 'Get a list of all courses'
+      title: 'Get the specified course.'
       description: ''
       authenticated: true
     headers:
       Authorization: 'Bearer {ACCESS_TOKEN}'
       Content-Type: application/json
       Accept: application/json
-    urlParameters: []
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the course'
+        required: true
+        example: 20
+        type: integer
     queryParameters: []
     bodyParameters: []
     responses:
       -
         status: 200
-        content: '{"data":[{"id":6,"name":"Intro to iusto","code":"VpQDj","description":"Maiores consequatur nam nisi beatae. Sunt qui et dolores accusamus. Ipsam aut vitae accusamus ullam. Fugiat nihil fugit sit non.","instructor":{"id":5,"username":"i_4","full_name":"Instructor 4","email":"i_4@test.com","gender":"male","date_of_birth":"2000-02-03 14:23:36"}},{"id":7,"name":"Intro to dignissimos","code":"sxuux","description":"Vero maiores vero temporibus ut deleniti aut qui. Quia et sunt occaecati sed adipisci. Dolores numquam quae accusantium pariatur quia est cupiditate.","instructor":{"id":11,"username":"i_10","full_name":"Instructor 10","email":"i_10@test.com","gender":"male","date_of_birth":"2000-02-03 14:23:37"}}]}'
+        content: '{"data":{"id":54,"name":"Intro to laboriosam","code":"Lw8RQ","description":"Laborum aut rerum voluptates. Est quos omnis explicabo distinctio quae voluptatum. Voluptate enim molestias consectetur autem minus quia.","instructor":{"id":7,"username":"i_6","full_name":"Instructor 6","email":"i_6@test.com","gender":"male","date_of_birth":"2000-02-03 18:07:40","roles":[{"id":2,"name":"instructor"}]}}}'
         headers: []
         description: null
+    responseFields: []
+  -
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/v1/courses/{id}'
+    metadata:
+      title: 'Update the specified course'
+      description: ''
+      authenticated: true
+    headers:
+      Authorization: 'Bearer {ACCESS_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the course'
+        required: true
+        example: 14
+        type: integer
+    queryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'The name of the course'
+        required: true
+        example: et
+        type: string
+      code:
+        name: code
+        description: 'The code of the course'
+        required: true
+        example: a
+        type: string
+      description:
+        name: description
+        description: 'The description of the course'
+        required: true
+        example: quasi
+        type: string
+      instructor_id:
+        name: instructor_id
+        description: 'The user_id of the instructor of the course'
+        required: true
+        example: 17
+        type: integer
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+           "message": "Successfully updated course!"
+          }
+        headers: []
+        description: '200'
+    responseFields: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/courses/{id}'
+    metadata:
+      title: 'Delete the specified course'
+      description: ''
+      authenticated: true
+    headers:
+      Authorization: 'Bearer {ACCESS_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the course'
+        required: true
+        example: 5
+        type: integer
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+           "message": "Successfully deleted user!"
+          }
+        headers: []
+        description: '200'
     responseFields: []

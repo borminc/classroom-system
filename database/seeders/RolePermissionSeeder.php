@@ -3,8 +3,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
 
 class RolePermissionSeeder extends Seeder
 {
@@ -19,7 +19,7 @@ class RolePermissionSeeder extends Seeder
         $roles = [
             'admin',
             'instructor',
-            'student'
+            'student',
         ];
 
         foreach ($roles as $role) {
@@ -32,15 +32,21 @@ class RolePermissionSeeder extends Seeder
             'view users',
             'view instructors',
             'view students',
+            'edit users',
+            'delete users',
 
             'register students-courses',
             'create courses',
             'edit courses',
             'delete courses',
+
+            'create roles',
+            'edit roles',
+            'delete roles',
         ];
         $admin_role = Role::where('name', 'admin')->first();
         foreach ($admin_permissions as $p) {
-            $permission = Permission::create(['name'=> $p]);
+            $permission = Permission::create(['name' => $p]);
             $admin_role->givePermissionTo($permission);
         }
 
@@ -48,7 +54,7 @@ class RolePermissionSeeder extends Seeder
         $student_permissions = [
             'take courses',
             'self-register courses',
-            'view own-student-courses'
+            'view own-student-courses',
         ];
         $student_role = Role::where('name', 'student')->first();
         foreach ($student_permissions as $p) {
@@ -59,7 +65,7 @@ class RolePermissionSeeder extends Seeder
         // seed instructors' permissions
         $instructor_permissions = [
             'teach courses',
-            'view own-instructor-courses'
+            'view own-instructor-courses',
         ];
         $instructor_role = Role::where('name', 'instructor')->first();
         foreach ($instructor_permissions as $p) {

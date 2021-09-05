@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "2258cee3-fea5-41bd-b6a8-19f6f8c49137",
+        "_postman_id": "81d06e9f-dab3-4132-bcf7-5cd46363d26b",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -20,7 +20,7 @@
             "description": "\nAPI endpoints for authentication such as login and registration",
             "item": [
                 {
-                    "name": "Login users",
+                    "name": "Login user",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -42,7 +42,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"excepturi\",\"password\":\"recusandae\",\"remember_me\":false}"
+                            "raw": "{\"email\":\"nam\",\"password\":\"qui\",\"remember_me\":false}"
                         },
                         "description": "",
                         "auth": {
@@ -65,7 +65,7 @@
                     ]
                 },
                 {
-                    "name": "Log out users",
+                    "name": "Log out user",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -131,7 +131,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":8,\"name\":\"Intro to vitae\",\"code\":\"qQtLg\",\"description\":\"Consectetur quos velit est. Tempore dolorem cum adipisci id ipsum consequatur. Sit saepe possimus sequi minima aut.\",\"instructor\":{\"id\":3,\"username\":\"i_2\",\"full_name\":\"Instructor 2\",\"email\":\"i_2@test.com\",\"gender\":\"male\",\"date_of_birth\":\"2000-02-03 14:23:35\"}},{\"id\":9,\"name\":\"Intro to omnis\",\"code\":\"vMlzR\",\"description\":\"Iste aliquid corporis consequatur enim reiciendis. Itaque omnis est nam atque.\",\"instructor\":{\"id\":11,\"username\":\"i_10\",\"full_name\":\"Instructor 10\",\"email\":\"i_10@test.com\",\"gender\":\"male\",\"date_of_birth\":\"2000-02-03 14:23:37\"}}]}",
+                            "body": "{\"data\":[{\"id\":48,\"name\":\"Intro to sed\",\"code\":\"93WR4\",\"description\":\"Omnis dolores ut officiis tenetur quos aut cumque. Quia natus reprehenderit ut velit magnam.\",\"instructor\":{\"id\":3,\"username\":\"i_2\",\"full_name\":\"Instructor 2\",\"email\":\"i_2@test.com\",\"gender\":\"male\",\"date_of_birth\":\"2000-02-03 18:07:39\",\"roles\":[{\"id\":2,\"name\":\"instructor\"}]}},{\"id\":49,\"name\":\"Intro to ad\",\"code\":\"tGU5Z\",\"description\":\"Ipsa quisquam voluptatem ex. Nihil voluptatem sunt molestiae. Aspernatur laboriosam enim eum sit facilis voluptate.\",\"instructor\":{\"id\":2,\"username\":\"i_1\",\"full_name\":\"Instructor 1\",\"email\":\"i_1@test.com\",\"gender\":\"male\",\"date_of_birth\":\"2000-02-03 18:07:39\",\"roles\":[{\"id\":2,\"name\":\"instructor\"}]}}]}",
                             "name": ""
                         }
                     ]
@@ -164,7 +164,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":10,\"name\":\"Intro to qui\",\"code\":\"vuto8\",\"description\":\"Et nobis quas hic nemo qui quaerat. Et et est facilis quas tempore velit. Laudantium et aut saepe est vel tempora. Et nam aut minima.\",\"instructor\":{\"id\":2,\"username\":\"i_1\",\"full_name\":\"Instructor 1\",\"email\":\"i_1@test.com\",\"gender\":\"male\",\"date_of_birth\":\"2000-02-03 14:23:35\"}},{\"id\":11,\"name\":\"Intro to id\",\"code\":\"rYSWJ\",\"description\":\"Et voluptatem et voluptatem sed iste mollitia et. Aut error quaerat fugit inventore quaerat nobis. Cum sint quas rerum.\",\"instructor\":{\"id\":6,\"username\":\"i_5\",\"full_name\":\"Instructor 5\",\"email\":\"i_5@test.com\",\"gender\":\"male\",\"date_of_birth\":\"2000-02-03 14:23:36\"}}]}",
+                            "body": "{\"data\":[{\"id\":50,\"name\":\"Intro to nesciunt\",\"code\":\"ESm4C\",\"description\":\"Odit rerum molestias voluptate qui aut et. Sit sit voluptas fuga voluptatem beatae enim sunt. Beatae ut nostrum ad provident in.\",\"instructor\":{\"id\":7,\"username\":\"i_6\",\"full_name\":\"Instructor 6\",\"email\":\"i_6@test.com\",\"gender\":\"male\",\"date_of_birth\":\"2000-02-03 18:07:40\",\"roles\":[{\"id\":2,\"name\":\"instructor\"}]}},{\"id\":51,\"name\":\"Intro to et\",\"code\":\"pWOM5\",\"description\":\"Aliquam consequatur ducimus quia nobis voluptas ex. Expedita minus non nam facere. Ipsum quas aliquam et nobis nisi corrupti.\",\"instructor\":{\"id\":4,\"username\":\"i_3\",\"full_name\":\"Instructor 3\",\"email\":\"i_3@test.com\",\"gender\":\"male\",\"date_of_birth\":\"2000-02-03 18:07:40\",\"roles\":[{\"id\":2,\"name\":\"instructor\"}]}}]}",
                             "name": ""
                         }
                     ]
@@ -192,7 +192,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"course_id\":17}"
+                            "raw": "{\"course_id\":6}"
                         },
                         "description": ""
                     },
@@ -234,7 +234,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"user_id\":4,\"course_id\":12}"
+                            "raw": "{\"user_id\":11,\"course_id\":4}"
                         },
                         "description": ""
                     },
@@ -260,14 +260,47 @@
             "description": "\nAPI endpoints for getting info about courses and creating courses",
             "item": [
                 {
+                    "name": "Get a list of all courses",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/courses",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/v1\/courses"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":[{\"id\":52,\"name\":\"Intro to numquam\",\"code\":\"XG7LH\",\"description\":\"Consequatur ipsam minus minus hic blanditiis eos. Natus sunt atque et ea optio quae consequatur. Provident eum recusandae dolorem qui possimus.\",\"instructor\":{\"id\":11,\"username\":\"i_10\",\"full_name\":\"Instructor 10\",\"email\":\"i_10@test.com\",\"gender\":\"male\",\"date_of_birth\":\"2000-02-03 18:07:41\",\"roles\":[{\"id\":2,\"name\":\"instructor\"}]}},{\"id\":53,\"name\":\"Intro to neque\",\"code\":\"2dIqw\",\"description\":\"Nam aut mollitia quia eos non. Voluptatem asperiores et facilis cum nulla reprehenderit eveniet. Expedita est eligendi maiores et itaque.\",\"instructor\":{\"id\":10,\"username\":\"i_9\",\"full_name\":\"Instructor 9\",\"email\":\"i_9@test.com\",\"gender\":\"male\",\"date_of_birth\":\"2000-02-03 18:07:41\",\"roles\":[{\"id\":2,\"name\":\"instructor\"}]}}]}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
                     "name": "Create a new course",
                     "request": {
                         "url": {
                             "protocol": "http",
                             "host": "{{baseUrl}}",
-                            "path": "api\/v1\/courses\/create",
+                            "path": "api\/v1\/courses",
                             "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/v1\/courses\/create"
+                            "raw": "http:\/\/{{baseUrl}}\/api\/v1\/courses"
                         },
                         "method": "POST",
                         "header": [
@@ -282,7 +315,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"totam\",\"code\":\"eveniet\",\"description\":\"repellendus\",\"instructor_id\":19}"
+                            "raw": "{\"name\":\"voluptatem\",\"code\":\"deserunt\",\"description\":\"nihil\",\"instructor_id\":7}"
                         },
                         "description": ""
                     },
@@ -296,14 +329,22 @@
                     ]
                 },
                 {
-                    "name": "Get a list of all courses",
+                    "name": "Get the specified course.",
                     "request": {
                         "url": {
                             "protocol": "http",
                             "host": "{{baseUrl}}",
-                            "path": "api\/v1\/courses\/view-all",
+                            "path": "api\/v1\/courses\/:id",
                             "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/v1\/courses\/view-all"
+                            "raw": "http:\/\/{{baseUrl}}\/api\/v1\/courses\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "20",
+                                    "description": "The ID of the course"
+                                }
+                            ]
                         },
                         "method": "GET",
                         "header": [
@@ -323,7 +364,92 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":6,\"name\":\"Intro to iusto\",\"code\":\"VpQDj\",\"description\":\"Maiores consequatur nam nisi beatae. Sunt qui et dolores accusamus. Ipsam aut vitae accusamus ullam. Fugiat nihil fugit sit non.\",\"instructor\":{\"id\":5,\"username\":\"i_4\",\"full_name\":\"Instructor 4\",\"email\":\"i_4@test.com\",\"gender\":\"male\",\"date_of_birth\":\"2000-02-03 14:23:36\"}},{\"id\":7,\"name\":\"Intro to dignissimos\",\"code\":\"sxuux\",\"description\":\"Vero maiores vero temporibus ut deleniti aut qui. Quia et sunt occaecati sed adipisci. Dolores numquam quae accusantium pariatur quia est cupiditate.\",\"instructor\":{\"id\":11,\"username\":\"i_10\",\"full_name\":\"Instructor 10\",\"email\":\"i_10@test.com\",\"gender\":\"male\",\"date_of_birth\":\"2000-02-03 14:23:37\"}}]}",
+                            "body": "{\"data\":{\"id\":54,\"name\":\"Intro to laboriosam\",\"code\":\"Lw8RQ\",\"description\":\"Laborum aut rerum voluptates. Est quos omnis explicabo distinctio quae voluptatum. Voluptate enim molestias consectetur autem minus quia.\",\"instructor\":{\"id\":7,\"username\":\"i_6\",\"full_name\":\"Instructor 6\",\"email\":\"i_6@test.com\",\"gender\":\"male\",\"date_of_birth\":\"2000-02-03 18:07:40\",\"roles\":[{\"id\":2,\"name\":\"instructor\"}]}}}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Update the specified course",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/courses\/:id",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/v1\/courses\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "14",
+                                    "description": "The ID of the course"
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"et\",\"code\":\"a\",\"description\":\"quasi\",\"instructor_id\":17}"
+                        },
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"message\": \"Successfully updated course!\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Delete the specified course",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/courses\/:id",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/v1\/courses\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "5",
+                                    "description": "The ID of the course"
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"message\": \"Successfully deleted user!\"\n}",
                             "name": ""
                         }
                     ]
@@ -331,18 +457,18 @@
             ]
         },
         {
-            "name": "User",
-            "description": "\nAPI endpoints for creating user and getting user info",
+            "name": "Roles",
+            "description": "\nAPI endpoints for managing roles",
             "item": [
                 {
-                    "name": "Get logged in user's info",
+                    "name": "Display all roles.",
                     "request": {
                         "url": {
                             "protocol": "http",
                             "host": "{{baseUrl}}",
-                            "path": "api\/v1\/user",
+                            "path": "api\/v1\/roles",
                             "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/v1\/user"
+                            "raw": "http:\/\/{{baseUrl}}\/api\/v1\/roles"
                         },
                         "method": "GET",
                         "header": [
@@ -362,11 +488,179 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":26,\"username\":\"ali63\",\"full_name\":\"Julianne Halvorson\",\"email\":\"ali63@test.com\",\"gender\":\"male\",\"date_of_birth\":\"2000-01-26\"}}",
+                            "body": "{\"data\":[{\"id\":1,\"name\":\"admin\"},{\"id\":1,\"name\":\"admin\"}]}",
                             "name": ""
                         }
                     ]
                 },
+                {
+                    "name": "Store a new role.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/roles",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/v1\/roles"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"rerum\"}"
+                        },
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 201,
+                            "body": "{\n \"message\": \"Successfully created role!\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Display a specific role.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/roles\/:id",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/v1\/roles\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "9",
+                                    "description": "The ID of the role"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":{\"id\":1,\"name\":\"admin\"}}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Update a specific role.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/roles\/:id",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/v1\/roles\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "9",
+                                    "description": "The ID of the role"
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"corrupti\"}"
+                        },
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"message\": \"Successfully updated role!\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Delete a specific role",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/roles\/:id",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/v1\/roles\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "2",
+                                    "description": "The ID of the role"
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"message\": \"Successfully deleted role!\"\n}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Users",
+            "description": "\nAPI endpoints for creating user and getting user info",
+            "item": [
                 {
                     "name": "Get all students' info",
                     "request": {
@@ -395,7 +689,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":27,\"username\":\"jakubowski.jena\",\"full_name\":\"Kaci Gaylord\",\"email\":\"jakubowski.jena@test.com\",\"gender\":\"female\",\"date_of_birth\":\"2002-01-06\"},{\"id\":28,\"username\":\"nathanial27\",\"full_name\":\"Gaston Leuschke\",\"email\":\"nathanial27@test.com\",\"gender\":\"female\",\"date_of_birth\":\"2014-09-24\"}]}",
+                            "body": "{\"data\":[{\"id\":73,\"username\":\"mohr.sadye\",\"full_name\":\"Savannah Grimes\",\"email\":\"mohr.sadye@test.com\",\"gender\":\"female\",\"date_of_birth\":\"1970-03-19\",\"roles\":[]},{\"id\":74,\"username\":\"taylor54\",\"full_name\":\"Marcelina Corkery\",\"email\":\"taylor54@test.com\",\"gender\":\"female\",\"date_of_birth\":\"1976-01-28\",\"roles\":[]}]}",
                             "name": ""
                         }
                     ]
@@ -428,20 +722,86 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":29,\"username\":\"myrtis78\",\"full_name\":\"Cecil Olson\",\"email\":\"myrtis78@test.com\",\"gender\":\"female\",\"date_of_birth\":\"2010-04-10\"},{\"id\":30,\"username\":\"ihodkiewicz\",\"full_name\":\"Allison Lindgren\",\"email\":\"ihodkiewicz@test.com\",\"gender\":\"male\",\"date_of_birth\":\"2009-11-16\"}]}",
+                            "body": "{\"data\":[{\"id\":75,\"username\":\"funk.jadyn\",\"full_name\":\"Yazmin Cremin\",\"email\":\"funk.jadyn@test.com\",\"gender\":\"female\",\"date_of_birth\":\"1988-04-16\",\"roles\":[]},{\"id\":76,\"username\":\"herminio64\",\"full_name\":\"Dolly Feeney\",\"email\":\"herminio64@test.com\",\"gender\":\"male\",\"date_of_birth\":\"2017-11-06\",\"roles\":[]}]}",
                             "name": ""
                         }
                     ]
                 },
                 {
-                    "name": "Register a new user",
+                    "name": "Get the logged in user's info",
                     "request": {
                         "url": {
                             "protocol": "http",
                             "host": "{{baseUrl}}",
-                            "path": "api\/v1\/register-user",
+                            "path": "api\/v1\/my-info",
                             "query": [],
-                            "raw": "http:\/\/{{baseUrl}}\/api\/v1\/register-user"
+                            "raw": "http:\/\/{{baseUrl}}\/api\/v1\/my-info"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":{\"id\":72,\"username\":\"nola.predovic\",\"full_name\":\"Orin Swaniawski\",\"email\":\"nola.predovic@test.com\",\"gender\":\"female\",\"date_of_birth\":\"2021-02-05\",\"roles\":[]}}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Get a list of all users",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/users",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/v1\/users"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":[{\"id\":77,\"username\":\"gregorio58\",\"full_name\":\"Camren Parisian\",\"email\":\"gregorio58@test.com\",\"gender\":\"male\",\"date_of_birth\":\"1970-04-26\",\"roles\":[]},{\"id\":78,\"username\":\"hmetz\",\"full_name\":\"Maegan Shields\",\"email\":\"hmetz@test.com\",\"gender\":\"male\",\"date_of_birth\":\"1985-05-31\",\"roles\":[]}]}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Create a new user",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/users",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/v1\/users"
                         },
                         "method": "POST",
                         "header": [
@@ -456,7 +816,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"username\":\"incidunt\",\"email\":\"omnis\",\"first_name\":\"quis\",\"last_name\":\"quo\",\"gender\":\"nihil\",\"date_of_birth\":\"2020-12-01\",\"role\":\"modi\"}"
+                            "raw": "{\"username\":\"aut\",\"email\":\"nostrum\",\"first_name\":\"officia\",\"last_name\":\"facilis\",\"gender\":\"veniam\",\"date_of_birth\":\"2020-12-01\",\"role_ids\":[16,14]}"
                         },
                         "description": ""
                     },
@@ -465,6 +825,132 @@
                             "header": [],
                             "code": 201,
                             "body": "{\n \"message\": \"Successfully created user!\",\n \"credentials\": {\n     \"email\": \"user@test.com\",\n     \"password\": \"12345678\"\n }\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Get the specified user.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/users\/:id",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/v1\/users\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "8",
+                                    "description": "The ID of the user"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\"data\":{\"id\":79,\"username\":\"spencer.cindy\",\"full_name\":\"Beulah Sipes\",\"email\":\"spencer.cindy@test.com\",\"gender\":\"male\",\"date_of_birth\":\"1981-02-03\",\"roles\":[]}}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Update the specified user",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/users\/:id",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/v1\/users\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "15",
+                                    "description": "The ID of the user"
+                                }
+                            ]
+                        },
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"username\":\"occaecati\",\"email\":\"sunt\",\"first_name\":\"rerum\",\"last_name\":\"beatae\",\"gender\":\"velit\",\"date_of_birth\":\"2020-12-01\",\"role_ids\":[18,17]}"
+                        },
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"message\": \"Successfully updated user!\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Delete the specified user",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/users\/:id",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/v1\/users\/:id",
+                            "variable": [
+                                {
+                                    "id": "id",
+                                    "key": "id",
+                                    "value": "13",
+                                    "description": "The ID of the user"
+                                }
+                            ]
+                        },
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"message\": \"Successfully deleted user!\"\n}",
                             "name": ""
                         }
                     ]

@@ -4,8 +4,9 @@ namespace App\Policies;
 
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
+use Spatie\Permission\Models\Role;
 
-class UserPolicy
+class RolePolicy
 {
     use HandlesAuthorization;
 
@@ -17,19 +18,20 @@ class UserPolicy
      */
     public function viewAny(User $user)
     {
-        return $user->can('view users');
+        return true;
     }
 
     /**
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\User  $model
+     * @param  \App\Models\Role  $role
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, User $model)
+    public function view(User $user, Role $role)
     {
-        return $user->can('view users') || $user->id === $model->id;
+        return true;
+
     }
 
     /**
@@ -40,31 +42,30 @@ class UserPolicy
      */
     public function create(User $user)
     {
-        return $user->can('create users');
+        return $user->can('create roles');
     }
 
     /**
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\User  $model
+     * @param  \App\Models\Role  $role
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, User $model)
+    public function update(User $user, Role $role)
     {
-        return $user->can('edit users') || $user->id === $model->id;
+        return $user->can('edit roles');
     }
 
     /**
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\User  $model
+     * @param  \App\Models\Role  $role
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, User $model)
+    public function delete(User $user, Role $role)
     {
-        return $user->can('delete users');
-
+        return $user->can('delete roles');
     }
 }
