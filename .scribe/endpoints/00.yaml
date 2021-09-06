@@ -21,13 +21,13 @@ endpoints:
         name: email
         description: ''
         required: true
-        example: nam
+        example: voluptatem
         type: string
       password:
         name: password
         description: ''
         required: true
-        example: qui
+        example: nisi
         type: string
       remember_me:
         name: remember_me
@@ -88,4 +88,76 @@ endpoints:
           }
         headers: []
         description: '200'
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/self-register-student
+    metadata:
+      title: 'Self-registration of new users'
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters:
+      username:
+        name: username
+        description: ''
+        required: true
+        example: qui
+        type: string
+      email:
+        name: email
+        description: ''
+        required: true
+        example: nihil
+        type: string
+      password:
+        name: password
+        description: ''
+        required: true
+        example: praesentium
+        type: string
+      password_confirmation:
+        name: password_confirmation
+        description: ''
+        required: true
+        example: quia
+        type: string
+      first_name:
+        name: first_name
+        description: ''
+        required: true
+        example: dolor
+        type: string
+      last_name:
+        name: last_name
+        description: ''
+        required: true
+        example: et
+        type: string
+      gender:
+        name: gender
+        description: ''
+        required: true
+        example: qui
+        type: string
+      date_of_birth:
+        name: date_of_birth
+        description: 'Date in the format of Y-m-d'
+        required: true
+        example: aut
+        type: string
+    responses:
+      -
+        status: 201
+        content: |-
+          {
+           "message": "Successfully created user!"
+          }
+        headers: []
+        description: '201'
     responseFields: []

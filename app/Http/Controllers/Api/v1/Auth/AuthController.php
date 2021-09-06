@@ -9,6 +9,7 @@ use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 /**
  * @group Authentication
@@ -21,29 +22,43 @@ class AuthController extends Controller
      * Self-registration of new users
      *
      * @param Request $request
-     * @bodyParam name required string
-     * @bodyParam email required string
-     * @bodyParam password required string
-     * @bodyParam password_confirmation required string
+     * @bodyParam username string required
+     * @bodyParam email string required
+     * @bodyParam password string required
+     * @bodyParam password_confirmation string required
+     * @bodyParam first_name string required
+     * @bodyParam last_name string required
+     * @bodyParam gender string required
+     * @bodyParam date_of_birth string required Date in the format of Y-m-d
      *
      * @return Illuminate\Http\JsonResponse
      * @response 201 {
      *  "message": "Successfully created user!"
      * }
      */
-    public function register(Request $request)
+    public function selfRegisterAsStudent(Request $request)
     {
         $request->validate([
-            'name' => 'required|string',
-            'email' => 'required|email|unique:users',
+            'username' => 'required|string|unique:users',
+            'email' => 'required|string|unique:users',
             'password' => 'required|min:8|confirmed',
+            'first_name' => 'required|string',
+            'last_name' => 'required|string',
+            'gender' => 'required',
+            'date_of_birth' => 'required|date',
         ]);
 
-        User::create([
-            'name' => $request->name,
+        $user = User::create([
+            'username' => $request->username,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
+            'gender' => $request->gender,
+            'date_of_birth' => $request->date_of_birth,
         ]);
+
+        $user->assignRole('student');
 
         return response()->json([
             'message' => 'Successfully created user!',

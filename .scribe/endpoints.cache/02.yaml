@@ -23,7 +23,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":52,"name":"Intro to numquam","code":"XG7LH","description":"Consequatur ipsam minus minus hic blanditiis eos. Natus sunt atque et ea optio quae consequatur. Provident eum recusandae dolorem qui possimus.","instructor":{"id":11,"username":"i_10","full_name":"Instructor 10","email":"i_10@test.com","gender":"male","date_of_birth":"2000-02-03 18:07:41","roles":[{"id":2,"name":"instructor"}]}},{"id":53,"name":"Intro to neque","code":"2dIqw","description":"Nam aut mollitia quia eos non. Voluptatem asperiores et facilis cum nulla reprehenderit eveniet. Expedita est eligendi maiores et itaque.","instructor":{"id":10,"username":"i_9","full_name":"Instructor 9","email":"i_9@test.com","gender":"male","date_of_birth":"2000-02-03 18:07:41","roles":[{"id":2,"name":"instructor"}]}}]}'
+        content: '{"data":[{"id":15,"name":"Intro to nemo","code":"1wZRw","description":"Repellendus molestias sed quisquam nam odio consequatur. Fugit quia esse ea dolor sint laudantium harum.","instructor":{"id":10,"username":"i_9","full_name":"Instructor 9","email":"i_9@test.com","gender":"male","date_of_birth":"2000-02-03 18:07:41","roles":[{"id":2,"name":"instructor"}]}},{"id":16,"name":"Intro to dignissimos","code":"tWLBh","description":"Tempore maxime ex sint sunt possimus ea. Eaque debitis iusto fugit molestiae dolorum similique.","instructor":{"id":6,"username":"i_5","full_name":"Instructor 5","email":"i_5@test.com","gender":"male","date_of_birth":"2000-02-03 18:07:40","roles":[{"id":2,"name":"instructor"}]}}]}'
         headers: []
         description: null
     responseFields: []
@@ -46,25 +46,25 @@ endpoints:
         name: name
         description: 'The name of the course'
         required: true
-        example: voluptatem
+        example: et
         type: string
       code:
         name: code
         description: 'The code of the course'
         required: true
-        example: deserunt
+        example: quo
         type: string
       description:
         name: description
         description: 'The description of the course'
         required: true
-        example: nihil
+        example: suscipit
         type: string
       instructor_id:
         name: instructor_id
         description: 'The user_id of the instructor of the course'
         required: true
-        example: 7
+        example: 3
         type: integer
     responses:
       -
@@ -93,14 +93,14 @@ endpoints:
         name: id
         description: 'The ID of the course'
         required: true
-        example: 20
+        example: 7
         type: integer
     queryParameters: []
     bodyParameters: []
     responses:
       -
         status: 200
-        content: '{"data":{"id":54,"name":"Intro to laboriosam","code":"Lw8RQ","description":"Laborum aut rerum voluptates. Est quos omnis explicabo distinctio quae voluptatum. Voluptate enim molestias consectetur autem minus quia.","instructor":{"id":7,"username":"i_6","full_name":"Instructor 6","email":"i_6@test.com","gender":"male","date_of_birth":"2000-02-03 18:07:40","roles":[{"id":2,"name":"instructor"}]}}}'
+        content: '{"data":{"id":17,"name":"Intro to laborum","code":"JNPSo","description":"Et voluptatem autem quia. Recusandae est eius ea voluptatum et at eum aut. Laborum atque officiis aliquid perferendis earum adipisci ut.","instructor":{"id":4,"username":"i_3","full_name":"Instructor 3","email":"i_3@test.com","gender":"male","date_of_birth":"2000-02-03 18:07:40","roles":[{"id":2,"name":"instructor"}]}}}'
         headers: []
         description: null
     responseFields: []
@@ -122,7 +122,7 @@ endpoints:
         name: id
         description: 'The ID of the course'
         required: true
-        example: 14
+        example: 13
         type: integer
     queryParameters: []
     bodyParameters:
@@ -130,19 +130,19 @@ endpoints:
         name: name
         description: 'The name of the course'
         required: true
-        example: et
+        example: fugit
         type: string
       code:
         name: code
         description: 'The code of the course'
         required: true
-        example: a
+        example: dolorem
         type: string
       description:
         name: description
         description: 'The description of the course'
         required: true
-        example: quasi
+        example: vero
         type: string
       instructor_id:
         name: instructor_id
@@ -177,7 +177,7 @@ endpoints:
         name: id
         description: 'The ID of the course'
         required: true
-        example: 5
+        example: 14
         type: integer
     queryParameters: []
     bodyParameters: []

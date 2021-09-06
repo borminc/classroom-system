@@ -21,7 +21,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":73,"username":"mohr.sadye","full_name":"Savannah Grimes","email":"mohr.sadye@test.com","gender":"female","date_of_birth":"1970-03-19","roles":[]},{"id":74,"username":"taylor54","full_name":"Marcelina Corkery","email":"taylor54@test.com","gender":"female","date_of_birth":"1976-01-28","roles":[]}]}'
+        content: '{"data":[{"id":90,"username":"cynthia.wyman","full_name":"Tina Ziemann","email":"cynthia.wyman@test.com","gender":"female","date_of_birth":"1977-07-05","roles":[]},{"id":91,"username":"kautzer.glenda","full_name":"Margarita Vandervort","email":"kautzer.glenda@test.com","gender":"female","date_of_birth":"2004-06-11","roles":[]}]}'
         headers: []
         description: null
     responseFields: []
@@ -43,7 +43,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":75,"username":"funk.jadyn","full_name":"Yazmin Cremin","email":"funk.jadyn@test.com","gender":"female","date_of_birth":"1988-04-16","roles":[]},{"id":76,"username":"herminio64","full_name":"Dolly Feeney","email":"herminio64@test.com","gender":"male","date_of_birth":"2017-11-06","roles":[]}]}'
+        content: '{"data":[{"id":92,"username":"fernando.brekke","full_name":"Yessenia Miller","email":"fernando.brekke@test.com","gender":"female","date_of_birth":"1982-08-16","roles":[]},{"id":93,"username":"radams","full_name":"Sincere Homenick","email":"radams@test.com","gender":"male","date_of_birth":"2015-01-19","roles":[]}]}'
         headers: []
         description: null
     responseFields: []
@@ -65,7 +65,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":72,"username":"nola.predovic","full_name":"Orin Swaniawski","email":"nola.predovic@test.com","gender":"female","date_of_birth":"2021-02-05","roles":[]}}'
+        content: '{"data":{"id":89,"username":"corkery.keon","full_name":"Gay Bashirian","email":"corkery.keon@test.com","gender":"female","date_of_birth":"2007-06-29","roles":[]}}'
         headers: []
         description: null
     responseFields: []
@@ -87,7 +87,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":77,"username":"gregorio58","full_name":"Camren Parisian","email":"gregorio58@test.com","gender":"male","date_of_birth":"1970-04-26","roles":[]},{"id":78,"username":"hmetz","full_name":"Maegan Shields","email":"hmetz@test.com","gender":"male","date_of_birth":"1985-05-31","roles":[]}]}'
+        content: '{"data":[{"id":94,"username":"daron.hettinger","full_name":"Avery Hamill","email":"daron.hettinger@test.com","gender":"male","date_of_birth":"1997-08-17","roles":[]},{"id":95,"username":"lisette.kovacek","full_name":"Merlin Johnson","email":"lisette.kovacek@test.com","gender":"female","date_of_birth":"2001-03-26","roles":[]}]}'
         headers: []
         description: null
     responseFields: []
@@ -110,31 +110,31 @@ endpoints:
         name: username
         description: 'A unique username'
         required: true
-        example: aut
+        example: et
         type: string
       email:
         name: email
         description: 'A unique email address'
         required: true
-        example: nostrum
+        example: aut
         type: string
       first_name:
         name: first_name
         description: ''
         required: true
-        example: officia
+        example: aut
         type: string
       last_name:
         name: last_name
         description: ''
         required: true
-        example: facilis
+        example: excepturi
         type: string
       gender:
         name: gender
         description: ''
         required: true
-        example: veniam
+        example: quia
         type: string
       date_of_birth:
         name: date_of_birth
@@ -147,8 +147,8 @@ endpoints:
         description: 'The role ids of the user'
         required: true
         example:
+          - 8
           - 16
-          - 14
         type: 'integer[]'
     responses:
       -
@@ -181,14 +181,14 @@ endpoints:
         name: id
         description: 'The ID of the user'
         required: true
-        example: 8
+        example: 20
         type: integer
     queryParameters: []
     bodyParameters: []
     responses:
       -
         status: 200
-        content: '{"data":{"id":79,"username":"spencer.cindy","full_name":"Beulah Sipes","email":"spencer.cindy@test.com","gender":"male","date_of_birth":"1981-02-03","roles":[]}}'
+        content: '{"data":{"id":96,"username":"krystal.kunze","full_name":"Belle Hintz","email":"krystal.kunze@test.com","gender":"female","date_of_birth":"1984-05-08","roles":[]}}'
         headers: []
         description: null
     responseFields: []
@@ -210,7 +210,7 @@ endpoints:
         name: id
         description: 'The ID of the user'
         required: true
-        example: 15
+        example: 17
         type: integer
     queryParameters: []
     bodyParameters:
@@ -218,31 +218,31 @@ endpoints:
         name: username
         description: 'A unique username'
         required: true
-        example: occaecati
+        example: eveniet
         type: string
       email:
         name: email
         description: 'A unique email address'
         required: true
-        example: sunt
+        example: optio
         type: string
       first_name:
         name: first_name
         description: ''
         required: true
-        example: rerum
+        example: accusamus
         type: string
       last_name:
         name: last_name
         description: ''
         required: true
-        example: beatae
+        example: vel
         type: string
       gender:
         name: gender
         description: ''
         required: true
-        example: velit
+        example: perspiciatis
         type: string
       date_of_birth:
         name: date_of_birth
@@ -255,8 +255,8 @@ endpoints:
         description: 'The role ids of the user'
         required: true
         example:
-          - 18
-          - 17
+          - 1
+          - 9
         type: 'integer[]'
     responses:
       -
@@ -285,7 +285,7 @@ endpoints:
         name: id
         description: 'The ID of the user'
         required: true
-        example: 13
+        example: 20
         type: integer
     queryParameters: []
     bodyParameters: []

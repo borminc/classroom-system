@@ -20,9 +20,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('v1')->group(function () {
     /**
-     * Login user
+     * Register and login user
      */
     Route::post('login', [AuthController::class, 'login']);
+    Route::post('self-register-student', [AuthController::class, 'selfRegisterAsStudent']);
 
     Route::group(['middleware' => 'auth:api'], function () {
         /**

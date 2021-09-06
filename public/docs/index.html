@@ -51,7 +51,7 @@
                             <li><a href="http://github.com/knuckleswtf/scribe">Documentation powered by Scribe ✍</a></li>
                     </ul>
             <ul class="toc-footer" id="last-updated">
-            <li>Last updated: September 2 2021</li>
+            <li>Last updated: September 6 2021</li>
         </ul>
 </div>
 <div class="page-wrapper">
@@ -67,7 +67,7 @@ You can switch the language used with the tabs at the top right (or from the nav
 <pre><code class="language-yaml">http://localhost:8000</code></pre>
 
         <h1>Authenticating requests</h1>
-<p>To authenticate requests, include an <strong><code>Authorization</code></strong> header with the value <strong><code>"Bearer {ACCESS_TOKEN}"</code></strong>.</p>
+<p>Authenticate requests to this API's endpoints by sending an <strong><code>Authorization</code></strong> header with the value <strong><code>"Bearer {ACCESS_TOKEN}"</code></strong>.</p>
 <p>All authenticated endpoints are marked with a <code>requires authentication</code> badge in the documentation below.</p>
 <p>You can retrieve your token by visiting your dashboard and clicking <b>Generate API token</b>.</p>
 
@@ -91,8 +91,8 @@ You can switch the language used with the tabs at the top right (or from the nav
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"nam\",
-    \"password\": \"qui\",
+    \"email\": \"voluptatem\",
+    \"password\": \"nisi\",
     \"remember_me\": false
 }"
 </code></pre>
@@ -107,8 +107,8 @@ const headers = {
 };
 
 let body = {
-    "email": "nam",
-    "password": "qui",
+    "email": "voluptatem",
+    "password": "nisi",
     "remember_me": false
 }
 
@@ -321,6 +321,178 @@ fetch(url, {
         </p>
                 </form>
 
+            <h2 id="authentication-POSTapi-v1-self-register-student">Self-registration of new users</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-v1-self-register-student">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request POST \
+    "http://localhost:8000/api/v1/self-register-student" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"username\": \"qui\",
+    \"email\": \"nihil\",
+    \"password\": \"praesentium\",
+    \"password_confirmation\": \"quia\",
+    \"first_name\": \"dolor\",
+    \"last_name\": \"et\",
+    \"gender\": \"qui\",
+    \"date_of_birth\": \"aut\"
+}"
+</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/v1/self-register-student"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "username": "qui",
+    "email": "nihil",
+    "password": "praesentium",
+    "password_confirmation": "quia",
+    "first_name": "dolor",
+    "last_name": "et",
+    "gender": "qui",
+    "date_of_birth": "aut"
+}
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-POSTapi-v1-self-register-student">
+            <blockquote>
+            <p>Example response (201):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Successfully created user!&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-v1-self-register-student" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-self-register-student"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-self-register-student"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-self-register-student" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-self-register-student"></code></pre>
+</span>
+<form id="form-POSTapi-v1-self-register-student" data-method="POST"
+      data-path="api/v1/self-register-student"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-self-register-student', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-self-register-student"
+                    onclick="tryItOut('POSTapi-v1-self-register-student');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-self-register-student"
+                    onclick="cancelTryOut('POSTapi-v1-self-register-student');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-self-register-student" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/self-register-student</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>username</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="username"
+               data-endpoint="POSTapi-v1-self-register-student"
+               data-component="body" required  hidden>
+    <br>
+        </p>
+                <p>
+            <b><code>email</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="email"
+               data-endpoint="POSTapi-v1-self-register-student"
+               data-component="body" required  hidden>
+    <br>
+        </p>
+                <p>
+            <b><code>password</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="password"
+               data-endpoint="POSTapi-v1-self-register-student"
+               data-component="body" required  hidden>
+    <br>
+        </p>
+                <p>
+            <b><code>password_confirmation</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="password_confirmation"
+               data-endpoint="POSTapi-v1-self-register-student"
+               data-component="body" required  hidden>
+    <br>
+        </p>
+                <p>
+            <b><code>first_name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="first_name"
+               data-endpoint="POSTapi-v1-self-register-student"
+               data-component="body" required  hidden>
+    <br>
+        </p>
+                <p>
+            <b><code>last_name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="last_name"
+               data-endpoint="POSTapi-v1-self-register-student"
+               data-component="body" required  hidden>
+    <br>
+        </p>
+                <p>
+            <b><code>gender</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="gender"
+               data-endpoint="POSTapi-v1-self-register-student"
+               data-component="body" required  hidden>
+    <br>
+        </p>
+                <p>
+            <b><code>date_of_birth</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="date_of_birth"
+               data-endpoint="POSTapi-v1-self-register-student"
+               data-component="body" required  hidden>
+    <br>
+<p>Date in the format of Y-m-d</p>        </p>
+    
+    </form>
+
         <h1 id="course-registration">Course Registration</h1>
 
     <p>API endpoints for registering courses</p>
@@ -368,17 +540,17 @@ fetch(url, {
 <code class="language-json">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 48,
+            &quot;id&quot;: 11,
             &quot;name&quot;: &quot;Intro to sed&quot;,
-            &quot;code&quot;: &quot;93WR4&quot;,
-            &quot;description&quot;: &quot;Omnis dolores ut officiis tenetur quos aut cumque. Quia natus reprehenderit ut velit magnam.&quot;,
+            &quot;code&quot;: &quot;lPUlC&quot;,
+            &quot;description&quot;: &quot;Repellendus est non incidunt omnis ratione. Consectetur omnis sit distinctio magni rerum dolores. Dolore quibusdam sapiente dolorem qui quia.&quot;,
             &quot;instructor&quot;: {
-                &quot;id&quot;: 3,
-                &quot;username&quot;: &quot;i_2&quot;,
-                &quot;full_name&quot;: &quot;Instructor 2&quot;,
-                &quot;email&quot;: &quot;i_2@test.com&quot;,
+                &quot;id&quot;: 9,
+                &quot;username&quot;: &quot;i_8&quot;,
+                &quot;full_name&quot;: &quot;Instructor 8&quot;,
+                &quot;email&quot;: &quot;i_8@test.com&quot;,
                 &quot;gender&quot;: &quot;male&quot;,
-                &quot;date_of_birth&quot;: &quot;2000-02-03 18:07:39&quot;,
+                &quot;date_of_birth&quot;: &quot;2000-02-03 18:07:40&quot;,
                 &quot;roles&quot;: [
                     {
                         &quot;id&quot;: 2,
@@ -388,17 +560,17 @@ fetch(url, {
             }
         },
         {
-            &quot;id&quot;: 49,
-            &quot;name&quot;: &quot;Intro to ad&quot;,
-            &quot;code&quot;: &quot;tGU5Z&quot;,
-            &quot;description&quot;: &quot;Ipsa quisquam voluptatem ex. Nihil voluptatem sunt molestiae. Aspernatur laboriosam enim eum sit facilis voluptate.&quot;,
+            &quot;id&quot;: 12,
+            &quot;name&quot;: &quot;Intro to similique&quot;,
+            &quot;code&quot;: &quot;gYSNA&quot;,
+            &quot;description&quot;: &quot;Unde sequi et tempore libero magni odio. Molestiae est quia est.&quot;,
             &quot;instructor&quot;: {
-                &quot;id&quot;: 2,
-                &quot;username&quot;: &quot;i_1&quot;,
-                &quot;full_name&quot;: &quot;Instructor 1&quot;,
-                &quot;email&quot;: &quot;i_1@test.com&quot;,
+                &quot;id&quot;: 5,
+                &quot;username&quot;: &quot;i_4&quot;,
+                &quot;full_name&quot;: &quot;Instructor 4&quot;,
+                &quot;email&quot;: &quot;i_4@test.com&quot;,
                 &quot;gender&quot;: &quot;male&quot;,
-                &quot;date_of_birth&quot;: &quot;2000-02-03 18:07:39&quot;,
+                &quot;date_of_birth&quot;: &quot;2000-02-03 18:07:40&quot;,
                 &quot;roles&quot;: [
                     {
                         &quot;id&quot;: 2,
@@ -503,15 +675,15 @@ fetch(url, {
 <code class="language-json">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 50,
-            &quot;name&quot;: &quot;Intro to nesciunt&quot;,
-            &quot;code&quot;: &quot;ESm4C&quot;,
-            &quot;description&quot;: &quot;Odit rerum molestias voluptate qui aut et. Sit sit voluptas fuga voluptatem beatae enim sunt. Beatae ut nostrum ad provident in.&quot;,
+            &quot;id&quot;: 13,
+            &quot;name&quot;: &quot;Intro to quidem&quot;,
+            &quot;code&quot;: &quot;ugMnN&quot;,
+            &quot;description&quot;: &quot;Saepe sit cum eos eligendi. Sed distinctio est est libero. Ipsum tempore dolor iusto maxime corrupti assumenda qui.&quot;,
             &quot;instructor&quot;: {
-                &quot;id&quot;: 7,
-                &quot;username&quot;: &quot;i_6&quot;,
-                &quot;full_name&quot;: &quot;Instructor 6&quot;,
-                &quot;email&quot;: &quot;i_6@test.com&quot;,
+                &quot;id&quot;: 8,
+                &quot;username&quot;: &quot;i_7&quot;,
+                &quot;full_name&quot;: &quot;Instructor 7&quot;,
+                &quot;email&quot;: &quot;i_7@test.com&quot;,
                 &quot;gender&quot;: &quot;male&quot;,
                 &quot;date_of_birth&quot;: &quot;2000-02-03 18:07:40&quot;,
                 &quot;roles&quot;: [
@@ -523,15 +695,15 @@ fetch(url, {
             }
         },
         {
-            &quot;id&quot;: 51,
-            &quot;name&quot;: &quot;Intro to et&quot;,
-            &quot;code&quot;: &quot;pWOM5&quot;,
-            &quot;description&quot;: &quot;Aliquam consequatur ducimus quia nobis voluptas ex. Expedita minus non nam facere. Ipsum quas aliquam et nobis nisi corrupti.&quot;,
+            &quot;id&quot;: 14,
+            &quot;name&quot;: &quot;Intro to excepturi&quot;,
+            &quot;code&quot;: &quot;oHPER&quot;,
+            &quot;description&quot;: &quot;Qui optio modi eveniet quia. Est atque quod ut non quo quia sint. Enim autem harum saepe iste quia odit non quia.&quot;,
             &quot;instructor&quot;: {
-                &quot;id&quot;: 4,
-                &quot;username&quot;: &quot;i_3&quot;,
-                &quot;full_name&quot;: &quot;Instructor 3&quot;,
-                &quot;email&quot;: &quot;i_3@test.com&quot;,
+                &quot;id&quot;: 7,
+                &quot;username&quot;: &quot;i_6&quot;,
+                &quot;full_name&quot;: &quot;Instructor 6&quot;,
+                &quot;email&quot;: &quot;i_6@test.com&quot;,
                 &quot;gender&quot;: &quot;male&quot;,
                 &quot;date_of_birth&quot;: &quot;2000-02-03 18:07:40&quot;,
                 &quot;roles&quot;: [
@@ -613,7 +785,7 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"course_id\": 6
+    \"course_id\": 2
 }"
 </code></pre>
 
@@ -628,7 +800,7 @@ const headers = {
 };
 
 let body = {
-    "course_id": 6
+    "course_id": 2
 }
 
 fetch(url, {
@@ -735,8 +907,8 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"user_id\": 11,
-    \"course_id\": 4
+    \"user_id\": 17,
+    \"course_id\": 10
 }"
 </code></pre>
 
@@ -751,8 +923,8 @@ const headers = {
 };
 
 let body = {
-    "user_id": 11,
-    "course_id": 4
+    "user_id": 17,
+    "course_id": 10
 }
 
 fetch(url, {
@@ -896,15 +1068,15 @@ fetch(url, {
 <code class="language-json">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 52,
-            &quot;name&quot;: &quot;Intro to numquam&quot;,
-            &quot;code&quot;: &quot;XG7LH&quot;,
-            &quot;description&quot;: &quot;Consequatur ipsam minus minus hic blanditiis eos. Natus sunt atque et ea optio quae consequatur. Provident eum recusandae dolorem qui possimus.&quot;,
+            &quot;id&quot;: 15,
+            &quot;name&quot;: &quot;Intro to nemo&quot;,
+            &quot;code&quot;: &quot;1wZRw&quot;,
+            &quot;description&quot;: &quot;Repellendus molestias sed quisquam nam odio consequatur. Fugit quia esse ea dolor sint laudantium harum.&quot;,
             &quot;instructor&quot;: {
-                &quot;id&quot;: 11,
-                &quot;username&quot;: &quot;i_10&quot;,
-                &quot;full_name&quot;: &quot;Instructor 10&quot;,
-                &quot;email&quot;: &quot;i_10@test.com&quot;,
+                &quot;id&quot;: 10,
+                &quot;username&quot;: &quot;i_9&quot;,
+                &quot;full_name&quot;: &quot;Instructor 9&quot;,
+                &quot;email&quot;: &quot;i_9@test.com&quot;,
                 &quot;gender&quot;: &quot;male&quot;,
                 &quot;date_of_birth&quot;: &quot;2000-02-03 18:07:41&quot;,
                 &quot;roles&quot;: [
@@ -916,17 +1088,17 @@ fetch(url, {
             }
         },
         {
-            &quot;id&quot;: 53,
-            &quot;name&quot;: &quot;Intro to neque&quot;,
-            &quot;code&quot;: &quot;2dIqw&quot;,
-            &quot;description&quot;: &quot;Nam aut mollitia quia eos non. Voluptatem asperiores et facilis cum nulla reprehenderit eveniet. Expedita est eligendi maiores et itaque.&quot;,
+            &quot;id&quot;: 16,
+            &quot;name&quot;: &quot;Intro to dignissimos&quot;,
+            &quot;code&quot;: &quot;tWLBh&quot;,
+            &quot;description&quot;: &quot;Tempore maxime ex sint sunt possimus ea. Eaque debitis iusto fugit molestiae dolorum similique.&quot;,
             &quot;instructor&quot;: {
-                &quot;id&quot;: 10,
-                &quot;username&quot;: &quot;i_9&quot;,
-                &quot;full_name&quot;: &quot;Instructor 9&quot;,
-                &quot;email&quot;: &quot;i_9@test.com&quot;,
+                &quot;id&quot;: 6,
+                &quot;username&quot;: &quot;i_5&quot;,
+                &quot;full_name&quot;: &quot;Instructor 5&quot;,
+                &quot;email&quot;: &quot;i_5@test.com&quot;,
                 &quot;gender&quot;: &quot;male&quot;,
-                &quot;date_of_birth&quot;: &quot;2000-02-03 18:07:41&quot;,
+                &quot;date_of_birth&quot;: &quot;2000-02-03 18:07:40&quot;,
                 &quot;roles&quot;: [
                     {
                         &quot;id&quot;: 2,
@@ -1006,10 +1178,10 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"voluptatem\",
-    \"code\": \"deserunt\",
-    \"description\": \"nihil\",
-    \"instructor_id\": 7
+    \"name\": \"et\",
+    \"code\": \"quo\",
+    \"description\": \"suscipit\",
+    \"instructor_id\": 3
 }"
 </code></pre>
 
@@ -1024,10 +1196,10 @@ const headers = {
 };
 
 let body = {
-    "name": "voluptatem",
-    "code": "deserunt",
-    "description": "nihil",
-    "instructor_id": 7
+    "name": "et",
+    "code": "quo",
+    "description": "suscipit",
+    "instructor_id": 3
 }
 
 fetch(url, {
@@ -1144,13 +1316,13 @@ fetch(url, {
 
 
 <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/v1/courses/20" \
+    --get "http://localhost:8000/api/v1/courses/7" \
     --header "Authorization: Bearer {ACCESS_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/courses/20"
+    "http://localhost:8000/api/v1/courses/7"
 );
 
 const headers = {
@@ -1173,15 +1345,15 @@ fetch(url, {
 
 <code class="language-json">{
     &quot;data&quot;: {
-        &quot;id&quot;: 54,
-        &quot;name&quot;: &quot;Intro to laboriosam&quot;,
-        &quot;code&quot;: &quot;Lw8RQ&quot;,
-        &quot;description&quot;: &quot;Laborum aut rerum voluptates. Est quos omnis explicabo distinctio quae voluptatum. Voluptate enim molestias consectetur autem minus quia.&quot;,
+        &quot;id&quot;: 17,
+        &quot;name&quot;: &quot;Intro to laborum&quot;,
+        &quot;code&quot;: &quot;JNPSo&quot;,
+        &quot;description&quot;: &quot;Et voluptatem autem quia. Recusandae est eius ea voluptatum et at eum aut. Laborum atque officiis aliquid perferendis earum adipisci ut.&quot;,
         &quot;instructor&quot;: {
-            &quot;id&quot;: 7,
-            &quot;username&quot;: &quot;i_6&quot;,
-            &quot;full_name&quot;: &quot;Instructor 6&quot;,
-            &quot;email&quot;: &quot;i_6@test.com&quot;,
+            &quot;id&quot;: 4,
+            &quot;username&quot;: &quot;i_3&quot;,
+            &quot;full_name&quot;: &quot;Instructor 3&quot;,
+            &quot;email&quot;: &quot;i_3@test.com&quot;,
             &quot;gender&quot;: &quot;male&quot;,
             &quot;date_of_birth&quot;: &quot;2000-02-03 18:07:40&quot;,
             &quot;roles&quot;: [
@@ -1266,20 +1438,20 @@ fetch(url, {
 
 
 <pre><code class="language-bash">curl --request PUT \
-    "http://localhost:8000/api/v1/courses/14" \
+    "http://localhost:8000/api/v1/courses/13" \
     --header "Authorization: Bearer {ACCESS_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"et\",
-    \"code\": \"a\",
-    \"description\": \"quasi\",
+    \"name\": \"fugit\",
+    \"code\": \"dolorem\",
+    \"description\": \"vero\",
     \"instructor_id\": 17
 }"
 </code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/courses/14"
+    "http://localhost:8000/api/v1/courses/13"
 );
 
 const headers = {
@@ -1289,9 +1461,9 @@ const headers = {
 };
 
 let body = {
-    "name": "et",
-    "code": "a",
-    "description": "quasi",
+    "name": "fugit",
+    "code": "dolorem",
+    "description": "vero",
     "instructor_id": 17
 }
 
@@ -1422,13 +1594,13 @@ fetch(url, {
 
 
 <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost:8000/api/v1/courses/5" \
+    "http://localhost:8000/api/v1/courses/14" \
     --header "Authorization: Bearer {ACCESS_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/courses/5"
+    "http://localhost:8000/api/v1/courses/14"
 );
 
 const headers = {
@@ -1637,7 +1809,7 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"rerum\"
+    \"name\": \"consequuntur\"
 }"
 </code></pre>
 
@@ -1652,7 +1824,7 @@ const headers = {
 };
 
 let body = {
-    "name": "rerum"
+    "name": "consequuntur"
 }
 
 fetch(url, {
@@ -1745,13 +1917,13 @@ fetch(url, {
 
 
 <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/v1/roles/9" \
+    --get "http://localhost:8000/api/v1/roles/19" \
     --header "Authorization: Bearer {ACCESS_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/roles/9"
+    "http://localhost:8000/api/v1/roles/19"
 );
 
 const headers = {
@@ -1851,17 +2023,17 @@ fetch(url, {
 
 
 <pre><code class="language-bash">curl --request PUT \
-    "http://localhost:8000/api/v1/roles/9" \
+    "http://localhost:8000/api/v1/roles/17" \
     --header "Authorization: Bearer {ACCESS_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"corrupti\"
+    \"name\": \"rerum\"
 }"
 </code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/roles/9"
+    "http://localhost:8000/api/v1/roles/17"
 );
 
 const headers = {
@@ -1871,7 +2043,7 @@ const headers = {
 };
 
 let body = {
-    "name": "corrupti"
+    "name": "rerum"
 }
 
 fetch(url, {
@@ -1977,13 +2149,13 @@ fetch(url, {
 
 
 <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost:8000/api/v1/roles/2" \
+    "http://localhost:8000/api/v1/roles/13" \
     --header "Authorization: Bearer {ACCESS_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/roles/2"
+    "http://localhost:8000/api/v1/roles/13"
 );
 
 const headers = {
@@ -2114,21 +2286,21 @@ fetch(url, {
 <code class="language-json">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 73,
-            &quot;username&quot;: &quot;mohr.sadye&quot;,
-            &quot;full_name&quot;: &quot;Savannah Grimes&quot;,
-            &quot;email&quot;: &quot;mohr.sadye@test.com&quot;,
+            &quot;id&quot;: 90,
+            &quot;username&quot;: &quot;cynthia.wyman&quot;,
+            &quot;full_name&quot;: &quot;Tina Ziemann&quot;,
+            &quot;email&quot;: &quot;cynthia.wyman@test.com&quot;,
             &quot;gender&quot;: &quot;female&quot;,
-            &quot;date_of_birth&quot;: &quot;1970-03-19&quot;,
+            &quot;date_of_birth&quot;: &quot;1977-07-05&quot;,
             &quot;roles&quot;: []
         },
         {
-            &quot;id&quot;: 74,
-            &quot;username&quot;: &quot;taylor54&quot;,
-            &quot;full_name&quot;: &quot;Marcelina Corkery&quot;,
-            &quot;email&quot;: &quot;taylor54@test.com&quot;,
+            &quot;id&quot;: 91,
+            &quot;username&quot;: &quot;kautzer.glenda&quot;,
+            &quot;full_name&quot;: &quot;Margarita Vandervort&quot;,
+            &quot;email&quot;: &quot;kautzer.glenda@test.com&quot;,
             &quot;gender&quot;: &quot;female&quot;,
-            &quot;date_of_birth&quot;: &quot;1976-01-28&quot;,
+            &quot;date_of_birth&quot;: &quot;2004-06-11&quot;,
             &quot;roles&quot;: []
         }
     ]
@@ -2227,21 +2399,21 @@ fetch(url, {
 <code class="language-json">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 75,
-            &quot;username&quot;: &quot;funk.jadyn&quot;,
-            &quot;full_name&quot;: &quot;Yazmin Cremin&quot;,
-            &quot;email&quot;: &quot;funk.jadyn@test.com&quot;,
+            &quot;id&quot;: 92,
+            &quot;username&quot;: &quot;fernando.brekke&quot;,
+            &quot;full_name&quot;: &quot;Yessenia Miller&quot;,
+            &quot;email&quot;: &quot;fernando.brekke@test.com&quot;,
             &quot;gender&quot;: &quot;female&quot;,
-            &quot;date_of_birth&quot;: &quot;1988-04-16&quot;,
+            &quot;date_of_birth&quot;: &quot;1982-08-16&quot;,
             &quot;roles&quot;: []
         },
         {
-            &quot;id&quot;: 76,
-            &quot;username&quot;: &quot;herminio64&quot;,
-            &quot;full_name&quot;: &quot;Dolly Feeney&quot;,
-            &quot;email&quot;: &quot;herminio64@test.com&quot;,
+            &quot;id&quot;: 93,
+            &quot;username&quot;: &quot;radams&quot;,
+            &quot;full_name&quot;: &quot;Sincere Homenick&quot;,
+            &quot;email&quot;: &quot;radams@test.com&quot;,
             &quot;gender&quot;: &quot;male&quot;,
-            &quot;date_of_birth&quot;: &quot;2017-11-06&quot;,
+            &quot;date_of_birth&quot;: &quot;2015-01-19&quot;,
             &quot;roles&quot;: []
         }
     ]
@@ -2339,12 +2511,12 @@ fetch(url, {
 
 <code class="language-json">{
     &quot;data&quot;: {
-        &quot;id&quot;: 72,
-        &quot;username&quot;: &quot;nola.predovic&quot;,
-        &quot;full_name&quot;: &quot;Orin Swaniawski&quot;,
-        &quot;email&quot;: &quot;nola.predovic@test.com&quot;,
+        &quot;id&quot;: 89,
+        &quot;username&quot;: &quot;corkery.keon&quot;,
+        &quot;full_name&quot;: &quot;Gay Bashirian&quot;,
+        &quot;email&quot;: &quot;corkery.keon@test.com&quot;,
         &quot;gender&quot;: &quot;female&quot;,
-        &quot;date_of_birth&quot;: &quot;2021-02-05&quot;,
+        &quot;date_of_birth&quot;: &quot;2007-06-29&quot;,
         &quot;roles&quot;: []
     }
 }</code>
@@ -2442,21 +2614,21 @@ fetch(url, {
 <code class="language-json">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 77,
-            &quot;username&quot;: &quot;gregorio58&quot;,
-            &quot;full_name&quot;: &quot;Camren Parisian&quot;,
-            &quot;email&quot;: &quot;gregorio58@test.com&quot;,
+            &quot;id&quot;: 94,
+            &quot;username&quot;: &quot;daron.hettinger&quot;,
+            &quot;full_name&quot;: &quot;Avery Hamill&quot;,
+            &quot;email&quot;: &quot;daron.hettinger@test.com&quot;,
             &quot;gender&quot;: &quot;male&quot;,
-            &quot;date_of_birth&quot;: &quot;1970-04-26&quot;,
+            &quot;date_of_birth&quot;: &quot;1997-08-17&quot;,
             &quot;roles&quot;: []
         },
         {
-            &quot;id&quot;: 78,
-            &quot;username&quot;: &quot;hmetz&quot;,
-            &quot;full_name&quot;: &quot;Maegan Shields&quot;,
-            &quot;email&quot;: &quot;hmetz@test.com&quot;,
-            &quot;gender&quot;: &quot;male&quot;,
-            &quot;date_of_birth&quot;: &quot;1985-05-31&quot;,
+            &quot;id&quot;: 95,
+            &quot;username&quot;: &quot;lisette.kovacek&quot;,
+            &quot;full_name&quot;: &quot;Merlin Johnson&quot;,
+            &quot;email&quot;: &quot;lisette.kovacek@test.com&quot;,
+            &quot;gender&quot;: &quot;female&quot;,
+            &quot;date_of_birth&quot;: &quot;2001-03-26&quot;,
             &quot;roles&quot;: []
         }
     ]
@@ -2530,15 +2702,15 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"username\": \"aut\",
-    \"email\": \"nostrum\",
-    \"first_name\": \"officia\",
-    \"last_name\": \"facilis\",
-    \"gender\": \"veniam\",
+    \"username\": \"et\",
+    \"email\": \"aut\",
+    \"first_name\": \"aut\",
+    \"last_name\": \"excepturi\",
+    \"gender\": \"quia\",
     \"date_of_birth\": \"2020-12-01\",
     \"role_ids\": [
-        16,
-        14
+        8,
+        16
     ]
 }"
 </code></pre>
@@ -2554,15 +2726,15 @@ const headers = {
 };
 
 let body = {
-    "username": "aut",
-    "email": "nostrum",
-    "first_name": "officia",
-    "last_name": "facilis",
-    "gender": "veniam",
+    "username": "et",
+    "email": "aut",
+    "first_name": "aut",
+    "last_name": "excepturi",
+    "gender": "quia",
     "date_of_birth": "2020-12-01",
     "role_ids": [
-        16,
-        14
+        8,
+        16
     ]
 }
 
@@ -2712,13 +2884,13 @@ fetch(url, {
 
 
 <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/v1/users/8" \
+    --get "http://localhost:8000/api/v1/users/20" \
     --header "Authorization: Bearer {ACCESS_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/users/8"
+    "http://localhost:8000/api/v1/users/20"
 );
 
 const headers = {
@@ -2741,12 +2913,12 @@ fetch(url, {
 
 <code class="language-json">{
     &quot;data&quot;: {
-        &quot;id&quot;: 79,
-        &quot;username&quot;: &quot;spencer.cindy&quot;,
-        &quot;full_name&quot;: &quot;Beulah Sipes&quot;,
-        &quot;email&quot;: &quot;spencer.cindy@test.com&quot;,
-        &quot;gender&quot;: &quot;male&quot;,
-        &quot;date_of_birth&quot;: &quot;1981-02-03&quot;,
+        &quot;id&quot;: 96,
+        &quot;username&quot;: &quot;krystal.kunze&quot;,
+        &quot;full_name&quot;: &quot;Belle Hintz&quot;,
+        &quot;email&quot;: &quot;krystal.kunze@test.com&quot;,
+        &quot;gender&quot;: &quot;female&quot;,
+        &quot;date_of_birth&quot;: &quot;1984-05-08&quot;,
         &quot;roles&quot;: []
     }
 }</code>
@@ -2823,26 +2995,26 @@ fetch(url, {
 
 
 <pre><code class="language-bash">curl --request PUT \
-    "http://localhost:8000/api/v1/users/15" \
+    "http://localhost:8000/api/v1/users/17" \
     --header "Authorization: Bearer {ACCESS_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"username\": \"occaecati\",
-    \"email\": \"sunt\",
-    \"first_name\": \"rerum\",
-    \"last_name\": \"beatae\",
-    \"gender\": \"velit\",
+    \"username\": \"eveniet\",
+    \"email\": \"optio\",
+    \"first_name\": \"accusamus\",
+    \"last_name\": \"vel\",
+    \"gender\": \"perspiciatis\",
     \"date_of_birth\": \"2020-12-01\",
     \"role_ids\": [
-        18,
-        17
+        1,
+        9
     ]
 }"
 </code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/users/15"
+    "http://localhost:8000/api/v1/users/17"
 );
 
 const headers = {
@@ -2852,15 +3024,15 @@ const headers = {
 };
 
 let body = {
-    "username": "occaecati",
-    "email": "sunt",
-    "first_name": "rerum",
-    "last_name": "beatae",
-    "gender": "velit",
+    "username": "eveniet",
+    "email": "optio",
+    "first_name": "accusamus",
+    "last_name": "vel",
+    "gender": "perspiciatis",
     "date_of_birth": "2020-12-01",
     "role_ids": [
-        18,
-        17
+        1,
+        9
     ]
 }
 
@@ -3019,13 +3191,13 @@ fetch(url, {
 
 
 <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost:8000/api/v1/users/13" \
+    "http://localhost:8000/api/v1/users/20" \
     --header "Authorization: Bearer {ACCESS_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/users/13"
+    "http://localhost:8000/api/v1/users/20"
 );
 
 const headers = {

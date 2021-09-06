@@ -91,11 +91,11 @@ paths:
                 email:
                   type: string
                   description: ''
-                  example: nam
+                  example: voluptatem
                 password:
                   type: string
                   description: ''
-                  example: qui
+                  example: nisi
                 remember_me:
                   type: boolean
                   description: ''
@@ -146,6 +146,89 @@ paths:
                     example: 'Successfully logged out'
       tags:
         - Authentication
+  /api/v1/self-register-student:
+    post:
+      summary: 'Self-registration of new users'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        201:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Successfully created user!'
+                properties:
+                  message:
+                    type: string
+                    example: 'Successfully created user!'
+      tags:
+        - Authentication
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                  description: ''
+                  example: qui
+                email:
+                  type: string
+                  description: ''
+                  example: nihil
+                password:
+                  type: string
+                  description: ''
+                  example: praesentium
+                password_confirmation:
+                  type: string
+                  description: ''
+                  example: quia
+                first_name:
+                  type: string
+                  description: ''
+                  example: dolor
+                last_name:
+                  type: string
+                  description: ''
+                  example: et
+                gender:
+                  type: string
+                  description: ''
+                  example: qui
+                date_of_birth:
+                  type: string
+                  description: 'Date in the format of Y-m-d'
+                  example: aut
+              required:
+                - username
+                - email
+                - password
+                - password_confirmation
+                - first_name
+                - last_name
+                - gender
+                - date_of_birth
+      security: []
   /api/v1/courses/view-student-registered:
     get:
       summary: 'Get students'' registered courses'
@@ -182,33 +265,33 @@ paths:
                 example:
                   data:
                     -
-                      id: 48
+                      id: 11
                       name: 'Intro to sed'
-                      code: 93WR4
-                      description: 'Omnis dolores ut officiis tenetur quos aut cumque. Quia natus reprehenderit ut velit magnam.'
+                      code: lPUlC
+                      description: 'Repellendus est non incidunt omnis ratione. Consectetur omnis sit distinctio magni rerum dolores. Dolore quibusdam sapiente dolorem qui quia.'
                       instructor:
-                        id: 3
-                        username: i_2
-                        full_name: 'Instructor 2'
-                        email: i_2@test.com
+                        id: 9
+                        username: i_8
+                        full_name: 'Instructor 8'
+                        email: i_8@test.com
                         gender: male
-                        date_of_birth: '2000-02-03 18:07:39'
+                        date_of_birth: '2000-02-03 18:07:40'
                         roles:
                           -
                             id: 2
                             name: instructor
                     -
-                      id: 49
-                      name: 'Intro to ad'
-                      code: tGU5Z
-                      description: 'Ipsa quisquam voluptatem ex. Nihil voluptatem sunt molestiae. Aspernatur laboriosam enim eum sit facilis voluptate.'
+                      id: 12
+                      name: 'Intro to similique'
+                      code: gYSNA
+                      description: 'Unde sequi et tempore libero magni odio. Molestiae est quia est.'
                       instructor:
-                        id: 2
-                        username: i_1
-                        full_name: 'Instructor 1'
-                        email: i_1@test.com
+                        id: 5
+                        username: i_4
+                        full_name: 'Instructor 4'
+                        email: i_4@test.com
                         gender: male
-                        date_of_birth: '2000-02-03 18:07:39'
+                        date_of_birth: '2000-02-03 18:07:40'
                         roles:
                           -
                             id: 2
@@ -218,33 +301,33 @@ paths:
                     type: array
                     example:
                       -
-                        id: 48
+                        id: 11
                         name: 'Intro to sed'
-                        code: 93WR4
-                        description: 'Omnis dolores ut officiis tenetur quos aut cumque. Quia natus reprehenderit ut velit magnam.'
+                        code: lPUlC
+                        description: 'Repellendus est non incidunt omnis ratione. Consectetur omnis sit distinctio magni rerum dolores. Dolore quibusdam sapiente dolorem qui quia.'
                         instructor:
-                          id: 3
-                          username: i_2
-                          full_name: 'Instructor 2'
-                          email: i_2@test.com
+                          id: 9
+                          username: i_8
+                          full_name: 'Instructor 8'
+                          email: i_8@test.com
                           gender: male
-                          date_of_birth: '2000-02-03 18:07:39'
+                          date_of_birth: '2000-02-03 18:07:40'
                           roles:
                             -
                               id: 2
                               name: instructor
                       -
-                        id: 49
-                        name: 'Intro to ad'
-                        code: tGU5Z
-                        description: 'Ipsa quisquam voluptatem ex. Nihil voluptatem sunt molestiae. Aspernatur laboriosam enim eum sit facilis voluptate.'
+                        id: 12
+                        name: 'Intro to similique'
+                        code: gYSNA
+                        description: 'Unde sequi et tempore libero magni odio. Molestiae est quia est.'
                         instructor:
-                          id: 2
-                          username: i_1
-                          full_name: 'Instructor 1'
-                          email: i_1@test.com
+                          id: 5
+                          username: i_4
+                          full_name: 'Instructor 4'
+                          email: i_4@test.com
                           gender: male
-                          date_of_birth: '2000-02-03 18:07:39'
+                          date_of_birth: '2000-02-03 18:07:40'
                           roles:
                             -
                               id: 2
@@ -289,10 +372,26 @@ paths:
                 example:
                   data:
                     -
-                      id: 50
-                      name: 'Intro to nesciunt'
-                      code: ESm4C
-                      description: 'Odit rerum molestias voluptate qui aut et. Sit sit voluptas fuga voluptatem beatae enim sunt. Beatae ut nostrum ad provident in.'
+                      id: 13
+                      name: 'Intro to quidem'
+                      code: ugMnN
+                      description: 'Saepe sit cum eos eligendi. Sed distinctio est est libero. Ipsum tempore dolor iusto maxime corrupti assumenda qui.'
+                      instructor:
+                        id: 8
+                        username: i_7
+                        full_name: 'Instructor 7'
+                        email: i_7@test.com
+                        gender: male
+                        date_of_birth: '2000-02-03 18:07:40'
+                        roles:
+                          -
+                            id: 2
+                            name: instructor
+                    -
+                      id: 14
+                      name: 'Intro to excepturi'
+                      code: oHPER
+                      description: 'Qui optio modi eveniet quia. Est atque quod ut non quo quia sint. Enim autem harum saepe iste quia odit non quia.'
                       instructor:
                         id: 7
                         username: i_6
@@ -304,36 +403,20 @@ paths:
                           -
                             id: 2
                             name: instructor
-                    -
-                      id: 51
-                      name: 'Intro to et'
-                      code: pWOM5
-                      description: 'Aliquam consequatur ducimus quia nobis voluptas ex. Expedita minus non nam facere. Ipsum quas aliquam et nobis nisi corrupti.'
-                      instructor:
-                        id: 4
-                        username: i_3
-                        full_name: 'Instructor 3'
-                        email: i_3@test.com
-                        gender: male
-                        date_of_birth: '2000-02-03 18:07:40'
-                        roles:
-                          -
-                            id: 2
-                            name: instructor
                 properties:
                   data:
                     type: array
                     example:
                       -
-                        id: 50
-                        name: 'Intro to nesciunt'
-                        code: ESm4C
-                        description: 'Odit rerum molestias voluptate qui aut et. Sit sit voluptas fuga voluptatem beatae enim sunt. Beatae ut nostrum ad provident in.'
+                        id: 13
+                        name: 'Intro to quidem'
+                        code: ugMnN
+                        description: 'Saepe sit cum eos eligendi. Sed distinctio est est libero. Ipsum tempore dolor iusto maxime corrupti assumenda qui.'
                         instructor:
-                          id: 7
-                          username: i_6
-                          full_name: 'Instructor 6'
-                          email: i_6@test.com
+                          id: 8
+                          username: i_7
+                          full_name: 'Instructor 7'
+                          email: i_7@test.com
                           gender: male
                           date_of_birth: '2000-02-03 18:07:40'
                           roles:
@@ -341,15 +424,15 @@ paths:
                               id: 2
                               name: instructor
                       -
-                        id: 51
-                        name: 'Intro to et'
-                        code: pWOM5
-                        description: 'Aliquam consequatur ducimus quia nobis voluptas ex. Expedita minus non nam facere. Ipsum quas aliquam et nobis nisi corrupti.'
+                        id: 14
+                        name: 'Intro to excepturi'
+                        code: oHPER
+                        description: 'Qui optio modi eveniet quia. Est atque quod ut non quo quia sint. Enim autem harum saepe iste quia odit non quia.'
                         instructor:
-                          id: 4
-                          username: i_3
-                          full_name: 'Instructor 3'
-                          email: i_3@test.com
+                          id: 7
+                          username: i_6
+                          full_name: 'Instructor 6'
+                          email: i_6@test.com
                           gender: male
                           date_of_birth: '2000-02-03 18:07:40'
                           roles:
@@ -423,7 +506,7 @@ paths:
                 course_id:
                   type: integer
                   description: 'The id of the course'
-                  example: 6
+                  example: 2
               required:
                 - course_id
   /api/v1/courses/register-student:
@@ -489,11 +572,11 @@ paths:
                 user_id:
                   type: integer
                   description: 'The user_id of the student to be registered'
-                  example: 11
+                  example: 17
                 course_id:
                   type: integer
                   description: 'The id of the course'
-                  example: 4
+                  example: 10
               required:
                 - user_id
                 - course_id
@@ -533,26 +616,10 @@ paths:
                 example:
                   data:
                     -
-                      id: 52
-                      name: 'Intro to numquam'
-                      code: XG7LH
-                      description: 'Consequatur ipsam minus minus hic blanditiis eos. Natus sunt atque et ea optio quae consequatur. Provident eum recusandae dolorem qui possimus.'
-                      instructor:
-                        id: 11
-                        username: i_10
-                        full_name: 'Instructor 10'
-                        email: i_10@test.com
-                        gender: male
-                        date_of_birth: '2000-02-03 18:07:41'
-                        roles:
-                          -
-                            id: 2
-                            name: instructor
-                    -
-                      id: 53
-                      name: 'Intro to neque'
-                      code: 2dIqw
-                      description: 'Nam aut mollitia quia eos non. Voluptatem asperiores et facilis cum nulla reprehenderit eveniet. Expedita est eligendi maiores et itaque.'
+                      id: 15
+                      name: 'Intro to nemo'
+                      code: 1wZRw
+                      description: 'Repellendus molestias sed quisquam nam odio consequatur. Fugit quia esse ea dolor sint laudantium harum.'
                       instructor:
                         id: 10
                         username: i_9
@@ -564,31 +631,31 @@ paths:
                           -
                             id: 2
                             name: instructor
+                    -
+                      id: 16
+                      name: 'Intro to dignissimos'
+                      code: tWLBh
+                      description: 'Tempore maxime ex sint sunt possimus ea. Eaque debitis iusto fugit molestiae dolorum similique.'
+                      instructor:
+                        id: 6
+                        username: i_5
+                        full_name: 'Instructor 5'
+                        email: i_5@test.com
+                        gender: male
+                        date_of_birth: '2000-02-03 18:07:40'
+                        roles:
+                          -
+                            id: 2
+                            name: instructor
                 properties:
                   data:
                     type: array
                     example:
                       -
-                        id: 52
-                        name: 'Intro to numquam'
-                        code: XG7LH
-                        description: 'Consequatur ipsam minus minus hic blanditiis eos. Natus sunt atque et ea optio quae consequatur. Provident eum recusandae dolorem qui possimus.'
-                        instructor:
-                          id: 11
-                          username: i_10
-                          full_name: 'Instructor 10'
-                          email: i_10@test.com
-                          gender: male
-                          date_of_birth: '2000-02-03 18:07:41'
-                          roles:
-                            -
-                              id: 2
-                              name: instructor
-                      -
-                        id: 53
-                        name: 'Intro to neque'
-                        code: 2dIqw
-                        description: 'Nam aut mollitia quia eos non. Voluptatem asperiores et facilis cum nulla reprehenderit eveniet. Expedita est eligendi maiores et itaque.'
+                        id: 15
+                        name: 'Intro to nemo'
+                        code: 1wZRw
+                        description: 'Repellendus molestias sed quisquam nam odio consequatur. Fugit quia esse ea dolor sint laudantium harum.'
                         instructor:
                           id: 10
                           username: i_9
@@ -596,6 +663,22 @@ paths:
                           email: i_9@test.com
                           gender: male
                           date_of_birth: '2000-02-03 18:07:41'
+                          roles:
+                            -
+                              id: 2
+                              name: instructor
+                      -
+                        id: 16
+                        name: 'Intro to dignissimos'
+                        code: tWLBh
+                        description: 'Tempore maxime ex sint sunt possimus ea. Eaque debitis iusto fugit molestiae dolorum similique.'
+                        instructor:
+                          id: 6
+                          username: i_5
+                          full_name: 'Instructor 5'
+                          email: i_5@test.com
+                          gender: male
+                          date_of_birth: '2000-02-03 18:07:40'
                           roles:
                             -
                               id: 2
@@ -654,19 +737,19 @@ paths:
                 name:
                   type: string
                   description: 'The name of the course'
-                  example: voluptatem
+                  example: et
                 code:
                   type: string
                   description: 'The code of the course'
-                  example: deserunt
+                  example: quo
                 description:
                   type: string
                   description: 'The description of the course'
-                  example: nihil
+                  example: suscipit
                 instructor_id:
                   type: integer
                   description: 'The user_id of the instructor of the course'
-                  example: 7
+                  example: 3
               required:
                 - name
                 - code
@@ -707,15 +790,15 @@ paths:
                 type: object
                 example:
                   data:
-                    id: 54
-                    name: 'Intro to laboriosam'
-                    code: Lw8RQ
-                    description: 'Laborum aut rerum voluptates. Est quos omnis explicabo distinctio quae voluptatum. Voluptate enim molestias consectetur autem minus quia.'
+                    id: 17
+                    name: 'Intro to laborum'
+                    code: JNPSo
+                    description: 'Et voluptatem autem quia. Recusandae est eius ea voluptatum et at eum aut. Laborum atque officiis aliquid perferendis earum adipisci ut.'
                     instructor:
-                      id: 7
-                      username: i_6
-                      full_name: 'Instructor 6'
-                      email: i_6@test.com
+                      id: 4
+                      username: i_3
+                      full_name: 'Instructor 3'
+                      email: i_3@test.com
                       gender: male
                       date_of_birth: '2000-02-03 18:07:40'
                       roles:
@@ -726,15 +809,15 @@ paths:
                   data:
                     type: object
                     example:
-                      id: 54
-                      name: 'Intro to laboriosam'
-                      code: Lw8RQ
-                      description: 'Laborum aut rerum voluptates. Est quos omnis explicabo distinctio quae voluptatum. Voluptate enim molestias consectetur autem minus quia.'
+                      id: 17
+                      name: 'Intro to laborum'
+                      code: JNPSo
+                      description: 'Et voluptatem autem quia. Recusandae est eius ea voluptatum et at eum aut. Laborum atque officiis aliquid perferendis earum adipisci ut.'
                       instructor:
-                        id: 7
-                        username: i_6
-                        full_name: 'Instructor 6'
-                        email: i_6@test.com
+                        id: 4
+                        username: i_3
+                        full_name: 'Instructor 3'
+                        email: i_3@test.com
                         gender: male
                         date_of_birth: '2000-02-03 18:07:40'
                         roles:
@@ -793,15 +876,15 @@ paths:
                 name:
                   type: string
                   description: 'The name of the course'
-                  example: et
+                  example: fugit
                 code:
                   type: string
                   description: 'The code of the course'
-                  example: a
+                  example: dolorem
                 description:
                   type: string
                   description: 'The description of the course'
-                  example: quasi
+                  example: vero
                 instructor_id:
                   type: integer
                   description: 'The user_id of the instructor of the course'
@@ -856,7 +939,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the course'
-        example: 20
+        example: 7
         required: true
         schema:
           type: integer
@@ -965,7 +1048,7 @@ paths:
                 name:
                   type: string
                   description: 'A unique role name'
-                  example: rerum
+                  example: consequuntur
               required:
                 - name
   '/api/v1/roles/{id}':
@@ -1063,7 +1146,7 @@ paths:
                 name:
                   type: string
                   description: 'The name of the role'
-                  example: corrupti
+                  example: rerum
               required:
                 - name
     delete:
@@ -1111,7 +1194,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the role'
-        example: 9
+        example: 19
         required: true
         schema:
           type: integer
@@ -1151,40 +1234,40 @@ paths:
                 example:
                   data:
                     -
-                      id: 73
-                      username: mohr.sadye
-                      full_name: 'Savannah Grimes'
-                      email: mohr.sadye@test.com
+                      id: 90
+                      username: cynthia.wyman
+                      full_name: 'Tina Ziemann'
+                      email: cynthia.wyman@test.com
                       gender: female
-                      date_of_birth: '1970-03-19'
+                      date_of_birth: '1977-07-05'
                       roles: []
                     -
-                      id: 74
-                      username: taylor54
-                      full_name: 'Marcelina Corkery'
-                      email: taylor54@test.com
+                      id: 91
+                      username: kautzer.glenda
+                      full_name: 'Margarita Vandervort'
+                      email: kautzer.glenda@test.com
                       gender: female
-                      date_of_birth: '1976-01-28'
+                      date_of_birth: '2004-06-11'
                       roles: []
                 properties:
                   data:
                     type: array
                     example:
                       -
-                        id: 73
-                        username: mohr.sadye
-                        full_name: 'Savannah Grimes'
-                        email: mohr.sadye@test.com
+                        id: 90
+                        username: cynthia.wyman
+                        full_name: 'Tina Ziemann'
+                        email: cynthia.wyman@test.com
                         gender: female
-                        date_of_birth: '1970-03-19'
+                        date_of_birth: '1977-07-05'
                         roles: []
                       -
-                        id: 74
-                        username: taylor54
-                        full_name: 'Marcelina Corkery'
-                        email: taylor54@test.com
+                        id: 91
+                        username: kautzer.glenda
+                        full_name: 'Margarita Vandervort'
+                        email: kautzer.glenda@test.com
                         gender: female
-                        date_of_birth: '1976-01-28'
+                        date_of_birth: '2004-06-11'
                         roles: []
                     items:
                       type: object
@@ -1226,40 +1309,40 @@ paths:
                 example:
                   data:
                     -
-                      id: 75
-                      username: funk.jadyn
-                      full_name: 'Yazmin Cremin'
-                      email: funk.jadyn@test.com
+                      id: 92
+                      username: fernando.brekke
+                      full_name: 'Yessenia Miller'
+                      email: fernando.brekke@test.com
                       gender: female
-                      date_of_birth: '1988-04-16'
+                      date_of_birth: '1982-08-16'
                       roles: []
                     -
-                      id: 76
-                      username: herminio64
-                      full_name: 'Dolly Feeney'
-                      email: herminio64@test.com
+                      id: 93
+                      username: radams
+                      full_name: 'Sincere Homenick'
+                      email: radams@test.com
                       gender: male
-                      date_of_birth: '2017-11-06'
+                      date_of_birth: '2015-01-19'
                       roles: []
                 properties:
                   data:
                     type: array
                     example:
                       -
-                        id: 75
-                        username: funk.jadyn
-                        full_name: 'Yazmin Cremin'
-                        email: funk.jadyn@test.com
+                        id: 92
+                        username: fernando.brekke
+                        full_name: 'Yessenia Miller'
+                        email: fernando.brekke@test.com
                         gender: female
-                        date_of_birth: '1988-04-16'
+                        date_of_birth: '1982-08-16'
                         roles: []
                       -
-                        id: 76
-                        username: herminio64
-                        full_name: 'Dolly Feeney'
-                        email: herminio64@test.com
+                        id: 93
+                        username: radams
+                        full_name: 'Sincere Homenick'
+                        email: radams@test.com
                         gender: male
-                        date_of_birth: '2017-11-06'
+                        date_of_birth: '2015-01-19'
                         roles: []
                     items:
                       type: object
@@ -1300,23 +1383,23 @@ paths:
                 type: object
                 example:
                   data:
-                    id: 72
-                    username: nola.predovic
-                    full_name: 'Orin Swaniawski'
-                    email: nola.predovic@test.com
+                    id: 89
+                    username: corkery.keon
+                    full_name: 'Gay Bashirian'
+                    email: corkery.keon@test.com
                     gender: female
-                    date_of_birth: '2021-02-05'
+                    date_of_birth: '2007-06-29'
                     roles: []
                 properties:
                   data:
                     type: object
                     example:
-                      id: 72
-                      username: nola.predovic
-                      full_name: 'Orin Swaniawski'
-                      email: nola.predovic@test.com
+                      id: 89
+                      username: corkery.keon
+                      full_name: 'Gay Bashirian'
+                      email: corkery.keon@test.com
                       gender: female
-                      date_of_birth: '2021-02-05'
+                      date_of_birth: '2007-06-29'
                       roles: []
       tags:
         - Users
@@ -1356,40 +1439,40 @@ paths:
                 example:
                   data:
                     -
-                      id: 77
-                      username: gregorio58
-                      full_name: 'Camren Parisian'
-                      email: gregorio58@test.com
+                      id: 94
+                      username: daron.hettinger
+                      full_name: 'Avery Hamill'
+                      email: daron.hettinger@test.com
                       gender: male
-                      date_of_birth: '1970-04-26'
+                      date_of_birth: '1997-08-17'
                       roles: []
                     -
-                      id: 78
-                      username: hmetz
-                      full_name: 'Maegan Shields'
-                      email: hmetz@test.com
-                      gender: male
-                      date_of_birth: '1985-05-31'
+                      id: 95
+                      username: lisette.kovacek
+                      full_name: 'Merlin Johnson'
+                      email: lisette.kovacek@test.com
+                      gender: female
+                      date_of_birth: '2001-03-26'
                       roles: []
                 properties:
                   data:
                     type: array
                     example:
                       -
-                        id: 77
-                        username: gregorio58
-                        full_name: 'Camren Parisian'
-                        email: gregorio58@test.com
+                        id: 94
+                        username: daron.hettinger
+                        full_name: 'Avery Hamill'
+                        email: daron.hettinger@test.com
                         gender: male
-                        date_of_birth: '1970-04-26'
+                        date_of_birth: '1997-08-17'
                         roles: []
                       -
-                        id: 78
-                        username: hmetz
-                        full_name: 'Maegan Shields'
-                        email: hmetz@test.com
-                        gender: male
-                        date_of_birth: '1985-05-31'
+                        id: 95
+                        username: lisette.kovacek
+                        full_name: 'Merlin Johnson'
+                        email: lisette.kovacek@test.com
+                        gender: female
+                        date_of_birth: '2001-03-26'
                         roles: []
                     items:
                       type: object
@@ -1453,23 +1536,23 @@ paths:
                 username:
                   type: string
                   description: 'A unique username'
-                  example: aut
+                  example: et
                 email:
                   type: string
                   description: 'A unique email address'
-                  example: nostrum
+                  example: aut
                 first_name:
                   type: string
                   description: ''
-                  example: officia
+                  example: aut
                 last_name:
                   type: string
                   description: ''
-                  example: facilis
+                  example: excepturi
                 gender:
                   type: string
                   description: ''
-                  example: veniam
+                  example: quia
                 date_of_birth:
                   type: string
                   description: ''
@@ -1478,8 +1561,8 @@ paths:
                   type: array
                   description: 'The role ids of the user'
                   example:
+                    - 8
                     - 16
-                    - 14
                   items:
                     type: integer
               required:
@@ -1525,23 +1608,23 @@ paths:
                 type: object
                 example:
                   data:
-                    id: 79
-                    username: spencer.cindy
-                    full_name: 'Beulah Sipes'
-                    email: spencer.cindy@test.com
-                    gender: male
-                    date_of_birth: '1981-02-03'
+                    id: 96
+                    username: krystal.kunze
+                    full_name: 'Belle Hintz'
+                    email: krystal.kunze@test.com
+                    gender: female
+                    date_of_birth: '1984-05-08'
                     roles: []
                 properties:
                   data:
                     type: object
                     example:
-                      id: 79
-                      username: spencer.cindy
-                      full_name: 'Beulah Sipes'
-                      email: spencer.cindy@test.com
-                      gender: male
-                      date_of_birth: '1981-02-03'
+                      id: 96
+                      username: krystal.kunze
+                      full_name: 'Belle Hintz'
+                      email: krystal.kunze@test.com
+                      gender: female
+                      date_of_birth: '1984-05-08'
                       roles: []
       tags:
         - Users
@@ -1595,23 +1678,23 @@ paths:
                 username:
                   type: string
                   description: 'A unique username'
-                  example: occaecati
+                  example: eveniet
                 email:
                   type: string
                   description: 'A unique email address'
-                  example: sunt
+                  example: optio
                 first_name:
                   type: string
                   description: ''
-                  example: rerum
+                  example: accusamus
                 last_name:
                   type: string
                   description: ''
-                  example: beatae
+                  example: vel
                 gender:
                   type: string
                   description: ''
-                  example: velit
+                  example: perspiciatis
                 date_of_birth:
                   type: string
                   description: ''
@@ -1620,8 +1703,8 @@ paths:
                   type: array
                   description: 'The role ids of the user'
                   example:
-                    - 18
-                    - 17
+                    - 1
+                    - 9
                   items:
                     type: integer
               required:
@@ -1677,7 +1760,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the user'
-        example: 8
+        example: 20
         required: true
         schema:
           type: integer
