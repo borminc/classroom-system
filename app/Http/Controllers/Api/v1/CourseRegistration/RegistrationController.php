@@ -117,7 +117,9 @@ class RegistrationController extends Controller
             'course_id' => 'required|integer',
         ]);
 
+        /** @var App\Models\User */
         $user = auth()->user();
+
         if ($user->student_courses->contains($request->course_id)) {
             return response()->json([
                 'message' => 'You are already enrolled in this course.',
