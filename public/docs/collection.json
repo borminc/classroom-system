@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "64dcb555-a9d9-4fc3-9b23-704bdd28f2a8",
+        "_postman_id": "6ddebbc0-642d-4147-b0ae-401f389d52ff",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -42,7 +42,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"voluptatem\",\"password\":\"nisi\",\"remember_me\":false}"
+                            "raw": "{\"email\":\"vel\",\"password\":\"nisi\",\"remember_me\":true}"
                         },
                         "description": "",
                         "auth": {
@@ -120,7 +120,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"username\":\"qui\",\"email\":\"nihil\",\"password\":\"praesentium\",\"password_confirmation\":\"quia\",\"first_name\":\"dolor\",\"last_name\":\"et\",\"gender\":\"qui\",\"date_of_birth\":\"aut\"}"
+                            "raw": "{\"username\":\"et\",\"email\":\"expedita\",\"password\":\"similique\",\"password_confirmation\":\"quia\",\"first_name\":\"neque\",\"last_name\":\"omnis\",\"gender\":\"harum\",\"date_of_birth\":\"eos\"}"
                         },
                         "description": "",
                         "auth": {
@@ -170,7 +170,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":11,\"name\":\"Intro to sed\",\"code\":\"lPUlC\",\"description\":\"Repellendus est non incidunt omnis ratione. Consectetur omnis sit distinctio magni rerum dolores. Dolore quibusdam sapiente dolorem qui quia.\",\"instructor\":{\"id\":9,\"username\":\"i_8\",\"full_name\":\"Instructor 8\",\"email\":\"i_8@test.com\",\"gender\":\"male\",\"date_of_birth\":\"2000-02-03 18:07:40\",\"roles\":[{\"id\":2,\"name\":\"instructor\"}]}},{\"id\":12,\"name\":\"Intro to similique\",\"code\":\"gYSNA\",\"description\":\"Unde sequi et tempore libero magni odio. Molestiae est quia est.\",\"instructor\":{\"id\":5,\"username\":\"i_4\",\"full_name\":\"Instructor 4\",\"email\":\"i_4@test.com\",\"gender\":\"male\",\"date_of_birth\":\"2000-02-03 18:07:40\",\"roles\":[{\"id\":2,\"name\":\"instructor\"}]}}]}",
+                            "body": "{\"data\":[{\"id\":4,\"name\":\"Intro to odit\",\"code\":\"yPZB7\",\"description\":\"Distinctio hic est distinctio dolorum natus. Rerum maiores ipsam et recusandae. Rem culpa quia sequi amet rerum.\",\"instructor\":{\"id\":8,\"username\":\"i_7\",\"first_name\":\"Instructor\",\"last_name\":\"7\",\"full_name\":\"Instructor 7\",\"email\":\"i_7@test.com\",\"gender\":\"male\",\"date_of_birth\":\"2000-02-03 18:07:40\",\"roles\":[2]}},{\"id\":5,\"name\":\"Intro to est\",\"code\":\"rMu8y\",\"description\":\"Ex eos ut cupiditate provident inventore. Sed similique vel iste voluptas ad. Ipsa cumque deleniti ratione doloribus ipsa neque qui et.\",\"instructor\":{\"id\":9,\"username\":\"i_8\",\"first_name\":\"Instructor\",\"last_name\":\"8\",\"full_name\":\"Instructor 8\",\"email\":\"i_8@test.com\",\"gender\":\"male\",\"date_of_birth\":\"2000-02-03 18:07:40\",\"roles\":[2]}}]}",
                             "name": ""
                         }
                     ]
@@ -203,7 +203,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":13,\"name\":\"Intro to quidem\",\"code\":\"ugMnN\",\"description\":\"Saepe sit cum eos eligendi. Sed distinctio est est libero. Ipsum tempore dolor iusto maxime corrupti assumenda qui.\",\"instructor\":{\"id\":8,\"username\":\"i_7\",\"full_name\":\"Instructor 7\",\"email\":\"i_7@test.com\",\"gender\":\"male\",\"date_of_birth\":\"2000-02-03 18:07:40\",\"roles\":[{\"id\":2,\"name\":\"instructor\"}]}},{\"id\":14,\"name\":\"Intro to excepturi\",\"code\":\"oHPER\",\"description\":\"Qui optio modi eveniet quia. Est atque quod ut non quo quia sint. Enim autem harum saepe iste quia odit non quia.\",\"instructor\":{\"id\":7,\"username\":\"i_6\",\"full_name\":\"Instructor 6\",\"email\":\"i_6@test.com\",\"gender\":\"male\",\"date_of_birth\":\"2000-02-03 18:07:40\",\"roles\":[{\"id\":2,\"name\":\"instructor\"}]}}]}",
+                            "body": "{\"data\":[{\"id\":6,\"name\":\"Intro to dolorem\",\"code\":\"dO3KX\",\"description\":\"Nostrum illo fuga accusamus dolorem ratione. Est consequatur ut corporis sint omnis magni. Ea et doloribus quia eos sed blanditiis omnis.\",\"instructor\":{\"id\":8,\"username\":\"i_7\",\"first_name\":\"Instructor\",\"last_name\":\"7\",\"full_name\":\"Instructor 7\",\"email\":\"i_7@test.com\",\"gender\":\"male\",\"date_of_birth\":\"2000-02-03 18:07:40\",\"roles\":[2]}},{\"id\":7,\"name\":\"Intro to id\",\"code\":\"m2M6g\",\"description\":\"Dolor dolorem reiciendis dolor unde. Natus expedita ea ut. Nostrum eum sit qui.\",\"instructor\":{\"id\":5,\"username\":\"i_4\",\"first_name\":\"Instructor\",\"last_name\":\"4\",\"full_name\":\"Instructor 4\",\"email\":\"i_4@test.com\",\"gender\":\"male\",\"date_of_birth\":\"2000-02-03 18:07:40\",\"roles\":[2]}}]}",
                             "name": ""
                         }
                     ]
@@ -231,7 +231,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"course_id\":2}"
+                            "raw": "{\"course_id\":16}"
                         },
                         "description": ""
                     },
@@ -273,7 +273,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"user_id\":17,\"course_id\":10}"
+                            "raw": "{\"user_id\":12,\"course_id\":15}"
                         },
                         "description": ""
                     },
@@ -326,7 +326,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":15,\"name\":\"Intro to nemo\",\"code\":\"1wZRw\",\"description\":\"Repellendus molestias sed quisquam nam odio consequatur. Fugit quia esse ea dolor sint laudantium harum.\",\"instructor\":{\"id\":10,\"username\":\"i_9\",\"full_name\":\"Instructor 9\",\"email\":\"i_9@test.com\",\"gender\":\"male\",\"date_of_birth\":\"2000-02-03 18:07:41\",\"roles\":[{\"id\":2,\"name\":\"instructor\"}]}},{\"id\":16,\"name\":\"Intro to dignissimos\",\"code\":\"tWLBh\",\"description\":\"Tempore maxime ex sint sunt possimus ea. Eaque debitis iusto fugit molestiae dolorum similique.\",\"instructor\":{\"id\":6,\"username\":\"i_5\",\"full_name\":\"Instructor 5\",\"email\":\"i_5@test.com\",\"gender\":\"male\",\"date_of_birth\":\"2000-02-03 18:07:40\",\"roles\":[{\"id\":2,\"name\":\"instructor\"}]}}]}",
+                            "body": "{\"data\":[{\"id\":8,\"name\":\"Intro to est\",\"code\":\"Yj3Cx\",\"description\":\"Quo aliquid est error minima et itaque minima. Quidem soluta veniam et qui. Nihil necessitatibus corrupti consequuntur ut est.\",\"instructor\":{\"id\":7,\"username\":\"i_6\",\"first_name\":\"Instructor\",\"last_name\":\"6\",\"full_name\":\"Instructor 6\",\"email\":\"i_6@test.com\",\"gender\":\"male\",\"date_of_birth\":\"2000-02-03 18:07:40\",\"roles\":[2]}},{\"id\":9,\"name\":\"Intro to doloribus\",\"code\":\"Fq0Ng\",\"description\":\"Placeat veniam et a illo corrupti perspiciatis earum dolor. Quod porro et dolore est praesentium. Incidunt quisquam qui iusto sint.\",\"instructor\":{\"id\":6,\"username\":\"i_5\",\"first_name\":\"Instructor\",\"last_name\":\"5\",\"full_name\":\"Instructor 5\",\"email\":\"i_5@test.com\",\"gender\":\"male\",\"date_of_birth\":\"2000-02-03 18:07:40\",\"roles\":[2]}}]}",
                             "name": ""
                         }
                     ]
@@ -354,7 +354,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"et\",\"code\":\"quo\",\"description\":\"suscipit\",\"instructor_id\":3}"
+                            "raw": "{\"name\":\"quia\",\"code\":\"dolor\",\"description\":\"nobis\",\"instructor_id\":6}"
                         },
                         "description": ""
                     },
@@ -380,7 +380,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "7",
+                                    "value": "3",
                                     "description": "The ID of the course"
                                 }
                             ]
@@ -403,7 +403,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":17,\"name\":\"Intro to laborum\",\"code\":\"JNPSo\",\"description\":\"Et voluptatem autem quia. Recusandae est eius ea voluptatum et at eum aut. Laborum atque officiis aliquid perferendis earum adipisci ut.\",\"instructor\":{\"id\":4,\"username\":\"i_3\",\"full_name\":\"Instructor 3\",\"email\":\"i_3@test.com\",\"gender\":\"male\",\"date_of_birth\":\"2000-02-03 18:07:40\",\"roles\":[{\"id\":2,\"name\":\"instructor\"}]}}}",
+                            "body": "{\"data\":{\"id\":10,\"name\":\"Intro to libero\",\"code\":\"QIbKw\",\"description\":\"Cumque aut voluptatibus ipsum quod provident quos. Ex sequi et officiis repellat. Fugiat nisi deserunt distinctio temporibus.\",\"instructor\":{\"id\":3,\"username\":\"i_2\",\"first_name\":\"Instructor\",\"last_name\":\"2\",\"full_name\":\"Instructor 2\",\"email\":\"i_2@test.com\",\"gender\":\"male\",\"date_of_birth\":\"2000-02-03 18:07:39\",\"roles\":[2]}}}",
                             "name": ""
                         }
                     ]
@@ -421,7 +421,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "13",
+                                    "value": "10",
                                     "description": "The ID of the course"
                                 }
                             ]
@@ -439,7 +439,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"fugit\",\"code\":\"dolorem\",\"description\":\"vero\",\"instructor_id\":17}"
+                            "raw": "{\"name\":\"quia\",\"code\":\"soluta\",\"description\":\"molestiae\",\"instructor_id\":2}"
                         },
                         "description": ""
                     },
@@ -465,7 +465,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "14",
+                                    "value": "11",
                                     "description": "The ID of the course"
                                 }
                             ]
@@ -555,7 +555,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"consequuntur\"}"
+                            "raw": "{\"name\":\"ea\"}"
                         },
                         "description": ""
                     },
@@ -581,7 +581,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "19",
+                                    "value": "5",
                                     "description": "The ID of the role"
                                 }
                             ]
@@ -622,7 +622,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "17",
+                                    "value": "3",
                                     "description": "The ID of the role"
                                 }
                             ]
@@ -640,7 +640,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"rerum\"}"
+                            "raw": "{\"name\":\"amet\"}"
                         },
                         "description": ""
                     },
@@ -666,7 +666,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "13",
+                                    "value": "7",
                                     "description": "The ID of the role"
                                 }
                             ]
@@ -728,7 +728,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":90,\"username\":\"cynthia.wyman\",\"full_name\":\"Tina Ziemann\",\"email\":\"cynthia.wyman@test.com\",\"gender\":\"female\",\"date_of_birth\":\"1977-07-05\",\"roles\":[]},{\"id\":91,\"username\":\"kautzer.glenda\",\"full_name\":\"Margarita Vandervort\",\"email\":\"kautzer.glenda@test.com\",\"gender\":\"female\",\"date_of_birth\":\"2004-06-11\",\"roles\":[]}]}",
+                            "body": "{\"data\":[{\"id\":100,\"username\":\"marques.becker\",\"first_name\":\"Rashawn\",\"last_name\":\"Bergstrom\",\"full_name\":\"Rashawn Bergstrom\",\"email\":\"marques.becker@test.com\",\"gender\":\"male\",\"date_of_birth\":\"1995-03-12\",\"roles\":[]},{\"id\":101,\"username\":\"cleannon\",\"first_name\":\"Delpha\",\"last_name\":\"Friesen\",\"full_name\":\"Delpha Friesen\",\"email\":\"cleannon@test.com\",\"gender\":\"male\",\"date_of_birth\":\"1998-02-06\",\"roles\":[]}]}",
                             "name": ""
                         }
                     ]
@@ -761,7 +761,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":92,\"username\":\"fernando.brekke\",\"full_name\":\"Yessenia Miller\",\"email\":\"fernando.brekke@test.com\",\"gender\":\"female\",\"date_of_birth\":\"1982-08-16\",\"roles\":[]},{\"id\":93,\"username\":\"radams\",\"full_name\":\"Sincere Homenick\",\"email\":\"radams@test.com\",\"gender\":\"male\",\"date_of_birth\":\"2015-01-19\",\"roles\":[]}]}",
+                            "body": "{\"data\":[{\"id\":102,\"username\":\"kunze.easter\",\"first_name\":\"Raul\",\"last_name\":\"Murray\",\"full_name\":\"Raul Murray\",\"email\":\"kunze.easter@test.com\",\"gender\":\"male\",\"date_of_birth\":\"2013-03-24\",\"roles\":[]},{\"id\":103,\"username\":\"jsteuber\",\"first_name\":\"Nyasia\",\"last_name\":\"Kuhic\",\"full_name\":\"Nyasia Kuhic\",\"email\":\"jsteuber@test.com\",\"gender\":\"male\",\"date_of_birth\":\"1974-03-22\",\"roles\":[]}]}",
                             "name": ""
                         }
                     ]
@@ -794,7 +794,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":89,\"username\":\"corkery.keon\",\"full_name\":\"Gay Bashirian\",\"email\":\"corkery.keon@test.com\",\"gender\":\"female\",\"date_of_birth\":\"2007-06-29\",\"roles\":[]}}",
+                            "body": "{\"data\":{\"id\":99,\"username\":\"lilly60\",\"first_name\":\"Nicola\",\"last_name\":\"Hartmann\",\"full_name\":\"Nicola Hartmann\",\"email\":\"lilly60@test.com\",\"gender\":\"male\",\"date_of_birth\":\"2021-07-14\",\"roles\":[]}}",
                             "name": ""
                         }
                     ]
@@ -827,7 +827,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":94,\"username\":\"daron.hettinger\",\"full_name\":\"Avery Hamill\",\"email\":\"daron.hettinger@test.com\",\"gender\":\"male\",\"date_of_birth\":\"1997-08-17\",\"roles\":[]},{\"id\":95,\"username\":\"lisette.kovacek\",\"full_name\":\"Merlin Johnson\",\"email\":\"lisette.kovacek@test.com\",\"gender\":\"female\",\"date_of_birth\":\"2001-03-26\",\"roles\":[]}]}",
+                            "body": "{\"data\":[{\"id\":104,\"username\":\"destany90\",\"first_name\":\"Lorena\",\"last_name\":\"Kub\",\"full_name\":\"Lorena Kub\",\"email\":\"destany90@test.com\",\"gender\":\"male\",\"date_of_birth\":\"1979-03-30\",\"roles\":[]},{\"id\":105,\"username\":\"urau\",\"first_name\":\"Eli\",\"last_name\":\"Schmitt\",\"full_name\":\"Eli Schmitt\",\"email\":\"urau@test.com\",\"gender\":\"male\",\"date_of_birth\":\"2017-09-25\",\"roles\":[]}]}",
                             "name": ""
                         }
                     ]
@@ -855,7 +855,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"username\":\"et\",\"email\":\"aut\",\"first_name\":\"aut\",\"last_name\":\"excepturi\",\"gender\":\"quia\",\"date_of_birth\":\"2020-12-01\",\"role_ids\":[8,16]}"
+                            "raw": "{\"username\":\"dolore\",\"email\":\"voluptatem\",\"first_name\":\"omnis\",\"last_name\":\"quae\",\"gender\":\"et\",\"date_of_birth\":\"2020-12-01\",\"role_ids\":[20,17]}"
                         },
                         "description": ""
                     },
@@ -881,7 +881,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "20",
+                                    "value": "9",
                                     "description": "The ID of the user"
                                 }
                             ]
@@ -904,7 +904,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":96,\"username\":\"krystal.kunze\",\"full_name\":\"Belle Hintz\",\"email\":\"krystal.kunze@test.com\",\"gender\":\"female\",\"date_of_birth\":\"1984-05-08\",\"roles\":[]}}",
+                            "body": "{\"data\":{\"id\":106,\"username\":\"schimmel.millie\",\"first_name\":\"Wellington\",\"last_name\":\"Kemmer\",\"full_name\":\"Wellington Kemmer\",\"email\":\"schimmel.millie@test.com\",\"gender\":\"female\",\"date_of_birth\":\"2021-01-09\",\"roles\":[]}}",
                             "name": ""
                         }
                     ]
@@ -922,7 +922,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "17",
+                                    "value": "8",
                                     "description": "The ID of the user"
                                 }
                             ]
@@ -940,7 +940,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"username\":\"eveniet\",\"email\":\"optio\",\"first_name\":\"accusamus\",\"last_name\":\"vel\",\"gender\":\"perspiciatis\",\"date_of_birth\":\"2020-12-01\",\"role_ids\":[1,9]}"
+                            "raw": "{\"username\":\"consequatur\",\"email\":\"in\",\"first_name\":\"voluptatem\",\"last_name\":\"eaque\",\"gender\":\"quos\",\"date_of_birth\":\"2020-12-01\",\"role_ids\":[9,19]}"
                         },
                         "description": ""
                     },
@@ -966,7 +966,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "20",
+                                    "value": "9",
                                     "description": "The ID of the user"
                                 }
                             ]

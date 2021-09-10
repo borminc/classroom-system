@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Api\v1\RolePermission;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\v1\Role\StoreRoleRequest;
+use App\Http\Requests\v1\Role\UpdateRoleRequest;
 use App\Http\Resources\v1\RoleResource;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
@@ -32,7 +34,7 @@ class RoleController extends Controller
      * Store a new role.
      *
      * @authenticated
-     * @param  \Illuminate\Http\Request  $request
+     * @param  StoreRoleRequest  $request
      * @bodyParam name string required A unique role name
      *
      * @return \Illuminate\Http\Response
@@ -40,15 +42,9 @@ class RoleController extends Controller
      *  "message": "Successfully created role!"
      * }
      */
-    public function store(Request $request)
+    public function store(StoreRoleRequest $request)
     {
-        $this->authorize('create', Role::class);
-
-        $request->validate([
-            'name' => 'required|string|unique:roles',
-        ]);
-
-        Role::create(['name' => $request->name]);
+        Role::create($request->validated());
         return response()->json([
             'message' => 'Successfully created role!',
         ], 201);
@@ -69,7 +65,6 @@ class RoleController extends Controller
     {
         $role = Role::findOrFail($id);
         $this->authorize('view', $role);
-
         return new RoleResource($role);
     }
 
@@ -87,22 +82,12 @@ class RoleController extends Controller
      *  "message": "Successfully updated role!"
      * }
      */
-    public function update(Request $request, $id)
+    public function update(UpdateRoleRequest $request, Role $role)
     {
-        $request->validate([
-            'name' => 'required|string|unique:roles',
-        ]);
-
-        $role = Role::findOrFail($id);
-        $this->authorize('update', $role);
-
-        $role->name = $request->name;
-        $role->save();
-
+        $role->update(['display_name' => $request->name]);
         return response()->json([
             'message' => 'Successfully updated role!',
         ], 200);
-
     }
 
     /**
@@ -117,11 +102,9 @@ class RoleController extends Controller
      *  "message": "Successfully deleted role!"
      * }
      */
-    public function destroy($id)
+    public function destroy(Role $role)
     {
-        $role = Role::findOrFail($id);
         $this->authorize('delete', $role);
-
         $role->delete();
         return response()->json([
             'message' => 'Successfully deleted role!',

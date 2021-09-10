@@ -3,10 +3,13 @@
 namespace App\Http\Controllers\Api\v1\User;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\v1\User\StoreUserRequest;
+use App\Http\Requests\v1\User\UpdateUserRequest;
 use App\Http\Resources\v1\UserResource;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 use Spatie\Permission\Models\Role;
 
 /**
@@ -77,7 +80,7 @@ class UserController extends Controller
      * Create a new user
      *
      * @authenticated
-     * @param Request $request
+     * @param StoreUserRequest $request
      * @bodyParam username string required A unique username
      * @bodyParam email string required A unique email address
      * @bodyParam first_name string required
@@ -95,33 +98,14 @@ class UserController extends Controller
      *  }
      * }
      */
-    public function store(Request $request)
+    public function store(StoreUserRequest $request)
     {
-        $this->authorize('create', User::class);
-
-        $request->validate([
-            'username' => 'required|string|unique:users',
-            'email' => 'required|string|unique:users',
-            'first_name' => 'required|string',
-            'last_name' => 'required|string',
-            'gender' => 'required',
-            'date_of_birth' => 'required|date',
-            'role_ids' => 'required|array|min:1',
-            'role_ids.*' => 'required|integer|distinct',
-        ]);
-
         // $password = Str::random(6);
         $password = '12345678';
 
-        $user = User::create([
-            'username' => $request->username,
-            'email' => $request->email,
-            'password' => Hash::make($password),
-            'first_name' => $request->first_name,
-            'last_name' => $request->last_name,
-            'gender' => $request->gender,
-            'date_of_birth' => $request->date_of_birth,
-        ]);
+        $user = User::create(
+            $request->except('password') + ['password' => Hash::make($password)]
+        );
 
         foreach ($request->role_ids as $role_id) {
             $role = Role::findOrFail($role_id);
@@ -159,7 +143,7 @@ class UserController extends Controller
      * Update the specified user
      *
      * @authenticated
-     * @param  \Illuminate\Http\Request  $request
+     * @param  UpdateUserRequest  $request
      * @param  \App\Models\User  $user
      * @urlParam id integer required The ID of the user
      * @bodyParam username string required A unique username
@@ -175,30 +159,10 @@ class UserController extends Controller
      *  "message": "Successfully updated user!"
      * }
      */
-    public function update(Request $request, User $user)
+    public function update(UpdateUserRequest $request, User $user)
     {
-        $this->authorize('update', $user);
-
-        $request->validate([
-            'username' => 'required|string',
-            'email' => 'required|string',
-            'first_name' => 'required|string',
-            'last_name' => 'required|string',
-            'gender' => 'required',
-            'date_of_birth' => 'required|date',
-            'role_ids' => 'required|array|min:1',
-            'role_ids.*' => 'required|integer|distinct',
-        ]);
-
-        $user->username = $request->username;
-        $user->email = $request->email;
-        $user->first_name = $request->first_name;
-        $user->last_name = $request->last_name;
-        $user->gender = $request->gender;
-        $user->date_of_birth = $request->date_of_birth;
-        $user->save();
+        $user->update($request->except('role_ids'));
         $user->syncRoles($request->role_ids);
-
         return response()->json([
             "message" => "Successfully updated user!",
         ], 200);
@@ -219,7 +183,6 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         $this->authorize('delete', $user);
-
         $user->delete();
         return response()->json([
             "message" => "Successfully deleted user!",

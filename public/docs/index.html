@@ -51,7 +51,7 @@
                             <li><a href="http://github.com/knuckleswtf/scribe">Documentation powered by Scribe ✍</a></li>
                     </ul>
             <ul class="toc-footer" id="last-updated">
-            <li>Last updated: September 6 2021</li>
+            <li>Last updated: September 9 2021</li>
         </ul>
 </div>
 <div class="page-wrapper">
@@ -67,7 +67,7 @@ You can switch the language used with the tabs at the top right (or from the nav
 <pre><code class="language-yaml">http://localhost:8000</code></pre>
 
         <h1>Authenticating requests</h1>
-<p>Authenticate requests to this API's endpoints by sending an <strong><code>Authorization</code></strong> header with the value <strong><code>"Bearer {ACCESS_TOKEN}"</code></strong>.</p>
+<p>This API is authenticated by sending an <strong><code>Authorization</code></strong> header with the value <strong><code>"Bearer {ACCESS_TOKEN}"</code></strong>.</p>
 <p>All authenticated endpoints are marked with a <code>requires authentication</code> badge in the documentation below.</p>
 <p>You can retrieve your token by visiting your dashboard and clicking <b>Generate API token</b>.</p>
 
@@ -91,9 +91,9 @@ You can switch the language used with the tabs at the top right (or from the nav
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"voluptatem\",
+    \"email\": \"vel\",
     \"password\": \"nisi\",
-    \"remember_me\": false
+    \"remember_me\": true
 }"
 </code></pre>
 
@@ -107,9 +107,9 @@ const headers = {
 };
 
 let body = {
-    "email": "voluptatem",
+    "email": "vel",
     "password": "nisi",
-    "remember_me": false
+    "remember_me": true
 }
 
 fetch(url, {
@@ -337,14 +337,14 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"username\": \"qui\",
-    \"email\": \"nihil\",
-    \"password\": \"praesentium\",
+    \"username\": \"et\",
+    \"email\": \"expedita\",
+    \"password\": \"similique\",
     \"password_confirmation\": \"quia\",
-    \"first_name\": \"dolor\",
-    \"last_name\": \"et\",
-    \"gender\": \"qui\",
-    \"date_of_birth\": \"aut\"
+    \"first_name\": \"neque\",
+    \"last_name\": \"omnis\",
+    \"gender\": \"harum\",
+    \"date_of_birth\": \"eos\"
 }"
 </code></pre>
 
@@ -358,14 +358,14 @@ const headers = {
 };
 
 let body = {
-    "username": "qui",
-    "email": "nihil",
-    "password": "praesentium",
+    "username": "et",
+    "email": "expedita",
+    "password": "similique",
     "password_confirmation": "quia",
-    "first_name": "dolor",
-    "last_name": "et",
-    "gender": "qui",
-    "date_of_birth": "aut"
+    "first_name": "neque",
+    "last_name": "omnis",
+    "gender": "harum",
+    "date_of_birth": "eos"
 }
 
 fetch(url, {
@@ -540,42 +540,40 @@ fetch(url, {
 <code class="language-json">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 11,
-            &quot;name&quot;: &quot;Intro to sed&quot;,
-            &quot;code&quot;: &quot;lPUlC&quot;,
-            &quot;description&quot;: &quot;Repellendus est non incidunt omnis ratione. Consectetur omnis sit distinctio magni rerum dolores. Dolore quibusdam sapiente dolorem qui quia.&quot;,
+            &quot;id&quot;: 4,
+            &quot;name&quot;: &quot;Intro to odit&quot;,
+            &quot;code&quot;: &quot;yPZB7&quot;,
+            &quot;description&quot;: &quot;Distinctio hic est distinctio dolorum natus. Rerum maiores ipsam et recusandae. Rem culpa quia sequi amet rerum.&quot;,
+            &quot;instructor&quot;: {
+                &quot;id&quot;: 8,
+                &quot;username&quot;: &quot;i_7&quot;,
+                &quot;first_name&quot;: &quot;Instructor&quot;,
+                &quot;last_name&quot;: &quot;7&quot;,
+                &quot;full_name&quot;: &quot;Instructor 7&quot;,
+                &quot;email&quot;: &quot;i_7@test.com&quot;,
+                &quot;gender&quot;: &quot;male&quot;,
+                &quot;date_of_birth&quot;: &quot;2000-02-03 18:07:40&quot;,
+                &quot;roles&quot;: [
+                    2
+                ]
+            }
+        },
+        {
+            &quot;id&quot;: 5,
+            &quot;name&quot;: &quot;Intro to est&quot;,
+            &quot;code&quot;: &quot;rMu8y&quot;,
+            &quot;description&quot;: &quot;Ex eos ut cupiditate provident inventore. Sed similique vel iste voluptas ad. Ipsa cumque deleniti ratione doloribus ipsa neque qui et.&quot;,
             &quot;instructor&quot;: {
                 &quot;id&quot;: 9,
                 &quot;username&quot;: &quot;i_8&quot;,
+                &quot;first_name&quot;: &quot;Instructor&quot;,
+                &quot;last_name&quot;: &quot;8&quot;,
                 &quot;full_name&quot;: &quot;Instructor 8&quot;,
                 &quot;email&quot;: &quot;i_8@test.com&quot;,
                 &quot;gender&quot;: &quot;male&quot;,
                 &quot;date_of_birth&quot;: &quot;2000-02-03 18:07:40&quot;,
                 &quot;roles&quot;: [
-                    {
-                        &quot;id&quot;: 2,
-                        &quot;name&quot;: &quot;instructor&quot;
-                    }
-                ]
-            }
-        },
-        {
-            &quot;id&quot;: 12,
-            &quot;name&quot;: &quot;Intro to similique&quot;,
-            &quot;code&quot;: &quot;gYSNA&quot;,
-            &quot;description&quot;: &quot;Unde sequi et tempore libero magni odio. Molestiae est quia est.&quot;,
-            &quot;instructor&quot;: {
-                &quot;id&quot;: 5,
-                &quot;username&quot;: &quot;i_4&quot;,
-                &quot;full_name&quot;: &quot;Instructor 4&quot;,
-                &quot;email&quot;: &quot;i_4@test.com&quot;,
-                &quot;gender&quot;: &quot;male&quot;,
-                &quot;date_of_birth&quot;: &quot;2000-02-03 18:07:40&quot;,
-                &quot;roles&quot;: [
-                    {
-                        &quot;id&quot;: 2,
-                        &quot;name&quot;: &quot;instructor&quot;
-                    }
+                    2
                 ]
             }
         }
@@ -675,42 +673,40 @@ fetch(url, {
 <code class="language-json">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 13,
-            &quot;name&quot;: &quot;Intro to quidem&quot;,
-            &quot;code&quot;: &quot;ugMnN&quot;,
-            &quot;description&quot;: &quot;Saepe sit cum eos eligendi. Sed distinctio est est libero. Ipsum tempore dolor iusto maxime corrupti assumenda qui.&quot;,
+            &quot;id&quot;: 6,
+            &quot;name&quot;: &quot;Intro to dolorem&quot;,
+            &quot;code&quot;: &quot;dO3KX&quot;,
+            &quot;description&quot;: &quot;Nostrum illo fuga accusamus dolorem ratione. Est consequatur ut corporis sint omnis magni. Ea et doloribus quia eos sed blanditiis omnis.&quot;,
             &quot;instructor&quot;: {
                 &quot;id&quot;: 8,
                 &quot;username&quot;: &quot;i_7&quot;,
+                &quot;first_name&quot;: &quot;Instructor&quot;,
+                &quot;last_name&quot;: &quot;7&quot;,
                 &quot;full_name&quot;: &quot;Instructor 7&quot;,
                 &quot;email&quot;: &quot;i_7@test.com&quot;,
                 &quot;gender&quot;: &quot;male&quot;,
                 &quot;date_of_birth&quot;: &quot;2000-02-03 18:07:40&quot;,
                 &quot;roles&quot;: [
-                    {
-                        &quot;id&quot;: 2,
-                        &quot;name&quot;: &quot;instructor&quot;
-                    }
+                    2
                 ]
             }
         },
         {
-            &quot;id&quot;: 14,
-            &quot;name&quot;: &quot;Intro to excepturi&quot;,
-            &quot;code&quot;: &quot;oHPER&quot;,
-            &quot;description&quot;: &quot;Qui optio modi eveniet quia. Est atque quod ut non quo quia sint. Enim autem harum saepe iste quia odit non quia.&quot;,
+            &quot;id&quot;: 7,
+            &quot;name&quot;: &quot;Intro to id&quot;,
+            &quot;code&quot;: &quot;m2M6g&quot;,
+            &quot;description&quot;: &quot;Dolor dolorem reiciendis dolor unde. Natus expedita ea ut. Nostrum eum sit qui.&quot;,
             &quot;instructor&quot;: {
-                &quot;id&quot;: 7,
-                &quot;username&quot;: &quot;i_6&quot;,
-                &quot;full_name&quot;: &quot;Instructor 6&quot;,
-                &quot;email&quot;: &quot;i_6@test.com&quot;,
+                &quot;id&quot;: 5,
+                &quot;username&quot;: &quot;i_4&quot;,
+                &quot;first_name&quot;: &quot;Instructor&quot;,
+                &quot;last_name&quot;: &quot;4&quot;,
+                &quot;full_name&quot;: &quot;Instructor 4&quot;,
+                &quot;email&quot;: &quot;i_4@test.com&quot;,
                 &quot;gender&quot;: &quot;male&quot;,
                 &quot;date_of_birth&quot;: &quot;2000-02-03 18:07:40&quot;,
                 &quot;roles&quot;: [
-                    {
-                        &quot;id&quot;: 2,
-                        &quot;name&quot;: &quot;instructor&quot;
-                    }
+                    2
                 ]
             }
         }
@@ -785,7 +781,7 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"course_id\": 2
+    \"course_id\": 16
 }"
 </code></pre>
 
@@ -800,7 +796,7 @@ const headers = {
 };
 
 let body = {
-    "course_id": 2
+    "course_id": 16
 }
 
 fetch(url, {
@@ -907,8 +903,8 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"user_id\": 17,
-    \"course_id\": 10
+    \"user_id\": 12,
+    \"course_id\": 15
 }"
 </code></pre>
 
@@ -923,8 +919,8 @@ const headers = {
 };
 
 let body = {
-    "user_id": 17,
-    "course_id": 10
+    "user_id": 12,
+    "course_id": 15
 }
 
 fetch(url, {
@@ -1068,42 +1064,40 @@ fetch(url, {
 <code class="language-json">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 15,
-            &quot;name&quot;: &quot;Intro to nemo&quot;,
-            &quot;code&quot;: &quot;1wZRw&quot;,
-            &quot;description&quot;: &quot;Repellendus molestias sed quisquam nam odio consequatur. Fugit quia esse ea dolor sint laudantium harum.&quot;,
+            &quot;id&quot;: 8,
+            &quot;name&quot;: &quot;Intro to est&quot;,
+            &quot;code&quot;: &quot;Yj3Cx&quot;,
+            &quot;description&quot;: &quot;Quo aliquid est error minima et itaque minima. Quidem soluta veniam et qui. Nihil necessitatibus corrupti consequuntur ut est.&quot;,
             &quot;instructor&quot;: {
-                &quot;id&quot;: 10,
-                &quot;username&quot;: &quot;i_9&quot;,
-                &quot;full_name&quot;: &quot;Instructor 9&quot;,
-                &quot;email&quot;: &quot;i_9@test.com&quot;,
+                &quot;id&quot;: 7,
+                &quot;username&quot;: &quot;i_6&quot;,
+                &quot;first_name&quot;: &quot;Instructor&quot;,
+                &quot;last_name&quot;: &quot;6&quot;,
+                &quot;full_name&quot;: &quot;Instructor 6&quot;,
+                &quot;email&quot;: &quot;i_6@test.com&quot;,
                 &quot;gender&quot;: &quot;male&quot;,
-                &quot;date_of_birth&quot;: &quot;2000-02-03 18:07:41&quot;,
+                &quot;date_of_birth&quot;: &quot;2000-02-03 18:07:40&quot;,
                 &quot;roles&quot;: [
-                    {
-                        &quot;id&quot;: 2,
-                        &quot;name&quot;: &quot;instructor&quot;
-                    }
+                    2
                 ]
             }
         },
         {
-            &quot;id&quot;: 16,
-            &quot;name&quot;: &quot;Intro to dignissimos&quot;,
-            &quot;code&quot;: &quot;tWLBh&quot;,
-            &quot;description&quot;: &quot;Tempore maxime ex sint sunt possimus ea. Eaque debitis iusto fugit molestiae dolorum similique.&quot;,
+            &quot;id&quot;: 9,
+            &quot;name&quot;: &quot;Intro to doloribus&quot;,
+            &quot;code&quot;: &quot;Fq0Ng&quot;,
+            &quot;description&quot;: &quot;Placeat veniam et a illo corrupti perspiciatis earum dolor. Quod porro et dolore est praesentium. Incidunt quisquam qui iusto sint.&quot;,
             &quot;instructor&quot;: {
                 &quot;id&quot;: 6,
                 &quot;username&quot;: &quot;i_5&quot;,
+                &quot;first_name&quot;: &quot;Instructor&quot;,
+                &quot;last_name&quot;: &quot;5&quot;,
                 &quot;full_name&quot;: &quot;Instructor 5&quot;,
                 &quot;email&quot;: &quot;i_5@test.com&quot;,
                 &quot;gender&quot;: &quot;male&quot;,
                 &quot;date_of_birth&quot;: &quot;2000-02-03 18:07:40&quot;,
                 &quot;roles&quot;: [
-                    {
-                        &quot;id&quot;: 2,
-                        &quot;name&quot;: &quot;instructor&quot;
-                    }
+                    2
                 ]
             }
         }
@@ -1178,10 +1172,10 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"et\",
-    \"code\": \"quo\",
-    \"description\": \"suscipit\",
-    \"instructor_id\": 3
+    \"name\": \"quia\",
+    \"code\": \"dolor\",
+    \"description\": \"nobis\",
+    \"instructor_id\": 6
 }"
 </code></pre>
 
@@ -1196,10 +1190,10 @@ const headers = {
 };
 
 let body = {
-    "name": "et",
-    "code": "quo",
-    "description": "suscipit",
-    "instructor_id": 3
+    "name": "quia",
+    "code": "dolor",
+    "description": "nobis",
+    "instructor_id": 6
 }
 
 fetch(url, {
@@ -1316,13 +1310,13 @@ fetch(url, {
 
 
 <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/v1/courses/7" \
+    --get "http://localhost:8000/api/v1/courses/3" \
     --header "Authorization: Bearer {ACCESS_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/courses/7"
+    "http://localhost:8000/api/v1/courses/3"
 );
 
 const headers = {
@@ -1345,22 +1339,21 @@ fetch(url, {
 
 <code class="language-json">{
     &quot;data&quot;: {
-        &quot;id&quot;: 17,
-        &quot;name&quot;: &quot;Intro to laborum&quot;,
-        &quot;code&quot;: &quot;JNPSo&quot;,
-        &quot;description&quot;: &quot;Et voluptatem autem quia. Recusandae est eius ea voluptatum et at eum aut. Laborum atque officiis aliquid perferendis earum adipisci ut.&quot;,
+        &quot;id&quot;: 10,
+        &quot;name&quot;: &quot;Intro to libero&quot;,
+        &quot;code&quot;: &quot;QIbKw&quot;,
+        &quot;description&quot;: &quot;Cumque aut voluptatibus ipsum quod provident quos. Ex sequi et officiis repellat. Fugiat nisi deserunt distinctio temporibus.&quot;,
         &quot;instructor&quot;: {
-            &quot;id&quot;: 4,
-            &quot;username&quot;: &quot;i_3&quot;,
-            &quot;full_name&quot;: &quot;Instructor 3&quot;,
-            &quot;email&quot;: &quot;i_3@test.com&quot;,
+            &quot;id&quot;: 3,
+            &quot;username&quot;: &quot;i_2&quot;,
+            &quot;first_name&quot;: &quot;Instructor&quot;,
+            &quot;last_name&quot;: &quot;2&quot;,
+            &quot;full_name&quot;: &quot;Instructor 2&quot;,
+            &quot;email&quot;: &quot;i_2@test.com&quot;,
             &quot;gender&quot;: &quot;male&quot;,
-            &quot;date_of_birth&quot;: &quot;2000-02-03 18:07:40&quot;,
+            &quot;date_of_birth&quot;: &quot;2000-02-03 18:07:39&quot;,
             &quot;roles&quot;: [
-                {
-                    &quot;id&quot;: 2,
-                    &quot;name&quot;: &quot;instructor&quot;
-                }
+                2
             ]
         }
     }
@@ -1438,20 +1431,20 @@ fetch(url, {
 
 
 <pre><code class="language-bash">curl --request PUT \
-    "http://localhost:8000/api/v1/courses/13" \
+    "http://localhost:8000/api/v1/courses/10" \
     --header "Authorization: Bearer {ACCESS_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"fugit\",
-    \"code\": \"dolorem\",
-    \"description\": \"vero\",
-    \"instructor_id\": 17
+    \"name\": \"quia\",
+    \"code\": \"soluta\",
+    \"description\": \"molestiae\",
+    \"instructor_id\": 2
 }"
 </code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/courses/13"
+    "http://localhost:8000/api/v1/courses/10"
 );
 
 const headers = {
@@ -1461,10 +1454,10 @@ const headers = {
 };
 
 let body = {
-    "name": "fugit",
-    "code": "dolorem",
-    "description": "vero",
-    "instructor_id": 17
+    "name": "quia",
+    "code": "soluta",
+    "description": "molestiae",
+    "instructor_id": 2
 }
 
 fetch(url, {
@@ -1594,13 +1587,13 @@ fetch(url, {
 
 
 <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost:8000/api/v1/courses/14" \
+    "http://localhost:8000/api/v1/courses/11" \
     --header "Authorization: Bearer {ACCESS_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/courses/14"
+    "http://localhost:8000/api/v1/courses/11"
 );
 
 const headers = {
@@ -1809,7 +1802,7 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"consequuntur\"
+    \"name\": \"ea\"
 }"
 </code></pre>
 
@@ -1824,7 +1817,7 @@ const headers = {
 };
 
 let body = {
-    "name": "consequuntur"
+    "name": "ea"
 }
 
 fetch(url, {
@@ -1917,13 +1910,13 @@ fetch(url, {
 
 
 <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/v1/roles/19" \
+    --get "http://localhost:8000/api/v1/roles/5" \
     --header "Authorization: Bearer {ACCESS_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/roles/19"
+    "http://localhost:8000/api/v1/roles/5"
 );
 
 const headers = {
@@ -2023,17 +2016,17 @@ fetch(url, {
 
 
 <pre><code class="language-bash">curl --request PUT \
-    "http://localhost:8000/api/v1/roles/17" \
+    "http://localhost:8000/api/v1/roles/3" \
     --header "Authorization: Bearer {ACCESS_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"rerum\"
+    \"name\": \"amet\"
 }"
 </code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/roles/17"
+    "http://localhost:8000/api/v1/roles/3"
 );
 
 const headers = {
@@ -2043,7 +2036,7 @@ const headers = {
 };
 
 let body = {
-    "name": "rerum"
+    "name": "amet"
 }
 
 fetch(url, {
@@ -2149,13 +2142,13 @@ fetch(url, {
 
 
 <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost:8000/api/v1/roles/13" \
+    "http://localhost:8000/api/v1/roles/7" \
     --header "Authorization: Bearer {ACCESS_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/roles/13"
+    "http://localhost:8000/api/v1/roles/7"
 );
 
 const headers = {
@@ -2286,21 +2279,25 @@ fetch(url, {
 <code class="language-json">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 90,
-            &quot;username&quot;: &quot;cynthia.wyman&quot;,
-            &quot;full_name&quot;: &quot;Tina Ziemann&quot;,
-            &quot;email&quot;: &quot;cynthia.wyman@test.com&quot;,
-            &quot;gender&quot;: &quot;female&quot;,
-            &quot;date_of_birth&quot;: &quot;1977-07-05&quot;,
+            &quot;id&quot;: 100,
+            &quot;username&quot;: &quot;marques.becker&quot;,
+            &quot;first_name&quot;: &quot;Rashawn&quot;,
+            &quot;last_name&quot;: &quot;Bergstrom&quot;,
+            &quot;full_name&quot;: &quot;Rashawn Bergstrom&quot;,
+            &quot;email&quot;: &quot;marques.becker@test.com&quot;,
+            &quot;gender&quot;: &quot;male&quot;,
+            &quot;date_of_birth&quot;: &quot;1995-03-12&quot;,
             &quot;roles&quot;: []
         },
         {
-            &quot;id&quot;: 91,
-            &quot;username&quot;: &quot;kautzer.glenda&quot;,
-            &quot;full_name&quot;: &quot;Margarita Vandervort&quot;,
-            &quot;email&quot;: &quot;kautzer.glenda@test.com&quot;,
-            &quot;gender&quot;: &quot;female&quot;,
-            &quot;date_of_birth&quot;: &quot;2004-06-11&quot;,
+            &quot;id&quot;: 101,
+            &quot;username&quot;: &quot;cleannon&quot;,
+            &quot;first_name&quot;: &quot;Delpha&quot;,
+            &quot;last_name&quot;: &quot;Friesen&quot;,
+            &quot;full_name&quot;: &quot;Delpha Friesen&quot;,
+            &quot;email&quot;: &quot;cleannon@test.com&quot;,
+            &quot;gender&quot;: &quot;male&quot;,
+            &quot;date_of_birth&quot;: &quot;1998-02-06&quot;,
             &quot;roles&quot;: []
         }
     ]
@@ -2399,21 +2396,25 @@ fetch(url, {
 <code class="language-json">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 92,
-            &quot;username&quot;: &quot;fernando.brekke&quot;,
-            &quot;full_name&quot;: &quot;Yessenia Miller&quot;,
-            &quot;email&quot;: &quot;fernando.brekke@test.com&quot;,
-            &quot;gender&quot;: &quot;female&quot;,
-            &quot;date_of_birth&quot;: &quot;1982-08-16&quot;,
+            &quot;id&quot;: 102,
+            &quot;username&quot;: &quot;kunze.easter&quot;,
+            &quot;first_name&quot;: &quot;Raul&quot;,
+            &quot;last_name&quot;: &quot;Murray&quot;,
+            &quot;full_name&quot;: &quot;Raul Murray&quot;,
+            &quot;email&quot;: &quot;kunze.easter@test.com&quot;,
+            &quot;gender&quot;: &quot;male&quot;,
+            &quot;date_of_birth&quot;: &quot;2013-03-24&quot;,
             &quot;roles&quot;: []
         },
         {
-            &quot;id&quot;: 93,
-            &quot;username&quot;: &quot;radams&quot;,
-            &quot;full_name&quot;: &quot;Sincere Homenick&quot;,
-            &quot;email&quot;: &quot;radams@test.com&quot;,
+            &quot;id&quot;: 103,
+            &quot;username&quot;: &quot;jsteuber&quot;,
+            &quot;first_name&quot;: &quot;Nyasia&quot;,
+            &quot;last_name&quot;: &quot;Kuhic&quot;,
+            &quot;full_name&quot;: &quot;Nyasia Kuhic&quot;,
+            &quot;email&quot;: &quot;jsteuber@test.com&quot;,
             &quot;gender&quot;: &quot;male&quot;,
-            &quot;date_of_birth&quot;: &quot;2015-01-19&quot;,
+            &quot;date_of_birth&quot;: &quot;1974-03-22&quot;,
             &quot;roles&quot;: []
         }
     ]
@@ -2511,12 +2512,14 @@ fetch(url, {
 
 <code class="language-json">{
     &quot;data&quot;: {
-        &quot;id&quot;: 89,
-        &quot;username&quot;: &quot;corkery.keon&quot;,
-        &quot;full_name&quot;: &quot;Gay Bashirian&quot;,
-        &quot;email&quot;: &quot;corkery.keon@test.com&quot;,
-        &quot;gender&quot;: &quot;female&quot;,
-        &quot;date_of_birth&quot;: &quot;2007-06-29&quot;,
+        &quot;id&quot;: 99,
+        &quot;username&quot;: &quot;lilly60&quot;,
+        &quot;first_name&quot;: &quot;Nicola&quot;,
+        &quot;last_name&quot;: &quot;Hartmann&quot;,
+        &quot;full_name&quot;: &quot;Nicola Hartmann&quot;,
+        &quot;email&quot;: &quot;lilly60@test.com&quot;,
+        &quot;gender&quot;: &quot;male&quot;,
+        &quot;date_of_birth&quot;: &quot;2021-07-14&quot;,
         &quot;roles&quot;: []
     }
 }</code>
@@ -2614,21 +2617,25 @@ fetch(url, {
 <code class="language-json">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 94,
-            &quot;username&quot;: &quot;daron.hettinger&quot;,
-            &quot;full_name&quot;: &quot;Avery Hamill&quot;,
-            &quot;email&quot;: &quot;daron.hettinger@test.com&quot;,
+            &quot;id&quot;: 104,
+            &quot;username&quot;: &quot;destany90&quot;,
+            &quot;first_name&quot;: &quot;Lorena&quot;,
+            &quot;last_name&quot;: &quot;Kub&quot;,
+            &quot;full_name&quot;: &quot;Lorena Kub&quot;,
+            &quot;email&quot;: &quot;destany90@test.com&quot;,
             &quot;gender&quot;: &quot;male&quot;,
-            &quot;date_of_birth&quot;: &quot;1997-08-17&quot;,
+            &quot;date_of_birth&quot;: &quot;1979-03-30&quot;,
             &quot;roles&quot;: []
         },
         {
-            &quot;id&quot;: 95,
-            &quot;username&quot;: &quot;lisette.kovacek&quot;,
-            &quot;full_name&quot;: &quot;Merlin Johnson&quot;,
-            &quot;email&quot;: &quot;lisette.kovacek@test.com&quot;,
-            &quot;gender&quot;: &quot;female&quot;,
-            &quot;date_of_birth&quot;: &quot;2001-03-26&quot;,
+            &quot;id&quot;: 105,
+            &quot;username&quot;: &quot;urau&quot;,
+            &quot;first_name&quot;: &quot;Eli&quot;,
+            &quot;last_name&quot;: &quot;Schmitt&quot;,
+            &quot;full_name&quot;: &quot;Eli Schmitt&quot;,
+            &quot;email&quot;: &quot;urau@test.com&quot;,
+            &quot;gender&quot;: &quot;male&quot;,
+            &quot;date_of_birth&quot;: &quot;2017-09-25&quot;,
             &quot;roles&quot;: []
         }
     ]
@@ -2702,15 +2709,15 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"username\": \"et\",
-    \"email\": \"aut\",
-    \"first_name\": \"aut\",
-    \"last_name\": \"excepturi\",
-    \"gender\": \"quia\",
+    \"username\": \"dolore\",
+    \"email\": \"voluptatem\",
+    \"first_name\": \"omnis\",
+    \"last_name\": \"quae\",
+    \"gender\": \"et\",
     \"date_of_birth\": \"2020-12-01\",
     \"role_ids\": [
-        8,
-        16
+        20,
+        17
     ]
 }"
 </code></pre>
@@ -2726,15 +2733,15 @@ const headers = {
 };
 
 let body = {
-    "username": "et",
-    "email": "aut",
-    "first_name": "aut",
-    "last_name": "excepturi",
-    "gender": "quia",
+    "username": "dolore",
+    "email": "voluptatem",
+    "first_name": "omnis",
+    "last_name": "quae",
+    "gender": "et",
     "date_of_birth": "2020-12-01",
     "role_ids": [
-        8,
-        16
+        20,
+        17
     ]
 }
 
@@ -2884,13 +2891,13 @@ fetch(url, {
 
 
 <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/v1/users/20" \
+    --get "http://localhost:8000/api/v1/users/9" \
     --header "Authorization: Bearer {ACCESS_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/users/20"
+    "http://localhost:8000/api/v1/users/9"
 );
 
 const headers = {
@@ -2913,12 +2920,14 @@ fetch(url, {
 
 <code class="language-json">{
     &quot;data&quot;: {
-        &quot;id&quot;: 96,
-        &quot;username&quot;: &quot;krystal.kunze&quot;,
-        &quot;full_name&quot;: &quot;Belle Hintz&quot;,
-        &quot;email&quot;: &quot;krystal.kunze@test.com&quot;,
+        &quot;id&quot;: 106,
+        &quot;username&quot;: &quot;schimmel.millie&quot;,
+        &quot;first_name&quot;: &quot;Wellington&quot;,
+        &quot;last_name&quot;: &quot;Kemmer&quot;,
+        &quot;full_name&quot;: &quot;Wellington Kemmer&quot;,
+        &quot;email&quot;: &quot;schimmel.millie@test.com&quot;,
         &quot;gender&quot;: &quot;female&quot;,
-        &quot;date_of_birth&quot;: &quot;1984-05-08&quot;,
+        &quot;date_of_birth&quot;: &quot;2021-01-09&quot;,
         &quot;roles&quot;: []
     }
 }</code>
@@ -2995,26 +3004,26 @@ fetch(url, {
 
 
 <pre><code class="language-bash">curl --request PUT \
-    "http://localhost:8000/api/v1/users/17" \
+    "http://localhost:8000/api/v1/users/8" \
     --header "Authorization: Bearer {ACCESS_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"username\": \"eveniet\",
-    \"email\": \"optio\",
-    \"first_name\": \"accusamus\",
-    \"last_name\": \"vel\",
-    \"gender\": \"perspiciatis\",
+    \"username\": \"consequatur\",
+    \"email\": \"in\",
+    \"first_name\": \"voluptatem\",
+    \"last_name\": \"eaque\",
+    \"gender\": \"quos\",
     \"date_of_birth\": \"2020-12-01\",
     \"role_ids\": [
-        1,
-        9
+        9,
+        19
     ]
 }"
 </code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/users/17"
+    "http://localhost:8000/api/v1/users/8"
 );
 
 const headers = {
@@ -3024,15 +3033,15 @@ const headers = {
 };
 
 let body = {
-    "username": "eveniet",
-    "email": "optio",
-    "first_name": "accusamus",
-    "last_name": "vel",
-    "gender": "perspiciatis",
+    "username": "consequatur",
+    "email": "in",
+    "first_name": "voluptatem",
+    "last_name": "eaque",
+    "gender": "quos",
     "date_of_birth": "2020-12-01",
     "role_ids": [
-        1,
-        9
+        9,
+        19
     ]
 }
 
@@ -3191,13 +3200,13 @@ fetch(url, {
 
 
 <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost:8000/api/v1/users/20" \
+    "http://localhost:8000/api/v1/users/9" \
     --header "Authorization: Bearer {ACCESS_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/users/20"
+    "http://localhost:8000/api/v1/users/9"
 );
 
 const headers = {

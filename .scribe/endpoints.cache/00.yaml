@@ -23,7 +23,7 @@ endpoints:
         name: email
         description: ''
         required: true
-        example: voluptatem
+        example: vel
         type: string
       password:
         name: password
@@ -35,7 +35,7 @@ endpoints:
         name: remember_me
         description: ''
         required: true
-        example: false
+        example: true
         type: boolean
     responses:
       -
@@ -109,19 +109,19 @@ endpoints:
         name: username
         description: ''
         required: true
-        example: qui
+        example: et
         type: string
       email:
         name: email
         description: ''
         required: true
-        example: nihil
+        example: expedita
         type: string
       password:
         name: password
         description: ''
         required: true
-        example: praesentium
+        example: similique
         type: string
       password_confirmation:
         name: password_confirmation
@@ -133,25 +133,25 @@ endpoints:
         name: first_name
         description: ''
         required: true
-        example: dolor
+        example: neque
         type: string
       last_name:
         name: last_name
         description: ''
         required: true
-        example: et
+        example: omnis
         type: string
       gender:
         name: gender
         description: ''
         required: true
-        example: qui
+        example: harum
         type: string
       date_of_birth:
         name: date_of_birth
         description: 'Date in the format of Y-m-d'
         required: true
-        example: aut
+        example: eos
         type: string
     responses:
       -

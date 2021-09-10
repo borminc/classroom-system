@@ -2,9 +2,13 @@
 
 use App\Http\Controllers\Api\v1\Auth\AuthController;
 use App\Http\Controllers\Api\v1\CourseRegistration\CourseController;
+use App\Http\Controllers\Api\v1\CourseRegistration\CourseStudentController;
 use App\Http\Controllers\Api\v1\CourseRegistration\RegistrationController;
+use App\Http\Controllers\Api\v1\RolePermission\PermissionController;
 use App\Http\Controllers\Api\v1\RolePermission\RoleController;
+use App\Http\Controllers\Api\v1\RolePermission\RolePermissionController;
 use App\Http\Controllers\Api\v1\User\UserController;
+use App\Http\Controllers\Api\v1\User\UserPermissionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,11 +41,23 @@ Route::prefix('v1')->group(function () {
         Route::apiResource('roles', RoleController::class);
 
         /**
+         * Permission
+         */
+        Route::post('permissions/assign-to-role', [RolePermissionController::class, 'assignPermissionsToRole']);
+        Route::post('permissions/assign-to-user', [RolePermissionController::class, 'assignPermissionsToUser']);
+        Route::post('permissions/revoke-from-role', [RolePermissionController::class, 'revokePermissionFromRole']);
+        Route::post('permissions/revoke-from-user', [RolePermissionController::class, 'revokePermissionFromUser']);
+        Route::get('permissions/by-group', [PermissionController::class, 'getPermissionsByGroups']);
+        Route::apiResource('permissions', PermissionController::class)
+            ->only(['index', 'show', 'update']);
+
+        /**
          * Users
          */
         Route::get('my-info', [UserController::class, 'getLoggedInUserInfo']);
         Route::get('all-students', [UserController::class, 'getAllStudents']);
         Route::get('all-instructors', [UserController::class, 'getAllInstructors']);
+        Route::get('users/with-permissions', [UserPermissionController::class, 'getAllUsersWithPermissions']);
         Route::apiResource('users', UserController::class);
 
         /**
@@ -55,6 +71,7 @@ Route::prefix('v1')->group(function () {
         /**
          * Courses
          */
+        Route::get('courses/with-students', [CourseStudentController::class, 'index']);
         Route::apiResource('courses', CourseController::class);
 
     });

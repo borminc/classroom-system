@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Api\v1\CourseRegistration;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\v1\CourseRegistration\RegisterStudentsCoursesRequest;
+use App\Http\Requests\v1\CourseRegistration\SelfRegisterCoursesRequest;
 use App\Http\Resources\v1\CourseResource;
 use App\Models\Course;
 use App\Models\User;
@@ -27,7 +29,7 @@ class RegistrationController extends Controller
     public function viewStudentRegisteredCourses(Request $request)
     {
         $this->authorize('viewOwnStudentCourses', Course::class);
-        $user = auth()->user();
+        $user = $request->user();
         return CourseResource::collection($user->student_courses);
     }
 
@@ -43,7 +45,7 @@ class RegistrationController extends Controller
     public function viewInstructorRegisteredCourses(Request $request)
     {
         $this->authorize('viewOwnInstructorCourses', Course::class);
-        $user = auth()->user();
+        $user = $request->user();
         return CourseResource::collection($user->instructor_courses);
     }
 
@@ -51,7 +53,7 @@ class RegistrationController extends Controller
      * Register students' courses by admin
      *
      * @authenticated
-     * @param Request $request
+     * @param RegisterStudentsCoursesRequest $request
      * @bodyParam user_id int required The user_id of the student to be registered
      * @bodyParam course_id int required The id of the course
      *
@@ -63,15 +65,8 @@ class RegistrationController extends Controller
      *  "message": "User cannot take any courses."
      * }
      */
-    public function registerStudentsCourses(Request $request)
+    public function registerStudentsCourses(RegisterStudentsCoursesRequest $request)
     {
-        $this->authorize('registerStudentsCourses', Course::class);
-
-        $request->validate([
-            'user_id' => 'required|integer',
-            'course_id' => 'required|integer',
-        ]);
-
         $course = Course::findOrFail($request->course_id);
         $student = User::findOrFail($request->user_id);
 
@@ -98,7 +93,7 @@ class RegistrationController extends Controller
      * Self-register course by students
      *
      * @authenticated
-     * @param Request $request
+     * @param SelfRegisterCoursesRequest $request
      * @bodyParam course_id int required The id of the course
      *
      * @return Illuminate\Http\JsonResponse
@@ -109,16 +104,9 @@ class RegistrationController extends Controller
      *  "message": "You are already enrolled in this course."
      * }
      */
-    public function selfRegisterCourses(Request $request)
+    public function selfRegisterCourses(SelfRegisterCoursesRequest $request)
     {
-        $this->authorize('selfRegisterCourses', Course::class);
-
-        $request->validate([
-            'course_id' => 'required|integer',
-        ]);
-
-        /** @var App\Models\User */
-        $user = auth()->user();
+        $user = $request->user();
 
         if ($user->student_courses->contains($request->course_id)) {
             return response()->json([

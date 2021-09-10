@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\Api\v1\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\v1\Auth\LoginRequest;
+use App\Http\Requests\v1\Auth\SelfRegisterRequest;
+use App\Http\Resources\v1\RoleResource;
 use App\Http\Resources\v1\UserResource;
 use App\Models\User;
 use Carbon\Carbon;
@@ -20,7 +23,7 @@ class AuthController extends Controller
     /**
      * Self-registration of new users
      *
-     * @param Request $request
+     * @param SelfRegisterRequest $request
      * @bodyParam username string required
      * @bodyParam email string required
      * @bodyParam password string required
@@ -35,28 +38,11 @@ class AuthController extends Controller
      *  "message": "Successfully created user!"
      * }
      */
-    public function selfRegisterAsStudent(Request $request)
+    public function selfRegisterAsStudent(SelfRegisterRequest $request)
     {
-        $request->validate([
-            'username' => 'required|string|unique:users',
-            'email' => 'required|string|unique:users',
-            'password' => 'required|min:8|confirmed',
-            'first_name' => 'required|string',
-            'last_name' => 'required|string',
-            'gender' => 'required',
-            'date_of_birth' => 'required|date',
-        ]);
-
-        $user = User::create([
-            'username' => $request->username,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-            'first_name' => $request->first_name,
-            'last_name' => $request->last_name,
-            'gender' => $request->gender,
-            'date_of_birth' => $request->date_of_birth,
-        ]);
-
+        $user = User::create(
+            $request->except('password') + ['password' => Hash::make($request->password)],
+        );
         $user->assignRole('student');
 
         return response()->json([
@@ -67,7 +53,7 @@ class AuthController extends Controller
     /**
      * Login user
      *
-     * @param Request $request
+     * @param LoginRequest $request
      * @bodyParam email string required
      * @bodyParam password string required
      * @bodyParam remember_me boolean required
@@ -91,20 +77,14 @@ class AuthController extends Controller
      *  "message": "Invalid username or password."
      * }
      */
-    public function login(Request $request)
+    public function login(LoginRequest $request)
     {
-        $request->validate([
-            'email' => 'required|email',
-            'password' => 'required',
-            'remember_me' => 'boolean',
-        ]);
-
-        $creds = [
+        $credentials = [
             'email' => $request->email,
             'password' => $request->password,
         ];
 
-        if (!Auth::attempt($creds)) {
+        if (!Auth::attempt($credentials)) {
             return response()->json([
                 'message' => 'Invalid username or password.',
             ], 401);
@@ -123,6 +103,7 @@ class AuthController extends Controller
             'token_type' => 'Bearer',
             'expires_at' => Carbon::parse($tokenResult->token->expires_at)->toDateTimeString(),
             'user' => new UserResource($user),
+            'roles' => RoleResource::collection($user->roles),
             'verified' => !($user->email_verified_at == null),
         ], 200);
     }

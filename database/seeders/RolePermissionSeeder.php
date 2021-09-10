@@ -40,13 +40,19 @@ class RolePermissionSeeder extends Seeder
             'edit courses',
             'delete courses',
 
+            'view roles',
             'create roles',
             'edit roles',
             'delete roles',
+
+            'view permissions',
+            'edit permissions',
+            'assign permissions',
+            'revoke permissions',
         ];
         $admin_role = Role::where('name', 'admin')->first();
         foreach ($admin_permissions as $p) {
-            $permission = Permission::create(['name' => $p]);
+            $permission = Permission::create(['name' => $p, 'group' => 'Admin permission']);
             $admin_role->givePermissionTo($permission);
         }
 
@@ -58,7 +64,7 @@ class RolePermissionSeeder extends Seeder
         ];
         $student_role = Role::where('name', 'student')->first();
         foreach ($student_permissions as $p) {
-            $permission = Permission::create(['name' => $p]);
+            $permission = Permission::create(['name' => $p, 'group' => 'Student permission']);
             $student_role->givePermissionTo($permission);
         }
 
@@ -69,7 +75,7 @@ class RolePermissionSeeder extends Seeder
         ];
         $instructor_role = Role::where('name', 'instructor')->first();
         foreach ($instructor_permissions as $p) {
-            $permission = Permission::create(['name' => $p]);
+            $permission = Permission::create(['name' => $p, 'group' => 'Instructor permission']);
             $instructor_role->givePermissionTo($permission);
         }
     }

@@ -44,7 +44,7 @@ endpoints:
         name: name
         description: 'A unique role name'
         required: true
-        example: consequuntur
+        example: ea
         type: string
     responses:
       -
@@ -73,7 +73,7 @@ endpoints:
         name: id
         description: 'The ID of the role'
         required: true
-        example: 19
+        example: 5
         type: integer
     queryParameters: []
     bodyParameters: []
@@ -102,7 +102,7 @@ endpoints:
         name: id
         description: 'The ID of the role'
         required: true
-        example: 17
+        example: 3
         type: integer
     queryParameters: []
     bodyParameters:
@@ -110,7 +110,7 @@ endpoints:
         name: name
         description: 'The name of the role'
         required: true
-        example: rerum
+        example: amet
         type: string
     responses:
       -
@@ -139,7 +139,7 @@ endpoints:
         name: id
         description: 'The ID of the role'
         required: true
-        example: 13
+        example: 7
         type: integer
     queryParameters: []
     bodyParameters: []
