@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Api\v1\Auth;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\v1\Auth\LoginRequest;
 use App\Http\Requests\v1\Auth\SelfRegisterRequest;
-use App\Http\Resources\v1\RoleResource;
 use App\Http\Resources\v1\UserResource;
 use App\Models\User;
 use Carbon\Carbon;
@@ -103,7 +102,6 @@ class AuthController extends Controller
             'token_type' => 'Bearer',
             'expires_at' => Carbon::parse($tokenResult->token->expires_at)->toDateTimeString(),
             'user' => new UserResource($user),
-            'roles' => RoleResource::collection($user->roles),
             'verified' => !($user->email_verified_at == null),
         ], 200);
     }
