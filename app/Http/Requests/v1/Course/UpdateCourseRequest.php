@@ -25,9 +25,32 @@ class UpdateCourseRequest extends FormRequest
     {
         return [
             'name' => 'required|string',
-            'code' => 'required|string|unique:courses,code,' . $this->course->id,
+            'code' => 'required|string|unique:courses,code,' . ($this && $this->course ? $this->course->id : null),
             'description' => 'required|string',
             'instructor_id' => 'required|integer',
+        ];
+    }
+
+    /**
+     * Get the body params in the request.
+     *
+     * @return array
+     */
+    public function bodyParameters()
+    {
+        return [
+            'name' => [
+                'description' => 'The name of the course',
+            ],
+            'code' => [
+                'description' => 'The code of the course',
+            ],
+            'description' => [
+                'description' => 'The description of the course',
+            ],
+            'instructor_id' => [
+                'description' => 'The id of the instructor',
+            ],
         ];
     }
 }

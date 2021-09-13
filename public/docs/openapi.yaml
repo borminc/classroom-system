@@ -90,62 +90,20 @@ paths:
               properties:
                 email:
                   type: string
-                  description: ''
-                  example: vel
+                  description: 'The email of the user. Must be a valid email address.'
+                  example: itorp@example.net
                 password:
                   type: string
-                  description: ''
-                  example: nisi
+                  description: 'The password of the user.'
+                  example: repellat
                 remember_me:
                   type: boolean
                   description: ''
-                  example: true
+                  example: false
               required:
                 - email
                 - password
-                - remember_me
       security: []
-  /api/v1/logout:
-    get:
-      summary: 'Log out user'
-      description: ''
-      parameters:
-        -
-          in: header
-          name: Authorization
-          description: ''
-          example: 'Bearer {ACCESS_TOKEN}'
-          schema:
-            type: string
-        -
-          in: header
-          name: Content-Type
-          description: ''
-          example: application/json
-          schema:
-            type: string
-        -
-          in: header
-          name: Accept
-          description: ''
-          example: application/json
-          schema:
-            type: string
-      responses:
-        200:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: 'Successfully logged out'
-                properties:
-                  message:
-                    type: string
-                    example: 'Successfully logged out'
-      tags:
-        - Authentication
   /api/v1/self-register-student:
     post:
       summary: 'Self-registration of new users'
@@ -189,36 +147,36 @@ paths:
               properties:
                 username:
                   type: string
-                  description: ''
-                  example: et
+                  description: 'The username user.'
+                  example: eum
                 email:
                   type: string
-                  description: ''
-                  example: expedita
+                  description: 'A unique email address.'
+                  example: error
                 password:
                   type: string
-                  description: ''
-                  example: similique
+                  description: 'The password of the account. Must be at least 8 characters.'
+                  example: ''
                 password_confirmation:
                   type: string
-                  description: ''
-                  example: quia
+                  description: 'Same as password.'
+                  example: voluptas
                 first_name:
                   type: string
-                  description: ''
-                  example: neque
+                  description: 'First name of user.'
+                  example: et
                 last_name:
                   type: string
-                  description: ''
-                  example: omnis
+                  description: 'Last name of user.'
+                  example: id
                 gender:
                   type: string
-                  description: ''
-                  example: harum
+                  description: 'Gender of the user.'
+                  example: et
                 date_of_birth:
                   type: string
-                  description: 'Date in the format of Y-m-d'
-                  example: eos
+                  description: 'The date of birth of user. Must be a valid date.'
+                  example: '2020-12-01'
               required:
                 - username
                 - email
@@ -229,6 +187,47 @@ paths:
                 - gender
                 - date_of_birth
       security: []
+  /api/v1/logout:
+    get:
+      summary: 'Log out user'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {ACCESS_TOKEN}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Successfully logged out'
+                properties:
+                  message:
+                    type: string
+                    example: 'Successfully logged out'
+      tags:
+        - Authentication
   /api/v1/courses/view-student-registered:
     get:
       summary: 'Get students'' registered courses'
@@ -265,26 +264,29 @@ paths:
                 example:
                   data:
                     -
-                      id: 4
-                      name: 'Intro to odit'
-                      code: yPZB7
-                      description: 'Distinctio hic est distinctio dolorum natus. Rerum maiores ipsam et recusandae. Rem culpa quia sequi amet rerum.'
+                      id: 500
+                      name: 'Intro to ab'
+                      code: nDCr0
+                      description: 'Pariatur sit omnis ad quibusdam. Et corporis hic qui a. Error qui repellat rerum ut quia ut dolores sit.'
                       instructor:
-                        id: 8
-                        username: i_7
+                        id: 2
+                        username: i_1
                         first_name: Instructor
-                        last_name: '7'
-                        full_name: 'Instructor 7'
-                        email: i_7@test.com
+                        last_name: '1'
+                        full_name: 'Instructor 1'
+                        email: i_1@test.com
                         gender: male
-                        date_of_birth: '2000-02-03 18:07:40'
+                        date_of_birth: 3/Feb/2000
                         roles:
-                          - 2
+                          -
+                            id: 2
+                            name: instructor
+                            display_name: instructor
                     -
-                      id: 5
-                      name: 'Intro to est'
-                      code: rMu8y
-                      description: 'Ex eos ut cupiditate provident inventore. Sed similique vel iste voluptas ad. Ipsa cumque deleniti ratione doloribus ipsa neque qui et.'
+                      id: 501
+                      name: 'Intro to cum'
+                      code: xi4ey
+                      description: 'Voluptas vero iste quis magnam et est. Sunt omnis est odio similique ut ducimus qui asperiores. Quia non voluptas veniam aut blanditiis rerum.'
                       instructor:
                         id: 9
                         username: i_8
@@ -293,34 +295,40 @@ paths:
                         full_name: 'Instructor 8'
                         email: i_8@test.com
                         gender: male
-                        date_of_birth: '2000-02-03 18:07:40'
+                        date_of_birth: 3/Feb/2000
                         roles:
-                          - 2
+                          -
+                            id: 2
+                            name: instructor
+                            display_name: instructor
                 properties:
                   data:
                     type: array
                     example:
                       -
-                        id: 4
-                        name: 'Intro to odit'
-                        code: yPZB7
-                        description: 'Distinctio hic est distinctio dolorum natus. Rerum maiores ipsam et recusandae. Rem culpa quia sequi amet rerum.'
+                        id: 500
+                        name: 'Intro to ab'
+                        code: nDCr0
+                        description: 'Pariatur sit omnis ad quibusdam. Et corporis hic qui a. Error qui repellat rerum ut quia ut dolores sit.'
                         instructor:
-                          id: 8
-                          username: i_7
+                          id: 2
+                          username: i_1
                           first_name: Instructor
-                          last_name: '7'
-                          full_name: 'Instructor 7'
-                          email: i_7@test.com
+                          last_name: '1'
+                          full_name: 'Instructor 1'
+                          email: i_1@test.com
                           gender: male
-                          date_of_birth: '2000-02-03 18:07:40'
+                          date_of_birth: 3/Feb/2000
                           roles:
-                            - 2
+                            -
+                              id: 2
+                              name: instructor
+                              display_name: instructor
                       -
-                        id: 5
-                        name: 'Intro to est'
-                        code: rMu8y
-                        description: 'Ex eos ut cupiditate provident inventore. Sed similique vel iste voluptas ad. Ipsa cumque deleniti ratione doloribus ipsa neque qui et.'
+                        id: 501
+                        name: 'Intro to cum'
+                        code: xi4ey
+                        description: 'Voluptas vero iste quis magnam et est. Sunt omnis est odio similique ut ducimus qui asperiores. Quia non voluptas veniam aut blanditiis rerum.'
                         instructor:
                           id: 9
                           username: i_8
@@ -329,9 +337,12 @@ paths:
                           full_name: 'Instructor 8'
                           email: i_8@test.com
                           gender: male
-                          date_of_birth: '2000-02-03 18:07:40'
+                          date_of_birth: 3/Feb/2000
                           roles:
-                            - 2
+                            -
+                              id: 2
+                              name: instructor
+                              display_name: instructor
                     items:
                       type: object
       tags:
@@ -372,73 +383,93 @@ paths:
                 example:
                   data:
                     -
-                      id: 6
-                      name: 'Intro to dolorem'
-                      code: dO3KX
-                      description: 'Nostrum illo fuga accusamus dolorem ratione. Est consequatur ut corporis sint omnis magni. Ea et doloribus quia eos sed blanditiis omnis.'
+                      id: 502
+                      name: 'Intro to quia'
+                      code: vLkDm
+                      description: 'Ipsam fugit quas consequatur voluptatem facere sequi. Aliquam ea labore est. Sunt eaque non et fugiat iure.'
                       instructor:
-                        id: 8
-                        username: i_7
+                        id: 11
+                        username: i_10
                         first_name: Instructor
-                        last_name: '7'
-                        full_name: 'Instructor 7'
-                        email: i_7@test.com
+                        last_name: '10'
+                        full_name: 'Instructor 10'
+                        email: i_10@test.com
                         gender: male
-                        date_of_birth: '2000-02-03 18:07:40'
+                        date_of_birth: 3/Feb/2000
                         roles:
-                          - 2
+                          -
+                            id: 2
+                            name: instructor
+                            display_name: instructor
                     -
-                      id: 7
-                      name: 'Intro to id'
-                      code: m2M6g
-                      description: 'Dolor dolorem reiciendis dolor unde. Natus expedita ea ut. Nostrum eum sit qui.'
+                      id: 503
+                      name: 'Intro to fuga'
+                      code: 5RRlQ
+                      description: 'Enim ad voluptatum natus aut. Laboriosam voluptatem vel id fuga cumque. Assumenda repellendus cumque officiis.'
                       instructor:
-                        id: 5
-                        username: i_4
-                        first_name: Instructor
-                        last_name: '4'
-                        full_name: 'Instructor 4'
-                        email: i_4@test.com
+                        id: 477
+                        username: 'bormin chau'
+                        first_name: bormin
+                        last_name: chau
+                        full_name: 'bormin chau'
+                        email: borminchau@gmail.com
                         gender: male
-                        date_of_birth: '2000-02-03 18:07:40'
+                        date_of_birth: 1/Jan/2000
                         roles:
-                          - 2
+                          -
+                            id: 2
+                            name: instructor
+                            display_name: instructor
+                          -
+                            id: 3
+                            name: student
+                            display_name: student
                 properties:
                   data:
                     type: array
                     example:
                       -
-                        id: 6
-                        name: 'Intro to dolorem'
-                        code: dO3KX
-                        description: 'Nostrum illo fuga accusamus dolorem ratione. Est consequatur ut corporis sint omnis magni. Ea et doloribus quia eos sed blanditiis omnis.'
+                        id: 502
+                        name: 'Intro to quia'
+                        code: vLkDm
+                        description: 'Ipsam fugit quas consequatur voluptatem facere sequi. Aliquam ea labore est. Sunt eaque non et fugiat iure.'
                         instructor:
-                          id: 8
-                          username: i_7
+                          id: 11
+                          username: i_10
                           first_name: Instructor
-                          last_name: '7'
-                          full_name: 'Instructor 7'
-                          email: i_7@test.com
+                          last_name: '10'
+                          full_name: 'Instructor 10'
+                          email: i_10@test.com
                           gender: male
-                          date_of_birth: '2000-02-03 18:07:40'
+                          date_of_birth: 3/Feb/2000
                           roles:
-                            - 2
+                            -
+                              id: 2
+                              name: instructor
+                              display_name: instructor
                       -
-                        id: 7
-                        name: 'Intro to id'
-                        code: m2M6g
-                        description: 'Dolor dolorem reiciendis dolor unde. Natus expedita ea ut. Nostrum eum sit qui.'
+                        id: 503
+                        name: 'Intro to fuga'
+                        code: 5RRlQ
+                        description: 'Enim ad voluptatum natus aut. Laboriosam voluptatem vel id fuga cumque. Assumenda repellendus cumque officiis.'
                         instructor:
-                          id: 5
-                          username: i_4
-                          first_name: Instructor
-                          last_name: '4'
-                          full_name: 'Instructor 4'
-                          email: i_4@test.com
+                          id: 477
+                          username: 'bormin chau'
+                          first_name: bormin
+                          last_name: chau
+                          full_name: 'bormin chau'
+                          email: borminchau@gmail.com
                           gender: male
-                          date_of_birth: '2000-02-03 18:07:40'
+                          date_of_birth: 1/Jan/2000
                           roles:
-                            - 2
+                            -
+                              id: 2
+                              name: instructor
+                              display_name: instructor
+                            -
+                              id: 3
+                              name: student
+                              display_name: student
                     items:
                       type: object
       tags:
@@ -505,8 +536,8 @@ paths:
               properties:
                 course_id:
                   type: integer
-                  description: 'The id of the course'
-                  example: 16
+                  description: 'The id of the course.'
+                  example: 18
               required:
                 - course_id
   /api/v1/courses/register-student:
@@ -571,15 +602,138 @@ paths:
               properties:
                 user_id:
                   type: integer
-                  description: 'The user_id of the student to be registered'
-                  example: 12
+                  description: 'The user_id of the student to be registered.'
+                  example: 7
                 course_id:
                   type: integer
-                  description: 'The id of the course'
-                  example: 15
+                  description: 'The id of the course.'
+                  example: 19
               required:
                 - user_id
                 - course_id
+  /api/v1/courses/with-students:
+    get:
+      summary: 'Get a list of all courses with students'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {ACCESS_TOKEN}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 504
+                      name: 'Intro to eum'
+                      code: rAW0W
+                      description: 'Maiores ratione et perferendis. Sint quis qui consequatur qui.'
+                      instructor:
+                        id: 9
+                        username: i_8
+                        first_name: Instructor
+                        last_name: '8'
+                        full_name: 'Instructor 8'
+                        email: i_8@test.com
+                        gender: male
+                        date_of_birth: 3/Feb/2000
+                        roles:
+                          -
+                            id: 2
+                            name: instructor
+                            display_name: instructor
+                      students: []
+                    -
+                      id: 505
+                      name: 'Intro to dolor'
+                      code: yLRts
+                      description: 'Tempora explicabo enim nam laudantium hic aut. Unde eveniet rerum quo reprehenderit ea nihil. Enim voluptatem dolor dicta incidunt magni.'
+                      instructor:
+                        id: 6
+                        username: i_5
+                        first_name: Instructor
+                        last_name: '5'
+                        full_name: 'Instructor 5'
+                        email: i_5@test.com
+                        gender: male
+                        date_of_birth: 3/Feb/2000
+                        roles:
+                          -
+                            id: 2
+                            name: instructor
+                            display_name: instructor
+                      students: []
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 504
+                        name: 'Intro to eum'
+                        code: rAW0W
+                        description: 'Maiores ratione et perferendis. Sint quis qui consequatur qui.'
+                        instructor:
+                          id: 9
+                          username: i_8
+                          first_name: Instructor
+                          last_name: '8'
+                          full_name: 'Instructor 8'
+                          email: i_8@test.com
+                          gender: male
+                          date_of_birth: 3/Feb/2000
+                          roles:
+                            -
+                              id: 2
+                              name: instructor
+                              display_name: instructor
+                        students: []
+                      -
+                        id: 505
+                        name: 'Intro to dolor'
+                        code: yLRts
+                        description: 'Tempora explicabo enim nam laudantium hic aut. Unde eveniet rerum quo reprehenderit ea nihil. Enim voluptatem dolor dicta incidunt magni.'
+                        instructor:
+                          id: 6
+                          username: i_5
+                          first_name: Instructor
+                          last_name: '5'
+                          full_name: 'Instructor 5'
+                          email: i_5@test.com
+                          gender: male
+                          date_of_birth: 3/Feb/2000
+                          roles:
+                            -
+                              id: 2
+                              name: instructor
+                              display_name: instructor
+                        students: []
+                    items:
+                      type: object
+      tags:
+        - Courses
   /api/v1/courses:
     get:
       summary: 'Get a list of all courses'
@@ -616,73 +770,85 @@ paths:
                 example:
                   data:
                     -
-                      id: 8
-                      name: 'Intro to est'
-                      code: Yj3Cx
-                      description: 'Quo aliquid est error minima et itaque minima. Quidem soluta veniam et qui. Nihil necessitatibus corrupti consequuntur ut est.'
+                      id: 506
+                      name: 'Intro to molestias'
+                      code: 6TCaR
+                      description: 'Est aut sit voluptas labore qui. Laudantium dolorem atque aliquam. Vero nam impedit vel vel.'
                       instructor:
-                        id: 7
-                        username: i_6
+                        id: 5
+                        username: i_4
                         first_name: Instructor
-                        last_name: '6'
-                        full_name: 'Instructor 6'
-                        email: i_6@test.com
+                        last_name: '4'
+                        full_name: 'Instructor 4'
+                        email: i_4@test.com
                         gender: male
-                        date_of_birth: '2000-02-03 18:07:40'
+                        date_of_birth: 3/Feb/2000
                         roles:
-                          - 2
+                          -
+                            id: 2
+                            name: instructor
+                            display_name: instructor
                     -
-                      id: 9
-                      name: 'Intro to doloribus'
-                      code: Fq0Ng
-                      description: 'Placeat veniam et a illo corrupti perspiciatis earum dolor. Quod porro et dolore est praesentium. Incidunt quisquam qui iusto sint.'
+                      id: 507
+                      name: 'Intro to mollitia'
+                      code: 0y0mQ
+                      description: 'Eveniet velit laudantium cupiditate rem voluptatem quia. Ducimus error sint ipsam itaque.'
                       instructor:
-                        id: 6
-                        username: i_5
+                        id: 2
+                        username: i_1
                         first_name: Instructor
-                        last_name: '5'
-                        full_name: 'Instructor 5'
-                        email: i_5@test.com
+                        last_name: '1'
+                        full_name: 'Instructor 1'
+                        email: i_1@test.com
                         gender: male
-                        date_of_birth: '2000-02-03 18:07:40'
+                        date_of_birth: 3/Feb/2000
                         roles:
-                          - 2
+                          -
+                            id: 2
+                            name: instructor
+                            display_name: instructor
                 properties:
                   data:
                     type: array
                     example:
                       -
-                        id: 8
-                        name: 'Intro to est'
-                        code: Yj3Cx
-                        description: 'Quo aliquid est error minima et itaque minima. Quidem soluta veniam et qui. Nihil necessitatibus corrupti consequuntur ut est.'
+                        id: 506
+                        name: 'Intro to molestias'
+                        code: 6TCaR
+                        description: 'Est aut sit voluptas labore qui. Laudantium dolorem atque aliquam. Vero nam impedit vel vel.'
                         instructor:
-                          id: 7
-                          username: i_6
+                          id: 5
+                          username: i_4
                           first_name: Instructor
-                          last_name: '6'
-                          full_name: 'Instructor 6'
-                          email: i_6@test.com
+                          last_name: '4'
+                          full_name: 'Instructor 4'
+                          email: i_4@test.com
                           gender: male
-                          date_of_birth: '2000-02-03 18:07:40'
+                          date_of_birth: 3/Feb/2000
                           roles:
-                            - 2
+                            -
+                              id: 2
+                              name: instructor
+                              display_name: instructor
                       -
-                        id: 9
-                        name: 'Intro to doloribus'
-                        code: Fq0Ng
-                        description: 'Placeat veniam et a illo corrupti perspiciatis earum dolor. Quod porro et dolore est praesentium. Incidunt quisquam qui iusto sint.'
+                        id: 507
+                        name: 'Intro to mollitia'
+                        code: 0y0mQ
+                        description: 'Eveniet velit laudantium cupiditate rem voluptatem quia. Ducimus error sint ipsam itaque.'
                         instructor:
-                          id: 6
-                          username: i_5
+                          id: 2
+                          username: i_1
                           first_name: Instructor
-                          last_name: '5'
-                          full_name: 'Instructor 5'
-                          email: i_5@test.com
+                          last_name: '1'
+                          full_name: 'Instructor 1'
+                          email: i_1@test.com
                           gender: male
-                          date_of_birth: '2000-02-03 18:07:40'
+                          date_of_birth: 3/Feb/2000
                           roles:
-                            - 2
+                            -
+                              id: 2
+                              name: instructor
+                              display_name: instructor
                     items:
                       type: object
       tags:
@@ -736,20 +902,20 @@ paths:
               properties:
                 name:
                   type: string
-                  description: 'The name of the course'
-                  example: quia
+                  description: 'The name of the course.'
+                  example: earum
                 code:
                   type: string
-                  description: 'The code of the course'
-                  example: dolor
+                  description: 'The code of the course.'
+                  example: ut
                 description:
                   type: string
-                  description: 'The description of the course'
-                  example: nobis
+                  description: 'The description of the course.'
+                  example: repellendus
                 instructor_id:
                   type: integer
-                  description: 'The user_id of the instructor of the course'
-                  example: 6
+                  description: 'The id of the instructor.'
+                  example: 5
               required:
                 - name
                 - code
@@ -790,40 +956,86 @@ paths:
                 type: object
                 example:
                   data:
-                    id: 10
-                    name: 'Intro to libero'
-                    code: QIbKw
-                    description: 'Cumque aut voluptatibus ipsum quod provident quos. Ex sequi et officiis repellat. Fugiat nisi deserunt distinctio temporibus.'
+                    id: 508
+                    name: 'Intro to non'
+                    code: 6vQBi
+                    description: 'Corrupti est rem iusto qui. Magni voluptate aliquid saepe dolorum aut. Quidem dolor repellendus pariatur.'
                     instructor:
-                      id: 3
-                      username: i_2
+                      id: 10
+                      username: i_9
                       first_name: Instructor
-                      last_name: '2'
-                      full_name: 'Instructor 2'
-                      email: i_2@test.com
+                      last_name: '9'
+                      full_name: 'Instructor 9'
+                      email: i_9@test.com
                       gender: male
-                      date_of_birth: '2000-02-03 18:07:39'
+                      date_of_birth: 3/Feb/2000
                       roles:
-                        - 2
+                        -
+                          id: 2
+                          name: instructor
+                          display_name: instructor
                 properties:
                   data:
                     type: object
                     example:
-                      id: 10
-                      name: 'Intro to libero'
-                      code: QIbKw
-                      description: 'Cumque aut voluptatibus ipsum quod provident quos. Ex sequi et officiis repellat. Fugiat nisi deserunt distinctio temporibus.'
+                      id: 508
+                      name: 'Intro to non'
+                      code: 6vQBi
+                      description: 'Corrupti est rem iusto qui. Magni voluptate aliquid saepe dolorum aut. Quidem dolor repellendus pariatur.'
                       instructor:
-                        id: 3
-                        username: i_2
+                        id: 10
+                        username: i_9
                         first_name: Instructor
-                        last_name: '2'
-                        full_name: 'Instructor 2'
-                        email: i_2@test.com
+                        last_name: '9'
+                        full_name: 'Instructor 9'
+                        email: i_9@test.com
                         gender: male
-                        date_of_birth: '2000-02-03 18:07:39'
+                        date_of_birth: 3/Feb/2000
                         roles:
-                          - 2
+                          -
+                            id: 2
+                            name: instructor
+                            display_name: instructor
+      tags:
+        - Courses
+    delete:
+      summary: 'Delete the specified course'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {ACCESS_TOKEN}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Successfully deleted user!'
+                properties:
+                  message:
+                    type: string
+                    example: 'Successfully deleted user!'
       tags:
         - Courses
     put:
@@ -875,27 +1087,37 @@ paths:
               properties:
                 name:
                   type: string
-                  description: 'The name of the course'
-                  example: quia
+                  description: 'The name of the course.'
+                  example: sit
                 code:
                   type: string
-                  description: 'The code of the course'
-                  example: soluta
+                  description: 'The code of the course.'
+                  example: nam
                 description:
                   type: string
-                  description: 'The description of the course'
-                  example: molestiae
+                  description: 'The description of the course.'
+                  example: ut
                 instructor_id:
                   type: integer
-                  description: 'The user_id of the instructor of the course'
-                  example: 2
+                  description: 'The id of the instructor.'
+                  example: 20
               required:
                 - name
                 - code
                 - description
                 - instructor_id
-    delete:
-      summary: 'Delete the specified course'
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the course.'
+        example: 14
+        required: true
+        schema:
+          type: integer
+  /api/v1/permissions/by-group:
+    get:
+      summary: 'Get all permissions by groups'
       description: ''
       parameters:
         -
@@ -927,22 +1149,462 @@ paths:
               schema:
                 type: object
                 example:
-                  message: 'Successfully deleted user!'
+                  'Student permission':
+                    -
+                      id: 19
+                      name: 'take courses'
+                      display_name: 'take courses'
+                      group: 'Student permission'
+                  'Instructor permission':
+                    -
+                      id: 22
+                      name: 'teach courses'
+                      display_name: 'teach courses'
+                      group: 'Instructor permission'
+                    -
+                      id: 23
+                      name: 'view own-instructor-courses'
+                      display_name: 'view own-instructor-courses'
+                      group: 'Instructor permission'
+                properties:
+                  'Student permission':
+                    type: array
+                    example:
+                      -
+                        id: 19
+                        name: 'take courses'
+                        display_name: 'take courses'
+                        group: 'Student permission'
+                    items:
+                      type: object
+                  'Instructor permission':
+                    type: array
+                    example:
+                      -
+                        id: 22
+                        name: 'teach courses'
+                        display_name: 'teach courses'
+                        group: 'Instructor permission'
+                      -
+                        id: 23
+                        name: 'view own-instructor-courses'
+                        display_name: 'view own-instructor-courses'
+                        group: 'Instructor permission'
+                    items:
+                      type: object
+      tags:
+        - Permission
+  /api/v1/permissions:
+    get:
+      summary: 'Display a listing of permissions.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {ACCESS_TOKEN}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      id: 1
+                      name: 'create users'
+                      display_name: 'create usersssssss'
+                      group: '123'
+                    -
+                      id: 1
+                      name: 'create users'
+                      display_name: 'create usersssssss'
+                      group: '123'
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        id: 1
+                        name: 'create users'
+                        display_name: 'create usersssssss'
+                        group: '123'
+                      -
+                        id: 1
+                        name: 'create users'
+                        display_name: 'create usersssssss'
+                        group: '123'
+                    items:
+                      type: object
+      tags:
+        - Permission
+  '/api/v1/permissions/{id}':
+    get:
+      summary: 'Display the specified permission.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {ACCESS_TOKEN}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    id: 1
+                    name: 'create users'
+                    display_name: 'create usersssssss'
+                    group: '123'
+                properties:
+                  data:
+                    type: object
+                    example:
+                      id: 1
+                      name: 'create users'
+                      display_name: 'create usersssssss'
+                      group: '123'
+      tags:
+        - Permission
+    put:
+      summary: 'Update the specified permission.'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {ACCESS_TOKEN}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Successfully updated permission!'
                 properties:
                   message:
                     type: string
-                    example: 'Successfully deleted user!'
+                    example: 'Successfully updated permission!'
       tags:
-        - Courses
+        - Permission
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'A unique name of the permission.'
+                  example: illum
+                group:
+                  type: string
+                  description: 'The group the permission belongs to.'
+                  example: dicta
+              required:
+                - name
+                - group
     parameters:
       -
         in: path
         name: id
-        description: 'The ID of the course'
-        example: 3
+        description: 'The ID of the permission.'
+        example: 5
         required: true
         schema:
           type: integer
+  /api/v1/permissions/assign-to-role:
+    post:
+      summary: 'Assign permission to role'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {ACCESS_TOKEN}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "{\n \"message\": \"No permission was assigned to role\",\n}"
+      tags:
+        - 'Permission assignment'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                role_id:
+                  type: integer
+                  description: 'The id of the role.'
+                  example: 19
+                permission_ids:
+                  type: array
+                  description: ''
+                  example:
+                    - 12
+                    - 18
+                  items:
+                    type: integer
+              required:
+                - role_id
+                - permission_ids
+  /api/v1/permissions/assign-to-user:
+    post:
+      summary: 'Assign permission to user'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {ACCESS_TOKEN}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "{\n \"message\": \"No permission was assigned to user\",\n}"
+      tags:
+        - 'Permission assignment'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: integer
+                  description: 'The id of the user.'
+                  example: 10
+                permission_ids:
+                  type: array
+                  description: ''
+                  example:
+                    - 13
+                    - 9
+                  items:
+                    type: integer
+              required:
+                - user_id
+                - permission_ids
+  /api/v1/permissions/revoke-from-role:
+    post:
+      summary: 'Revoke permissions from role'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {ACCESS_TOKEN}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "{\n \"message\": \"No permission was revoked\",\n}"
+      tags:
+        - 'Permission assignment'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                role_id:
+                  type: integer
+                  description: 'The id of the role.'
+                  example: 18
+                permission_ids:
+                  type: array
+                  description: ''
+                  example:
+                    - 2
+                    - 13
+                  items:
+                    type: integer
+              required:
+                - role_id
+                - permission_ids
+  /api/v1/permissions/revoke-from-user:
+    post:
+      summary: 'Revoke permissions from user'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {ACCESS_TOKEN}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "{\n \"message\": \"No permission was revoked\",\n}"
+      tags:
+        - 'Permission assignment'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: integer
+                  description: 'The id of the user.'
+                  example: 8
+                permission_ids:
+                  type: array
+                  description: ''
+                  example:
+                    - 9
+                    - 20
+                  items:
+                    type: integer
+              required:
+                - user_id
+                - permission_ids
   /api/v1/roles:
     get:
       summary: 'Display all roles.'
@@ -981,9 +1643,11 @@ paths:
                     -
                       id: 1
                       name: admin
+                      display_name: admin
                     -
                       id: 1
                       name: admin
+                      display_name: admin
                 properties:
                   data:
                     type: array
@@ -991,9 +1655,11 @@ paths:
                       -
                         id: 1
                         name: admin
+                        display_name: admin
                       -
                         id: 1
                         name: admin
+                        display_name: admin
                     items:
                       type: object
       tags:
@@ -1047,8 +1713,8 @@ paths:
               properties:
                 name:
                   type: string
-                  description: 'A unique role name'
-                  example: ea
+                  description: 'The name of the role.'
+                  example: similique
               required:
                 - name
   '/api/v1/roles/{id}':
@@ -1088,12 +1754,54 @@ paths:
                   data:
                     id: 1
                     name: admin
+                    display_name: admin
                 properties:
                   data:
                     type: object
                     example:
                       id: 1
                       name: admin
+                      display_name: admin
+      tags:
+        - Roles
+    delete:
+      summary: 'Delete a specific role'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {ACCESS_TOKEN}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Successfully deleted role!'
+                properties:
+                  message:
+                    type: string
+                    example: 'Successfully deleted role!'
       tags:
         - Roles
     put:
@@ -1145,12 +1853,22 @@ paths:
               properties:
                 name:
                   type: string
-                  description: 'The name of the role'
-                  example: amet
+                  description: 'The name of the role.'
+                  example: qui
               required:
                 - name
-    delete:
-      summary: 'Delete a specific role'
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the role.'
+        example: minus
+        required: true
+        schema:
+          type: string
+  /api/v1/my-info:
+    get:
+      summary: 'Get the logged in user''s info'
       description: ''
       parameters:
         -
@@ -1182,22 +1900,122 @@ paths:
               schema:
                 type: object
                 example:
-                  message: 'Successfully deleted role!'
+                  data:
+                    id: 479
+                    username: mmurray
+                    first_name: Alverta
+                    last_name: Murray
+                    full_name: 'Alverta Murray'
+                    email: mmurray@test.com
+                    gender: female
+                    date_of_birth: 23/Dec/1984
+                    roles: []
                 properties:
-                  message:
-                    type: string
-                    example: 'Successfully deleted role!'
+                  data:
+                    type: object
+                    example:
+                      id: 479
+                      username: mmurray
+                      first_name: Alverta
+                      last_name: Murray
+                      full_name: 'Alverta Murray'
+                      email: mmurray@test.com
+                      gender: female
+                      date_of_birth: 23/Dec/1984
+                      roles: []
       tags:
-        - Roles
-    parameters:
-      -
-        in: path
-        name: id
-        description: 'The ID of the role'
-        example: 5
-        required: true
-        schema:
-          type: integer
+        - Users
+  /api/v1/users/with-permissions:
+    get:
+      summary: 'Get all users with permissions'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {ACCESS_TOKEN}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  data:
+                    -
+                      user:
+                        id: 484
+                        username: tillman.bode
+                        first_name: Deanna
+                        last_name: Kuphal
+                        full_name: 'Deanna Kuphal'
+                        email: tillman.bode@test.com
+                        gender: male
+                        date_of_birth: 17/Feb/1991
+                        roles: []
+                      permissions: []
+                    -
+                      user:
+                        id: 485
+                        username: pollich.jany
+                        first_name: Itzel
+                        last_name: Streich
+                        full_name: 'Itzel Streich'
+                        email: pollich.jany@test.com
+                        gender: female
+                        date_of_birth: 21/Dec/2006
+                        roles: []
+                      permissions: []
+                properties:
+                  data:
+                    type: array
+                    example:
+                      -
+                        user:
+                          id: 484
+                          username: tillman.bode
+                          first_name: Deanna
+                          last_name: Kuphal
+                          full_name: 'Deanna Kuphal'
+                          email: tillman.bode@test.com
+                          gender: male
+                          date_of_birth: 17/Feb/1991
+                          roles: []
+                        permissions: []
+                      -
+                        user:
+                          id: 485
+                          username: pollich.jany
+                          first_name: Itzel
+                          last_name: Streich
+                          full_name: 'Itzel Streich'
+                          email: pollich.jany@test.com
+                          gender: female
+                          date_of_birth: 21/Dec/2006
+                          roles: []
+                        permissions: []
+                    items:
+                      type: object
+      tags:
+        - Users
   /api/v1/all-students:
     get:
       summary: 'Get all students'' info'
@@ -1234,48 +2052,48 @@ paths:
                 example:
                   data:
                     -
-                      id: 100
-                      username: marques.becker
-                      first_name: Rashawn
-                      last_name: Bergstrom
-                      full_name: 'Rashawn Bergstrom'
-                      email: marques.becker@test.com
-                      gender: male
-                      date_of_birth: '1995-03-12'
+                      id: 480
+                      username: kali.smith
+                      first_name: Kacie
+                      last_name: Lueilwitz
+                      full_name: 'Kacie Lueilwitz'
+                      email: kali.smith@test.com
+                      gender: female
+                      date_of_birth: 18/Dec/1988
                       roles: []
                     -
-                      id: 101
-                      username: cleannon
-                      first_name: Delpha
-                      last_name: Friesen
-                      full_name: 'Delpha Friesen'
-                      email: cleannon@test.com
+                      id: 481
+                      username: sipes.wilhelm
+                      first_name: Angelita
+                      last_name: Luettgen
+                      full_name: 'Angelita Luettgen'
+                      email: sipes.wilhelm@test.com
                       gender: male
-                      date_of_birth: '1998-02-06'
+                      date_of_birth: 17/Jan/1989
                       roles: []
                 properties:
                   data:
                     type: array
                     example:
                       -
-                        id: 100
-                        username: marques.becker
-                        first_name: Rashawn
-                        last_name: Bergstrom
-                        full_name: 'Rashawn Bergstrom'
-                        email: marques.becker@test.com
-                        gender: male
-                        date_of_birth: '1995-03-12'
+                        id: 480
+                        username: kali.smith
+                        first_name: Kacie
+                        last_name: Lueilwitz
+                        full_name: 'Kacie Lueilwitz'
+                        email: kali.smith@test.com
+                        gender: female
+                        date_of_birth: 18/Dec/1988
                         roles: []
                       -
-                        id: 101
-                        username: cleannon
-                        first_name: Delpha
-                        last_name: Friesen
-                        full_name: 'Delpha Friesen'
-                        email: cleannon@test.com
+                        id: 481
+                        username: sipes.wilhelm
+                        first_name: Angelita
+                        last_name: Luettgen
+                        full_name: 'Angelita Luettgen'
+                        email: sipes.wilhelm@test.com
                         gender: male
-                        date_of_birth: '1998-02-06'
+                        date_of_birth: 17/Jan/1989
                         roles: []
                     items:
                       type: object
@@ -1317,110 +2135,51 @@ paths:
                 example:
                   data:
                     -
-                      id: 102
-                      username: kunze.easter
-                      first_name: Raul
-                      last_name: Murray
-                      full_name: 'Raul Murray'
-                      email: kunze.easter@test.com
-                      gender: male
-                      date_of_birth: '2013-03-24'
+                      id: 482
+                      username: florian79
+                      first_name: Robyn
+                      last_name: Weissnat
+                      full_name: 'Robyn Weissnat'
+                      email: florian79@test.com
+                      gender: female
+                      date_of_birth: 14/Dec/1972
                       roles: []
                     -
-                      id: 103
-                      username: jsteuber
-                      first_name: Nyasia
-                      last_name: Kuhic
-                      full_name: 'Nyasia Kuhic'
-                      email: jsteuber@test.com
+                      id: 483
+                      username: benny.hayes
+                      first_name: Robin
+                      last_name: Powlowski
+                      full_name: 'Robin Powlowski'
+                      email: benny.hayes@test.com
                       gender: male
-                      date_of_birth: '1974-03-22'
+                      date_of_birth: 24/Sep/2007
                       roles: []
                 properties:
                   data:
                     type: array
                     example:
                       -
-                        id: 102
-                        username: kunze.easter
-                        first_name: Raul
-                        last_name: Murray
-                        full_name: 'Raul Murray'
-                        email: kunze.easter@test.com
-                        gender: male
-                        date_of_birth: '2013-03-24'
+                        id: 482
+                        username: florian79
+                        first_name: Robyn
+                        last_name: Weissnat
+                        full_name: 'Robyn Weissnat'
+                        email: florian79@test.com
+                        gender: female
+                        date_of_birth: 14/Dec/1972
                         roles: []
                       -
-                        id: 103
-                        username: jsteuber
-                        first_name: Nyasia
-                        last_name: Kuhic
-                        full_name: 'Nyasia Kuhic'
-                        email: jsteuber@test.com
+                        id: 483
+                        username: benny.hayes
+                        first_name: Robin
+                        last_name: Powlowski
+                        full_name: 'Robin Powlowski'
+                        email: benny.hayes@test.com
                         gender: male
-                        date_of_birth: '1974-03-22'
+                        date_of_birth: 24/Sep/2007
                         roles: []
                     items:
                       type: object
-      tags:
-        - Users
-  /api/v1/my-info:
-    get:
-      summary: 'Get the logged in user''s info'
-      description: ''
-      parameters:
-        -
-          in: header
-          name: Authorization
-          description: ''
-          example: 'Bearer {ACCESS_TOKEN}'
-          schema:
-            type: string
-        -
-          in: header
-          name: Content-Type
-          description: ''
-          example: application/json
-          schema:
-            type: string
-        -
-          in: header
-          name: Accept
-          description: ''
-          example: application/json
-          schema:
-            type: string
-      responses:
-        200:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  data:
-                    id: 99
-                    username: lilly60
-                    first_name: Nicola
-                    last_name: Hartmann
-                    full_name: 'Nicola Hartmann'
-                    email: lilly60@test.com
-                    gender: male
-                    date_of_birth: '2021-07-14'
-                    roles: []
-                properties:
-                  data:
-                    type: object
-                    example:
-                      id: 99
-                      username: lilly60
-                      first_name: Nicola
-                      last_name: Hartmann
-                      full_name: 'Nicola Hartmann'
-                      email: lilly60@test.com
-                      gender: male
-                      date_of_birth: '2021-07-14'
-                      roles: []
       tags:
         - Users
   /api/v1/users:
@@ -1459,48 +2218,48 @@ paths:
                 example:
                   data:
                     -
-                      id: 104
-                      username: destany90
-                      first_name: Lorena
-                      last_name: Kub
-                      full_name: 'Lorena Kub'
-                      email: destany90@test.com
+                      id: 486
+                      username: gretchen.gerhold
+                      first_name: Dayna
+                      last_name: Hane
+                      full_name: 'Dayna Hane'
+                      email: gretchen.gerhold@test.com
                       gender: male
-                      date_of_birth: '1979-03-30'
+                      date_of_birth: 22/Aug/2000
                       roles: []
                     -
-                      id: 105
-                      username: urau
-                      first_name: Eli
-                      last_name: Schmitt
-                      full_name: 'Eli Schmitt'
-                      email: urau@test.com
-                      gender: male
-                      date_of_birth: '2017-09-25'
+                      id: 487
+                      username: hans97
+                      first_name: Heloise
+                      last_name: Koepp
+                      full_name: 'Heloise Koepp'
+                      email: hans97@test.com
+                      gender: female
+                      date_of_birth: 9/Mar/1982
                       roles: []
                 properties:
                   data:
                     type: array
                     example:
                       -
-                        id: 104
-                        username: destany90
-                        first_name: Lorena
-                        last_name: Kub
-                        full_name: 'Lorena Kub'
-                        email: destany90@test.com
+                        id: 486
+                        username: gretchen.gerhold
+                        first_name: Dayna
+                        last_name: Hane
+                        full_name: 'Dayna Hane'
+                        email: gretchen.gerhold@test.com
                         gender: male
-                        date_of_birth: '1979-03-30'
+                        date_of_birth: 22/Aug/2000
                         roles: []
                       -
-                        id: 105
-                        username: urau
-                        first_name: Eli
-                        last_name: Schmitt
-                        full_name: 'Eli Schmitt'
-                        email: urau@test.com
-                        gender: male
-                        date_of_birth: '2017-09-25'
+                        id: 487
+                        username: hans97
+                        first_name: Heloise
+                        last_name: Koepp
+                        full_name: 'Heloise Koepp'
+                        email: hans97@test.com
+                        gender: female
+                        date_of_birth: 9/Mar/1982
                         roles: []
                     items:
                       type: object
@@ -1563,34 +2322,34 @@ paths:
               properties:
                 username:
                   type: string
-                  description: 'A unique username'
-                  example: dolore
+                  description: 'A unique username.'
+                  example: qui
                 email:
                   type: string
-                  description: 'A unique email address'
-                  example: voluptatem
+                  description: 'A unique email address.'
+                  example: aut
                 first_name:
                   type: string
-                  description: ''
-                  example: omnis
+                  description: 'First name of user.'
+                  example: quod
                 last_name:
                   type: string
-                  description: ''
-                  example: quae
+                  description: 'Last name of user.'
+                  example: odio
                 gender:
                   type: string
-                  description: ''
-                  example: et
+                  description: 'Gender of the user.'
+                  example: nobis
                 date_of_birth:
                   type: string
-                  description: ''
+                  description: 'The date of birth of user. Must be a valid date.'
                   example: '2020-12-01'
                 role_ids:
                   type: array
-                  description: 'The role ids of the user'
+                  description: ''
                   example:
                     - 20
-                    - 17
+                    - 10
                   items:
                     type: integer
               required:
@@ -1636,28 +2395,68 @@ paths:
                 type: object
                 example:
                   data:
-                    id: 106
-                    username: schimmel.millie
-                    first_name: Wellington
-                    last_name: Kemmer
-                    full_name: 'Wellington Kemmer'
-                    email: schimmel.millie@test.com
+                    id: 488
+                    username: feil.maryjane
+                    first_name: Noemie
+                    last_name: Ortiz
+                    full_name: 'Noemie Ortiz'
+                    email: feil.maryjane@test.com
                     gender: female
-                    date_of_birth: '2021-01-09'
+                    date_of_birth: 1/Aug/1972
                     roles: []
                 properties:
                   data:
                     type: object
                     example:
-                      id: 106
-                      username: schimmel.millie
-                      first_name: Wellington
-                      last_name: Kemmer
-                      full_name: 'Wellington Kemmer'
-                      email: schimmel.millie@test.com
+                      id: 488
+                      username: feil.maryjane
+                      first_name: Noemie
+                      last_name: Ortiz
+                      full_name: 'Noemie Ortiz'
+                      email: feil.maryjane@test.com
                       gender: female
-                      date_of_birth: '2021-01-09'
+                      date_of_birth: 1/Aug/1972
                       roles: []
+      tags:
+        - Users
+    delete:
+      summary: 'Delete the specified user'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {ACCESS_TOKEN}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Successfully deleted user!'
+                properties:
+                  message:
+                    type: string
+                    example: 'Successfully deleted user!'
       tags:
         - Users
     put:
@@ -1709,34 +2508,34 @@ paths:
               properties:
                 username:
                   type: string
-                  description: 'A unique username'
-                  example: consequatur
+                  description: 'A unique username.'
+                  example: ducimus
                 email:
                   type: string
-                  description: 'A unique email address'
-                  example: in
+                  description: 'A unique email address.'
+                  example: amet
                 first_name:
                   type: string
-                  description: ''
-                  example: voluptatem
+                  description: 'First name of user.'
+                  example: quaerat
                 last_name:
                   type: string
-                  description: ''
-                  example: eaque
+                  description: 'Last name of user.'
+                  example: atque
                 gender:
                   type: string
-                  description: ''
-                  example: quos
+                  description: 'Gender of the user.'
+                  example: ducimus
                 date_of_birth:
                   type: string
-                  description: ''
+                  description: 'The date of birth of user. Must be a valid date.'
                   example: '2020-12-01'
                 role_ids:
                   type: array
-                  description: 'The role ids of the user'
+                  description: ''
                   example:
-                    - 9
-                    - 19
+                    - 17
+                    - 2
                   items:
                     type: integer
               required:
@@ -1747,52 +2546,12 @@ paths:
                 - gender
                 - date_of_birth
                 - role_ids
-    delete:
-      summary: 'Delete the specified user'
-      description: ''
-      parameters:
-        -
-          in: header
-          name: Authorization
-          description: ''
-          example: 'Bearer {ACCESS_TOKEN}'
-          schema:
-            type: string
-        -
-          in: header
-          name: Content-Type
-          description: ''
-          example: application/json
-          schema:
-            type: string
-        -
-          in: header
-          name: Accept
-          description: ''
-          example: application/json
-          schema:
-            type: string
-      responses:
-        200:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: 'Successfully deleted user!'
-                properties:
-                  message:
-                    type: string
-                    example: 'Successfully deleted user!'
-      tags:
-        - Users
     parameters:
       -
         in: path
         name: id
-        description: 'The ID of the user'
-        example: 9
+        description: 'The ID of the user.'
+        example: 2
         required: true
         schema:
           type: integer
@@ -1806,6 +2565,12 @@ tags:
   -
     name: Courses
     description: "\nAPI endpoints for getting info about courses and creating courses"
+  -
+    name: Permission
+    description: "\nAPI endpoints for managing permission"
+  -
+    name: 'Permission assignment'
+    description: "\nAPI endpoints for assigning permissions to roles and users"
   -
     name: Roles
     description: "\nAPI endpoints for managing roles"

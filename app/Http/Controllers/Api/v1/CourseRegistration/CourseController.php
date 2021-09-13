@@ -37,11 +37,6 @@ class CourseController extends Controller
      *
      * @authenticated
      * @param StoreCourseRequest $request
-     * @bodyParam name string required The name of the course
-     * @bodyParam code string required The code of the course
-     * @bodyParam description string required The description of the course
-     * @bodyParam instructor_id int required The user_id of the instructor of the course
-     *
      * @return Illuminate\Http\JsonResponse
      * @response 201 {
      *  "message": "Successfully created course!"
@@ -60,8 +55,6 @@ class CourseController extends Controller
      *
      * @authenticated
      * @param  \App\Models\Course  $course
-     * @urlParam id integer required The ID of the course
-     *
      * @return \Illuminate\Http\Response
      * @apiResource App\Http\Resources\v1\CourseResource
      * @apiResourceModel App\Models\Course
@@ -78,12 +71,6 @@ class CourseController extends Controller
      * @authenticated
      * @param  UpdateCourseRequest  $request
      * @param  \App\Models\Course  $course
-     * @urlParam id integer required The ID of the course
-     * @bodyParam name string required The name of the course
-     * @bodyParam code string required The code of the course
-     * @bodyParam description string required The description of the course
-     * @bodyParam instructor_id int required The user_id of the instructor of the course
-     *
      * @return \Illuminate\Http\Response
      * @response {
      *  "message": "Successfully updated course!"
@@ -102,8 +89,6 @@ class CourseController extends Controller
      *
      * @authenticated
      * @param  \App\Models\Course  $course
-     * @urlParam id integer required The ID of the course
-     *
      * @return \Illuminate\Http\Response
      * @response {
      *  "message": "Successfully deleted user!"
@@ -117,6 +102,5 @@ class CourseController extends Controller
         return response()->json([
             'message' => 'Successfully deleted course!',
         ], 200);
-
     }
 }

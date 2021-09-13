@@ -19,21 +19,21 @@ endpoints:
     bodyParameters:
       email:
         name: email
-        description: ''
+        description: 'The email of the user. Must be a valid email address.'
         required: true
-        example: vel
+        example: itorp@example.net
         type: string
       password:
         name: password
-        description: ''
+        description: 'The password of the user.'
         required: true
-        example: nisi
+        example: repellat
         type: string
       remember_me:
         name: remember_me
         description: ''
-        required: true
-        example: true
+        required: false
+        example: false
         type: boolean
     responses:
       -
@@ -66,6 +66,78 @@ endpoints:
     responseFields: []
   -
     httpMethods:
+      - POST
+    uri: api/v1/self-register-student
+    metadata:
+      title: 'Self-registration of new users'
+      description: ''
+      authenticated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters:
+      username:
+        name: username
+        description: 'The username user.'
+        required: true
+        example: eum
+        type: string
+      email:
+        name: email
+        description: 'A unique email address.'
+        required: true
+        example: error
+        type: string
+      password:
+        name: password
+        description: 'The password of the account. Must be at least 8 characters.'
+        required: true
+        example: ''
+        type: string
+      password_confirmation:
+        name: password_confirmation
+        description: 'Same as password.'
+        required: true
+        example: voluptas
+        type: string
+      first_name:
+        name: first_name
+        description: 'First name of user.'
+        required: true
+        example: et
+        type: string
+      last_name:
+        name: last_name
+        description: 'Last name of user.'
+        required: true
+        example: id
+        type: string
+      gender:
+        name: gender
+        description: 'Gender of the user.'
+        required: true
+        example: et
+        type: string
+      date_of_birth:
+        name: date_of_birth
+        description: 'The date of birth of user. Must be a valid date.'
+        required: true
+        example: '2020-12-01'
+        type: string
+    responses:
+      -
+        status: 201
+        content: |-
+          {
+           "message": "Successfully created user!"
+          }
+        headers: []
+        description: '201'
+    responseFields: []
+  -
+    httpMethods:
       - GET
     uri: api/v1/logout
     metadata:
@@ -88,76 +160,4 @@ endpoints:
           }
         headers: []
         description: '200'
-    responseFields: []
-  -
-    httpMethods:
-      - POST
-    uri: api/v1/self-register-student
-    metadata:
-      title: 'Self-registration of new users'
-      description: ''
-      authenticated: false
-    headers:
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    queryParameters: []
-    bodyParameters:
-      username:
-        name: username
-        description: ''
-        required: true
-        example: et
-        type: string
-      email:
-        name: email
-        description: ''
-        required: true
-        example: expedita
-        type: string
-      password:
-        name: password
-        description: ''
-        required: true
-        example: similique
-        type: string
-      password_confirmation:
-        name: password_confirmation
-        description: ''
-        required: true
-        example: quia
-        type: string
-      first_name:
-        name: first_name
-        description: ''
-        required: true
-        example: neque
-        type: string
-      last_name:
-        name: last_name
-        description: ''
-        required: true
-        example: omnis
-        type: string
-      gender:
-        name: gender
-        description: ''
-        required: true
-        example: harum
-        type: string
-      date_of_birth:
-        name: date_of_birth
-        description: 'Date in the format of Y-m-d'
-        required: true
-        example: eos
-        type: string
-    responses:
-      -
-        status: 201
-        content: |-
-          {
-           "message": "Successfully created user!"
-          }
-        headers: []
-        description: '201'
     responseFields: []

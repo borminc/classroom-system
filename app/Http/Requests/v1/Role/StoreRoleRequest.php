@@ -28,4 +28,18 @@ class StoreRoleRequest extends FormRequest
             'name' => 'required|string|unique:roles',
         ];
     }
+
+    /**
+     * Get the body params in the request.
+     *
+     * @return array
+     */
+    public function bodyParameters()
+    {
+        return [
+            'name' => [
+                'description' => 'The name of the role',
+            ],
+        ];
+    }
 }

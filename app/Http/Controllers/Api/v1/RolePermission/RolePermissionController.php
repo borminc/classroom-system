@@ -12,8 +12,34 @@ use App\Models\User;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
 
+/**
+ * @group Permission assignment
+ *
+ * API endpoints for assigning permissions to roles and users
+ */
 class RolePermissionController extends Controller
 {
+    /**
+     * Assign permission to role
+     *
+     * @authenticated
+     * @param AssignPermissionToRoleRequest $request
+     * @return \Illuminate\Http\Response
+     * @response {
+     *  "message" => "Successfully assigned permissions to role",
+     *  "assigned_permissions" => [
+     *    {
+     *        "id": 1,
+     *        "name": "create users",
+     *        "display_name": "create users",
+     *        "group": "Admin permission"
+     *    }
+     *  ],
+     * }
+     * @response {
+     *  "message": "No permission was assigned to role",
+     * }
+     */
     public function assignPermissionsToRole(AssignPermissionToRoleRequest $request)
     {
         $role = Role::findOrFail($request->role_id);
@@ -39,6 +65,27 @@ class RolePermissionController extends Controller
         ], 200);
     }
 
+    /**
+     * Assign permission to user
+     *
+     * @authenticated
+     * @param AssignPermissionToUserRequest $request
+     * @return \Illuminate\Http\Response
+     * @response {
+     *  "message" => "Successfully assigned permissions to user",
+     *  "assigned_permissions" => [
+     *    {
+     *        "id": 1,
+     *        "name": "create users",
+     *        "display_name": "create users",
+     *        "group": "Admin permission"
+     *    }
+     *  ],
+     * }
+     * @response {
+     *  "message": "No permission was assigned to user",
+     * }
+     */
     public function assignPermissionsToUser(AssignPermissionToUserRequest $request)
     {
         $user = User::findOrFail($request->user_id);
@@ -64,6 +111,27 @@ class RolePermissionController extends Controller
         ], 200);
     }
 
+    /**
+     * Revoke permissions from role
+     *
+     * @authenticated
+     * @param RevokePermissionFromRoleRequest $request
+     * @return \Illuminate\Http\Response
+     * @response {
+     *  "message" => "Successfully revoked permissions from role",
+     *  "revoked_permissions" => [
+     *    {
+     *        "id": 1,
+     *        "name": "create users",
+     *        "display_name": "create users",
+     *        "group": "Admin permission"
+     *    }
+     *  ],
+     * }
+     * @response {
+     *  "message": "No permission was revoked",
+     * }
+     */
     public function revokePermissionFromRole(RevokePermissionFromRoleRequest $request)
     {
         $role = Role::findOrFail($request->role_id);
@@ -89,6 +157,27 @@ class RolePermissionController extends Controller
         ], 200);
     }
 
+    /**
+     * Revoke permissions from user
+     *
+     * @authenticated
+     * @param RevokePermissionFromUserRequest $request
+     * @return \Illuminate\Http\Response
+     * @response {
+     *  "message" => "Successfully revoked permissions from user",
+     *  "revoked_permissions" => [
+     *    {
+     *        "id": 1,
+     *        "name": "create users",
+     *        "display_name": "create users",
+     *        "group": "Admin permission"
+     *    }
+     *  ],
+     * }
+     * @response {
+     *  "message": "No permission was revoked",
+     * }
+     */
     public function revokePermissionFromUser(RevokePermissionFromUserRequest $request)
     {
         $user = User::findOrFail($request->user_id);

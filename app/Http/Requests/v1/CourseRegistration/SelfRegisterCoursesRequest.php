@@ -27,4 +27,18 @@ class SelfRegisterCoursesRequest extends FormRequest
             'course_id' => 'required|integer|exists:courses,id',
         ];
     }
+
+    /**
+     * Get the body params in the request.
+     *
+     * @return array
+     */
+    public function bodyParameters()
+    {
+        return [
+            'course_id' => [
+                'description' => 'The id of the course',
+            ],
+        ];
+    }
 }

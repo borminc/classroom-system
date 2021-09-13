@@ -31,4 +31,27 @@ class StoreCourseRequest extends FormRequest
             'instructor_id' => 'required|integer',
         ];
     }
+
+    /**
+     * Get the body params in the request.
+     *
+     * @return array
+     */
+    public function bodyParameters()
+    {
+        return [
+            'name' => [
+                'description' => 'The name of the course',
+            ],
+            'code' => [
+                'description' => 'The code of the course',
+            ],
+            'description' => [
+                'description' => 'The description of the course',
+            ],
+            'instructor_id' => [
+                'description' => 'The id of the instructor',
+            ],
+        ];
+    }
 }

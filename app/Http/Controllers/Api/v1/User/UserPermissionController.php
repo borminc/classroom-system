@@ -7,8 +7,19 @@ use App\Http\Resources\v1\UserPermissionResource;
 use App\Models\User;
 use Spatie\Permission\Models\Permission;
 
+/**
+ * @group Users
+ */
 class UserPermissionController extends Controller
 {
+    /**
+     * Get all users with permissions
+     *
+     * @authenticated
+     * @return UserPermissionResource
+     * @apiResourceCollection App\Http\Resources\v1\UserPermissionResource
+     * @apiResourceModel App\Models\User
+     */
     public function getAllUsersWithPermissions()
     {
         $this->authorize('viewAny', Permission::class);

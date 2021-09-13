@@ -29,4 +29,22 @@ class LoginRequest extends FormRequest
             'remember_me' => 'boolean',
         ];
     }
+
+    /**
+     * Get the body params in the request.
+     *
+     * @return array
+     */
+    public function bodyParameters()
+    {
+        return [
+            'email' => [
+                'description' => 'The email of the user',
+            ],
+            'password' => [
+                'description' => 'The password of the user',
+            ],
+            'remember_me',
+        ];
+    }
 }

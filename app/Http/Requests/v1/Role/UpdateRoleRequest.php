@@ -24,7 +24,21 @@ class UpdateRoleRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string|unique:roles,name,' . $this->role->id,
+            'name' => 'required|string|unique:roles,name,' . ($this && $this->role ? $this->role->id : null),
+        ];
+    }
+
+    /**
+     * Get the body params in the request.
+     *
+     * @return array
+     */
+    public function bodyParameters()
+    {
+        return [
+            'name' => [
+                'description' => 'The name of the role',
+            ],
         ];
     }
 }

@@ -23,15 +23,6 @@ class AuthController extends Controller
      * Self-registration of new users
      *
      * @param SelfRegisterRequest $request
-     * @bodyParam username string required
-     * @bodyParam email string required
-     * @bodyParam password string required
-     * @bodyParam password_confirmation string required
-     * @bodyParam first_name string required
-     * @bodyParam last_name string required
-     * @bodyParam gender string required
-     * @bodyParam date_of_birth string required Date in the format of Y-m-d
-     *
      * @return Illuminate\Http\JsonResponse
      * @response 201 {
      *  "message": "Successfully created user!"
@@ -53,10 +44,6 @@ class AuthController extends Controller
      * Login user
      *
      * @param LoginRequest $request
-     * @bodyParam email string required
-     * @bodyParam password string required
-     * @bodyParam remember_me boolean required
-     *
      * @return Illuminate\Http\JsonResponse
      * @response 200 {
      *  "access_token": "eyJ0eX...",

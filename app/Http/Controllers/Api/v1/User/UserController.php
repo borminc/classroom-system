@@ -81,14 +81,6 @@ class UserController extends Controller
      *
      * @authenticated
      * @param StoreUserRequest $request
-     * @bodyParam username string required A unique username
-     * @bodyParam email string required A unique email address
-     * @bodyParam first_name string required
-     * @bodyParam last_name string required
-     * @bodyParam gender string required
-     * @bodyParam date_of_birth string required Example: 2020-12-01
-     * @bodyParam role_ids int[] required The role ids of the user
-     *
      * @return Illuminate\Http\JsonResponse
      * @response 201 {
      *  "message": "Successfully created user!",
@@ -127,8 +119,6 @@ class UserController extends Controller
      *
      * @authenticated
      * @param  \App\Models\User  $user
-     * @urlParam id integer required The ID of the user
-     *
      * @return \Illuminate\Http\Response
      * @apiResource App\Http\Resources\v1\UserResource
      * @apiResourceModel App\Models\User
@@ -145,15 +135,6 @@ class UserController extends Controller
      * @authenticated
      * @param  UpdateUserRequest  $request
      * @param  \App\Models\User  $user
-     * @urlParam id integer required The ID of the user
-     * @bodyParam username string required A unique username
-     * @bodyParam email string required A unique email address
-     * @bodyParam first_name string required
-     * @bodyParam last_name string required
-     * @bodyParam gender string required
-     * @bodyParam date_of_birth string required Example: 2020-12-01
-     * @bodyParam role_ids int[] required The role ids of the user
-     *
      * @return \Illuminate\Http\Response
      * @response {
      *  "message": "Successfully updated user!"
@@ -173,8 +154,6 @@ class UserController extends Controller
      *
      * @authenticated
      * @param  \App\Models\User  $user
-     * @urlParam id integer required The ID of the user
-     *
      * @return \Illuminate\Http\Response
      * @response {
      *  "message": "Successfully deleted user!"

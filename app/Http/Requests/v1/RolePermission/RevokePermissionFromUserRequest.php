@@ -26,7 +26,24 @@ class RevokePermissionFromUserRequest extends FormRequest
         return [
             'user_id' => 'required|integer|exists:users,id',
             'permission_ids' => 'required|array|min:1',
-            'permission_ids.*' => 'integer|distinct|exists:permissions,id',
+            'permission_ids.*' => 'required|integer|distinct|exists:permissions,id',
+        ];
+    }
+
+    /**
+     * Get the body params in the request.
+     *
+     * @return array
+     */
+    public function bodyParameters()
+    {
+        return [
+            'user_id' => [
+                'description' => 'The id of the user',
+            ],
+            'permission_ids' => [
+                'description' => 'An array of ids of permissions',
+            ],
         ];
     }
 }

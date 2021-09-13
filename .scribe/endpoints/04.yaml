@@ -1,102 +1,14 @@
-name: Users
+name: 'Permission assignment'
 description: |-
 
-  API endpoints for creating user and getting user info
+  API endpoints for assigning permissions to roles and users
 endpoints:
   -
     httpMethods:
-      - GET
-    uri: api/v1/all-students
-    metadata:
-      title: 'Get all students'' info'
-      description: ''
-      authenticated: true
-    headers:
-      Authorization: 'Bearer {ACCESS_TOKEN}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    queryParameters: []
-    bodyParameters: []
-    responses:
-      -
-        status: 200
-        content: '{"data":[{"id":100,"username":"marques.becker","first_name":"Rashawn","last_name":"Bergstrom","full_name":"Rashawn Bergstrom","email":"marques.becker@test.com","gender":"male","date_of_birth":"1995-03-12","roles":[]},{"id":101,"username":"cleannon","first_name":"Delpha","last_name":"Friesen","full_name":"Delpha Friesen","email":"cleannon@test.com","gender":"male","date_of_birth":"1998-02-06","roles":[]}]}'
-        headers: []
-        description: null
-    responseFields: []
-  -
-    httpMethods:
-      - GET
-    uri: api/v1/all-instructors
-    metadata:
-      title: 'Get all instructors'' info'
-      description: ''
-      authenticated: true
-    headers:
-      Authorization: 'Bearer {ACCESS_TOKEN}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    queryParameters: []
-    bodyParameters: []
-    responses:
-      -
-        status: 200
-        content: '{"data":[{"id":102,"username":"kunze.easter","first_name":"Raul","last_name":"Murray","full_name":"Raul Murray","email":"kunze.easter@test.com","gender":"male","date_of_birth":"2013-03-24","roles":[]},{"id":103,"username":"jsteuber","first_name":"Nyasia","last_name":"Kuhic","full_name":"Nyasia Kuhic","email":"jsteuber@test.com","gender":"male","date_of_birth":"1974-03-22","roles":[]}]}'
-        headers: []
-        description: null
-    responseFields: []
-  -
-    httpMethods:
-      - GET
-    uri: api/v1/my-info
-    metadata:
-      title: 'Get the logged in user''s info'
-      description: ''
-      authenticated: true
-    headers:
-      Authorization: 'Bearer {ACCESS_TOKEN}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    queryParameters: []
-    bodyParameters: []
-    responses:
-      -
-        status: 200
-        content: '{"data":{"id":99,"username":"lilly60","first_name":"Nicola","last_name":"Hartmann","full_name":"Nicola Hartmann","email":"lilly60@test.com","gender":"male","date_of_birth":"2021-07-14","roles":[]}}'
-        headers: []
-        description: null
-    responseFields: []
-  -
-    httpMethods:
-      - GET
-    uri: api/v1/users
-    metadata:
-      title: 'Get a list of all users'
-      description: ''
-      authenticated: true
-    headers:
-      Authorization: 'Bearer {ACCESS_TOKEN}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    queryParameters: []
-    bodyParameters: []
-    responses:
-      -
-        status: 200
-        content: '{"data":[{"id":104,"username":"destany90","first_name":"Lorena","last_name":"Kub","full_name":"Lorena Kub","email":"destany90@test.com","gender":"male","date_of_birth":"1979-03-30","roles":[]},{"id":105,"username":"urau","first_name":"Eli","last_name":"Schmitt","full_name":"Eli Schmitt","email":"urau@test.com","gender":"male","date_of_birth":"2017-09-25","roles":[]}]}'
-        headers: []
-        description: null
-    responseFields: []
-  -
-    httpMethods:
       - POST
-    uri: api/v1/users
+    uri: api/v1/permissions/assign-to-role
     metadata:
-      title: 'Create a new user'
+      title: 'Assign permission to role'
       description: ''
       authenticated: true
     headers:
@@ -106,195 +18,207 @@ endpoints:
     urlParameters: []
     queryParameters: []
     bodyParameters:
-      username:
-        name: username
-        description: 'A unique username'
+      role_id:
+        name: role_id
+        description: 'The id of the role.'
         required: true
-        example: dolore
-        type: string
-      email:
-        name: email
-        description: 'A unique email address'
-        required: true
-        example: voluptatem
-        type: string
-      first_name:
-        name: first_name
+        example: 19
+        type: integer
+      permission_ids:
+        name: permission_ids
         description: ''
-        required: true
-        example: omnis
-        type: string
-      last_name:
-        name: last_name
-        description: ''
-        required: true
-        example: quae
-        type: string
-      gender:
-        name: gender
-        description: ''
-        required: true
-        example: et
-        type: string
-      date_of_birth:
-        name: date_of_birth
-        description: ''
-        required: true
-        example: '2020-12-01'
-        type: string
-      role_ids:
-        name: role_ids
-        description: 'The role ids of the user'
         required: true
         example:
-          - 20
-          - 17
+          - 12
+          - 18
         type: 'integer[]'
     responses:
       -
-        status: 201
+        status: 200
         content: |-
           {
-           "message": "Successfully created user!",
-           "credentials": {
-               "email": "user@test.com",
-               "password": "12345678"
-           }
+           "message" => "Successfully assigned permissions to role",
+           "assigned_permissions" => [
+             {
+                 "id": 1,
+                 "name": "create users",
+                 "display_name": "create users",
+                 "group": "Admin permission"
+             }
+           ],
           }
         headers: []
-        description: '201'
-    responseFields: []
-  -
-    httpMethods:
-      - GET
-    uri: 'api/v1/users/{id}'
-    metadata:
-      title: 'Get the specified user.'
-      description: ''
-      authenticated: true
-    headers:
-      Authorization: 'Bearer {ACCESS_TOKEN}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the user'
-        required: true
-        example: 9
-        type: integer
-    queryParameters: []
-    bodyParameters: []
-    responses:
-      -
-        status: 200
-        content: '{"data":{"id":106,"username":"schimmel.millie","first_name":"Wellington","last_name":"Kemmer","full_name":"Wellington Kemmer","email":"schimmel.millie@test.com","gender":"female","date_of_birth":"2021-01-09","roles":[]}}'
-        headers: []
-        description: null
-    responseFields: []
-  -
-    httpMethods:
-      - PUT
-      - PATCH
-    uri: 'api/v1/users/{id}'
-    metadata:
-      title: 'Update the specified user'
-      description: ''
-      authenticated: true
-    headers:
-      Authorization: 'Bearer {ACCESS_TOKEN}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the user'
-        required: true
-        example: 8
-        type: integer
-    queryParameters: []
-    bodyParameters:
-      username:
-        name: username
-        description: 'A unique username'
-        required: true
-        example: consequatur
-        type: string
-      email:
-        name: email
-        description: 'A unique email address'
-        required: true
-        example: in
-        type: string
-      first_name:
-        name: first_name
-        description: ''
-        required: true
-        example: voluptatem
-        type: string
-      last_name:
-        name: last_name
-        description: ''
-        required: true
-        example: eaque
-        type: string
-      gender:
-        name: gender
-        description: ''
-        required: true
-        example: quos
-        type: string
-      date_of_birth:
-        name: date_of_birth
-        description: ''
-        required: true
-        example: '2020-12-01'
-        type: string
-      role_ids:
-        name: role_ids
-        description: 'The role ids of the user'
-        required: true
-        example:
-          - 9
-          - 19
-        type: 'integer[]'
-    responses:
+        description: '200'
       -
         status: 200
         content: |-
           {
-           "message": "Successfully updated user!"
+           "message": "No permission was assigned to role",
           }
         headers: []
         description: '200'
     responseFields: []
   -
     httpMethods:
-      - DELETE
-    uri: 'api/v1/users/{id}'
+      - POST
+    uri: api/v1/permissions/assign-to-user
     metadata:
-      title: 'Delete the specified user'
+      title: 'Assign permission to user'
       description: ''
       authenticated: true
     headers:
       Authorization: 'Bearer {ACCESS_TOKEN}'
       Content-Type: application/json
       Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the user'
-        required: true
-        example: 9
-        type: integer
+    urlParameters: []
     queryParameters: []
-    bodyParameters: []
+    bodyParameters:
+      user_id:
+        name: user_id
+        description: 'The id of the user.'
+        required: true
+        example: 10
+        type: integer
+      permission_ids:
+        name: permission_ids
+        description: ''
+        required: true
+        example:
+          - 13
+          - 9
+        type: 'integer[]'
     responses:
       -
         status: 200
         content: |-
           {
-           "message": "Successfully deleted user!"
+           "message" => "Successfully assigned permissions to user",
+           "assigned_permissions" => [
+             {
+                 "id": 1,
+                 "name": "create users",
+                 "display_name": "create users",
+                 "group": "Admin permission"
+             }
+           ],
+          }
+        headers: []
+        description: '200'
+      -
+        status: 200
+        content: |-
+          {
+           "message": "No permission was assigned to user",
+          }
+        headers: []
+        description: '200'
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/permissions/revoke-from-role
+    metadata:
+      title: 'Revoke permissions from role'
+      description: ''
+      authenticated: true
+    headers:
+      Authorization: 'Bearer {ACCESS_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters:
+      role_id:
+        name: role_id
+        description: 'The id of the role.'
+        required: true
+        example: 18
+        type: integer
+      permission_ids:
+        name: permission_ids
+        description: ''
+        required: true
+        example:
+          - 2
+          - 13
+        type: 'integer[]'
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+           "message" => "Successfully revoked permissions from role",
+           "revoked_permissions" => [
+             {
+                 "id": 1,
+                 "name": "create users",
+                 "display_name": "create users",
+                 "group": "Admin permission"
+             }
+           ],
+          }
+        headers: []
+        description: '200'
+      -
+        status: 200
+        content: |-
+          {
+           "message": "No permission was revoked",
+          }
+        headers: []
+        description: '200'
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/permissions/revoke-from-user
+    metadata:
+      title: 'Revoke permissions from user'
+      description: ''
+      authenticated: true
+    headers:
+      Authorization: 'Bearer {ACCESS_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters:
+      user_id:
+        name: user_id
+        description: 'The id of the user.'
+        required: true
+        example: 8
+        type: integer
+      permission_ids:
+        name: permission_ids
+        description: ''
+        required: true
+        example:
+          - 9
+          - 20
+        type: 'integer[]'
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+           "message" => "Successfully revoked permissions from user",
+           "revoked_permissions" => [
+             {
+                 "id": 1,
+                 "name": "create users",
+                 "display_name": "create users",
+                 "group": "Admin permission"
+             }
+           ],
+          }
+        headers: []
+        description: '200'
+      -
+        status: 200
+        content: |-
+          {
+           "message": "No permission was revoked",
           }
         headers: []
         description: '200'

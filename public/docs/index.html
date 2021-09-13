@@ -51,7 +51,7 @@
                             <li><a href="http://github.com/knuckleswtf/scribe">Documentation powered by Scribe ✍</a></li>
                     </ul>
             <ul class="toc-footer" id="last-updated">
-            <li>Last updated: September 9 2021</li>
+            <li>Last updated: September 13 2021</li>
         </ul>
 </div>
 <div class="page-wrapper">
@@ -67,7 +67,7 @@ You can switch the language used with the tabs at the top right (or from the nav
 <pre><code class="language-yaml">http://localhost:8000</code></pre>
 
         <h1>Authenticating requests</h1>
-<p>This API is authenticated by sending an <strong><code>Authorization</code></strong> header with the value <strong><code>"Bearer {ACCESS_TOKEN}"</code></strong>.</p>
+<p>To authenticate requests, include an <strong><code>Authorization</code></strong> header with the value <strong><code>"Bearer {ACCESS_TOKEN}"</code></strong>.</p>
 <p>All authenticated endpoints are marked with a <code>requires authentication</code> badge in the documentation below.</p>
 <p>You can retrieve your token by visiting your dashboard and clicking <b>Generate API token</b>.</p>
 
@@ -91,9 +91,9 @@ You can switch the language used with the tabs at the top right (or from the nav
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"vel\",
-    \"password\": \"nisi\",
-    \"remember_me\": true
+    \"email\": \"itorp@example.net\",
+    \"password\": \"repellat\",
+    \"remember_me\": false
 }"
 </code></pre>
 
@@ -107,9 +107,9 @@ const headers = {
 };
 
 let body = {
-    "email": "vel",
-    "password": "nisi",
-    "remember_me": true
+    "email": "itorp@example.net",
+    "password": "repellat",
+    "remember_me": false
 }
 
 fetch(url, {
@@ -197,7 +197,7 @@ fetch(url, {
                data-endpoint="POSTapi-v1-login"
                data-component="body" required  hidden>
     <br>
-        </p>
+<p>The email of the user. Must be a valid email address.</p>        </p>
                 <p>
             <b><code>password</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
                 <input type="text"
@@ -205,25 +205,197 @@ fetch(url, {
                data-endpoint="POSTapi-v1-login"
                data-component="body" required  hidden>
     <br>
-        </p>
+<p>The password of the user.</p>        </p>
                 <p>
-            <b><code>remember_me</code></b>&nbsp;&nbsp;<small>boolean</small>  &nbsp;
+            <b><code>remember_me</code></b>&nbsp;&nbsp;<small>boolean</small>     <i>optional</i> &nbsp;
                 <label data-endpoint="POSTapi-v1-login" hidden>
             <input type="radio" name="remember_me"
                    value="true"
                    data-endpoint="POSTapi-v1-login"
-                   data-component="body" required             >
+                   data-component="body"             >
             <code>true</code>
         </label>
         <label data-endpoint="POSTapi-v1-login" hidden>
             <input type="radio" name="remember_me"
                    value="false"
                    data-endpoint="POSTapi-v1-login"
-                   data-component="body" required             >
+                   data-component="body"             >
             <code>false</code>
         </label>
     <br>
         </p>
+    
+    </form>
+
+            <h2 id="authentication-POSTapi-v1-self-register-student">Self-registration of new users</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-v1-self-register-student">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request POST \
+    "http://localhost:8000/api/v1/self-register-student" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"username\": \"eum\",
+    \"email\": \"error\",
+    \"password\": \"\",
+    \"password_confirmation\": \"voluptas\",
+    \"first_name\": \"et\",
+    \"last_name\": \"id\",
+    \"gender\": \"et\",
+    \"date_of_birth\": \"2020-12-01\"
+}"
+</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/v1/self-register-student"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "username": "eum",
+    "email": "error",
+    "password": "",
+    "password_confirmation": "voluptas",
+    "first_name": "et",
+    "last_name": "id",
+    "gender": "et",
+    "date_of_birth": "2020-12-01"
+}
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-POSTapi-v1-self-register-student">
+            <blockquote>
+            <p>Example response (201):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Successfully created user!&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-v1-self-register-student" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-self-register-student"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-self-register-student"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-self-register-student" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-self-register-student"></code></pre>
+</span>
+<form id="form-POSTapi-v1-self-register-student" data-method="POST"
+      data-path="api/v1/self-register-student"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-self-register-student', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-self-register-student"
+                    onclick="tryItOut('POSTapi-v1-self-register-student');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-self-register-student"
+                    onclick="cancelTryOut('POSTapi-v1-self-register-student');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-self-register-student" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/self-register-student</code></b>
+        </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>username</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="username"
+               data-endpoint="POSTapi-v1-self-register-student"
+               data-component="body" required  hidden>
+    <br>
+<p>The username user.</p>        </p>
+                <p>
+            <b><code>email</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="email"
+               data-endpoint="POSTapi-v1-self-register-student"
+               data-component="body" required  hidden>
+    <br>
+<p>A unique email address.</p>        </p>
+                <p>
+            <b><code>password</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="password"
+               data-endpoint="POSTapi-v1-self-register-student"
+               data-component="body" required  hidden>
+    <br>
+<p>The password of the account. Must be at least 8 characters.</p>        </p>
+                <p>
+            <b><code>password_confirmation</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="password_confirmation"
+               data-endpoint="POSTapi-v1-self-register-student"
+               data-component="body" required  hidden>
+    <br>
+<p>Same as password.</p>        </p>
+                <p>
+            <b><code>first_name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="first_name"
+               data-endpoint="POSTapi-v1-self-register-student"
+               data-component="body" required  hidden>
+    <br>
+<p>First name of user.</p>        </p>
+                <p>
+            <b><code>last_name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="last_name"
+               data-endpoint="POSTapi-v1-self-register-student"
+               data-component="body" required  hidden>
+    <br>
+<p>Last name of user.</p>        </p>
+                <p>
+            <b><code>gender</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="gender"
+               data-endpoint="POSTapi-v1-self-register-student"
+               data-component="body" required  hidden>
+    <br>
+<p>Gender of the user.</p>        </p>
+                <p>
+            <b><code>date_of_birth</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="date_of_birth"
+               data-endpoint="POSTapi-v1-self-register-student"
+               data-component="body" required  hidden>
+    <br>
+<p>The date of birth of user. Must be a valid date.</p>        </p>
     
     </form>
 
@@ -321,178 +493,6 @@ fetch(url, {
         </p>
                 </form>
 
-            <h2 id="authentication-POSTapi-v1-self-register-student">Self-registration of new users</h2>
-
-<p>
-</p>
-
-
-
-<span id="example-requests-POSTapi-v1-self-register-student">
-<blockquote>Example request:</blockquote>
-
-
-<pre><code class="language-bash">curl --request POST \
-    "http://localhost:8000/api/v1/self-register-student" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json" \
-    --data "{
-    \"username\": \"et\",
-    \"email\": \"expedita\",
-    \"password\": \"similique\",
-    \"password_confirmation\": \"quia\",
-    \"first_name\": \"neque\",
-    \"last_name\": \"omnis\",
-    \"gender\": \"harum\",
-    \"date_of_birth\": \"eos\"
-}"
-</code></pre>
-
-<pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/self-register-student"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "username": "et",
-    "email": "expedita",
-    "password": "similique",
-    "password_confirmation": "quia",
-    "first_name": "neque",
-    "last_name": "omnis",
-    "gender": "harum",
-    "date_of_birth": "eos"
-}
-
-fetch(url, {
-    method: "POST",
-    headers,
-    body: JSON.stringify(body),
-}).then(response =&gt; response.json());</code></pre>
-</span>
-
-<span id="example-responses-POSTapi-v1-self-register-student">
-            <blockquote>
-            <p>Example response (201):</p>
-        </blockquote>
-                <pre>
-
-<code class="language-json">{
-    &quot;message&quot;: &quot;Successfully created user!&quot;
-}</code>
- </pre>
-    </span>
-<span id="execution-results-POSTapi-v1-self-register-student" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-POSTapi-v1-self-register-student"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-v1-self-register-student"></code></pre>
-</span>
-<span id="execution-error-POSTapi-v1-self-register-student" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-v1-self-register-student"></code></pre>
-</span>
-<form id="form-POSTapi-v1-self-register-student" data-method="POST"
-      data-path="api/v1/self-register-student"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}'
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-self-register-student', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-POSTapi-v1-self-register-student"
-                    onclick="tryItOut('POSTapi-v1-self-register-student');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-POSTapi-v1-self-register-student"
-                    onclick="cancelTryOut('POSTapi-v1-self-register-student');" hidden>Cancel
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-POSTapi-v1-self-register-student" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-black">POST</small>
-            <b><code>api/v1/self-register-student</code></b>
-        </p>
-                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
-        <p>
-            <b><code>username</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-                <input type="text"
-               name="username"
-               data-endpoint="POSTapi-v1-self-register-student"
-               data-component="body" required  hidden>
-    <br>
-        </p>
-                <p>
-            <b><code>email</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-                <input type="text"
-               name="email"
-               data-endpoint="POSTapi-v1-self-register-student"
-               data-component="body" required  hidden>
-    <br>
-        </p>
-                <p>
-            <b><code>password</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-                <input type="text"
-               name="password"
-               data-endpoint="POSTapi-v1-self-register-student"
-               data-component="body" required  hidden>
-    <br>
-        </p>
-                <p>
-            <b><code>password_confirmation</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-                <input type="text"
-               name="password_confirmation"
-               data-endpoint="POSTapi-v1-self-register-student"
-               data-component="body" required  hidden>
-    <br>
-        </p>
-                <p>
-            <b><code>first_name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-                <input type="text"
-               name="first_name"
-               data-endpoint="POSTapi-v1-self-register-student"
-               data-component="body" required  hidden>
-    <br>
-        </p>
-                <p>
-            <b><code>last_name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-                <input type="text"
-               name="last_name"
-               data-endpoint="POSTapi-v1-self-register-student"
-               data-component="body" required  hidden>
-    <br>
-        </p>
-                <p>
-            <b><code>gender</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-                <input type="text"
-               name="gender"
-               data-endpoint="POSTapi-v1-self-register-student"
-               data-component="body" required  hidden>
-    <br>
-        </p>
-                <p>
-            <b><code>date_of_birth</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-                <input type="text"
-               name="date_of_birth"
-               data-endpoint="POSTapi-v1-self-register-student"
-               data-component="body" required  hidden>
-    <br>
-<p>Date in the format of Y-m-d</p>        </p>
-    
-    </form>
-
         <h1 id="course-registration">Course Registration</h1>
 
     <p>API endpoints for registering courses</p>
@@ -540,29 +540,33 @@ fetch(url, {
 <code class="language-json">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 4,
-            &quot;name&quot;: &quot;Intro to odit&quot;,
-            &quot;code&quot;: &quot;yPZB7&quot;,
-            &quot;description&quot;: &quot;Distinctio hic est distinctio dolorum natus. Rerum maiores ipsam et recusandae. Rem culpa quia sequi amet rerum.&quot;,
+            &quot;id&quot;: 500,
+            &quot;name&quot;: &quot;Intro to ab&quot;,
+            &quot;code&quot;: &quot;nDCr0&quot;,
+            &quot;description&quot;: &quot;Pariatur sit omnis ad quibusdam. Et corporis hic qui a. Error qui repellat rerum ut quia ut dolores sit.&quot;,
             &quot;instructor&quot;: {
-                &quot;id&quot;: 8,
-                &quot;username&quot;: &quot;i_7&quot;,
+                &quot;id&quot;: 2,
+                &quot;username&quot;: &quot;i_1&quot;,
                 &quot;first_name&quot;: &quot;Instructor&quot;,
-                &quot;last_name&quot;: &quot;7&quot;,
-                &quot;full_name&quot;: &quot;Instructor 7&quot;,
-                &quot;email&quot;: &quot;i_7@test.com&quot;,
+                &quot;last_name&quot;: &quot;1&quot;,
+                &quot;full_name&quot;: &quot;Instructor 1&quot;,
+                &quot;email&quot;: &quot;i_1@test.com&quot;,
                 &quot;gender&quot;: &quot;male&quot;,
-                &quot;date_of_birth&quot;: &quot;2000-02-03 18:07:40&quot;,
+                &quot;date_of_birth&quot;: &quot;3/Feb/2000&quot;,
                 &quot;roles&quot;: [
-                    2
+                    {
+                        &quot;id&quot;: 2,
+                        &quot;name&quot;: &quot;instructor&quot;,
+                        &quot;display_name&quot;: &quot;instructor&quot;
+                    }
                 ]
             }
         },
         {
-            &quot;id&quot;: 5,
-            &quot;name&quot;: &quot;Intro to est&quot;,
-            &quot;code&quot;: &quot;rMu8y&quot;,
-            &quot;description&quot;: &quot;Ex eos ut cupiditate provident inventore. Sed similique vel iste voluptas ad. Ipsa cumque deleniti ratione doloribus ipsa neque qui et.&quot;,
+            &quot;id&quot;: 501,
+            &quot;name&quot;: &quot;Intro to cum&quot;,
+            &quot;code&quot;: &quot;xi4ey&quot;,
+            &quot;description&quot;: &quot;Voluptas vero iste quis magnam et est. Sunt omnis est odio similique ut ducimus qui asperiores. Quia non voluptas veniam aut blanditiis rerum.&quot;,
             &quot;instructor&quot;: {
                 &quot;id&quot;: 9,
                 &quot;username&quot;: &quot;i_8&quot;,
@@ -571,9 +575,13 @@ fetch(url, {
                 &quot;full_name&quot;: &quot;Instructor 8&quot;,
                 &quot;email&quot;: &quot;i_8@test.com&quot;,
                 &quot;gender&quot;: &quot;male&quot;,
-                &quot;date_of_birth&quot;: &quot;2000-02-03 18:07:40&quot;,
+                &quot;date_of_birth&quot;: &quot;3/Feb/2000&quot;,
                 &quot;roles&quot;: [
-                    2
+                    {
+                        &quot;id&quot;: 2,
+                        &quot;name&quot;: &quot;instructor&quot;,
+                        &quot;display_name&quot;: &quot;instructor&quot;
+                    }
                 ]
             }
         }
@@ -673,40 +681,53 @@ fetch(url, {
 <code class="language-json">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 6,
-            &quot;name&quot;: &quot;Intro to dolorem&quot;,
-            &quot;code&quot;: &quot;dO3KX&quot;,
-            &quot;description&quot;: &quot;Nostrum illo fuga accusamus dolorem ratione. Est consequatur ut corporis sint omnis magni. Ea et doloribus quia eos sed blanditiis omnis.&quot;,
+            &quot;id&quot;: 502,
+            &quot;name&quot;: &quot;Intro to quia&quot;,
+            &quot;code&quot;: &quot;vLkDm&quot;,
+            &quot;description&quot;: &quot;Ipsam fugit quas consequatur voluptatem facere sequi. Aliquam ea labore est. Sunt eaque non et fugiat iure.&quot;,
             &quot;instructor&quot;: {
-                &quot;id&quot;: 8,
-                &quot;username&quot;: &quot;i_7&quot;,
+                &quot;id&quot;: 11,
+                &quot;username&quot;: &quot;i_10&quot;,
                 &quot;first_name&quot;: &quot;Instructor&quot;,
-                &quot;last_name&quot;: &quot;7&quot;,
-                &quot;full_name&quot;: &quot;Instructor 7&quot;,
-                &quot;email&quot;: &quot;i_7@test.com&quot;,
+                &quot;last_name&quot;: &quot;10&quot;,
+                &quot;full_name&quot;: &quot;Instructor 10&quot;,
+                &quot;email&quot;: &quot;i_10@test.com&quot;,
                 &quot;gender&quot;: &quot;male&quot;,
-                &quot;date_of_birth&quot;: &quot;2000-02-03 18:07:40&quot;,
+                &quot;date_of_birth&quot;: &quot;3/Feb/2000&quot;,
                 &quot;roles&quot;: [
-                    2
+                    {
+                        &quot;id&quot;: 2,
+                        &quot;name&quot;: &quot;instructor&quot;,
+                        &quot;display_name&quot;: &quot;instructor&quot;
+                    }
                 ]
             }
         },
         {
-            &quot;id&quot;: 7,
-            &quot;name&quot;: &quot;Intro to id&quot;,
-            &quot;code&quot;: &quot;m2M6g&quot;,
-            &quot;description&quot;: &quot;Dolor dolorem reiciendis dolor unde. Natus expedita ea ut. Nostrum eum sit qui.&quot;,
+            &quot;id&quot;: 503,
+            &quot;name&quot;: &quot;Intro to fuga&quot;,
+            &quot;code&quot;: &quot;5RRlQ&quot;,
+            &quot;description&quot;: &quot;Enim ad voluptatum natus aut. Laboriosam voluptatem vel id fuga cumque. Assumenda repellendus cumque officiis.&quot;,
             &quot;instructor&quot;: {
-                &quot;id&quot;: 5,
-                &quot;username&quot;: &quot;i_4&quot;,
-                &quot;first_name&quot;: &quot;Instructor&quot;,
-                &quot;last_name&quot;: &quot;4&quot;,
-                &quot;full_name&quot;: &quot;Instructor 4&quot;,
-                &quot;email&quot;: &quot;i_4@test.com&quot;,
+                &quot;id&quot;: 477,
+                &quot;username&quot;: &quot;bormin chau&quot;,
+                &quot;first_name&quot;: &quot;bormin&quot;,
+                &quot;last_name&quot;: &quot;chau&quot;,
+                &quot;full_name&quot;: &quot;bormin chau&quot;,
+                &quot;email&quot;: &quot;borminchau@gmail.com&quot;,
                 &quot;gender&quot;: &quot;male&quot;,
-                &quot;date_of_birth&quot;: &quot;2000-02-03 18:07:40&quot;,
+                &quot;date_of_birth&quot;: &quot;1/Jan/2000&quot;,
                 &quot;roles&quot;: [
-                    2
+                    {
+                        &quot;id&quot;: 2,
+                        &quot;name&quot;: &quot;instructor&quot;,
+                        &quot;display_name&quot;: &quot;instructor&quot;
+                    },
+                    {
+                        &quot;id&quot;: 3,
+                        &quot;name&quot;: &quot;student&quot;,
+                        &quot;display_name&quot;: &quot;student&quot;
+                    }
                 ]
             }
         }
@@ -781,7 +802,7 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"course_id\": 16
+    \"course_id\": 18
 }"
 </code></pre>
 
@@ -796,7 +817,7 @@ const headers = {
 };
 
 let body = {
-    "course_id": 16
+    "course_id": 18
 }
 
 fetch(url, {
@@ -881,7 +902,7 @@ fetch(url, {
                data-endpoint="POSTapi-v1-courses-self-register"
                data-component="body" required  hidden>
     <br>
-<p>The id of the course</p>        </p>
+<p>The id of the course.</p>        </p>
     
     </form>
 
@@ -903,8 +924,8 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"user_id\": 12,
-    \"course_id\": 15
+    \"user_id\": 7,
+    \"course_id\": 19
 }"
 </code></pre>
 
@@ -919,8 +940,8 @@ const headers = {
 };
 
 let body = {
-    "user_id": 12,
-    "course_id": 15
+    "user_id": 7,
+    "course_id": 19
 }
 
 fetch(url, {
@@ -1005,7 +1026,7 @@ fetch(url, {
                data-endpoint="POSTapi-v1-courses-register-student"
                data-component="body" required  hidden>
     <br>
-<p>The user_id of the student to be registered</p>        </p>
+<p>The user_id of the student to be registered.</p>        </p>
                 <p>
             <b><code>course_id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
                 <input type="number"
@@ -1013,13 +1034,156 @@ fetch(url, {
                data-endpoint="POSTapi-v1-courses-register-student"
                data-component="body" required  hidden>
     <br>
-<p>The id of the course</p>        </p>
+<p>The id of the course.</p>        </p>
     
     </form>
 
         <h1 id="courses">Courses</h1>
 
     <p>API endpoints for getting info about courses and creating courses</p>
+
+            <h2 id="courses-GETapi-v1-courses-with-students">Get a list of all courses with students</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-GETapi-v1-courses-with-students">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request GET \
+    --get "http://localhost:8000/api/v1/courses/with-students" \
+    --header "Authorization: Bearer {ACCESS_TOKEN}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/v1/courses/with-students"
+);
+
+const headers = {
+    "Authorization": "Bearer {ACCESS_TOKEN}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-GETapi-v1-courses-with-students">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 504,
+            &quot;name&quot;: &quot;Intro to eum&quot;,
+            &quot;code&quot;: &quot;rAW0W&quot;,
+            &quot;description&quot;: &quot;Maiores ratione et perferendis. Sint quis qui consequatur qui.&quot;,
+            &quot;instructor&quot;: {
+                &quot;id&quot;: 9,
+                &quot;username&quot;: &quot;i_8&quot;,
+                &quot;first_name&quot;: &quot;Instructor&quot;,
+                &quot;last_name&quot;: &quot;8&quot;,
+                &quot;full_name&quot;: &quot;Instructor 8&quot;,
+                &quot;email&quot;: &quot;i_8@test.com&quot;,
+                &quot;gender&quot;: &quot;male&quot;,
+                &quot;date_of_birth&quot;: &quot;3/Feb/2000&quot;,
+                &quot;roles&quot;: [
+                    {
+                        &quot;id&quot;: 2,
+                        &quot;name&quot;: &quot;instructor&quot;,
+                        &quot;display_name&quot;: &quot;instructor&quot;
+                    }
+                ]
+            },
+            &quot;students&quot;: []
+        },
+        {
+            &quot;id&quot;: 505,
+            &quot;name&quot;: &quot;Intro to dolor&quot;,
+            &quot;code&quot;: &quot;yLRts&quot;,
+            &quot;description&quot;: &quot;Tempora explicabo enim nam laudantium hic aut. Unde eveniet rerum quo reprehenderit ea nihil. Enim voluptatem dolor dicta incidunt magni.&quot;,
+            &quot;instructor&quot;: {
+                &quot;id&quot;: 6,
+                &quot;username&quot;: &quot;i_5&quot;,
+                &quot;first_name&quot;: &quot;Instructor&quot;,
+                &quot;last_name&quot;: &quot;5&quot;,
+                &quot;full_name&quot;: &quot;Instructor 5&quot;,
+                &quot;email&quot;: &quot;i_5@test.com&quot;,
+                &quot;gender&quot;: &quot;male&quot;,
+                &quot;date_of_birth&quot;: &quot;3/Feb/2000&quot;,
+                &quot;roles&quot;: [
+                    {
+                        &quot;id&quot;: 2,
+                        &quot;name&quot;: &quot;instructor&quot;,
+                        &quot;display_name&quot;: &quot;instructor&quot;
+                    }
+                ]
+            },
+            &quot;students&quot;: []
+        }
+    ]
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-courses-with-students" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-courses-with-students"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-courses-with-students"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-courses-with-students" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-courses-with-students"></code></pre>
+</span>
+<form id="form-GETapi-v1-courses-with-students" data-method="GET"
+      data-path="api/v1/courses/with-students"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Authorization":"Bearer {ACCESS_TOKEN}","Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-courses-with-students', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-courses-with-students"
+                    onclick="tryItOut('GETapi-v1-courses-with-students');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-courses-with-students"
+                    onclick="cancelTryOut('GETapi-v1-courses-with-students');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-courses-with-students" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/courses/with-students</code></b>
+        </p>
+                <p>
+            <label id="auth-GETapi-v1-courses-with-students" hidden>Authorization header:
+                <b><code>Bearer </code></b><input type="text"
+                                                                name="Authorization"
+                                                                data-prefix="Bearer "
+                                                                data-endpoint="GETapi-v1-courses-with-students"
+                                                                data-component="header"></label>
+        </p>
+                </form>
 
             <h2 id="courses-GETapi-v1-courses">Get a list of all courses</h2>
 
@@ -1064,40 +1228,48 @@ fetch(url, {
 <code class="language-json">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 8,
-            &quot;name&quot;: &quot;Intro to est&quot;,
-            &quot;code&quot;: &quot;Yj3Cx&quot;,
-            &quot;description&quot;: &quot;Quo aliquid est error minima et itaque minima. Quidem soluta veniam et qui. Nihil necessitatibus corrupti consequuntur ut est.&quot;,
+            &quot;id&quot;: 506,
+            &quot;name&quot;: &quot;Intro to molestias&quot;,
+            &quot;code&quot;: &quot;6TCaR&quot;,
+            &quot;description&quot;: &quot;Est aut sit voluptas labore qui. Laudantium dolorem atque aliquam. Vero nam impedit vel vel.&quot;,
             &quot;instructor&quot;: {
-                &quot;id&quot;: 7,
-                &quot;username&quot;: &quot;i_6&quot;,
+                &quot;id&quot;: 5,
+                &quot;username&quot;: &quot;i_4&quot;,
                 &quot;first_name&quot;: &quot;Instructor&quot;,
-                &quot;last_name&quot;: &quot;6&quot;,
-                &quot;full_name&quot;: &quot;Instructor 6&quot;,
-                &quot;email&quot;: &quot;i_6@test.com&quot;,
+                &quot;last_name&quot;: &quot;4&quot;,
+                &quot;full_name&quot;: &quot;Instructor 4&quot;,
+                &quot;email&quot;: &quot;i_4@test.com&quot;,
                 &quot;gender&quot;: &quot;male&quot;,
-                &quot;date_of_birth&quot;: &quot;2000-02-03 18:07:40&quot;,
+                &quot;date_of_birth&quot;: &quot;3/Feb/2000&quot;,
                 &quot;roles&quot;: [
-                    2
+                    {
+                        &quot;id&quot;: 2,
+                        &quot;name&quot;: &quot;instructor&quot;,
+                        &quot;display_name&quot;: &quot;instructor&quot;
+                    }
                 ]
             }
         },
         {
-            &quot;id&quot;: 9,
-            &quot;name&quot;: &quot;Intro to doloribus&quot;,
-            &quot;code&quot;: &quot;Fq0Ng&quot;,
-            &quot;description&quot;: &quot;Placeat veniam et a illo corrupti perspiciatis earum dolor. Quod porro et dolore est praesentium. Incidunt quisquam qui iusto sint.&quot;,
+            &quot;id&quot;: 507,
+            &quot;name&quot;: &quot;Intro to mollitia&quot;,
+            &quot;code&quot;: &quot;0y0mQ&quot;,
+            &quot;description&quot;: &quot;Eveniet velit laudantium cupiditate rem voluptatem quia. Ducimus error sint ipsam itaque.&quot;,
             &quot;instructor&quot;: {
-                &quot;id&quot;: 6,
-                &quot;username&quot;: &quot;i_5&quot;,
+                &quot;id&quot;: 2,
+                &quot;username&quot;: &quot;i_1&quot;,
                 &quot;first_name&quot;: &quot;Instructor&quot;,
-                &quot;last_name&quot;: &quot;5&quot;,
-                &quot;full_name&quot;: &quot;Instructor 5&quot;,
-                &quot;email&quot;: &quot;i_5@test.com&quot;,
+                &quot;last_name&quot;: &quot;1&quot;,
+                &quot;full_name&quot;: &quot;Instructor 1&quot;,
+                &quot;email&quot;: &quot;i_1@test.com&quot;,
                 &quot;gender&quot;: &quot;male&quot;,
-                &quot;date_of_birth&quot;: &quot;2000-02-03 18:07:40&quot;,
+                &quot;date_of_birth&quot;: &quot;3/Feb/2000&quot;,
                 &quot;roles&quot;: [
-                    2
+                    {
+                        &quot;id&quot;: 2,
+                        &quot;name&quot;: &quot;instructor&quot;,
+                        &quot;display_name&quot;: &quot;instructor&quot;
+                    }
                 ]
             }
         }
@@ -1172,10 +1344,10 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"quia\",
-    \"code\": \"dolor\",
-    \"description\": \"nobis\",
-    \"instructor_id\": 6
+    \"name\": \"earum\",
+    \"code\": \"ut\",
+    \"description\": \"repellendus\",
+    \"instructor_id\": 5
 }"
 </code></pre>
 
@@ -1190,10 +1362,10 @@ const headers = {
 };
 
 let body = {
-    "name": "quia",
-    "code": "dolor",
-    "description": "nobis",
-    "instructor_id": 6
+    "name": "earum",
+    "code": "ut",
+    "description": "repellendus",
+    "instructor_id": 5
 }
 
 fetch(url, {
@@ -1269,7 +1441,7 @@ fetch(url, {
                data-endpoint="POSTapi-v1-courses"
                data-component="body" required  hidden>
     <br>
-<p>The name of the course</p>        </p>
+<p>The name of the course.</p>        </p>
                 <p>
             <b><code>code</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
                 <input type="text"
@@ -1277,7 +1449,7 @@ fetch(url, {
                data-endpoint="POSTapi-v1-courses"
                data-component="body" required  hidden>
     <br>
-<p>The code of the course</p>        </p>
+<p>The code of the course.</p>        </p>
                 <p>
             <b><code>description</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
                 <input type="text"
@@ -1285,7 +1457,7 @@ fetch(url, {
                data-endpoint="POSTapi-v1-courses"
                data-component="body" required  hidden>
     <br>
-<p>The description of the course</p>        </p>
+<p>The description of the course.</p>        </p>
                 <p>
             <b><code>instructor_id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
                 <input type="number"
@@ -1293,7 +1465,7 @@ fetch(url, {
                data-endpoint="POSTapi-v1-courses"
                data-component="body" required  hidden>
     <br>
-<p>The user_id of the instructor of the course</p>        </p>
+<p>The id of the instructor.</p>        </p>
     
     </form>
 
@@ -1310,13 +1482,13 @@ fetch(url, {
 
 
 <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/v1/courses/3" \
+    --get "http://localhost:8000/api/v1/courses/14" \
     --header "Authorization: Bearer {ACCESS_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/courses/3"
+    "http://localhost:8000/api/v1/courses/14"
 );
 
 const headers = {
@@ -1339,21 +1511,25 @@ fetch(url, {
 
 <code class="language-json">{
     &quot;data&quot;: {
-        &quot;id&quot;: 10,
-        &quot;name&quot;: &quot;Intro to libero&quot;,
-        &quot;code&quot;: &quot;QIbKw&quot;,
-        &quot;description&quot;: &quot;Cumque aut voluptatibus ipsum quod provident quos. Ex sequi et officiis repellat. Fugiat nisi deserunt distinctio temporibus.&quot;,
+        &quot;id&quot;: 508,
+        &quot;name&quot;: &quot;Intro to non&quot;,
+        &quot;code&quot;: &quot;6vQBi&quot;,
+        &quot;description&quot;: &quot;Corrupti est rem iusto qui. Magni voluptate aliquid saepe dolorum aut. Quidem dolor repellendus pariatur.&quot;,
         &quot;instructor&quot;: {
-            &quot;id&quot;: 3,
-            &quot;username&quot;: &quot;i_2&quot;,
+            &quot;id&quot;: 10,
+            &quot;username&quot;: &quot;i_9&quot;,
             &quot;first_name&quot;: &quot;Instructor&quot;,
-            &quot;last_name&quot;: &quot;2&quot;,
-            &quot;full_name&quot;: &quot;Instructor 2&quot;,
-            &quot;email&quot;: &quot;i_2@test.com&quot;,
+            &quot;last_name&quot;: &quot;9&quot;,
+            &quot;full_name&quot;: &quot;Instructor 9&quot;,
+            &quot;email&quot;: &quot;i_9@test.com&quot;,
             &quot;gender&quot;: &quot;male&quot;,
-            &quot;date_of_birth&quot;: &quot;2000-02-03 18:07:39&quot;,
+            &quot;date_of_birth&quot;: &quot;3/Feb/2000&quot;,
             &quot;roles&quot;: [
-                2
+                {
+                    &quot;id&quot;: 2,
+                    &quot;name&quot;: &quot;instructor&quot;,
+                    &quot;display_name&quot;: &quot;instructor&quot;
+                }
             ]
         }
     }
@@ -1415,164 +1591,8 @@ fetch(url, {
                data-endpoint="GETapi-v1-courses--id-"
                data-component="url" required  hidden>
     <br>
-<p>The ID of the course</p>            </p>
+<p>The ID of the course.</p>            </p>
                     </form>
-
-            <h2 id="courses-PUTapi-v1-courses--id-">Update the specified course</h2>
-
-<p>
-<small class="badge badge-darkred">requires authentication</small>
-</p>
-
-
-
-<span id="example-requests-PUTapi-v1-courses--id-">
-<blockquote>Example request:</blockquote>
-
-
-<pre><code class="language-bash">curl --request PUT \
-    "http://localhost:8000/api/v1/courses/10" \
-    --header "Authorization: Bearer {ACCESS_TOKEN}" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json" \
-    --data "{
-    \"name\": \"quia\",
-    \"code\": \"soluta\",
-    \"description\": \"molestiae\",
-    \"instructor_id\": 2
-}"
-</code></pre>
-
-<pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/courses/10"
-);
-
-const headers = {
-    "Authorization": "Bearer {ACCESS_TOKEN}",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "name": "quia",
-    "code": "soluta",
-    "description": "molestiae",
-    "instructor_id": 2
-}
-
-fetch(url, {
-    method: "PUT",
-    headers,
-    body: JSON.stringify(body),
-}).then(response =&gt; response.json());</code></pre>
-</span>
-
-<span id="example-responses-PUTapi-v1-courses--id-">
-            <blockquote>
-            <p>Example response (200):</p>
-        </blockquote>
-                <pre>
-
-<code class="language-json">{
-    &quot;message&quot;: &quot;Successfully updated course!&quot;
-}</code>
- </pre>
-    </span>
-<span id="execution-results-PUTapi-v1-courses--id-" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-PUTapi-v1-courses--id-"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-PUTapi-v1-courses--id-"></code></pre>
-</span>
-<span id="execution-error-PUTapi-v1-courses--id-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-PUTapi-v1-courses--id-"></code></pre>
-</span>
-<form id="form-PUTapi-v1-courses--id-" data-method="PUT"
-      data-path="api/v1/courses/{id}"
-      data-authed="1"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      data-headers='{"Authorization":"Bearer {ACCESS_TOKEN}","Content-Type":"application\/json","Accept":"application\/json"}'
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('PUTapi-v1-courses--id-', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-PUTapi-v1-courses--id-"
-                    onclick="tryItOut('PUTapi-v1-courses--id-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-PUTapi-v1-courses--id-"
-                    onclick="cancelTryOut('PUTapi-v1-courses--id-');" hidden>Cancel
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-PUTapi-v1-courses--id-" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-darkblue">PUT</small>
-            <b><code>api/v1/courses/{id}</code></b>
-        </p>
-            <p>
-            <small class="badge badge-purple">PATCH</small>
-            <b><code>api/v1/courses/{id}</code></b>
-        </p>
-                <p>
-            <label id="auth-PUTapi-v1-courses--id-" hidden>Authorization header:
-                <b><code>Bearer </code></b><input type="text"
-                                                                name="Authorization"
-                                                                data-prefix="Bearer "
-                                                                data-endpoint="PUTapi-v1-courses--id-"
-                                                                data-component="header"></label>
-        </p>
-                <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <p>
-                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
-                <input type="number"
-               name="id"
-               data-endpoint="PUTapi-v1-courses--id-"
-               data-component="url" required  hidden>
-    <br>
-<p>The ID of the course</p>            </p>
-                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
-        <p>
-            <b><code>name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-                <input type="text"
-               name="name"
-               data-endpoint="PUTapi-v1-courses--id-"
-               data-component="body" required  hidden>
-    <br>
-<p>The name of the course</p>        </p>
-                <p>
-            <b><code>code</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-                <input type="text"
-               name="code"
-               data-endpoint="PUTapi-v1-courses--id-"
-               data-component="body" required  hidden>
-    <br>
-<p>The code of the course</p>        </p>
-                <p>
-            <b><code>description</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-                <input type="text"
-               name="description"
-               data-endpoint="PUTapi-v1-courses--id-"
-               data-component="body" required  hidden>
-    <br>
-<p>The description of the course</p>        </p>
-                <p>
-            <b><code>instructor_id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
-                <input type="number"
-               name="instructor_id"
-               data-endpoint="PUTapi-v1-courses--id-"
-               data-component="body" required  hidden>
-    <br>
-<p>The user_id of the instructor of the course</p>        </p>
-    
-    </form>
 
             <h2 id="courses-DELETEapi-v1-courses--id-">Delete the specified course</h2>
 
@@ -1587,13 +1607,13 @@ fetch(url, {
 
 
 <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost:8000/api/v1/courses/11" \
+    "http://localhost:8000/api/v1/courses/12" \
     --header "Authorization: Bearer {ACCESS_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/courses/11"
+    "http://localhost:8000/api/v1/courses/12"
 );
 
 const headers = {
@@ -1674,8 +1694,1238 @@ fetch(url, {
                data-endpoint="DELETEapi-v1-courses--id-"
                data-component="url" required  hidden>
     <br>
-<p>The ID of the course</p>            </p>
+<p>The ID of the course.</p>            </p>
                     </form>
+
+            <h2 id="courses-PUTapi-v1-courses--id-">Update the specified course</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-PUTapi-v1-courses--id-">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request PUT \
+    "http://localhost:8000/api/v1/courses/14" \
+    --header "Authorization: Bearer {ACCESS_TOKEN}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"name\": \"sit\",
+    \"code\": \"nam\",
+    \"description\": \"ut\",
+    \"instructor_id\": 20
+}"
+</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/v1/courses/14"
+);
+
+const headers = {
+    "Authorization": "Bearer {ACCESS_TOKEN}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "sit",
+    "code": "nam",
+    "description": "ut",
+    "instructor_id": 20
+}
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-PUTapi-v1-courses--id-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Successfully updated course!&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-PUTapi-v1-courses--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-v1-courses--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-v1-courses--id-"></code></pre>
+</span>
+<span id="execution-error-PUTapi-v1-courses--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-v1-courses--id-"></code></pre>
+</span>
+<form id="form-PUTapi-v1-courses--id-" data-method="PUT"
+      data-path="api/v1/courses/{id}"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Authorization":"Bearer {ACCESS_TOKEN}","Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-v1-courses--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTapi-v1-courses--id-"
+                    onclick="tryItOut('PUTapi-v1-courses--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTapi-v1-courses--id-"
+                    onclick="cancelTryOut('PUTapi-v1-courses--id-');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTapi-v1-courses--id-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/v1/courses/{id}</code></b>
+        </p>
+            <p>
+            <small class="badge badge-purple">PATCH</small>
+            <b><code>api/v1/courses/{id}</code></b>
+        </p>
+                <p>
+            <label id="auth-PUTapi-v1-courses--id-" hidden>Authorization header:
+                <b><code>Bearer </code></b><input type="text"
+                                                                name="Authorization"
+                                                                data-prefix="Bearer "
+                                                                data-endpoint="PUTapi-v1-courses--id-"
+                                                                data-component="header"></label>
+        </p>
+                <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="id"
+               data-endpoint="PUTapi-v1-courses--id-"
+               data-component="url" required  hidden>
+    <br>
+<p>The ID of the course.</p>            </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="name"
+               data-endpoint="PUTapi-v1-courses--id-"
+               data-component="body" required  hidden>
+    <br>
+<p>The name of the course.</p>        </p>
+                <p>
+            <b><code>code</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="code"
+               data-endpoint="PUTapi-v1-courses--id-"
+               data-component="body" required  hidden>
+    <br>
+<p>The code of the course.</p>        </p>
+                <p>
+            <b><code>description</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="description"
+               data-endpoint="PUTapi-v1-courses--id-"
+               data-component="body" required  hidden>
+    <br>
+<p>The description of the course.</p>        </p>
+                <p>
+            <b><code>instructor_id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="instructor_id"
+               data-endpoint="PUTapi-v1-courses--id-"
+               data-component="body" required  hidden>
+    <br>
+<p>The id of the instructor.</p>        </p>
+    
+    </form>
+
+        <h1 id="permission">Permission</h1>
+
+    <p>API endpoints for managing permission</p>
+
+            <h2 id="permission-GETapi-v1-permissions-by-group">Get all permissions by groups</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-GETapi-v1-permissions-by-group">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request GET \
+    --get "http://localhost:8000/api/v1/permissions/by-group" \
+    --header "Authorization: Bearer {ACCESS_TOKEN}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/v1/permissions/by-group"
+);
+
+const headers = {
+    "Authorization": "Bearer {ACCESS_TOKEN}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-GETapi-v1-permissions-by-group">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;Student permission&quot;: [
+        {
+            &quot;id&quot;: 19,
+            &quot;name&quot;: &quot;take courses&quot;,
+            &quot;display_name&quot;: &quot;take courses&quot;,
+            &quot;group&quot;: &quot;Student permission&quot;
+        }
+    ],
+    &quot;Instructor permission&quot;: [
+        {
+            &quot;id&quot;: 22,
+            &quot;name&quot;: &quot;teach courses&quot;,
+            &quot;display_name&quot;: &quot;teach courses&quot;,
+            &quot;group&quot;: &quot;Instructor permission&quot;
+        },
+        {
+            &quot;id&quot;: 23,
+            &quot;name&quot;: &quot;view own-instructor-courses&quot;,
+            &quot;display_name&quot;: &quot;view own-instructor-courses&quot;,
+            &quot;group&quot;: &quot;Instructor permission&quot;
+        }
+    ]
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-permissions-by-group" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-permissions-by-group"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-permissions-by-group"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-permissions-by-group" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-permissions-by-group"></code></pre>
+</span>
+<form id="form-GETapi-v1-permissions-by-group" data-method="GET"
+      data-path="api/v1/permissions/by-group"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Authorization":"Bearer {ACCESS_TOKEN}","Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-permissions-by-group', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-permissions-by-group"
+                    onclick="tryItOut('GETapi-v1-permissions-by-group');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-permissions-by-group"
+                    onclick="cancelTryOut('GETapi-v1-permissions-by-group');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-permissions-by-group" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/permissions/by-group</code></b>
+        </p>
+                <p>
+            <label id="auth-GETapi-v1-permissions-by-group" hidden>Authorization header:
+                <b><code>Bearer </code></b><input type="text"
+                                                                name="Authorization"
+                                                                data-prefix="Bearer "
+                                                                data-endpoint="GETapi-v1-permissions-by-group"
+                                                                data-component="header"></label>
+        </p>
+                </form>
+
+            <h2 id="permission-GETapi-v1-permissions">Display a listing of permissions.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-GETapi-v1-permissions">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request GET \
+    --get "http://localhost:8000/api/v1/permissions" \
+    --header "Authorization: Bearer {ACCESS_TOKEN}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/v1/permissions"
+);
+
+const headers = {
+    "Authorization": "Bearer {ACCESS_TOKEN}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-GETapi-v1-permissions">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: 1,
+            &quot;name&quot;: &quot;create users&quot;,
+            &quot;display_name&quot;: &quot;create usersssssss&quot;,
+            &quot;group&quot;: &quot;123&quot;
+        },
+        {
+            &quot;id&quot;: 1,
+            &quot;name&quot;: &quot;create users&quot;,
+            &quot;display_name&quot;: &quot;create usersssssss&quot;,
+            &quot;group&quot;: &quot;123&quot;
+        }
+    ]
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-permissions" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-permissions"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-permissions"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-permissions" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-permissions"></code></pre>
+</span>
+<form id="form-GETapi-v1-permissions" data-method="GET"
+      data-path="api/v1/permissions"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Authorization":"Bearer {ACCESS_TOKEN}","Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-permissions', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-permissions"
+                    onclick="tryItOut('GETapi-v1-permissions');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-permissions"
+                    onclick="cancelTryOut('GETapi-v1-permissions');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-permissions" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/permissions</code></b>
+        </p>
+                <p>
+            <label id="auth-GETapi-v1-permissions" hidden>Authorization header:
+                <b><code>Bearer </code></b><input type="text"
+                                                                name="Authorization"
+                                                                data-prefix="Bearer "
+                                                                data-endpoint="GETapi-v1-permissions"
+                                                                data-component="header"></label>
+        </p>
+                </form>
+
+            <h2 id="permission-GETapi-v1-permissions--id-">Display the specified permission.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-GETapi-v1-permissions--id-">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request GET \
+    --get "http://localhost:8000/api/v1/permissions/5" \
+    --header "Authorization: Bearer {ACCESS_TOKEN}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/v1/permissions/5"
+);
+
+const headers = {
+    "Authorization": "Bearer {ACCESS_TOKEN}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-GETapi-v1-permissions--id-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;data&quot;: {
+        &quot;id&quot;: 1,
+        &quot;name&quot;: &quot;create users&quot;,
+        &quot;display_name&quot;: &quot;create usersssssss&quot;,
+        &quot;group&quot;: &quot;123&quot;
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-permissions--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-permissions--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-permissions--id-"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-permissions--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-permissions--id-"></code></pre>
+</span>
+<form id="form-GETapi-v1-permissions--id-" data-method="GET"
+      data-path="api/v1/permissions/{id}"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Authorization":"Bearer {ACCESS_TOKEN}","Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-permissions--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-permissions--id-"
+                    onclick="tryItOut('GETapi-v1-permissions--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-permissions--id-"
+                    onclick="cancelTryOut('GETapi-v1-permissions--id-');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-permissions--id-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/permissions/{id}</code></b>
+        </p>
+                <p>
+            <label id="auth-GETapi-v1-permissions--id-" hidden>Authorization header:
+                <b><code>Bearer </code></b><input type="text"
+                                                                name="Authorization"
+                                                                data-prefix="Bearer "
+                                                                data-endpoint="GETapi-v1-permissions--id-"
+                                                                data-component="header"></label>
+        </p>
+                <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="id"
+               data-endpoint="GETapi-v1-permissions--id-"
+               data-component="url" required  hidden>
+    <br>
+<p>The ID of the permission.</p>            </p>
+                    </form>
+
+            <h2 id="permission-PUTapi-v1-permissions--id-">Update the specified permission.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-PUTapi-v1-permissions--id-">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request PUT \
+    "http://localhost:8000/api/v1/permissions/17" \
+    --header "Authorization: Bearer {ACCESS_TOKEN}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"name\": \"illum\",
+    \"group\": \"dicta\"
+}"
+</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/v1/permissions/17"
+);
+
+const headers = {
+    "Authorization": "Bearer {ACCESS_TOKEN}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "illum",
+    "group": "dicta"
+}
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-PUTapi-v1-permissions--id-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Successfully updated permission!&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-PUTapi-v1-permissions--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-v1-permissions--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-v1-permissions--id-"></code></pre>
+</span>
+<span id="execution-error-PUTapi-v1-permissions--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-v1-permissions--id-"></code></pre>
+</span>
+<form id="form-PUTapi-v1-permissions--id-" data-method="PUT"
+      data-path="api/v1/permissions/{id}"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Authorization":"Bearer {ACCESS_TOKEN}","Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-v1-permissions--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTapi-v1-permissions--id-"
+                    onclick="tryItOut('PUTapi-v1-permissions--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTapi-v1-permissions--id-"
+                    onclick="cancelTryOut('PUTapi-v1-permissions--id-');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTapi-v1-permissions--id-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/v1/permissions/{id}</code></b>
+        </p>
+            <p>
+            <small class="badge badge-purple">PATCH</small>
+            <b><code>api/v1/permissions/{id}</code></b>
+        </p>
+                <p>
+            <label id="auth-PUTapi-v1-permissions--id-" hidden>Authorization header:
+                <b><code>Bearer </code></b><input type="text"
+                                                                name="Authorization"
+                                                                data-prefix="Bearer "
+                                                                data-endpoint="PUTapi-v1-permissions--id-"
+                                                                data-component="header"></label>
+        </p>
+                <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="id"
+               data-endpoint="PUTapi-v1-permissions--id-"
+               data-component="url" required  hidden>
+    <br>
+<p>The ID of the permission.</p>            </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="name"
+               data-endpoint="PUTapi-v1-permissions--id-"
+               data-component="body" required  hidden>
+    <br>
+<p>A unique name of the permission.</p>        </p>
+                <p>
+            <b><code>group</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="group"
+               data-endpoint="PUTapi-v1-permissions--id-"
+               data-component="body" required  hidden>
+    <br>
+<p>The group the permission belongs to.</p>        </p>
+    
+    </form>
+
+        <h1 id="permission-assignment">Permission assignment</h1>
+
+    <p>API endpoints for assigning permissions to roles and users</p>
+
+            <h2 id="permission-assignment-POSTapi-v1-permissions-assign-to-role">Assign permission to role</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-POSTapi-v1-permissions-assign-to-role">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request POST \
+    "http://localhost:8000/api/v1/permissions/assign-to-role" \
+    --header "Authorization: Bearer {ACCESS_TOKEN}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"role_id\": 19,
+    \"permission_ids\": [
+        12,
+        18
+    ]
+}"
+</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/v1/permissions/assign-to-role"
+);
+
+const headers = {
+    "Authorization": "Bearer {ACCESS_TOKEN}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "role_id": 19,
+    "permission_ids": [
+        12,
+        18
+    ]
+}
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-POSTapi-v1-permissions-assign-to-role">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+ &quot;message&quot; =&gt; &quot;Successfully assigned permissions to role&quot;,
+ &quot;assigned_permissions&quot; =&gt; [
+   {
+       &quot;id&quot;: 1,
+       &quot;name&quot;: &quot;create users&quot;,
+       &quot;display_name&quot;: &quot;create users&quot;,
+       &quot;group&quot;: &quot;Admin permission&quot;
+   }
+ ],
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+ &quot;message&quot;: &quot;No permission was assigned to role&quot;,
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-v1-permissions-assign-to-role" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-permissions-assign-to-role"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-permissions-assign-to-role"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-permissions-assign-to-role" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-permissions-assign-to-role"></code></pre>
+</span>
+<form id="form-POSTapi-v1-permissions-assign-to-role" data-method="POST"
+      data-path="api/v1/permissions/assign-to-role"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Authorization":"Bearer {ACCESS_TOKEN}","Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-permissions-assign-to-role', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-permissions-assign-to-role"
+                    onclick="tryItOut('POSTapi-v1-permissions-assign-to-role');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-permissions-assign-to-role"
+                    onclick="cancelTryOut('POSTapi-v1-permissions-assign-to-role');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-permissions-assign-to-role" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/permissions/assign-to-role</code></b>
+        </p>
+                <p>
+            <label id="auth-POSTapi-v1-permissions-assign-to-role" hidden>Authorization header:
+                <b><code>Bearer </code></b><input type="text"
+                                                                name="Authorization"
+                                                                data-prefix="Bearer "
+                                                                data-endpoint="POSTapi-v1-permissions-assign-to-role"
+                                                                data-component="header"></label>
+        </p>
+                        <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>role_id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="role_id"
+               data-endpoint="POSTapi-v1-permissions-assign-to-role"
+               data-component="body" required  hidden>
+    <br>
+<p>The id of the role.</p>        </p>
+                <p>
+            <b><code>permission_ids</code></b>&nbsp;&nbsp;<small>integer[]</small>  &nbsp;
+                <input type="number"
+               name="permission_ids.0"
+               data-endpoint="POSTapi-v1-permissions-assign-to-role"
+               data-component="body" required  hidden>
+        <input type="number"
+               name="permission_ids.1"
+               data-endpoint="POSTapi-v1-permissions-assign-to-role"
+               data-component="body" hidden>
+    <br>
+        </p>
+    
+    </form>
+
+            <h2 id="permission-assignment-POSTapi-v1-permissions-assign-to-user">Assign permission to user</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-POSTapi-v1-permissions-assign-to-user">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request POST \
+    "http://localhost:8000/api/v1/permissions/assign-to-user" \
+    --header "Authorization: Bearer {ACCESS_TOKEN}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"user_id\": 10,
+    \"permission_ids\": [
+        13,
+        9
+    ]
+}"
+</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/v1/permissions/assign-to-user"
+);
+
+const headers = {
+    "Authorization": "Bearer {ACCESS_TOKEN}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "user_id": 10,
+    "permission_ids": [
+        13,
+        9
+    ]
+}
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-POSTapi-v1-permissions-assign-to-user">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+ &quot;message&quot; =&gt; &quot;Successfully assigned permissions to user&quot;,
+ &quot;assigned_permissions&quot; =&gt; [
+   {
+       &quot;id&quot;: 1,
+       &quot;name&quot;: &quot;create users&quot;,
+       &quot;display_name&quot;: &quot;create users&quot;,
+       &quot;group&quot;: &quot;Admin permission&quot;
+   }
+ ],
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+ &quot;message&quot;: &quot;No permission was assigned to user&quot;,
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-v1-permissions-assign-to-user" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-permissions-assign-to-user"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-permissions-assign-to-user"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-permissions-assign-to-user" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-permissions-assign-to-user"></code></pre>
+</span>
+<form id="form-POSTapi-v1-permissions-assign-to-user" data-method="POST"
+      data-path="api/v1/permissions/assign-to-user"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Authorization":"Bearer {ACCESS_TOKEN}","Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-permissions-assign-to-user', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-permissions-assign-to-user"
+                    onclick="tryItOut('POSTapi-v1-permissions-assign-to-user');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-permissions-assign-to-user"
+                    onclick="cancelTryOut('POSTapi-v1-permissions-assign-to-user');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-permissions-assign-to-user" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/permissions/assign-to-user</code></b>
+        </p>
+                <p>
+            <label id="auth-POSTapi-v1-permissions-assign-to-user" hidden>Authorization header:
+                <b><code>Bearer </code></b><input type="text"
+                                                                name="Authorization"
+                                                                data-prefix="Bearer "
+                                                                data-endpoint="POSTapi-v1-permissions-assign-to-user"
+                                                                data-component="header"></label>
+        </p>
+                        <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>user_id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="user_id"
+               data-endpoint="POSTapi-v1-permissions-assign-to-user"
+               data-component="body" required  hidden>
+    <br>
+<p>The id of the user.</p>        </p>
+                <p>
+            <b><code>permission_ids</code></b>&nbsp;&nbsp;<small>integer[]</small>  &nbsp;
+                <input type="number"
+               name="permission_ids.0"
+               data-endpoint="POSTapi-v1-permissions-assign-to-user"
+               data-component="body" required  hidden>
+        <input type="number"
+               name="permission_ids.1"
+               data-endpoint="POSTapi-v1-permissions-assign-to-user"
+               data-component="body" hidden>
+    <br>
+        </p>
+    
+    </form>
+
+            <h2 id="permission-assignment-POSTapi-v1-permissions-revoke-from-role">Revoke permissions from role</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-POSTapi-v1-permissions-revoke-from-role">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request POST \
+    "http://localhost:8000/api/v1/permissions/revoke-from-role" \
+    --header "Authorization: Bearer {ACCESS_TOKEN}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"role_id\": 18,
+    \"permission_ids\": [
+        2,
+        13
+    ]
+}"
+</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/v1/permissions/revoke-from-role"
+);
+
+const headers = {
+    "Authorization": "Bearer {ACCESS_TOKEN}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "role_id": 18,
+    "permission_ids": [
+        2,
+        13
+    ]
+}
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-POSTapi-v1-permissions-revoke-from-role">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+ &quot;message&quot; =&gt; &quot;Successfully revoked permissions from role&quot;,
+ &quot;revoked_permissions&quot; =&gt; [
+   {
+       &quot;id&quot;: 1,
+       &quot;name&quot;: &quot;create users&quot;,
+       &quot;display_name&quot;: &quot;create users&quot;,
+       &quot;group&quot;: &quot;Admin permission&quot;
+   }
+ ],
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+ &quot;message&quot;: &quot;No permission was revoked&quot;,
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-v1-permissions-revoke-from-role" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-permissions-revoke-from-role"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-permissions-revoke-from-role"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-permissions-revoke-from-role" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-permissions-revoke-from-role"></code></pre>
+</span>
+<form id="form-POSTapi-v1-permissions-revoke-from-role" data-method="POST"
+      data-path="api/v1/permissions/revoke-from-role"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Authorization":"Bearer {ACCESS_TOKEN}","Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-permissions-revoke-from-role', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-permissions-revoke-from-role"
+                    onclick="tryItOut('POSTapi-v1-permissions-revoke-from-role');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-permissions-revoke-from-role"
+                    onclick="cancelTryOut('POSTapi-v1-permissions-revoke-from-role');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-permissions-revoke-from-role" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/permissions/revoke-from-role</code></b>
+        </p>
+                <p>
+            <label id="auth-POSTapi-v1-permissions-revoke-from-role" hidden>Authorization header:
+                <b><code>Bearer </code></b><input type="text"
+                                                                name="Authorization"
+                                                                data-prefix="Bearer "
+                                                                data-endpoint="POSTapi-v1-permissions-revoke-from-role"
+                                                                data-component="header"></label>
+        </p>
+                        <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>role_id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="role_id"
+               data-endpoint="POSTapi-v1-permissions-revoke-from-role"
+               data-component="body" required  hidden>
+    <br>
+<p>The id of the role.</p>        </p>
+                <p>
+            <b><code>permission_ids</code></b>&nbsp;&nbsp;<small>integer[]</small>  &nbsp;
+                <input type="number"
+               name="permission_ids.0"
+               data-endpoint="POSTapi-v1-permissions-revoke-from-role"
+               data-component="body" required  hidden>
+        <input type="number"
+               name="permission_ids.1"
+               data-endpoint="POSTapi-v1-permissions-revoke-from-role"
+               data-component="body" hidden>
+    <br>
+        </p>
+    
+    </form>
+
+            <h2 id="permission-assignment-POSTapi-v1-permissions-revoke-from-user">Revoke permissions from user</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-POSTapi-v1-permissions-revoke-from-user">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request POST \
+    "http://localhost:8000/api/v1/permissions/revoke-from-user" \
+    --header "Authorization: Bearer {ACCESS_TOKEN}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"user_id\": 8,
+    \"permission_ids\": [
+        9,
+        20
+    ]
+}"
+</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/v1/permissions/revoke-from-user"
+);
+
+const headers = {
+    "Authorization": "Bearer {ACCESS_TOKEN}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "user_id": 8,
+    "permission_ids": [
+        9,
+        20
+    ]
+}
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-POSTapi-v1-permissions-revoke-from-user">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+ &quot;message&quot; =&gt; &quot;Successfully revoked permissions from user&quot;,
+ &quot;revoked_permissions&quot; =&gt; [
+   {
+       &quot;id&quot;: 1,
+       &quot;name&quot;: &quot;create users&quot;,
+       &quot;display_name&quot;: &quot;create users&quot;,
+       &quot;group&quot;: &quot;Admin permission&quot;
+   }
+ ],
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+ &quot;message&quot;: &quot;No permission was revoked&quot;,
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-v1-permissions-revoke-from-user" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-permissions-revoke-from-user"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-permissions-revoke-from-user"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-permissions-revoke-from-user" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-permissions-revoke-from-user"></code></pre>
+</span>
+<form id="form-POSTapi-v1-permissions-revoke-from-user" data-method="POST"
+      data-path="api/v1/permissions/revoke-from-user"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Authorization":"Bearer {ACCESS_TOKEN}","Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-permissions-revoke-from-user', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-permissions-revoke-from-user"
+                    onclick="tryItOut('POSTapi-v1-permissions-revoke-from-user');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-permissions-revoke-from-user"
+                    onclick="cancelTryOut('POSTapi-v1-permissions-revoke-from-user');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-permissions-revoke-from-user" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/permissions/revoke-from-user</code></b>
+        </p>
+                <p>
+            <label id="auth-POSTapi-v1-permissions-revoke-from-user" hidden>Authorization header:
+                <b><code>Bearer </code></b><input type="text"
+                                                                name="Authorization"
+                                                                data-prefix="Bearer "
+                                                                data-endpoint="POSTapi-v1-permissions-revoke-from-user"
+                                                                data-component="header"></label>
+        </p>
+                        <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>user_id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="user_id"
+               data-endpoint="POSTapi-v1-permissions-revoke-from-user"
+               data-component="body" required  hidden>
+    <br>
+<p>The id of the user.</p>        </p>
+                <p>
+            <b><code>permission_ids</code></b>&nbsp;&nbsp;<small>integer[]</small>  &nbsp;
+                <input type="number"
+               name="permission_ids.0"
+               data-endpoint="POSTapi-v1-permissions-revoke-from-user"
+               data-component="body" required  hidden>
+        <input type="number"
+               name="permission_ids.1"
+               data-endpoint="POSTapi-v1-permissions-revoke-from-user"
+               data-component="body" hidden>
+    <br>
+        </p>
+    
+    </form>
 
         <h1 id="roles">Roles</h1>
 
@@ -1725,11 +2975,13 @@ fetch(url, {
     &quot;data&quot;: [
         {
             &quot;id&quot;: 1,
-            &quot;name&quot;: &quot;admin&quot;
+            &quot;name&quot;: &quot;admin&quot;,
+            &quot;display_name&quot;: &quot;admin&quot;
         },
         {
             &quot;id&quot;: 1,
-            &quot;name&quot;: &quot;admin&quot;
+            &quot;name&quot;: &quot;admin&quot;,
+            &quot;display_name&quot;: &quot;admin&quot;
         }
     ]
 }</code>
@@ -1802,7 +3054,7 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"ea\"
+    \"name\": \"similique\"
 }"
 </code></pre>
 
@@ -1817,7 +3069,7 @@ const headers = {
 };
 
 let body = {
-    "name": "ea"
+    "name": "similique"
 }
 
 fetch(url, {
@@ -1893,7 +3145,7 @@ fetch(url, {
                data-endpoint="POSTapi-v1-roles"
                data-component="body" required  hidden>
     <br>
-<p>A unique role name</p>        </p>
+<p>The name of the role.</p>        </p>
     
     </form>
 
@@ -1910,13 +3162,13 @@ fetch(url, {
 
 
 <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/v1/roles/5" \
+    --get "http://localhost:8000/api/v1/roles/minus" \
     --header "Authorization: Bearer {ACCESS_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/roles/5"
+    "http://localhost:8000/api/v1/roles/minus"
 );
 
 const headers = {
@@ -1940,7 +3192,8 @@ fetch(url, {
 <code class="language-json">{
     &quot;data&quot;: {
         &quot;id&quot;: 1,
-        &quot;name&quot;: &quot;admin&quot;
+        &quot;name&quot;: &quot;admin&quot;,
+        &quot;display_name&quot;: &quot;admin&quot;
     }
 }</code>
  </pre>
@@ -1994,140 +3247,14 @@ fetch(url, {
         </p>
                 <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <p>
-                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
-                <input type="number"
+                <b><code>id</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
                name="id"
                data-endpoint="GETapi-v1-roles--id-"
                data-component="url" required  hidden>
     <br>
-<p>The ID of the role</p>            </p>
+<p>The ID of the role.</p>            </p>
                     </form>
-
-            <h2 id="roles-PUTapi-v1-roles--id-">Update a specific role.</h2>
-
-<p>
-<small class="badge badge-darkred">requires authentication</small>
-</p>
-
-
-
-<span id="example-requests-PUTapi-v1-roles--id-">
-<blockquote>Example request:</blockquote>
-
-
-<pre><code class="language-bash">curl --request PUT \
-    "http://localhost:8000/api/v1/roles/3" \
-    --header "Authorization: Bearer {ACCESS_TOKEN}" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json" \
-    --data "{
-    \"name\": \"amet\"
-}"
-</code></pre>
-
-<pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/roles/3"
-);
-
-const headers = {
-    "Authorization": "Bearer {ACCESS_TOKEN}",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "name": "amet"
-}
-
-fetch(url, {
-    method: "PUT",
-    headers,
-    body: JSON.stringify(body),
-}).then(response =&gt; response.json());</code></pre>
-</span>
-
-<span id="example-responses-PUTapi-v1-roles--id-">
-            <blockquote>
-            <p>Example response (200):</p>
-        </blockquote>
-                <pre>
-
-<code class="language-json">{
-    &quot;message&quot;: &quot;Successfully updated role!&quot;
-}</code>
- </pre>
-    </span>
-<span id="execution-results-PUTapi-v1-roles--id-" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-PUTapi-v1-roles--id-"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-PUTapi-v1-roles--id-"></code></pre>
-</span>
-<span id="execution-error-PUTapi-v1-roles--id-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-PUTapi-v1-roles--id-"></code></pre>
-</span>
-<form id="form-PUTapi-v1-roles--id-" data-method="PUT"
-      data-path="api/v1/roles/{id}"
-      data-authed="1"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      data-headers='{"Authorization":"Bearer {ACCESS_TOKEN}","Content-Type":"application\/json","Accept":"application\/json"}'
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('PUTapi-v1-roles--id-', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-PUTapi-v1-roles--id-"
-                    onclick="tryItOut('PUTapi-v1-roles--id-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-PUTapi-v1-roles--id-"
-                    onclick="cancelTryOut('PUTapi-v1-roles--id-');" hidden>Cancel
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-PUTapi-v1-roles--id-" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-darkblue">PUT</small>
-            <b><code>api/v1/roles/{id}</code></b>
-        </p>
-            <p>
-            <small class="badge badge-purple">PATCH</small>
-            <b><code>api/v1/roles/{id}</code></b>
-        </p>
-                <p>
-            <label id="auth-PUTapi-v1-roles--id-" hidden>Authorization header:
-                <b><code>Bearer </code></b><input type="text"
-                                                                name="Authorization"
-                                                                data-prefix="Bearer "
-                                                                data-endpoint="PUTapi-v1-roles--id-"
-                                                                data-component="header"></label>
-        </p>
-                <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <p>
-                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
-                <input type="number"
-               name="id"
-               data-endpoint="PUTapi-v1-roles--id-"
-               data-component="url" required  hidden>
-    <br>
-<p>The ID of the role</p>            </p>
-                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
-        <p>
-            <b><code>name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-                <input type="text"
-               name="name"
-               data-endpoint="PUTapi-v1-roles--id-"
-               data-component="body" required  hidden>
-    <br>
-<p>The name of the role</p>        </p>
-    
-    </form>
 
             <h2 id="roles-DELETEapi-v1-roles--id-">Delete a specific role</h2>
 
@@ -2142,13 +3269,13 @@ fetch(url, {
 
 
 <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost:8000/api/v1/roles/7" \
+    "http://localhost:8000/api/v1/roles/9" \
     --header "Authorization: Bearer {ACCESS_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/roles/7"
+    "http://localhost:8000/api/v1/roles/9"
 );
 
 const headers = {
@@ -2229,12 +3356,365 @@ fetch(url, {
                data-endpoint="DELETEapi-v1-roles--id-"
                data-component="url" required  hidden>
     <br>
-<p>The ID of the role</p>            </p>
+<p>The ID of the role.</p>            </p>
                     </form>
+
+            <h2 id="roles-PUTapi-v1-roles--id-">Update a specific role.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-PUTapi-v1-roles--id-">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request PUT \
+    "http://localhost:8000/api/v1/roles/14" \
+    --header "Authorization: Bearer {ACCESS_TOKEN}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"name\": \"qui\"
+}"
+</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/v1/roles/14"
+);
+
+const headers = {
+    "Authorization": "Bearer {ACCESS_TOKEN}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": "qui"
+}
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-PUTapi-v1-roles--id-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Successfully updated role!&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-PUTapi-v1-roles--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-v1-roles--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-v1-roles--id-"></code></pre>
+</span>
+<span id="execution-error-PUTapi-v1-roles--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-v1-roles--id-"></code></pre>
+</span>
+<form id="form-PUTapi-v1-roles--id-" data-method="PUT"
+      data-path="api/v1/roles/{id}"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Authorization":"Bearer {ACCESS_TOKEN}","Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-v1-roles--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTapi-v1-roles--id-"
+                    onclick="tryItOut('PUTapi-v1-roles--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTapi-v1-roles--id-"
+                    onclick="cancelTryOut('PUTapi-v1-roles--id-');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTapi-v1-roles--id-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/v1/roles/{id}</code></b>
+        </p>
+            <p>
+            <small class="badge badge-purple">PATCH</small>
+            <b><code>api/v1/roles/{id}</code></b>
+        </p>
+                <p>
+            <label id="auth-PUTapi-v1-roles--id-" hidden>Authorization header:
+                <b><code>Bearer </code></b><input type="text"
+                                                                name="Authorization"
+                                                                data-prefix="Bearer "
+                                                                data-endpoint="PUTapi-v1-roles--id-"
+                                                                data-component="header"></label>
+        </p>
+                <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="id"
+               data-endpoint="PUTapi-v1-roles--id-"
+               data-component="url" required  hidden>
+    <br>
+<p>The ID of the role.</p>            </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="name"
+               data-endpoint="PUTapi-v1-roles--id-"
+               data-component="body" required  hidden>
+    <br>
+<p>The name of the role.</p>        </p>
+    
+    </form>
 
         <h1 id="users">Users</h1>
 
     <p>API endpoints for creating user and getting user info</p>
+
+            <h2 id="users-GETapi-v1-my-info">Get the logged in user&#039;s info</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-GETapi-v1-my-info">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request GET \
+    --get "http://localhost:8000/api/v1/my-info" \
+    --header "Authorization: Bearer {ACCESS_TOKEN}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/v1/my-info"
+);
+
+const headers = {
+    "Authorization": "Bearer {ACCESS_TOKEN}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-GETapi-v1-my-info">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;data&quot;: {
+        &quot;id&quot;: 479,
+        &quot;username&quot;: &quot;mmurray&quot;,
+        &quot;first_name&quot;: &quot;Alverta&quot;,
+        &quot;last_name&quot;: &quot;Murray&quot;,
+        &quot;full_name&quot;: &quot;Alverta Murray&quot;,
+        &quot;email&quot;: &quot;mmurray@test.com&quot;,
+        &quot;gender&quot;: &quot;female&quot;,
+        &quot;date_of_birth&quot;: &quot;23/Dec/1984&quot;,
+        &quot;roles&quot;: []
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-my-info" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-my-info"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-my-info"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-my-info" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-my-info"></code></pre>
+</span>
+<form id="form-GETapi-v1-my-info" data-method="GET"
+      data-path="api/v1/my-info"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Authorization":"Bearer {ACCESS_TOKEN}","Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-my-info', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-my-info"
+                    onclick="tryItOut('GETapi-v1-my-info');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-my-info"
+                    onclick="cancelTryOut('GETapi-v1-my-info');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-my-info" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/my-info</code></b>
+        </p>
+                <p>
+            <label id="auth-GETapi-v1-my-info" hidden>Authorization header:
+                <b><code>Bearer </code></b><input type="text"
+                                                                name="Authorization"
+                                                                data-prefix="Bearer "
+                                                                data-endpoint="GETapi-v1-my-info"
+                                                                data-component="header"></label>
+        </p>
+                </form>
+
+            <h2 id="users-GETapi-v1-users-with-permissions">Get all users with permissions</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-GETapi-v1-users-with-permissions">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request GET \
+    --get "http://localhost:8000/api/v1/users/with-permissions" \
+    --header "Authorization: Bearer {ACCESS_TOKEN}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/v1/users/with-permissions"
+);
+
+const headers = {
+    "Authorization": "Bearer {ACCESS_TOKEN}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-GETapi-v1-users-with-permissions">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;data&quot;: [
+        {
+            &quot;user&quot;: {
+                &quot;id&quot;: 484,
+                &quot;username&quot;: &quot;tillman.bode&quot;,
+                &quot;first_name&quot;: &quot;Deanna&quot;,
+                &quot;last_name&quot;: &quot;Kuphal&quot;,
+                &quot;full_name&quot;: &quot;Deanna Kuphal&quot;,
+                &quot;email&quot;: &quot;tillman.bode@test.com&quot;,
+                &quot;gender&quot;: &quot;male&quot;,
+                &quot;date_of_birth&quot;: &quot;17/Feb/1991&quot;,
+                &quot;roles&quot;: []
+            },
+            &quot;permissions&quot;: []
+        },
+        {
+            &quot;user&quot;: {
+                &quot;id&quot;: 485,
+                &quot;username&quot;: &quot;pollich.jany&quot;,
+                &quot;first_name&quot;: &quot;Itzel&quot;,
+                &quot;last_name&quot;: &quot;Streich&quot;,
+                &quot;full_name&quot;: &quot;Itzel Streich&quot;,
+                &quot;email&quot;: &quot;pollich.jany@test.com&quot;,
+                &quot;gender&quot;: &quot;female&quot;,
+                &quot;date_of_birth&quot;: &quot;21/Dec/2006&quot;,
+                &quot;roles&quot;: []
+            },
+            &quot;permissions&quot;: []
+        }
+    ]
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-users-with-permissions" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-users-with-permissions"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-users-with-permissions"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-users-with-permissions" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-users-with-permissions"></code></pre>
+</span>
+<form id="form-GETapi-v1-users-with-permissions" data-method="GET"
+      data-path="api/v1/users/with-permissions"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Authorization":"Bearer {ACCESS_TOKEN}","Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-users-with-permissions', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-users-with-permissions"
+                    onclick="tryItOut('GETapi-v1-users-with-permissions');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-users-with-permissions"
+                    onclick="cancelTryOut('GETapi-v1-users-with-permissions');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-users-with-permissions" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/users/with-permissions</code></b>
+        </p>
+                <p>
+            <label id="auth-GETapi-v1-users-with-permissions" hidden>Authorization header:
+                <b><code>Bearer </code></b><input type="text"
+                                                                name="Authorization"
+                                                                data-prefix="Bearer "
+                                                                data-endpoint="GETapi-v1-users-with-permissions"
+                                                                data-component="header"></label>
+        </p>
+                </form>
 
             <h2 id="users-GETapi-v1-all-students">Get all students&#039; info</h2>
 
@@ -2279,25 +3759,25 @@ fetch(url, {
 <code class="language-json">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 100,
-            &quot;username&quot;: &quot;marques.becker&quot;,
-            &quot;first_name&quot;: &quot;Rashawn&quot;,
-            &quot;last_name&quot;: &quot;Bergstrom&quot;,
-            &quot;full_name&quot;: &quot;Rashawn Bergstrom&quot;,
-            &quot;email&quot;: &quot;marques.becker@test.com&quot;,
-            &quot;gender&quot;: &quot;male&quot;,
-            &quot;date_of_birth&quot;: &quot;1995-03-12&quot;,
+            &quot;id&quot;: 480,
+            &quot;username&quot;: &quot;kali.smith&quot;,
+            &quot;first_name&quot;: &quot;Kacie&quot;,
+            &quot;last_name&quot;: &quot;Lueilwitz&quot;,
+            &quot;full_name&quot;: &quot;Kacie Lueilwitz&quot;,
+            &quot;email&quot;: &quot;kali.smith@test.com&quot;,
+            &quot;gender&quot;: &quot;female&quot;,
+            &quot;date_of_birth&quot;: &quot;18/Dec/1988&quot;,
             &quot;roles&quot;: []
         },
         {
-            &quot;id&quot;: 101,
-            &quot;username&quot;: &quot;cleannon&quot;,
-            &quot;first_name&quot;: &quot;Delpha&quot;,
-            &quot;last_name&quot;: &quot;Friesen&quot;,
-            &quot;full_name&quot;: &quot;Delpha Friesen&quot;,
-            &quot;email&quot;: &quot;cleannon@test.com&quot;,
+            &quot;id&quot;: 481,
+            &quot;username&quot;: &quot;sipes.wilhelm&quot;,
+            &quot;first_name&quot;: &quot;Angelita&quot;,
+            &quot;last_name&quot;: &quot;Luettgen&quot;,
+            &quot;full_name&quot;: &quot;Angelita Luettgen&quot;,
+            &quot;email&quot;: &quot;sipes.wilhelm@test.com&quot;,
             &quot;gender&quot;: &quot;male&quot;,
-            &quot;date_of_birth&quot;: &quot;1998-02-06&quot;,
+            &quot;date_of_birth&quot;: &quot;17/Jan/1989&quot;,
             &quot;roles&quot;: []
         }
     ]
@@ -2396,25 +3876,25 @@ fetch(url, {
 <code class="language-json">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 102,
-            &quot;username&quot;: &quot;kunze.easter&quot;,
-            &quot;first_name&quot;: &quot;Raul&quot;,
-            &quot;last_name&quot;: &quot;Murray&quot;,
-            &quot;full_name&quot;: &quot;Raul Murray&quot;,
-            &quot;email&quot;: &quot;kunze.easter@test.com&quot;,
-            &quot;gender&quot;: &quot;male&quot;,
-            &quot;date_of_birth&quot;: &quot;2013-03-24&quot;,
+            &quot;id&quot;: 482,
+            &quot;username&quot;: &quot;florian79&quot;,
+            &quot;first_name&quot;: &quot;Robyn&quot;,
+            &quot;last_name&quot;: &quot;Weissnat&quot;,
+            &quot;full_name&quot;: &quot;Robyn Weissnat&quot;,
+            &quot;email&quot;: &quot;florian79@test.com&quot;,
+            &quot;gender&quot;: &quot;female&quot;,
+            &quot;date_of_birth&quot;: &quot;14/Dec/1972&quot;,
             &quot;roles&quot;: []
         },
         {
-            &quot;id&quot;: 103,
-            &quot;username&quot;: &quot;jsteuber&quot;,
-            &quot;first_name&quot;: &quot;Nyasia&quot;,
-            &quot;last_name&quot;: &quot;Kuhic&quot;,
-            &quot;full_name&quot;: &quot;Nyasia Kuhic&quot;,
-            &quot;email&quot;: &quot;jsteuber@test.com&quot;,
+            &quot;id&quot;: 483,
+            &quot;username&quot;: &quot;benny.hayes&quot;,
+            &quot;first_name&quot;: &quot;Robin&quot;,
+            &quot;last_name&quot;: &quot;Powlowski&quot;,
+            &quot;full_name&quot;: &quot;Robin Powlowski&quot;,
+            &quot;email&quot;: &quot;benny.hayes@test.com&quot;,
             &quot;gender&quot;: &quot;male&quot;,
-            &quot;date_of_birth&quot;: &quot;1974-03-22&quot;,
+            &quot;date_of_birth&quot;: &quot;24/Sep/2007&quot;,
             &quot;roles&quot;: []
         }
     ]
@@ -2470,110 +3950,6 @@ fetch(url, {
         </p>
                 </form>
 
-            <h2 id="users-GETapi-v1-my-info">Get the logged in user&#039;s info</h2>
-
-<p>
-<small class="badge badge-darkred">requires authentication</small>
-</p>
-
-
-
-<span id="example-requests-GETapi-v1-my-info">
-<blockquote>Example request:</blockquote>
-
-
-<pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/v1/my-info" \
-    --header "Authorization: Bearer {ACCESS_TOKEN}" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre>
-
-<pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/my-info"
-);
-
-const headers = {
-    "Authorization": "Bearer {ACCESS_TOKEN}",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre>
-</span>
-
-<span id="example-responses-GETapi-v1-my-info">
-            <blockquote>
-            <p>Example response (200):</p>
-        </blockquote>
-                <pre>
-
-<code class="language-json">{
-    &quot;data&quot;: {
-        &quot;id&quot;: 99,
-        &quot;username&quot;: &quot;lilly60&quot;,
-        &quot;first_name&quot;: &quot;Nicola&quot;,
-        &quot;last_name&quot;: &quot;Hartmann&quot;,
-        &quot;full_name&quot;: &quot;Nicola Hartmann&quot;,
-        &quot;email&quot;: &quot;lilly60@test.com&quot;,
-        &quot;gender&quot;: &quot;male&quot;,
-        &quot;date_of_birth&quot;: &quot;2021-07-14&quot;,
-        &quot;roles&quot;: []
-    }
-}</code>
- </pre>
-    </span>
-<span id="execution-results-GETapi-v1-my-info" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-GETapi-v1-my-info"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-v1-my-info"></code></pre>
-</span>
-<span id="execution-error-GETapi-v1-my-info" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-v1-my-info"></code></pre>
-</span>
-<form id="form-GETapi-v1-my-info" data-method="GET"
-      data-path="api/v1/my-info"
-      data-authed="1"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      data-headers='{"Authorization":"Bearer {ACCESS_TOKEN}","Content-Type":"application\/json","Accept":"application\/json"}'
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-my-info', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-v1-my-info"
-                    onclick="tryItOut('GETapi-v1-my-info');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-v1-my-info"
-                    onclick="cancelTryOut('GETapi-v1-my-info');" hidden>Cancel
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-v1-my-info" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-green">GET</small>
-            <b><code>api/v1/my-info</code></b>
-        </p>
-                <p>
-            <label id="auth-GETapi-v1-my-info" hidden>Authorization header:
-                <b><code>Bearer </code></b><input type="text"
-                                                                name="Authorization"
-                                                                data-prefix="Bearer "
-                                                                data-endpoint="GETapi-v1-my-info"
-                                                                data-component="header"></label>
-        </p>
-                </form>
-
             <h2 id="users-GETapi-v1-users">Get a list of all users</h2>
 
 <p>
@@ -2617,25 +3993,25 @@ fetch(url, {
 <code class="language-json">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 104,
-            &quot;username&quot;: &quot;destany90&quot;,
-            &quot;first_name&quot;: &quot;Lorena&quot;,
-            &quot;last_name&quot;: &quot;Kub&quot;,
-            &quot;full_name&quot;: &quot;Lorena Kub&quot;,
-            &quot;email&quot;: &quot;destany90@test.com&quot;,
+            &quot;id&quot;: 486,
+            &quot;username&quot;: &quot;gretchen.gerhold&quot;,
+            &quot;first_name&quot;: &quot;Dayna&quot;,
+            &quot;last_name&quot;: &quot;Hane&quot;,
+            &quot;full_name&quot;: &quot;Dayna Hane&quot;,
+            &quot;email&quot;: &quot;gretchen.gerhold@test.com&quot;,
             &quot;gender&quot;: &quot;male&quot;,
-            &quot;date_of_birth&quot;: &quot;1979-03-30&quot;,
+            &quot;date_of_birth&quot;: &quot;22/Aug/2000&quot;,
             &quot;roles&quot;: []
         },
         {
-            &quot;id&quot;: 105,
-            &quot;username&quot;: &quot;urau&quot;,
-            &quot;first_name&quot;: &quot;Eli&quot;,
-            &quot;last_name&quot;: &quot;Schmitt&quot;,
-            &quot;full_name&quot;: &quot;Eli Schmitt&quot;,
-            &quot;email&quot;: &quot;urau@test.com&quot;,
-            &quot;gender&quot;: &quot;male&quot;,
-            &quot;date_of_birth&quot;: &quot;2017-09-25&quot;,
+            &quot;id&quot;: 487,
+            &quot;username&quot;: &quot;hans97&quot;,
+            &quot;first_name&quot;: &quot;Heloise&quot;,
+            &quot;last_name&quot;: &quot;Koepp&quot;,
+            &quot;full_name&quot;: &quot;Heloise Koepp&quot;,
+            &quot;email&quot;: &quot;hans97@test.com&quot;,
+            &quot;gender&quot;: &quot;female&quot;,
+            &quot;date_of_birth&quot;: &quot;9/Mar/1982&quot;,
             &quot;roles&quot;: []
         }
     ]
@@ -2709,15 +4085,15 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"username\": \"dolore\",
-    \"email\": \"voluptatem\",
-    \"first_name\": \"omnis\",
-    \"last_name\": \"quae\",
-    \"gender\": \"et\",
+    \"username\": \"qui\",
+    \"email\": \"aut\",
+    \"first_name\": \"quod\",
+    \"last_name\": \"odio\",
+    \"gender\": \"nobis\",
     \"date_of_birth\": \"2020-12-01\",
     \"role_ids\": [
         20,
-        17
+        10
     ]
 }"
 </code></pre>
@@ -2733,15 +4109,15 @@ const headers = {
 };
 
 let body = {
-    "username": "dolore",
-    "email": "voluptatem",
-    "first_name": "omnis",
-    "last_name": "quae",
-    "gender": "et",
+    "username": "qui",
+    "email": "aut",
+    "first_name": "quod",
+    "last_name": "odio",
+    "gender": "nobis",
     "date_of_birth": "2020-12-01",
     "role_ids": [
         20,
-        17
+        10
     ]
 }
 
@@ -2822,7 +4198,7 @@ fetch(url, {
                data-endpoint="POSTapi-v1-users"
                data-component="body" required  hidden>
     <br>
-<p>A unique username</p>        </p>
+<p>A unique username.</p>        </p>
                 <p>
             <b><code>email</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
                 <input type="text"
@@ -2830,7 +4206,7 @@ fetch(url, {
                data-endpoint="POSTapi-v1-users"
                data-component="body" required  hidden>
     <br>
-<p>A unique email address</p>        </p>
+<p>A unique email address.</p>        </p>
                 <p>
             <b><code>first_name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
                 <input type="text"
@@ -2838,7 +4214,7 @@ fetch(url, {
                data-endpoint="POSTapi-v1-users"
                data-component="body" required  hidden>
     <br>
-        </p>
+<p>First name of user.</p>        </p>
                 <p>
             <b><code>last_name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
                 <input type="text"
@@ -2846,7 +4222,7 @@ fetch(url, {
                data-endpoint="POSTapi-v1-users"
                data-component="body" required  hidden>
     <br>
-        </p>
+<p>Last name of user.</p>        </p>
                 <p>
             <b><code>gender</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
                 <input type="text"
@@ -2854,7 +4230,7 @@ fetch(url, {
                data-endpoint="POSTapi-v1-users"
                data-component="body" required  hidden>
     <br>
-        </p>
+<p>Gender of the user.</p>        </p>
                 <p>
             <b><code>date_of_birth</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
                 <input type="text"
@@ -2862,7 +4238,7 @@ fetch(url, {
                data-endpoint="POSTapi-v1-users"
                data-component="body" required  hidden>
     <br>
-        </p>
+<p>The date of birth of user. Must be a valid date.</p>        </p>
                 <p>
             <b><code>role_ids</code></b>&nbsp;&nbsp;<small>integer[]</small>  &nbsp;
                 <input type="number"
@@ -2874,7 +4250,7 @@ fetch(url, {
                data-endpoint="POSTapi-v1-users"
                data-component="body" hidden>
     <br>
-<p>The role ids of the user</p>        </p>
+        </p>
     
     </form>
 
@@ -2891,13 +4267,13 @@ fetch(url, {
 
 
 <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/v1/users/9" \
+    --get "http://localhost:8000/api/v1/users/2" \
     --header "Authorization: Bearer {ACCESS_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/users/9"
+    "http://localhost:8000/api/v1/users/2"
 );
 
 const headers = {
@@ -2920,14 +4296,14 @@ fetch(url, {
 
 <code class="language-json">{
     &quot;data&quot;: {
-        &quot;id&quot;: 106,
-        &quot;username&quot;: &quot;schimmel.millie&quot;,
-        &quot;first_name&quot;: &quot;Wellington&quot;,
-        &quot;last_name&quot;: &quot;Kemmer&quot;,
-        &quot;full_name&quot;: &quot;Wellington Kemmer&quot;,
-        &quot;email&quot;: &quot;schimmel.millie@test.com&quot;,
+        &quot;id&quot;: 488,
+        &quot;username&quot;: &quot;feil.maryjane&quot;,
+        &quot;first_name&quot;: &quot;Noemie&quot;,
+        &quot;last_name&quot;: &quot;Ortiz&quot;,
+        &quot;full_name&quot;: &quot;Noemie Ortiz&quot;,
+        &quot;email&quot;: &quot;feil.maryjane@test.com&quot;,
         &quot;gender&quot;: &quot;female&quot;,
-        &quot;date_of_birth&quot;: &quot;2021-01-09&quot;,
+        &quot;date_of_birth&quot;: &quot;1/Aug/1972&quot;,
         &quot;roles&quot;: []
     }
 }</code>
@@ -2988,204 +4364,8 @@ fetch(url, {
                data-endpoint="GETapi-v1-users--id-"
                data-component="url" required  hidden>
     <br>
-<p>The ID of the user</p>            </p>
+<p>The ID of the user.</p>            </p>
                     </form>
-
-            <h2 id="users-PUTapi-v1-users--id-">Update the specified user</h2>
-
-<p>
-<small class="badge badge-darkred">requires authentication</small>
-</p>
-
-
-
-<span id="example-requests-PUTapi-v1-users--id-">
-<blockquote>Example request:</blockquote>
-
-
-<pre><code class="language-bash">curl --request PUT \
-    "http://localhost:8000/api/v1/users/8" \
-    --header "Authorization: Bearer {ACCESS_TOKEN}" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json" \
-    --data "{
-    \"username\": \"consequatur\",
-    \"email\": \"in\",
-    \"first_name\": \"voluptatem\",
-    \"last_name\": \"eaque\",
-    \"gender\": \"quos\",
-    \"date_of_birth\": \"2020-12-01\",
-    \"role_ids\": [
-        9,
-        19
-    ]
-}"
-</code></pre>
-
-<pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/users/8"
-);
-
-const headers = {
-    "Authorization": "Bearer {ACCESS_TOKEN}",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "username": "consequatur",
-    "email": "in",
-    "first_name": "voluptatem",
-    "last_name": "eaque",
-    "gender": "quos",
-    "date_of_birth": "2020-12-01",
-    "role_ids": [
-        9,
-        19
-    ]
-}
-
-fetch(url, {
-    method: "PUT",
-    headers,
-    body: JSON.stringify(body),
-}).then(response =&gt; response.json());</code></pre>
-</span>
-
-<span id="example-responses-PUTapi-v1-users--id-">
-            <blockquote>
-            <p>Example response (200):</p>
-        </blockquote>
-                <pre>
-
-<code class="language-json">{
-    &quot;message&quot;: &quot;Successfully updated user!&quot;
-}</code>
- </pre>
-    </span>
-<span id="execution-results-PUTapi-v1-users--id-" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-PUTapi-v1-users--id-"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-PUTapi-v1-users--id-"></code></pre>
-</span>
-<span id="execution-error-PUTapi-v1-users--id-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-PUTapi-v1-users--id-"></code></pre>
-</span>
-<form id="form-PUTapi-v1-users--id-" data-method="PUT"
-      data-path="api/v1/users/{id}"
-      data-authed="1"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      data-headers='{"Authorization":"Bearer {ACCESS_TOKEN}","Content-Type":"application\/json","Accept":"application\/json"}'
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('PUTapi-v1-users--id-', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-PUTapi-v1-users--id-"
-                    onclick="tryItOut('PUTapi-v1-users--id-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-PUTapi-v1-users--id-"
-                    onclick="cancelTryOut('PUTapi-v1-users--id-');" hidden>Cancel
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-PUTapi-v1-users--id-" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-darkblue">PUT</small>
-            <b><code>api/v1/users/{id}</code></b>
-        </p>
-            <p>
-            <small class="badge badge-purple">PATCH</small>
-            <b><code>api/v1/users/{id}</code></b>
-        </p>
-                <p>
-            <label id="auth-PUTapi-v1-users--id-" hidden>Authorization header:
-                <b><code>Bearer </code></b><input type="text"
-                                                                name="Authorization"
-                                                                data-prefix="Bearer "
-                                                                data-endpoint="PUTapi-v1-users--id-"
-                                                                data-component="header"></label>
-        </p>
-                <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <p>
-                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
-                <input type="number"
-               name="id"
-               data-endpoint="PUTapi-v1-users--id-"
-               data-component="url" required  hidden>
-    <br>
-<p>The ID of the user</p>            </p>
-                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
-        <p>
-            <b><code>username</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-                <input type="text"
-               name="username"
-               data-endpoint="PUTapi-v1-users--id-"
-               data-component="body" required  hidden>
-    <br>
-<p>A unique username</p>        </p>
-                <p>
-            <b><code>email</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-                <input type="text"
-               name="email"
-               data-endpoint="PUTapi-v1-users--id-"
-               data-component="body" required  hidden>
-    <br>
-<p>A unique email address</p>        </p>
-                <p>
-            <b><code>first_name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-                <input type="text"
-               name="first_name"
-               data-endpoint="PUTapi-v1-users--id-"
-               data-component="body" required  hidden>
-    <br>
-        </p>
-                <p>
-            <b><code>last_name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-                <input type="text"
-               name="last_name"
-               data-endpoint="PUTapi-v1-users--id-"
-               data-component="body" required  hidden>
-    <br>
-        </p>
-                <p>
-            <b><code>gender</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-                <input type="text"
-               name="gender"
-               data-endpoint="PUTapi-v1-users--id-"
-               data-component="body" required  hidden>
-    <br>
-        </p>
-                <p>
-            <b><code>date_of_birth</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-                <input type="text"
-               name="date_of_birth"
-               data-endpoint="PUTapi-v1-users--id-"
-               data-component="body" required  hidden>
-    <br>
-        </p>
-                <p>
-            <b><code>role_ids</code></b>&nbsp;&nbsp;<small>integer[]</small>  &nbsp;
-                <input type="number"
-               name="role_ids.0"
-               data-endpoint="PUTapi-v1-users--id-"
-               data-component="body" required  hidden>
-        <input type="number"
-               name="role_ids.1"
-               data-endpoint="PUTapi-v1-users--id-"
-               data-component="body" hidden>
-    <br>
-<p>The role ids of the user</p>        </p>
-    
-    </form>
 
             <h2 id="users-DELETEapi-v1-users--id-">Delete the specified user</h2>
 
@@ -3200,13 +4380,13 @@ fetch(url, {
 
 
 <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost:8000/api/v1/users/9" \
+    "http://localhost:8000/api/v1/users/1" \
     --header "Authorization: Bearer {ACCESS_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/users/9"
+    "http://localhost:8000/api/v1/users/1"
 );
 
 const headers = {
@@ -3287,8 +4467,204 @@ fetch(url, {
                data-endpoint="DELETEapi-v1-users--id-"
                data-component="url" required  hidden>
     <br>
-<p>The ID of the user</p>            </p>
+<p>The ID of the user.</p>            </p>
                     </form>
+
+            <h2 id="users-PUTapi-v1-users--id-">Update the specified user</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-PUTapi-v1-users--id-">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request PUT \
+    "http://localhost:8000/api/v1/users/10" \
+    --header "Authorization: Bearer {ACCESS_TOKEN}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"username\": \"ducimus\",
+    \"email\": \"amet\",
+    \"first_name\": \"quaerat\",
+    \"last_name\": \"atque\",
+    \"gender\": \"ducimus\",
+    \"date_of_birth\": \"2020-12-01\",
+    \"role_ids\": [
+        17,
+        2
+    ]
+}"
+</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/v1/users/10"
+);
+
+const headers = {
+    "Authorization": "Bearer {ACCESS_TOKEN}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "username": "ducimus",
+    "email": "amet",
+    "first_name": "quaerat",
+    "last_name": "atque",
+    "gender": "ducimus",
+    "date_of_birth": "2020-12-01",
+    "role_ids": [
+        17,
+        2
+    ]
+}
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-PUTapi-v1-users--id-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Successfully updated user!&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-PUTapi-v1-users--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-v1-users--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-v1-users--id-"></code></pre>
+</span>
+<span id="execution-error-PUTapi-v1-users--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-v1-users--id-"></code></pre>
+</span>
+<form id="form-PUTapi-v1-users--id-" data-method="PUT"
+      data-path="api/v1/users/{id}"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Authorization":"Bearer {ACCESS_TOKEN}","Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-v1-users--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTapi-v1-users--id-"
+                    onclick="tryItOut('PUTapi-v1-users--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTapi-v1-users--id-"
+                    onclick="cancelTryOut('PUTapi-v1-users--id-');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTapi-v1-users--id-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/v1/users/{id}</code></b>
+        </p>
+            <p>
+            <small class="badge badge-purple">PATCH</small>
+            <b><code>api/v1/users/{id}</code></b>
+        </p>
+                <p>
+            <label id="auth-PUTapi-v1-users--id-" hidden>Authorization header:
+                <b><code>Bearer </code></b><input type="text"
+                                                                name="Authorization"
+                                                                data-prefix="Bearer "
+                                                                data-endpoint="PUTapi-v1-users--id-"
+                                                                data-component="header"></label>
+        </p>
+                <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="id"
+               data-endpoint="PUTapi-v1-users--id-"
+               data-component="url" required  hidden>
+    <br>
+<p>The ID of the user.</p>            </p>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <p>
+            <b><code>username</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="username"
+               data-endpoint="PUTapi-v1-users--id-"
+               data-component="body" required  hidden>
+    <br>
+<p>A unique username.</p>        </p>
+                <p>
+            <b><code>email</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="email"
+               data-endpoint="PUTapi-v1-users--id-"
+               data-component="body" required  hidden>
+    <br>
+<p>A unique email address.</p>        </p>
+                <p>
+            <b><code>first_name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="first_name"
+               data-endpoint="PUTapi-v1-users--id-"
+               data-component="body" required  hidden>
+    <br>
+<p>First name of user.</p>        </p>
+                <p>
+            <b><code>last_name</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="last_name"
+               data-endpoint="PUTapi-v1-users--id-"
+               data-component="body" required  hidden>
+    <br>
+<p>Last name of user.</p>        </p>
+                <p>
+            <b><code>gender</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="gender"
+               data-endpoint="PUTapi-v1-users--id-"
+               data-component="body" required  hidden>
+    <br>
+<p>Gender of the user.</p>        </p>
+                <p>
+            <b><code>date_of_birth</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+                <input type="text"
+               name="date_of_birth"
+               data-endpoint="PUTapi-v1-users--id-"
+               data-component="body" required  hidden>
+    <br>
+<p>The date of birth of user. Must be a valid date.</p>        </p>
+                <p>
+            <b><code>role_ids</code></b>&nbsp;&nbsp;<small>integer[]</small>  &nbsp;
+                <input type="number"
+               name="role_ids.0"
+               data-endpoint="PUTapi-v1-users--id-"
+               data-component="body" required  hidden>
+        <input type="number"
+               name="role_ids.1"
+               data-endpoint="PUTapi-v1-users--id-"
+               data-component="body" hidden>
+    <br>
+        </p>
+    
+    </form>
 
     
 

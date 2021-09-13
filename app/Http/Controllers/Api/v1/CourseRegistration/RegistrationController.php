@@ -54,9 +54,6 @@ class RegistrationController extends Controller
      *
      * @authenticated
      * @param RegisterStudentsCoursesRequest $request
-     * @bodyParam user_id int required The user_id of the student to be registered
-     * @bodyParam course_id int required The id of the course
-     *
      * @return Illuminate\Http\JsonResponse
      * @response 200 {
      *  "message": "Successfully registered student!"
@@ -94,8 +91,6 @@ class RegistrationController extends Controller
      *
      * @authenticated
      * @param SelfRegisterCoursesRequest $request
-     * @bodyParam course_id int required The id of the course
-     *
      * @return Illuminate\Http\JsonResponse
      * @response 200 {
      *  "message": "Successfully enrolled!"

@@ -1,0 +1,155 @@
+name: Roles
+description: |-
+
+  API endpoints for managing roles
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/roles
+    metadata:
+      title: 'Display all roles.'
+      description: ''
+      authenticated: true
+    headers:
+      Authorization: 'Bearer {ACCESS_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"id":1,"name":"admin","display_name":"admin"},{"id":1,"name":"admin","display_name":"admin"}]}'
+        headers: []
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/roles
+    metadata:
+      title: 'Store a new role.'
+      description: ''
+      authenticated: true
+    headers:
+      Authorization: 'Bearer {ACCESS_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'The name of the role.'
+        required: true
+        example: similique
+        type: string
+    responses:
+      -
+        status: 201
+        content: |-
+          {
+           "message": "Successfully created role!"
+          }
+        headers: []
+        description: '201'
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/roles/{id}'
+    metadata:
+      title: 'Display a specific role.'
+      description: ''
+      authenticated: true
+    headers:
+      Authorization: 'Bearer {ACCESS_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the role.'
+        required: true
+        example: minus
+        type: string
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":{"id":1,"name":"admin","display_name":"admin"}}'
+        headers: []
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/roles/{id}'
+    metadata:
+      title: 'Delete a specific role'
+      description: ''
+      authenticated: true
+    headers:
+      Authorization: 'Bearer {ACCESS_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the role.'
+        required: true
+        example: 9
+        type: integer
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+           "message": "Successfully deleted role!"
+          }
+        headers: []
+        description: '200'
+    responseFields: []
+  -
+    httpMethods:
+      - PUT
+      - PATCH
+    uri: 'api/v1/roles/{id}'
+    metadata:
+      title: 'Update a specific role.'
+      description: ''
+      authenticated: true
+    headers:
+      Authorization: 'Bearer {ACCESS_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the role.'
+        required: true
+        example: 14
+        type: integer
+    queryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: 'The name of the role.'
+        required: true
+        example: qui
+        type: string
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+           "message": "Successfully updated role!"
+          }
+        headers: []
+        description: '200'
+    responseFields: []

@@ -27,10 +27,28 @@ class UpdatePermissionRequest extends FormRequest
             'name' => [
                 'required',
                 'string',
-                'unique:permissions,display_name,' . $this->permission->id,
-                'unique:permissions,name,' . $this->permission->id,
+                'unique:permissions,display_name,' . ($this && $this->permission ? $this->permission->id : null),
+                'unique:permissions,name,' . ($this && $this->permission ? $this->permission->id : null),
             ],
             'group' => 'required|string',
         ];
     }
+
+    /**
+     * Get the body params in the request.
+     *
+     * @return array
+     */
+    public function bodyParameters()
+    {
+        return [
+            'name' => [
+                'description' => 'A unique name of the permission',
+            ],
+            'group' => [
+                'description' => 'The group the permission belongs to',
+            ],
+        ];
+    }
+
 }

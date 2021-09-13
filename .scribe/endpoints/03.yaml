@@ -1,14 +1,14 @@
-name: Roles
+name: Permission
 description: |-
 
-  API endpoints for managing roles
+  API endpoints for managing permission
 endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/roles
+    uri: api/v1/permissions/by-group
     metadata:
-      title: 'Display all roles.'
+      title: 'Get all permissions by groups'
       description: ''
       authenticated: true
     headers:
@@ -21,16 +21,40 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":1,"name":"admin"},{"id":1,"name":"admin"}]}'
+        content: |-
+          {
+           "Student permission": [
+                 {
+                     "id": 19,
+                     "name": "take courses",
+                     "display_name": "take courses",
+                     "group": "Student permission"
+                 }
+             ],
+             "Instructor permission": [
+                 {
+                     "id": 22,
+                     "name": "teach courses",
+                     "display_name": "teach courses",
+                     "group": "Instructor permission"
+                 },
+                 {
+                     "id": 23,
+                     "name": "view own-instructor-courses",
+                     "display_name": "view own-instructor-courses",
+                     "group": "Instructor permission"
+                 }
+             ]
+          }
         headers: []
-        description: null
+        description: '200'
     responseFields: []
   -
     httpMethods:
-      - POST
-    uri: api/v1/roles
+      - GET
+    uri: api/v1/permissions
     metadata:
-      title: 'Store a new role.'
+      title: 'Display a listing of permissions.'
       description: ''
       authenticated: true
     headers:
@@ -39,29 +63,20 @@ endpoints:
       Accept: application/json
     urlParameters: []
     queryParameters: []
-    bodyParameters:
-      name:
-        name: name
-        description: 'A unique role name'
-        required: true
-        example: ea
-        type: string
+    bodyParameters: []
     responses:
       -
-        status: 201
-        content: |-
-          {
-           "message": "Successfully created role!"
-          }
+        status: 200
+        content: '{"data":[{"id":1,"name":"create users","display_name":"create usersssssss","group":"123"},{"id":1,"name":"create users","display_name":"create usersssssss","group":"123"}]}'
         headers: []
-        description: '201'
+        description: null
     responseFields: []
   -
     httpMethods:
       - GET
-    uri: 'api/v1/roles/{id}'
+    uri: 'api/v1/permissions/{id}'
     metadata:
-      title: 'Display a specific role.'
+      title: 'Display the specified permission.'
       description: ''
       authenticated: true
     headers:
@@ -71,7 +86,7 @@ endpoints:
     urlParameters:
       id:
         name: id
-        description: 'The ID of the role'
+        description: 'The ID of the permission.'
         required: true
         example: 5
         type: integer
@@ -80,7 +95,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"name":"admin"}}'
+        content: '{"data":{"id":1,"name":"create users","display_name":"create usersssssss","group":"123"}}'
         headers: []
         description: null
     responseFields: []
@@ -88,9 +103,9 @@ endpoints:
     httpMethods:
       - PUT
       - PATCH
-    uri: 'api/v1/roles/{id}'
+    uri: 'api/v1/permissions/{id}'
     metadata:
-      title: 'Update a specific role.'
+      title: 'Update the specified permission.'
       description: ''
       authenticated: true
     headers:
@@ -100,55 +115,30 @@ endpoints:
     urlParameters:
       id:
         name: id
-        description: 'The ID of the role'
+        description: 'The ID of the permission.'
         required: true
-        example: 3
+        example: 17
         type: integer
     queryParameters: []
     bodyParameters:
       name:
         name: name
-        description: 'The name of the role'
+        description: 'A unique name of the permission.'
         required: true
-        example: amet
+        example: illum
+        type: string
+      group:
+        name: group
+        description: 'The group the permission belongs to.'
+        required: true
+        example: dicta
         type: string
     responses:
       -
         status: 200
         content: |-
           {
-           "message": "Successfully updated role!"
-          }
-        headers: []
-        description: '200'
-    responseFields: []
-  -
-    httpMethods:
-      - DELETE
-    uri: 'api/v1/roles/{id}'
-    metadata:
-      title: 'Delete a specific role'
-      description: ''
-      authenticated: true
-    headers:
-      Authorization: 'Bearer {ACCESS_TOKEN}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the role'
-        required: true
-        example: 7
-        type: integer
-    queryParameters: []
-    bodyParameters: []
-    responses:
-      -
-        status: 200
-        content: |-
-          {
-           "message": "Successfully deleted role!"
+           "message": "Successfully updated permission!"
           }
         headers: []
         description: '200'

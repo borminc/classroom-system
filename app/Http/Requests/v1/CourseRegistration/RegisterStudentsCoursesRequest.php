@@ -29,4 +29,21 @@ class RegisterStudentsCoursesRequest extends FormRequest
             'course_id' => 'required|integer|exists:courses,id',
         ];
     }
+
+    /**
+     * Get the body params in the request.
+     *
+     * @return array
+     */
+    public function bodyParameters()
+    {
+        return [
+            'user_id' => [
+                'description' => 'The user_id of the student to be registered',
+            ],
+            'course_id' => [
+                'description' => 'The id of the course',
+            ],
+        ];
+    }
 }

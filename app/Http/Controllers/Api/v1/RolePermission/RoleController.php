@@ -35,8 +35,6 @@ class RoleController extends Controller
      *
      * @authenticated
      * @param  StoreRoleRequest  $request
-     * @bodyParam name string required A unique role name
-     *
      * @return \Illuminate\Http\Response
      * @response 201 {
      *  "message": "Successfully created role!"
@@ -55,8 +53,6 @@ class RoleController extends Controller
      *
      * @authenticated
      * @param  int  $id
-     * @urlParam id integer required The ID of the role
-     *
      * @return \Illuminate\Http\Response
      * @apiResource App\Http\Resources\v1\RoleResource
      * @apiResourceModel Spatie\Permission\Models\Role
@@ -73,10 +69,7 @@ class RoleController extends Controller
      *
      * @authenticated
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @urlParam id integer required The ID of the role
-     * @bodyParam name string required The name of the role
-     *
+     * @param  Spatie\Permission\Models\Role $role
      * @return \Illuminate\Http\Response
      * @response {
      *  "message": "Successfully updated role!"
@@ -94,9 +87,7 @@ class RoleController extends Controller
      * Delete a specific role
      *
      * @authenticated
-     * @param  int  $id
-     * @urlParam id integer required The ID of the role
-     *
+     * @param  Spatie\Permission\Models\Role $role
      * @return \Illuminate\Http\Response
      * @response {
      *  "message": "Successfully deleted role!"

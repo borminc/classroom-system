@@ -27,7 +27,24 @@ class AssignPermissionToRoleRequest extends FormRequest
         return [
             'role_id' => 'required|integer|exists:roles,id',
             'permission_ids' => 'required|array|min:1',
-            'permission_ids.*' => 'integer|distinct|exists:permissions,id',
+            'permission_ids.*' => 'required|integer|distinct|exists:permissions,id',
+        ];
+    }
+
+    /**
+     * Get the body params in the request.
+     *
+     * @return array
+     */
+    public function bodyParameters()
+    {
+        return [
+            'role_id' => [
+                'description' => 'The id of the role',
+            ],
+            'permission_ids' => [
+                'description' => 'An array of ids of permissions',
+            ],
         ];
     }
 }
