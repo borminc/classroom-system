@@ -44,7 +44,7 @@ endpoints:
         name: name
         description: 'The name of the role.'
         required: true
-        example: similique
+        example: nesciunt
         type: string
     responses:
       -
@@ -73,7 +73,7 @@ endpoints:
         name: id
         description: 'The ID of the role.'
         required: true
-        example: minus
+        example: velit
         type: string
     queryParameters: []
     bodyParameters: []
@@ -83,37 +83,6 @@ endpoints:
         content: '{"data":{"id":1,"name":"admin","display_name":"admin"}}'
         headers: []
         description: null
-    responseFields: []
-  -
-    httpMethods:
-      - DELETE
-    uri: 'api/v1/roles/{id}'
-    metadata:
-      title: 'Delete a specific role'
-      description: ''
-      authenticated: true
-    headers:
-      Authorization: 'Bearer {ACCESS_TOKEN}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the role.'
-        required: true
-        example: 9
-        type: integer
-    queryParameters: []
-    bodyParameters: []
-    responses:
-      -
-        status: 200
-        content: |-
-          {
-           "message": "Successfully deleted role!"
-          }
-        headers: []
-        description: '200'
     responseFields: []
   -
     httpMethods:
@@ -133,7 +102,7 @@ endpoints:
         name: id
         description: 'The ID of the role.'
         required: true
-        example: 14
+        example: 18
         type: integer
     queryParameters: []
     bodyParameters:
@@ -141,7 +110,7 @@ endpoints:
         name: name
         description: 'The name of the role.'
         required: true
-        example: qui
+        example: cupiditate
         type: string
     responses:
       -
@@ -149,6 +118,37 @@ endpoints:
         content: |-
           {
            "message": "Successfully updated role!"
+          }
+        headers: []
+        description: '200'
+    responseFields: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/roles/{id}'
+    metadata:
+      title: 'Delete a specific role'
+      description: ''
+      authenticated: true
+    headers:
+      Authorization: 'Bearer {ACCESS_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the role.'
+        required: true
+        example: 20
+        type: integer
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+           "message": "Successfully deleted role!"
           }
         headers: []
         description: '200'

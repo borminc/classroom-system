@@ -23,7 +23,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":504,"name":"Intro to eum","code":"rAW0W","description":"Maiores ratione et perferendis. Sint quis qui consequatur qui.","instructor":{"id":9,"username":"i_8","first_name":"Instructor","last_name":"8","full_name":"Instructor 8","email":"i_8@test.com","gender":"male","date_of_birth":"3\/Feb\/2000","roles":[{"id":2,"name":"instructor","display_name":"instructor"}]},"students":[]},{"id":505,"name":"Intro to dolor","code":"yLRts","description":"Tempora explicabo enim nam laudantium hic aut. Unde eveniet rerum quo reprehenderit ea nihil. Enim voluptatem dolor dicta incidunt magni.","instructor":{"id":6,"username":"i_5","first_name":"Instructor","last_name":"5","full_name":"Instructor 5","email":"i_5@test.com","gender":"male","date_of_birth":"3\/Feb\/2000","roles":[{"id":2,"name":"instructor","display_name":"instructor"}]},"students":[]}]}'
+        content: '{"data":[{"id":35,"name":"Intro to qui","code":"CnCzA","description":"Voluptas tenetur sit consequatur dolores delectus voluptates. Est repellendus magnam qui perspiciatis dolorum. Fugit corporis eum temporibus.","instructor":{"id":11,"username":"i_10","first_name":"Instructor","last_name":"10","full_name":"Instructor 10","email":"i_10@test.com","gender":"male","date_of_birth":"3\/Feb\/2000","roles":[{"id":2,"name":"instructor","display_name":"instructor"}]},"students":[]},{"id":36,"name":"Intro to est","code":"FzVKJ","description":"Sit itaque accusantium totam dolore vel nam. Esse dicta vel accusantium quibusdam. Et in et commodi ipsum est.","instructor":{"id":7,"username":"i_6","first_name":"Instructor","last_name":"6","full_name":"Instructor 6","email":"i_6@test.com","gender":"male","date_of_birth":"3\/Feb\/2000","roles":[{"id":2,"name":"instructor","display_name":"instructor"}]},"students":[]}]}'
         headers: []
         description: null
     responseFields: []
@@ -45,7 +45,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":506,"name":"Intro to molestias","code":"6TCaR","description":"Est aut sit voluptas labore qui. Laudantium dolorem atque aliquam. Vero nam impedit vel vel.","instructor":{"id":5,"username":"i_4","first_name":"Instructor","last_name":"4","full_name":"Instructor 4","email":"i_4@test.com","gender":"male","date_of_birth":"3\/Feb\/2000","roles":[{"id":2,"name":"instructor","display_name":"instructor"}]}},{"id":507,"name":"Intro to mollitia","code":"0y0mQ","description":"Eveniet velit laudantium cupiditate rem voluptatem quia. Ducimus error sint ipsam itaque.","instructor":{"id":2,"username":"i_1","first_name":"Instructor","last_name":"1","full_name":"Instructor 1","email":"i_1@test.com","gender":"male","date_of_birth":"3\/Feb\/2000","roles":[{"id":2,"name":"instructor","display_name":"instructor"}]}}]}'
+        content: '{"data":[{"id":37,"name":"Intro to est","code":"pZE8y","description":"Consequatur in blanditiis nihil iure. Et aliquam blanditiis possimus quasi ipsam. Rerum tempore deserunt quas rerum quae doloremque.","instructor":{"id":5,"username":"i_4","first_name":"Instructor","last_name":"4","full_name":"Instructor 4","email":"i_4@test.com","gender":"male","date_of_birth":"3\/Feb\/2000","roles":[{"id":2,"name":"instructor","display_name":"instructor"}]}},{"id":38,"name":"Intro to et","code":"RexNm","description":"Eum fuga facere et nobis. Sapiente qui quia quisquam non voluptate expedita. Ex recusandae quisquam est.","instructor":{"id":3,"username":"i_2","first_name":"Instructor","last_name":"2","full_name":"Instructor 2","email":"i_2@test.com","gender":"male","date_of_birth":"3\/Feb\/2000","roles":[{"id":2,"name":"instructor","display_name":"instructor"}]}}]}'
         headers: []
         description: null
     responseFields: []
@@ -68,25 +68,25 @@ endpoints:
         name: name
         description: 'The name of the course.'
         required: true
-        example: earum
+        example: animi
         type: string
       code:
         name: code
         description: 'The code of the course.'
         required: true
-        example: ut
+        example: consequatur
         type: string
       description:
         name: description
         description: 'The description of the course.'
         required: true
-        example: repellendus
+        example: ut
         type: string
       instructor_id:
         name: instructor_id
         description: 'The id of the instructor.'
         required: true
-        example: 5
+        example: 2
         type: integer
     responses:
       -
@@ -115,47 +115,16 @@ endpoints:
         name: id
         description: 'The ID of the course.'
         required: true
-        example: 14
+        example: 7
         type: integer
     queryParameters: []
     bodyParameters: []
     responses:
       -
         status: 200
-        content: '{"data":{"id":508,"name":"Intro to non","code":"6vQBi","description":"Corrupti est rem iusto qui. Magni voluptate aliquid saepe dolorum aut. Quidem dolor repellendus pariatur.","instructor":{"id":10,"username":"i_9","first_name":"Instructor","last_name":"9","full_name":"Instructor 9","email":"i_9@test.com","gender":"male","date_of_birth":"3\/Feb\/2000","roles":[{"id":2,"name":"instructor","display_name":"instructor"}]}}}'
+        content: '{"data":{"id":39,"name":"Intro to blanditiis","code":"xekeT","description":"Rerum repudiandae laudantium ipsum laudantium sint. Officia tenetur optio maiores rem ipsam mollitia et inventore. Deleniti et saepe autem quae.","instructor":{"id":477,"username":"bormin chau","first_name":"bormin","last_name":"chau","full_name":"bormin chau","email":"borminchau@gmail.com","gender":"male","date_of_birth":"1\/Jan\/2000","roles":[{"id":2,"name":"instructor","display_name":"instructor"},{"id":3,"name":"student","display_name":"student"}]}}}'
         headers: []
         description: null
-    responseFields: []
-  -
-    httpMethods:
-      - DELETE
-    uri: 'api/v1/courses/{id}'
-    metadata:
-      title: 'Delete the specified course'
-      description: ''
-      authenticated: true
-    headers:
-      Authorization: 'Bearer {ACCESS_TOKEN}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the course.'
-        required: true
-        example: 12
-        type: integer
-    queryParameters: []
-    bodyParameters: []
-    responses:
-      -
-        status: 200
-        content: |-
-          {
-           "message": "Successfully deleted user!"
-          }
-        headers: []
-        description: '200'
     responseFields: []
   -
     httpMethods:
@@ -175,7 +144,7 @@ endpoints:
         name: id
         description: 'The ID of the course.'
         required: true
-        example: 14
+        example: 13
         type: integer
     queryParameters: []
     bodyParameters:
@@ -183,25 +152,25 @@ endpoints:
         name: name
         description: 'The name of the course.'
         required: true
-        example: sit
+        example: qui
         type: string
       code:
         name: code
         description: 'The code of the course.'
         required: true
-        example: nam
+        example: pariatur
         type: string
       description:
         name: description
         description: 'The description of the course.'
         required: true
-        example: ut
+        example: id
         type: string
       instructor_id:
         name: instructor_id
         description: 'The id of the instructor.'
         required: true
-        example: 20
+        example: 14
         type: integer
     responses:
       -
@@ -209,6 +178,37 @@ endpoints:
         content: |-
           {
            "message": "Successfully updated course!"
+          }
+        headers: []
+        description: '200'
+    responseFields: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/courses/{id}'
+    metadata:
+      title: 'Delete the specified course'
+      description: ''
+      authenticated: true
+    headers:
+      Authorization: 'Bearer {ACCESS_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the course.'
+        required: true
+        example: 3
+        type: integer
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+           "message": "Successfully deleted user!"
           }
         headers: []
         description: '200'

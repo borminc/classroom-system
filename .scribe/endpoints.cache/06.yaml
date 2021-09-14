@@ -23,29 +23,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":479,"username":"mmurray","first_name":"Alverta","last_name":"Murray","full_name":"Alverta Murray","email":"mmurray@test.com","gender":"female","date_of_birth":"23\/Dec\/1984","roles":[]}}'
-        headers: []
-        description: null
-    responseFields: []
-  -
-    httpMethods:
-      - GET
-    uri: api/v1/users/with-permissions
-    metadata:
-      title: 'Get all users with permissions'
-      description: ''
-      authenticated: true
-    headers:
-      Authorization: 'Bearer {ACCESS_TOKEN}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    queryParameters: []
-    bodyParameters: []
-    responses:
-      -
-        status: 200
-        content: '{"data":[{"user":{"id":484,"username":"tillman.bode","first_name":"Deanna","last_name":"Kuphal","full_name":"Deanna Kuphal","email":"tillman.bode@test.com","gender":"male","date_of_birth":"17\/Feb\/1991","roles":[]},"permissions":[]},{"user":{"id":485,"username":"pollich.jany","first_name":"Itzel","last_name":"Streich","full_name":"Itzel Streich","email":"pollich.jany@test.com","gender":"female","date_of_birth":"21\/Dec\/2006","roles":[]},"permissions":[]}]}'
+        content: '{"data":{"id":508,"username":"corene.conn","first_name":"Karen","last_name":"Sawayn","full_name":"Karen Sawayn","email":"corene.conn@test.com","gender":"male","date_of_birth":"6\/Oct\/1974","roles":[]}}'
         headers: []
         description: null
     responseFields: []
@@ -67,7 +45,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":480,"username":"kali.smith","first_name":"Kacie","last_name":"Lueilwitz","full_name":"Kacie Lueilwitz","email":"kali.smith@test.com","gender":"female","date_of_birth":"18\/Dec\/1988","roles":[]},{"id":481,"username":"sipes.wilhelm","first_name":"Angelita","last_name":"Luettgen","full_name":"Angelita Luettgen","email":"sipes.wilhelm@test.com","gender":"male","date_of_birth":"17\/Jan\/1989","roles":[]}]}'
+        content: '{"data":[{"id":509,"username":"kkozey","first_name":"Rebecca","last_name":"Spencer","full_name":"Rebecca Spencer","email":"kkozey@test.com","gender":"female","date_of_birth":"27\/Nov\/2018","roles":[]},{"id":510,"username":"berge.lisette","first_name":"Columbus","last_name":"Renner","full_name":"Columbus Renner","email":"berge.lisette@test.com","gender":"male","date_of_birth":"9\/Feb\/1975","roles":[]}]}'
         headers: []
         description: null
     responseFields: []
@@ -89,7 +67,29 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":482,"username":"florian79","first_name":"Robyn","last_name":"Weissnat","full_name":"Robyn Weissnat","email":"florian79@test.com","gender":"female","date_of_birth":"14\/Dec\/1972","roles":[]},{"id":483,"username":"benny.hayes","first_name":"Robin","last_name":"Powlowski","full_name":"Robin Powlowski","email":"benny.hayes@test.com","gender":"male","date_of_birth":"24\/Sep\/2007","roles":[]}]}'
+        content: '{"data":[{"id":511,"username":"reynolds.jean","first_name":"Meghan","last_name":"Zieme","full_name":"Meghan Zieme","email":"reynolds.jean@test.com","gender":"male","date_of_birth":"5\/Aug\/1974","roles":[]},{"id":512,"username":"imogene11","first_name":"Kelton","last_name":"Reichert","full_name":"Kelton Reichert","email":"imogene11@test.com","gender":"male","date_of_birth":"12\/Dec\/1981","roles":[]}]}'
+        headers: []
+        description: null
+    responseFields: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/users/with-permissions
+    metadata:
+      title: 'Get all users with permissions'
+      description: ''
+      authenticated: true
+    headers:
+      Authorization: 'Bearer {ACCESS_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: '{"data":[{"user":{"id":513,"username":"cdonnelly","first_name":"Sherman","last_name":"Hirthe","full_name":"Sherman Hirthe","email":"cdonnelly@test.com","gender":"female","date_of_birth":"18\/Jun\/1988","roles":[]},"permissions":[]},{"user":{"id":514,"username":"sawayn.astrid","first_name":"Osbaldo","last_name":"Mayert","full_name":"Osbaldo Mayert","email":"sawayn.astrid@test.com","gender":"male","date_of_birth":"20\/Jun\/1986","roles":[]},"permissions":[]}]}'
         headers: []
         description: null
     responseFields: []
@@ -111,7 +111,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":486,"username":"gretchen.gerhold","first_name":"Dayna","last_name":"Hane","full_name":"Dayna Hane","email":"gretchen.gerhold@test.com","gender":"male","date_of_birth":"22\/Aug\/2000","roles":[]},{"id":487,"username":"hans97","first_name":"Heloise","last_name":"Koepp","full_name":"Heloise Koepp","email":"hans97@test.com","gender":"female","date_of_birth":"9\/Mar\/1982","roles":[]}]}'
+        content: '{"data":[{"id":515,"username":"axel39","first_name":"Cordie","last_name":"White","full_name":"Cordie White","email":"axel39@test.com","gender":"female","date_of_birth":"27\/Aug\/2008","roles":[]},{"id":516,"username":"ramiro.walsh","first_name":"Keenan","last_name":"Schaden","full_name":"Keenan Schaden","email":"ramiro.walsh@test.com","gender":"male","date_of_birth":"9\/Nov\/2015","roles":[]}]}'
         headers: []
         description: null
     responseFields: []
@@ -140,25 +140,25 @@ endpoints:
         name: email
         description: 'A unique email address.'
         required: true
-        example: aut
+        example: occaecati
         type: string
       first_name:
         name: first_name
         description: 'First name of user.'
         required: true
-        example: quod
+        example: fugiat
         type: string
       last_name:
         name: last_name
         description: 'Last name of user.'
         required: true
-        example: odio
+        example: perferendis
         type: string
       gender:
         name: gender
         description: 'Gender of the user.'
         required: true
-        example: nobis
+        example: qui
         type: string
       date_of_birth:
         name: date_of_birth
@@ -171,8 +171,8 @@ endpoints:
         description: ''
         required: true
         example:
-          - 20
-          - 10
+          - 11
+          - 8
         type: 'integer[]'
     responses:
       -
@@ -205,47 +205,16 @@ endpoints:
         name: id
         description: 'The ID of the user.'
         required: true
-        example: 2
+        example: 7
         type: integer
     queryParameters: []
     bodyParameters: []
     responses:
       -
         status: 200
-        content: '{"data":{"id":488,"username":"feil.maryjane","first_name":"Noemie","last_name":"Ortiz","full_name":"Noemie Ortiz","email":"feil.maryjane@test.com","gender":"female","date_of_birth":"1\/Aug\/1972","roles":[]}}'
+        content: '{"data":{"id":517,"username":"ariel49","first_name":"Aileen","last_name":"Tromp","full_name":"Aileen Tromp","email":"ariel49@test.com","gender":"male","date_of_birth":"9\/Feb\/1999","roles":[]}}'
         headers: []
         description: null
-    responseFields: []
-  -
-    httpMethods:
-      - DELETE
-    uri: 'api/v1/users/{id}'
-    metadata:
-      title: 'Delete the specified user'
-      description: ''
-      authenticated: true
-    headers:
-      Authorization: 'Bearer {ACCESS_TOKEN}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters:
-      id:
-        name: id
-        description: 'The ID of the user.'
-        required: true
-        example: 1
-        type: integer
-    queryParameters: []
-    bodyParameters: []
-    responses:
-      -
-        status: 200
-        content: |-
-          {
-           "message": "Successfully deleted user!"
-          }
-        headers: []
-        description: '200'
     responseFields: []
   -
     httpMethods:
@@ -265,7 +234,7 @@ endpoints:
         name: id
         description: 'The ID of the user.'
         required: true
-        example: 10
+        example: 14
         type: integer
     queryParameters: []
     bodyParameters:
@@ -273,31 +242,31 @@ endpoints:
         name: username
         description: 'A unique username.'
         required: true
-        example: ducimus
+        example: sed
         type: string
       email:
         name: email
         description: 'A unique email address.'
         required: true
-        example: amet
+        example: consequatur
         type: string
       first_name:
         name: first_name
         description: 'First name of user.'
         required: true
-        example: quaerat
+        example: iure
         type: string
       last_name:
         name: last_name
         description: 'Last name of user.'
         required: true
-        example: atque
+        example: illum
         type: string
       gender:
         name: gender
         description: 'Gender of the user.'
         required: true
-        example: ducimus
+        example: earum
         type: string
       date_of_birth:
         name: date_of_birth
@@ -310,8 +279,8 @@ endpoints:
         description: ''
         required: true
         example:
-          - 17
-          - 2
+          - 11
+          - 6
         type: 'integer[]'
     responses:
       -
@@ -319,6 +288,37 @@ endpoints:
         content: |-
           {
            "message": "Successfully updated user!"
+          }
+        headers: []
+        description: '200'
+    responseFields: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/users/{id}'
+    metadata:
+      title: 'Delete the specified user'
+      description: ''
+      authenticated: true
+    headers:
+      Authorization: 'Bearer {ACCESS_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the user.'
+        required: true
+        example: 16
+        type: integer
+    queryParameters: []
+    bodyParameters: []
+    responses:
+      -
+        status: 200
+        content: |-
+          {
+           "message": "Successfully deleted user!"
           }
         headers: []
         description: '200'

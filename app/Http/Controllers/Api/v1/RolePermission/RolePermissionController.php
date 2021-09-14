@@ -8,6 +8,7 @@ use App\Http\Requests\v1\RolePermission\AssignPermissionToUserRequest;
 use App\Http\Requests\v1\RolePermission\RevokePermissionFromRoleRequest;
 use App\Http\Requests\v1\RolePermission\RevokePermissionFromUserRequest;
 use App\Http\Resources\v1\PermissionResource;
+use App\Http\Resources\v1\RolePermissionResource;
 use App\Models\User;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
@@ -19,6 +20,19 @@ use Spatie\Permission\Models\Role;
  */
 class RolePermissionController extends Controller
 {
+    /**
+     * Get all roles with permissions
+     *
+     * @authenticated
+     * @apiResourceCollection App\Http\Resources\v1\RolePermissionResource
+     * @apiResourceModel Spatie\Permission\Models\Role
+     * @return void
+     */
+    public function getAllRolesWithPermissions()
+    {
+        return RolePermissionResource::collection(Role::all());
+    }
+
     /**
      * Assign permission to role
      *

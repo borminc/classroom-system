@@ -38,6 +38,7 @@ Route::prefix('v1')->group(function () {
         /**
          * Roles
          */
+        Route::get('roles/with-permissions', [RolePermissionController::class, 'getAllRolesWithPermissions']);
         Route::apiResource('roles', RoleController::class);
 
         /**

@@ -21,7 +21,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":500,"name":"Intro to ab","code":"nDCr0","description":"Pariatur sit omnis ad quibusdam. Et corporis hic qui a. Error qui repellat rerum ut quia ut dolores sit.","instructor":{"id":2,"username":"i_1","first_name":"Instructor","last_name":"1","full_name":"Instructor 1","email":"i_1@test.com","gender":"male","date_of_birth":"3\/Feb\/2000","roles":[{"id":2,"name":"instructor","display_name":"instructor"}]}},{"id":501,"name":"Intro to cum","code":"xi4ey","description":"Voluptas vero iste quis magnam et est. Sunt omnis est odio similique ut ducimus qui asperiores. Quia non voluptas veniam aut blanditiis rerum.","instructor":{"id":9,"username":"i_8","first_name":"Instructor","last_name":"8","full_name":"Instructor 8","email":"i_8@test.com","gender":"male","date_of_birth":"3\/Feb\/2000","roles":[{"id":2,"name":"instructor","display_name":"instructor"}]}}]}'
+        content: '{"data":[{"id":31,"name":"Intro to eius","code":"vO0s5","description":"Et eligendi natus qui veniam molestiae temporibus. Quam quibusdam reiciendis ipsum alias. Dolore explicabo quam placeat in.","instructor":{"id":10,"username":"i_9","first_name":"Instructor","last_name":"9","full_name":"Instructor 9","email":"i_9@test.com","gender":"male","date_of_birth":"3\/Feb\/2000","roles":[{"id":2,"name":"instructor","display_name":"instructor"}]}},{"id":32,"name":"Intro to molestiae","code":"PP5d0","description":"Ipsa asperiores doloremque ea tempore. Impedit ea voluptatem molestiae doloribus. Ea deserunt qui quia quo.","instructor":{"id":11,"username":"i_10","first_name":"Instructor","last_name":"10","full_name":"Instructor 10","email":"i_10@test.com","gender":"male","date_of_birth":"3\/Feb\/2000","roles":[{"id":2,"name":"instructor","display_name":"instructor"}]}}]}'
         headers: []
         description: null
     responseFields: []
@@ -43,7 +43,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":502,"name":"Intro to quia","code":"vLkDm","description":"Ipsam fugit quas consequatur voluptatem facere sequi. Aliquam ea labore est. Sunt eaque non et fugiat iure.","instructor":{"id":11,"username":"i_10","first_name":"Instructor","last_name":"10","full_name":"Instructor 10","email":"i_10@test.com","gender":"male","date_of_birth":"3\/Feb\/2000","roles":[{"id":2,"name":"instructor","display_name":"instructor"}]}},{"id":503,"name":"Intro to fuga","code":"5RRlQ","description":"Enim ad voluptatum natus aut. Laboriosam voluptatem vel id fuga cumque. Assumenda repellendus cumque officiis.","instructor":{"id":477,"username":"bormin chau","first_name":"bormin","last_name":"chau","full_name":"bormin chau","email":"borminchau@gmail.com","gender":"male","date_of_birth":"1\/Jan\/2000","roles":[{"id":2,"name":"instructor","display_name":"instructor"},{"id":3,"name":"student","display_name":"student"}]}}]}'
+        content: '{"data":[{"id":33,"name":"Intro to mollitia","code":"pxqic","description":"Quam quod illum unde voluptatem minus. Molestiae accusantium maxime quaerat fuga est.","instructor":{"id":6,"username":"i_5","first_name":"Instructor","last_name":"5","full_name":"Instructor 5","email":"i_5@test.com","gender":"male","date_of_birth":"3\/Feb\/2000","roles":[{"id":2,"name":"instructor","display_name":"instructor"}]}},{"id":34,"name":"Intro to libero","code":"B5tn5","description":"Reprehenderit harum optio enim sit dolores labore enim. Omnis porro illum vitae dolorem cum enim.","instructor":{"id":10,"username":"i_9","first_name":"Instructor","last_name":"9","full_name":"Instructor 9","email":"i_9@test.com","gender":"male","date_of_birth":"3\/Feb\/2000","roles":[{"id":2,"name":"instructor","display_name":"instructor"}]}}]}'
         headers: []
         description: null
     responseFields: []
@@ -66,7 +66,7 @@ endpoints:
         name: course_id
         description: 'The id of the course.'
         required: true
-        example: 18
+        example: 19
         type: integer
     responses:
       -
@@ -105,13 +105,13 @@ endpoints:
         name: user_id
         description: 'The user_id of the student to be registered.'
         required: true
-        example: 7
+        example: 4
         type: integer
       course_id:
         name: course_id
         description: 'The id of the course.'
         required: true
-        example: 19
+        example: 8
         type: integer
     responses:
       -

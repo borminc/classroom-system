@@ -51,7 +51,7 @@
                             <li><a href="http://github.com/knuckleswtf/scribe">Documentation powered by Scribe ✍</a></li>
                     </ul>
             <ul class="toc-footer" id="last-updated">
-            <li>Last updated: September 13 2021</li>
+            <li>Last updated: September 14 2021</li>
         </ul>
 </div>
 <div class="page-wrapper">
@@ -67,7 +67,7 @@ You can switch the language used with the tabs at the top right (or from the nav
 <pre><code class="language-yaml">http://localhost:8000</code></pre>
 
         <h1>Authenticating requests</h1>
-<p>To authenticate requests, include an <strong><code>Authorization</code></strong> header with the value <strong><code>"Bearer {ACCESS_TOKEN}"</code></strong>.</p>
+<p>Authenticate requests to this API's endpoints by sending an <strong><code>Authorization</code></strong> header with the value <strong><code>"Bearer {ACCESS_TOKEN}"</code></strong>.</p>
 <p>All authenticated endpoints are marked with a <code>requires authentication</code> badge in the documentation below.</p>
 <p>You can retrieve your token by visiting your dashboard and clicking <b>Generate API token</b>.</p>
 
@@ -91,8 +91,8 @@ You can switch the language used with the tabs at the top right (or from the nav
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"itorp@example.net\",
-    \"password\": \"repellat\",
+    \"email\": \"dickens.dayton@example.org\",
+    \"password\": \"maiores\",
     \"remember_me\": false
 }"
 </code></pre>
@@ -107,8 +107,8 @@ const headers = {
 };
 
 let body = {
-    "email": "itorp@example.net",
-    "password": "repellat",
+    "email": "dickens.dayton@example.org",
+    "password": "maiores",
     "remember_me": false
 }
 
@@ -243,13 +243,13 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"username\": \"eum\",
-    \"email\": \"error\",
-    \"password\": \"\",
-    \"password_confirmation\": \"voluptas\",
-    \"first_name\": \"et\",
-    \"last_name\": \"id\",
-    \"gender\": \"et\",
+    \"username\": \"optio\",
+    \"email\": \"quis\",
+    \"password\": \"wravue\",
+    \"password_confirmation\": \"illo\",
+    \"first_name\": \"nisi\",
+    \"last_name\": \"occaecati\",
+    \"gender\": \"dolore\",
     \"date_of_birth\": \"2020-12-01\"
 }"
 </code></pre>
@@ -264,13 +264,13 @@ const headers = {
 };
 
 let body = {
-    "username": "eum",
-    "email": "error",
-    "password": "",
-    "password_confirmation": "voluptas",
-    "first_name": "et",
-    "last_name": "id",
-    "gender": "et",
+    "username": "optio",
+    "email": "quis",
+    "password": "wravue",
+    "password_confirmation": "illo",
+    "first_name": "nisi",
+    "last_name": "occaecati",
+    "gender": "dolore",
     "date_of_birth": "2020-12-01"
 }
 
@@ -540,17 +540,17 @@ fetch(url, {
 <code class="language-json">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 500,
-            &quot;name&quot;: &quot;Intro to ab&quot;,
-            &quot;code&quot;: &quot;nDCr0&quot;,
-            &quot;description&quot;: &quot;Pariatur sit omnis ad quibusdam. Et corporis hic qui a. Error qui repellat rerum ut quia ut dolores sit.&quot;,
+            &quot;id&quot;: 31,
+            &quot;name&quot;: &quot;Intro to eius&quot;,
+            &quot;code&quot;: &quot;vO0s5&quot;,
+            &quot;description&quot;: &quot;Et eligendi natus qui veniam molestiae temporibus. Quam quibusdam reiciendis ipsum alias. Dolore explicabo quam placeat in.&quot;,
             &quot;instructor&quot;: {
-                &quot;id&quot;: 2,
-                &quot;username&quot;: &quot;i_1&quot;,
+                &quot;id&quot;: 10,
+                &quot;username&quot;: &quot;i_9&quot;,
                 &quot;first_name&quot;: &quot;Instructor&quot;,
-                &quot;last_name&quot;: &quot;1&quot;,
-                &quot;full_name&quot;: &quot;Instructor 1&quot;,
-                &quot;email&quot;: &quot;i_1@test.com&quot;,
+                &quot;last_name&quot;: &quot;9&quot;,
+                &quot;full_name&quot;: &quot;Instructor 9&quot;,
+                &quot;email&quot;: &quot;i_9@test.com&quot;,
                 &quot;gender&quot;: &quot;male&quot;,
                 &quot;date_of_birth&quot;: &quot;3/Feb/2000&quot;,
                 &quot;roles&quot;: [
@@ -563,17 +563,17 @@ fetch(url, {
             }
         },
         {
-            &quot;id&quot;: 501,
-            &quot;name&quot;: &quot;Intro to cum&quot;,
-            &quot;code&quot;: &quot;xi4ey&quot;,
-            &quot;description&quot;: &quot;Voluptas vero iste quis magnam et est. Sunt omnis est odio similique ut ducimus qui asperiores. Quia non voluptas veniam aut blanditiis rerum.&quot;,
+            &quot;id&quot;: 32,
+            &quot;name&quot;: &quot;Intro to molestiae&quot;,
+            &quot;code&quot;: &quot;PP5d0&quot;,
+            &quot;description&quot;: &quot;Ipsa asperiores doloremque ea tempore. Impedit ea voluptatem molestiae doloribus. Ea deserunt qui quia quo.&quot;,
             &quot;instructor&quot;: {
-                &quot;id&quot;: 9,
-                &quot;username&quot;: &quot;i_8&quot;,
+                &quot;id&quot;: 11,
+                &quot;username&quot;: &quot;i_10&quot;,
                 &quot;first_name&quot;: &quot;Instructor&quot;,
-                &quot;last_name&quot;: &quot;8&quot;,
-                &quot;full_name&quot;: &quot;Instructor 8&quot;,
-                &quot;email&quot;: &quot;i_8@test.com&quot;,
+                &quot;last_name&quot;: &quot;10&quot;,
+                &quot;full_name&quot;: &quot;Instructor 10&quot;,
+                &quot;email&quot;: &quot;i_10@test.com&quot;,
                 &quot;gender&quot;: &quot;male&quot;,
                 &quot;date_of_birth&quot;: &quot;3/Feb/2000&quot;,
                 &quot;roles&quot;: [
@@ -681,17 +681,17 @@ fetch(url, {
 <code class="language-json">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 502,
-            &quot;name&quot;: &quot;Intro to quia&quot;,
-            &quot;code&quot;: &quot;vLkDm&quot;,
-            &quot;description&quot;: &quot;Ipsam fugit quas consequatur voluptatem facere sequi. Aliquam ea labore est. Sunt eaque non et fugiat iure.&quot;,
+            &quot;id&quot;: 33,
+            &quot;name&quot;: &quot;Intro to mollitia&quot;,
+            &quot;code&quot;: &quot;pxqic&quot;,
+            &quot;description&quot;: &quot;Quam quod illum unde voluptatem minus. Molestiae accusantium maxime quaerat fuga est.&quot;,
             &quot;instructor&quot;: {
-                &quot;id&quot;: 11,
-                &quot;username&quot;: &quot;i_10&quot;,
+                &quot;id&quot;: 6,
+                &quot;username&quot;: &quot;i_5&quot;,
                 &quot;first_name&quot;: &quot;Instructor&quot;,
-                &quot;last_name&quot;: &quot;10&quot;,
-                &quot;full_name&quot;: &quot;Instructor 10&quot;,
-                &quot;email&quot;: &quot;i_10@test.com&quot;,
+                &quot;last_name&quot;: &quot;5&quot;,
+                &quot;full_name&quot;: &quot;Instructor 5&quot;,
+                &quot;email&quot;: &quot;i_5@test.com&quot;,
                 &quot;gender&quot;: &quot;male&quot;,
                 &quot;date_of_birth&quot;: &quot;3/Feb/2000&quot;,
                 &quot;roles&quot;: [
@@ -704,29 +704,24 @@ fetch(url, {
             }
         },
         {
-            &quot;id&quot;: 503,
-            &quot;name&quot;: &quot;Intro to fuga&quot;,
-            &quot;code&quot;: &quot;5RRlQ&quot;,
-            &quot;description&quot;: &quot;Enim ad voluptatum natus aut. Laboriosam voluptatem vel id fuga cumque. Assumenda repellendus cumque officiis.&quot;,
+            &quot;id&quot;: 34,
+            &quot;name&quot;: &quot;Intro to libero&quot;,
+            &quot;code&quot;: &quot;B5tn5&quot;,
+            &quot;description&quot;: &quot;Reprehenderit harum optio enim sit dolores labore enim. Omnis porro illum vitae dolorem cum enim.&quot;,
             &quot;instructor&quot;: {
-                &quot;id&quot;: 477,
-                &quot;username&quot;: &quot;bormin chau&quot;,
-                &quot;first_name&quot;: &quot;bormin&quot;,
-                &quot;last_name&quot;: &quot;chau&quot;,
-                &quot;full_name&quot;: &quot;bormin chau&quot;,
-                &quot;email&quot;: &quot;borminchau@gmail.com&quot;,
+                &quot;id&quot;: 10,
+                &quot;username&quot;: &quot;i_9&quot;,
+                &quot;first_name&quot;: &quot;Instructor&quot;,
+                &quot;last_name&quot;: &quot;9&quot;,
+                &quot;full_name&quot;: &quot;Instructor 9&quot;,
+                &quot;email&quot;: &quot;i_9@test.com&quot;,
                 &quot;gender&quot;: &quot;male&quot;,
-                &quot;date_of_birth&quot;: &quot;1/Jan/2000&quot;,
+                &quot;date_of_birth&quot;: &quot;3/Feb/2000&quot;,
                 &quot;roles&quot;: [
                     {
                         &quot;id&quot;: 2,
                         &quot;name&quot;: &quot;instructor&quot;,
                         &quot;display_name&quot;: &quot;instructor&quot;
-                    },
-                    {
-                        &quot;id&quot;: 3,
-                        &quot;name&quot;: &quot;student&quot;,
-                        &quot;display_name&quot;: &quot;student&quot;
                     }
                 ]
             }
@@ -802,7 +797,7 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"course_id\": 18
+    \"course_id\": 19
 }"
 </code></pre>
 
@@ -817,7 +812,7 @@ const headers = {
 };
 
 let body = {
-    "course_id": 18
+    "course_id": 19
 }
 
 fetch(url, {
@@ -924,8 +919,8 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"user_id\": 7,
-    \"course_id\": 19
+    \"user_id\": 4,
+    \"course_id\": 8
 }"
 </code></pre>
 
@@ -940,8 +935,8 @@ const headers = {
 };
 
 let body = {
-    "user_id": 7,
-    "course_id": 19
+    "user_id": 4,
+    "course_id": 8
 }
 
 fetch(url, {
@@ -1085,17 +1080,17 @@ fetch(url, {
 <code class="language-json">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 504,
-            &quot;name&quot;: &quot;Intro to eum&quot;,
-            &quot;code&quot;: &quot;rAW0W&quot;,
-            &quot;description&quot;: &quot;Maiores ratione et perferendis. Sint quis qui consequatur qui.&quot;,
+            &quot;id&quot;: 35,
+            &quot;name&quot;: &quot;Intro to qui&quot;,
+            &quot;code&quot;: &quot;CnCzA&quot;,
+            &quot;description&quot;: &quot;Voluptas tenetur sit consequatur dolores delectus voluptates. Est repellendus magnam qui perspiciatis dolorum. Fugit corporis eum temporibus.&quot;,
             &quot;instructor&quot;: {
-                &quot;id&quot;: 9,
-                &quot;username&quot;: &quot;i_8&quot;,
+                &quot;id&quot;: 11,
+                &quot;username&quot;: &quot;i_10&quot;,
                 &quot;first_name&quot;: &quot;Instructor&quot;,
-                &quot;last_name&quot;: &quot;8&quot;,
-                &quot;full_name&quot;: &quot;Instructor 8&quot;,
-                &quot;email&quot;: &quot;i_8@test.com&quot;,
+                &quot;last_name&quot;: &quot;10&quot;,
+                &quot;full_name&quot;: &quot;Instructor 10&quot;,
+                &quot;email&quot;: &quot;i_10@test.com&quot;,
                 &quot;gender&quot;: &quot;male&quot;,
                 &quot;date_of_birth&quot;: &quot;3/Feb/2000&quot;,
                 &quot;roles&quot;: [
@@ -1109,17 +1104,17 @@ fetch(url, {
             &quot;students&quot;: []
         },
         {
-            &quot;id&quot;: 505,
-            &quot;name&quot;: &quot;Intro to dolor&quot;,
-            &quot;code&quot;: &quot;yLRts&quot;,
-            &quot;description&quot;: &quot;Tempora explicabo enim nam laudantium hic aut. Unde eveniet rerum quo reprehenderit ea nihil. Enim voluptatem dolor dicta incidunt magni.&quot;,
+            &quot;id&quot;: 36,
+            &quot;name&quot;: &quot;Intro to est&quot;,
+            &quot;code&quot;: &quot;FzVKJ&quot;,
+            &quot;description&quot;: &quot;Sit itaque accusantium totam dolore vel nam. Esse dicta vel accusantium quibusdam. Et in et commodi ipsum est.&quot;,
             &quot;instructor&quot;: {
-                &quot;id&quot;: 6,
-                &quot;username&quot;: &quot;i_5&quot;,
+                &quot;id&quot;: 7,
+                &quot;username&quot;: &quot;i_6&quot;,
                 &quot;first_name&quot;: &quot;Instructor&quot;,
-                &quot;last_name&quot;: &quot;5&quot;,
-                &quot;full_name&quot;: &quot;Instructor 5&quot;,
-                &quot;email&quot;: &quot;i_5@test.com&quot;,
+                &quot;last_name&quot;: &quot;6&quot;,
+                &quot;full_name&quot;: &quot;Instructor 6&quot;,
+                &quot;email&quot;: &quot;i_6@test.com&quot;,
                 &quot;gender&quot;: &quot;male&quot;,
                 &quot;date_of_birth&quot;: &quot;3/Feb/2000&quot;,
                 &quot;roles&quot;: [
@@ -1228,10 +1223,10 @@ fetch(url, {
 <code class="language-json">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 506,
-            &quot;name&quot;: &quot;Intro to molestias&quot;,
-            &quot;code&quot;: &quot;6TCaR&quot;,
-            &quot;description&quot;: &quot;Est aut sit voluptas labore qui. Laudantium dolorem atque aliquam. Vero nam impedit vel vel.&quot;,
+            &quot;id&quot;: 37,
+            &quot;name&quot;: &quot;Intro to est&quot;,
+            &quot;code&quot;: &quot;pZE8y&quot;,
+            &quot;description&quot;: &quot;Consequatur in blanditiis nihil iure. Et aliquam blanditiis possimus quasi ipsam. Rerum tempore deserunt quas rerum quae doloremque.&quot;,
             &quot;instructor&quot;: {
                 &quot;id&quot;: 5,
                 &quot;username&quot;: &quot;i_4&quot;,
@@ -1251,17 +1246,17 @@ fetch(url, {
             }
         },
         {
-            &quot;id&quot;: 507,
-            &quot;name&quot;: &quot;Intro to mollitia&quot;,
-            &quot;code&quot;: &quot;0y0mQ&quot;,
-            &quot;description&quot;: &quot;Eveniet velit laudantium cupiditate rem voluptatem quia. Ducimus error sint ipsam itaque.&quot;,
+            &quot;id&quot;: 38,
+            &quot;name&quot;: &quot;Intro to et&quot;,
+            &quot;code&quot;: &quot;RexNm&quot;,
+            &quot;description&quot;: &quot;Eum fuga facere et nobis. Sapiente qui quia quisquam non voluptate expedita. Ex recusandae quisquam est.&quot;,
             &quot;instructor&quot;: {
-                &quot;id&quot;: 2,
-                &quot;username&quot;: &quot;i_1&quot;,
+                &quot;id&quot;: 3,
+                &quot;username&quot;: &quot;i_2&quot;,
                 &quot;first_name&quot;: &quot;Instructor&quot;,
-                &quot;last_name&quot;: &quot;1&quot;,
-                &quot;full_name&quot;: &quot;Instructor 1&quot;,
-                &quot;email&quot;: &quot;i_1@test.com&quot;,
+                &quot;last_name&quot;: &quot;2&quot;,
+                &quot;full_name&quot;: &quot;Instructor 2&quot;,
+                &quot;email&quot;: &quot;i_2@test.com&quot;,
                 &quot;gender&quot;: &quot;male&quot;,
                 &quot;date_of_birth&quot;: &quot;3/Feb/2000&quot;,
                 &quot;roles&quot;: [
@@ -1344,10 +1339,10 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"earum\",
-    \"code\": \"ut\",
-    \"description\": \"repellendus\",
-    \"instructor_id\": 5
+    \"name\": \"animi\",
+    \"code\": \"consequatur\",
+    \"description\": \"ut\",
+    \"instructor_id\": 2
 }"
 </code></pre>
 
@@ -1362,10 +1357,10 @@ const headers = {
 };
 
 let body = {
-    "name": "earum",
-    "code": "ut",
-    "description": "repellendus",
-    "instructor_id": 5
+    "name": "animi",
+    "code": "consequatur",
+    "description": "ut",
+    "instructor_id": 2
 }
 
 fetch(url, {
@@ -1482,13 +1477,13 @@ fetch(url, {
 
 
 <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/v1/courses/14" \
+    --get "http://localhost:8000/api/v1/courses/7" \
     --header "Authorization: Bearer {ACCESS_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/courses/14"
+    "http://localhost:8000/api/v1/courses/7"
 );
 
 const headers = {
@@ -1511,24 +1506,29 @@ fetch(url, {
 
 <code class="language-json">{
     &quot;data&quot;: {
-        &quot;id&quot;: 508,
-        &quot;name&quot;: &quot;Intro to non&quot;,
-        &quot;code&quot;: &quot;6vQBi&quot;,
-        &quot;description&quot;: &quot;Corrupti est rem iusto qui. Magni voluptate aliquid saepe dolorum aut. Quidem dolor repellendus pariatur.&quot;,
+        &quot;id&quot;: 39,
+        &quot;name&quot;: &quot;Intro to blanditiis&quot;,
+        &quot;code&quot;: &quot;xekeT&quot;,
+        &quot;description&quot;: &quot;Rerum repudiandae laudantium ipsum laudantium sint. Officia tenetur optio maiores rem ipsam mollitia et inventore. Deleniti et saepe autem quae.&quot;,
         &quot;instructor&quot;: {
-            &quot;id&quot;: 10,
-            &quot;username&quot;: &quot;i_9&quot;,
-            &quot;first_name&quot;: &quot;Instructor&quot;,
-            &quot;last_name&quot;: &quot;9&quot;,
-            &quot;full_name&quot;: &quot;Instructor 9&quot;,
-            &quot;email&quot;: &quot;i_9@test.com&quot;,
+            &quot;id&quot;: 477,
+            &quot;username&quot;: &quot;bormin chau&quot;,
+            &quot;first_name&quot;: &quot;bormin&quot;,
+            &quot;last_name&quot;: &quot;chau&quot;,
+            &quot;full_name&quot;: &quot;bormin chau&quot;,
+            &quot;email&quot;: &quot;borminchau@gmail.com&quot;,
             &quot;gender&quot;: &quot;male&quot;,
-            &quot;date_of_birth&quot;: &quot;3/Feb/2000&quot;,
+            &quot;date_of_birth&quot;: &quot;1/Jan/2000&quot;,
             &quot;roles&quot;: [
                 {
                     &quot;id&quot;: 2,
                     &quot;name&quot;: &quot;instructor&quot;,
                     &quot;display_name&quot;: &quot;instructor&quot;
+                },
+                {
+                    &quot;id&quot;: 3,
+                    &quot;name&quot;: &quot;student&quot;,
+                    &quot;display_name&quot;: &quot;student&quot;
                 }
             ]
         }
@@ -1594,109 +1594,6 @@ fetch(url, {
 <p>The ID of the course.</p>            </p>
                     </form>
 
-            <h2 id="courses-DELETEapi-v1-courses--id-">Delete the specified course</h2>
-
-<p>
-<small class="badge badge-darkred">requires authentication</small>
-</p>
-
-
-
-<span id="example-requests-DELETEapi-v1-courses--id-">
-<blockquote>Example request:</blockquote>
-
-
-<pre><code class="language-bash">curl --request DELETE \
-    "http://localhost:8000/api/v1/courses/12" \
-    --header "Authorization: Bearer {ACCESS_TOKEN}" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre>
-
-<pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/courses/12"
-);
-
-const headers = {
-    "Authorization": "Bearer {ACCESS_TOKEN}",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "DELETE",
-    headers,
-}).then(response =&gt; response.json());</code></pre>
-</span>
-
-<span id="example-responses-DELETEapi-v1-courses--id-">
-            <blockquote>
-            <p>Example response (200):</p>
-        </blockquote>
-                <pre>
-
-<code class="language-json">{
-    &quot;message&quot;: &quot;Successfully deleted user!&quot;
-}</code>
- </pre>
-    </span>
-<span id="execution-results-DELETEapi-v1-courses--id-" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-DELETEapi-v1-courses--id-"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-DELETEapi-v1-courses--id-"></code></pre>
-</span>
-<span id="execution-error-DELETEapi-v1-courses--id-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-DELETEapi-v1-courses--id-"></code></pre>
-</span>
-<form id="form-DELETEapi-v1-courses--id-" data-method="DELETE"
-      data-path="api/v1/courses/{id}"
-      data-authed="1"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      data-headers='{"Authorization":"Bearer {ACCESS_TOKEN}","Content-Type":"application\/json","Accept":"application\/json"}'
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-v1-courses--id-', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-DELETEapi-v1-courses--id-"
-                    onclick="tryItOut('DELETEapi-v1-courses--id-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-DELETEapi-v1-courses--id-"
-                    onclick="cancelTryOut('DELETEapi-v1-courses--id-');" hidden>Cancel
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-DELETEapi-v1-courses--id-" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-red">DELETE</small>
-            <b><code>api/v1/courses/{id}</code></b>
-        </p>
-                <p>
-            <label id="auth-DELETEapi-v1-courses--id-" hidden>Authorization header:
-                <b><code>Bearer </code></b><input type="text"
-                                                                name="Authorization"
-                                                                data-prefix="Bearer "
-                                                                data-endpoint="DELETEapi-v1-courses--id-"
-                                                                data-component="header"></label>
-        </p>
-                <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <p>
-                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
-                <input type="number"
-               name="id"
-               data-endpoint="DELETEapi-v1-courses--id-"
-               data-component="url" required  hidden>
-    <br>
-<p>The ID of the course.</p>            </p>
-                    </form>
-
             <h2 id="courses-PUTapi-v1-courses--id-">Update the specified course</h2>
 
 <p>
@@ -1710,20 +1607,20 @@ fetch(url, {
 
 
 <pre><code class="language-bash">curl --request PUT \
-    "http://localhost:8000/api/v1/courses/14" \
+    "http://localhost:8000/api/v1/courses/13" \
     --header "Authorization: Bearer {ACCESS_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"sit\",
-    \"code\": \"nam\",
-    \"description\": \"ut\",
-    \"instructor_id\": 20
+    \"name\": \"qui\",
+    \"code\": \"pariatur\",
+    \"description\": \"id\",
+    \"instructor_id\": 14
 }"
 </code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/courses/14"
+    "http://localhost:8000/api/v1/courses/13"
 );
 
 const headers = {
@@ -1733,10 +1630,10 @@ const headers = {
 };
 
 let body = {
-    "name": "sit",
-    "code": "nam",
-    "description": "ut",
-    "instructor_id": 20
+    "name": "qui",
+    "code": "pariatur",
+    "description": "id",
+    "instructor_id": 14
 }
 
 fetch(url, {
@@ -1852,6 +1749,109 @@ fetch(url, {
 <p>The id of the instructor.</p>        </p>
     
     </form>
+
+            <h2 id="courses-DELETEapi-v1-courses--id-">Delete the specified course</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-DELETEapi-v1-courses--id-">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request DELETE \
+    "http://localhost:8000/api/v1/courses/3" \
+    --header "Authorization: Bearer {ACCESS_TOKEN}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/v1/courses/3"
+);
+
+const headers = {
+    "Authorization": "Bearer {ACCESS_TOKEN}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-DELETEapi-v1-courses--id-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Successfully deleted user!&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-DELETEapi-v1-courses--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-v1-courses--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-v1-courses--id-"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-v1-courses--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-v1-courses--id-"></code></pre>
+</span>
+<form id="form-DELETEapi-v1-courses--id-" data-method="DELETE"
+      data-path="api/v1/courses/{id}"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Authorization":"Bearer {ACCESS_TOKEN}","Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-v1-courses--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-v1-courses--id-"
+                    onclick="tryItOut('DELETEapi-v1-courses--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-v1-courses--id-"
+                    onclick="cancelTryOut('DELETEapi-v1-courses--id-');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-v1-courses--id-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/v1/courses/{id}</code></b>
+        </p>
+                <p>
+            <label id="auth-DELETEapi-v1-courses--id-" hidden>Authorization header:
+                <b><code>Bearer </code></b><input type="text"
+                                                                name="Authorization"
+                                                                data-prefix="Bearer "
+                                                                data-endpoint="DELETEapi-v1-courses--id-"
+                                                                data-component="header"></label>
+        </p>
+                <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="id"
+               data-endpoint="DELETEapi-v1-courses--id-"
+               data-component="url" required  hidden>
+    <br>
+<p>The ID of the course.</p>            </p>
+                    </form>
 
         <h1 id="permission">Permission</h1>
 
@@ -2092,13 +2092,13 @@ fetch(url, {
 
 
 <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/v1/permissions/5" \
+    --get "http://localhost:8000/api/v1/permissions/19" \
     --header "Authorization: Bearer {ACCESS_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/permissions/5"
+    "http://localhost:8000/api/v1/permissions/19"
 );
 
 const headers = {
@@ -2200,18 +2200,18 @@ fetch(url, {
 
 
 <pre><code class="language-bash">curl --request PUT \
-    "http://localhost:8000/api/v1/permissions/17" \
+    "http://localhost:8000/api/v1/permissions/2" \
     --header "Authorization: Bearer {ACCESS_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"illum\",
-    \"group\": \"dicta\"
+    \"name\": \"quis\",
+    \"group\": \"et\"
 }"
 </code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/permissions/17"
+    "http://localhost:8000/api/v1/permissions/2"
 );
 
 const headers = {
@@ -2221,8 +2221,8 @@ const headers = {
 };
 
 let body = {
-    "name": "illum",
-    "group": "dicta"
+    "name": "quis",
+    "group": "et"
 }
 
 fetch(url, {
@@ -2345,10 +2345,10 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"role_id\": 19,
+    \"role_id\": 18,
     \"permission_ids\": [
-        12,
-        18
+        17,
+        14
     ]
 }"
 </code></pre>
@@ -2364,10 +2364,10 @@ const headers = {
 };
 
 let body = {
-    "role_id": 19,
+    "role_id": 18,
     "permission_ids": [
-        12,
-        18
+        17,
+        14
     ]
 }
 
@@ -2495,10 +2495,10 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"user_id\": 10,
+    \"user_id\": 5,
     \"permission_ids\": [
-        13,
-        9
+        16,
+        1
     ]
 }"
 </code></pre>
@@ -2514,10 +2514,10 @@ const headers = {
 };
 
 let body = {
-    "user_id": 10,
+    "user_id": 5,
     "permission_ids": [
-        13,
-        9
+        16,
+        1
     ]
 }
 
@@ -2645,10 +2645,10 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"role_id\": 18,
+    \"role_id\": 7,
     \"permission_ids\": [
-        2,
-        13
+        13,
+        11
     ]
 }"
 </code></pre>
@@ -2664,10 +2664,10 @@ const headers = {
 };
 
 let body = {
-    "role_id": 18,
+    "role_id": 7,
     "permission_ids": [
-        2,
-        13
+        13,
+        11
     ]
 }
 
@@ -2795,10 +2795,10 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"user_id\": 8,
+    \"user_id\": 1,
     \"permission_ids\": [
-        9,
-        20
+        2,
+        6
     ]
 }"
 </code></pre>
@@ -2814,10 +2814,10 @@ const headers = {
 };
 
 let body = {
-    "user_id": 8,
+    "user_id": 1,
     "permission_ids": [
-        9,
-        20
+        2,
+        6
     ]
 }
 
@@ -2926,6 +2926,335 @@ fetch(url, {
         </p>
     
     </form>
+
+            <h2 id="permission-assignment-GETapi-v1-roles-with-permissions">Get all roles with permissions</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-GETapi-v1-roles-with-permissions">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request GET \
+    --get "http://localhost:8000/api/v1/roles/with-permissions" \
+    --header "Authorization: Bearer {ACCESS_TOKEN}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/v1/roles/with-permissions"
+);
+
+const headers = {
+    "Authorization": "Bearer {ACCESS_TOKEN}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-GETapi-v1-roles-with-permissions">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;data&quot;: [
+        {
+            &quot;role&quot;: {
+                &quot;id&quot;: 1,
+                &quot;name&quot;: &quot;admin&quot;,
+                &quot;display_name&quot;: &quot;admin&quot;
+            },
+            &quot;permissions&quot;: [
+                {
+                    &quot;id&quot;: 1,
+                    &quot;name&quot;: &quot;create users&quot;,
+                    &quot;display_name&quot;: &quot;create usersssssss&quot;,
+                    &quot;group&quot;: &quot;123&quot;
+                },
+                {
+                    &quot;id&quot;: 2,
+                    &quot;name&quot;: &quot;view users&quot;,
+                    &quot;display_name&quot;: &quot;view users&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 3,
+                    &quot;name&quot;: &quot;view instructors&quot;,
+                    &quot;display_name&quot;: &quot;view instructors&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 4,
+                    &quot;name&quot;: &quot;view students&quot;,
+                    &quot;display_name&quot;: &quot;view students&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 5,
+                    &quot;name&quot;: &quot;edit users&quot;,
+                    &quot;display_name&quot;: &quot;edit users&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 6,
+                    &quot;name&quot;: &quot;delete users&quot;,
+                    &quot;display_name&quot;: &quot;delete users&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 7,
+                    &quot;name&quot;: &quot;register students-courses&quot;,
+                    &quot;display_name&quot;: &quot;register students-courses&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 8,
+                    &quot;name&quot;: &quot;create courses&quot;,
+                    &quot;display_name&quot;: &quot;create courses&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 9,
+                    &quot;name&quot;: &quot;edit courses&quot;,
+                    &quot;display_name&quot;: &quot;edit courses&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 10,
+                    &quot;name&quot;: &quot;delete courses&quot;,
+                    &quot;display_name&quot;: &quot;delete courses&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 11,
+                    &quot;name&quot;: &quot;view roles&quot;,
+                    &quot;display_name&quot;: &quot;view roles&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 12,
+                    &quot;name&quot;: &quot;create roles&quot;,
+                    &quot;display_name&quot;: &quot;create roles&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 13,
+                    &quot;name&quot;: &quot;edit roles&quot;,
+                    &quot;display_name&quot;: &quot;edit roles&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 14,
+                    &quot;name&quot;: &quot;delete roles&quot;,
+                    &quot;display_name&quot;: &quot;delete roles&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 15,
+                    &quot;name&quot;: &quot;view permissions&quot;,
+                    &quot;display_name&quot;: &quot;view permissions&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 16,
+                    &quot;name&quot;: &quot;edit permissions&quot;,
+                    &quot;display_name&quot;: &quot;edit permissions&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 17,
+                    &quot;name&quot;: &quot;assign permissions&quot;,
+                    &quot;display_name&quot;: &quot;assign permissions&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 18,
+                    &quot;name&quot;: &quot;revoke permissions&quot;,
+                    &quot;display_name&quot;: &quot;revoke permissions&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                }
+            ]
+        },
+        {
+            &quot;role&quot;: {
+                &quot;id&quot;: 1,
+                &quot;name&quot;: &quot;admin&quot;,
+                &quot;display_name&quot;: &quot;admin&quot;
+            },
+            &quot;permissions&quot;: [
+                {
+                    &quot;id&quot;: 1,
+                    &quot;name&quot;: &quot;create users&quot;,
+                    &quot;display_name&quot;: &quot;create usersssssss&quot;,
+                    &quot;group&quot;: &quot;123&quot;
+                },
+                {
+                    &quot;id&quot;: 2,
+                    &quot;name&quot;: &quot;view users&quot;,
+                    &quot;display_name&quot;: &quot;view users&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 3,
+                    &quot;name&quot;: &quot;view instructors&quot;,
+                    &quot;display_name&quot;: &quot;view instructors&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 4,
+                    &quot;name&quot;: &quot;view students&quot;,
+                    &quot;display_name&quot;: &quot;view students&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 5,
+                    &quot;name&quot;: &quot;edit users&quot;,
+                    &quot;display_name&quot;: &quot;edit users&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 6,
+                    &quot;name&quot;: &quot;delete users&quot;,
+                    &quot;display_name&quot;: &quot;delete users&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 7,
+                    &quot;name&quot;: &quot;register students-courses&quot;,
+                    &quot;display_name&quot;: &quot;register students-courses&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 8,
+                    &quot;name&quot;: &quot;create courses&quot;,
+                    &quot;display_name&quot;: &quot;create courses&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 9,
+                    &quot;name&quot;: &quot;edit courses&quot;,
+                    &quot;display_name&quot;: &quot;edit courses&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 10,
+                    &quot;name&quot;: &quot;delete courses&quot;,
+                    &quot;display_name&quot;: &quot;delete courses&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 11,
+                    &quot;name&quot;: &quot;view roles&quot;,
+                    &quot;display_name&quot;: &quot;view roles&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 12,
+                    &quot;name&quot;: &quot;create roles&quot;,
+                    &quot;display_name&quot;: &quot;create roles&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 13,
+                    &quot;name&quot;: &quot;edit roles&quot;,
+                    &quot;display_name&quot;: &quot;edit roles&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 14,
+                    &quot;name&quot;: &quot;delete roles&quot;,
+                    &quot;display_name&quot;: &quot;delete roles&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 15,
+                    &quot;name&quot;: &quot;view permissions&quot;,
+                    &quot;display_name&quot;: &quot;view permissions&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 16,
+                    &quot;name&quot;: &quot;edit permissions&quot;,
+                    &quot;display_name&quot;: &quot;edit permissions&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 17,
+                    &quot;name&quot;: &quot;assign permissions&quot;,
+                    &quot;display_name&quot;: &quot;assign permissions&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 18,
+                    &quot;name&quot;: &quot;revoke permissions&quot;,
+                    &quot;display_name&quot;: &quot;revoke permissions&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                }
+            ]
+        }
+    ]
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-roles-with-permissions" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-roles-with-permissions"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-roles-with-permissions"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-roles-with-permissions" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-roles-with-permissions"></code></pre>
+</span>
+<form id="form-GETapi-v1-roles-with-permissions" data-method="GET"
+      data-path="api/v1/roles/with-permissions"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Authorization":"Bearer {ACCESS_TOKEN}","Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-roles-with-permissions', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-roles-with-permissions"
+                    onclick="tryItOut('GETapi-v1-roles-with-permissions');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-roles-with-permissions"
+                    onclick="cancelTryOut('GETapi-v1-roles-with-permissions');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-roles-with-permissions" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/roles/with-permissions</code></b>
+        </p>
+                <p>
+            <label id="auth-GETapi-v1-roles-with-permissions" hidden>Authorization header:
+                <b><code>Bearer </code></b><input type="text"
+                                                                name="Authorization"
+                                                                data-prefix="Bearer "
+                                                                data-endpoint="GETapi-v1-roles-with-permissions"
+                                                                data-component="header"></label>
+        </p>
+                </form>
 
         <h1 id="roles">Roles</h1>
 
@@ -3054,7 +3383,7 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"similique\"
+    \"name\": \"nesciunt\"
 }"
 </code></pre>
 
@@ -3069,7 +3398,7 @@ const headers = {
 };
 
 let body = {
-    "name": "similique"
+    "name": "nesciunt"
 }
 
 fetch(url, {
@@ -3162,13 +3491,13 @@ fetch(url, {
 
 
 <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/v1/roles/minus" \
+    --get "http://localhost:8000/api/v1/roles/velit" \
     --header "Authorization: Bearer {ACCESS_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/roles/minus"
+    "http://localhost:8000/api/v1/roles/velit"
 );
 
 const headers = {
@@ -3256,109 +3585,6 @@ fetch(url, {
 <p>The ID of the role.</p>            </p>
                     </form>
 
-            <h2 id="roles-DELETEapi-v1-roles--id-">Delete a specific role</h2>
-
-<p>
-<small class="badge badge-darkred">requires authentication</small>
-</p>
-
-
-
-<span id="example-requests-DELETEapi-v1-roles--id-">
-<blockquote>Example request:</blockquote>
-
-
-<pre><code class="language-bash">curl --request DELETE \
-    "http://localhost:8000/api/v1/roles/9" \
-    --header "Authorization: Bearer {ACCESS_TOKEN}" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre>
-
-<pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/roles/9"
-);
-
-const headers = {
-    "Authorization": "Bearer {ACCESS_TOKEN}",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "DELETE",
-    headers,
-}).then(response =&gt; response.json());</code></pre>
-</span>
-
-<span id="example-responses-DELETEapi-v1-roles--id-">
-            <blockquote>
-            <p>Example response (200):</p>
-        </blockquote>
-                <pre>
-
-<code class="language-json">{
-    &quot;message&quot;: &quot;Successfully deleted role!&quot;
-}</code>
- </pre>
-    </span>
-<span id="execution-results-DELETEapi-v1-roles--id-" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-DELETEapi-v1-roles--id-"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-DELETEapi-v1-roles--id-"></code></pre>
-</span>
-<span id="execution-error-DELETEapi-v1-roles--id-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-DELETEapi-v1-roles--id-"></code></pre>
-</span>
-<form id="form-DELETEapi-v1-roles--id-" data-method="DELETE"
-      data-path="api/v1/roles/{id}"
-      data-authed="1"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      data-headers='{"Authorization":"Bearer {ACCESS_TOKEN}","Content-Type":"application\/json","Accept":"application\/json"}'
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-v1-roles--id-', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-DELETEapi-v1-roles--id-"
-                    onclick="tryItOut('DELETEapi-v1-roles--id-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-DELETEapi-v1-roles--id-"
-                    onclick="cancelTryOut('DELETEapi-v1-roles--id-');" hidden>Cancel
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-DELETEapi-v1-roles--id-" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-red">DELETE</small>
-            <b><code>api/v1/roles/{id}</code></b>
-        </p>
-                <p>
-            <label id="auth-DELETEapi-v1-roles--id-" hidden>Authorization header:
-                <b><code>Bearer </code></b><input type="text"
-                                                                name="Authorization"
-                                                                data-prefix="Bearer "
-                                                                data-endpoint="DELETEapi-v1-roles--id-"
-                                                                data-component="header"></label>
-        </p>
-                <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <p>
-                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
-                <input type="number"
-               name="id"
-               data-endpoint="DELETEapi-v1-roles--id-"
-               data-component="url" required  hidden>
-    <br>
-<p>The ID of the role.</p>            </p>
-                    </form>
-
             <h2 id="roles-PUTapi-v1-roles--id-">Update a specific role.</h2>
 
 <p>
@@ -3372,17 +3598,17 @@ fetch(url, {
 
 
 <pre><code class="language-bash">curl --request PUT \
-    "http://localhost:8000/api/v1/roles/14" \
+    "http://localhost:8000/api/v1/roles/18" \
     --header "Authorization: Bearer {ACCESS_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"qui\"
+    \"name\": \"cupiditate\"
 }"
 </code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/roles/14"
+    "http://localhost:8000/api/v1/roles/18"
 );
 
 const headers = {
@@ -3392,7 +3618,7 @@ const headers = {
 };
 
 let body = {
-    "name": "qui"
+    "name": "cupiditate"
 }
 
 fetch(url, {
@@ -3485,6 +3711,109 @@ fetch(url, {
     
     </form>
 
+            <h2 id="roles-DELETEapi-v1-roles--id-">Delete a specific role</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-DELETEapi-v1-roles--id-">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request DELETE \
+    "http://localhost:8000/api/v1/roles/20" \
+    --header "Authorization: Bearer {ACCESS_TOKEN}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/v1/roles/20"
+);
+
+const headers = {
+    "Authorization": "Bearer {ACCESS_TOKEN}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-DELETEapi-v1-roles--id-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Successfully deleted role!&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-DELETEapi-v1-roles--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-v1-roles--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-v1-roles--id-"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-v1-roles--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-v1-roles--id-"></code></pre>
+</span>
+<form id="form-DELETEapi-v1-roles--id-" data-method="DELETE"
+      data-path="api/v1/roles/{id}"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Authorization":"Bearer {ACCESS_TOKEN}","Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-v1-roles--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-v1-roles--id-"
+                    onclick="tryItOut('DELETEapi-v1-roles--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-v1-roles--id-"
+                    onclick="cancelTryOut('DELETEapi-v1-roles--id-');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-v1-roles--id-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/v1/roles/{id}</code></b>
+        </p>
+                <p>
+            <label id="auth-DELETEapi-v1-roles--id-" hidden>Authorization header:
+                <b><code>Bearer </code></b><input type="text"
+                                                                name="Authorization"
+                                                                data-prefix="Bearer "
+                                                                data-endpoint="DELETEapi-v1-roles--id-"
+                                                                data-component="header"></label>
+        </p>
+                <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="id"
+               data-endpoint="DELETEapi-v1-roles--id-"
+               data-component="url" required  hidden>
+    <br>
+<p>The ID of the role.</p>            </p>
+                    </form>
+
         <h1 id="users">Users</h1>
 
     <p>API endpoints for creating user and getting user info</p>
@@ -3531,14 +3860,14 @@ fetch(url, {
 
 <code class="language-json">{
     &quot;data&quot;: {
-        &quot;id&quot;: 479,
-        &quot;username&quot;: &quot;mmurray&quot;,
-        &quot;first_name&quot;: &quot;Alverta&quot;,
-        &quot;last_name&quot;: &quot;Murray&quot;,
-        &quot;full_name&quot;: &quot;Alverta Murray&quot;,
-        &quot;email&quot;: &quot;mmurray@test.com&quot;,
-        &quot;gender&quot;: &quot;female&quot;,
-        &quot;date_of_birth&quot;: &quot;23/Dec/1984&quot;,
+        &quot;id&quot;: 508,
+        &quot;username&quot;: &quot;corene.conn&quot;,
+        &quot;first_name&quot;: &quot;Karen&quot;,
+        &quot;last_name&quot;: &quot;Sawayn&quot;,
+        &quot;full_name&quot;: &quot;Karen Sawayn&quot;,
+        &quot;email&quot;: &quot;corene.conn@test.com&quot;,
+        &quot;gender&quot;: &quot;male&quot;,
+        &quot;date_of_birth&quot;: &quot;6/Oct/1974&quot;,
         &quot;roles&quot;: []
     }
 }</code>
@@ -3593,129 +3922,6 @@ fetch(url, {
         </p>
                 </form>
 
-            <h2 id="users-GETapi-v1-users-with-permissions">Get all users with permissions</h2>
-
-<p>
-<small class="badge badge-darkred">requires authentication</small>
-</p>
-
-
-
-<span id="example-requests-GETapi-v1-users-with-permissions">
-<blockquote>Example request:</blockquote>
-
-
-<pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/v1/users/with-permissions" \
-    --header "Authorization: Bearer {ACCESS_TOKEN}" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre>
-
-<pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/users/with-permissions"
-);
-
-const headers = {
-    "Authorization": "Bearer {ACCESS_TOKEN}",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre>
-</span>
-
-<span id="example-responses-GETapi-v1-users-with-permissions">
-            <blockquote>
-            <p>Example response (200):</p>
-        </blockquote>
-                <pre>
-
-<code class="language-json">{
-    &quot;data&quot;: [
-        {
-            &quot;user&quot;: {
-                &quot;id&quot;: 484,
-                &quot;username&quot;: &quot;tillman.bode&quot;,
-                &quot;first_name&quot;: &quot;Deanna&quot;,
-                &quot;last_name&quot;: &quot;Kuphal&quot;,
-                &quot;full_name&quot;: &quot;Deanna Kuphal&quot;,
-                &quot;email&quot;: &quot;tillman.bode@test.com&quot;,
-                &quot;gender&quot;: &quot;male&quot;,
-                &quot;date_of_birth&quot;: &quot;17/Feb/1991&quot;,
-                &quot;roles&quot;: []
-            },
-            &quot;permissions&quot;: []
-        },
-        {
-            &quot;user&quot;: {
-                &quot;id&quot;: 485,
-                &quot;username&quot;: &quot;pollich.jany&quot;,
-                &quot;first_name&quot;: &quot;Itzel&quot;,
-                &quot;last_name&quot;: &quot;Streich&quot;,
-                &quot;full_name&quot;: &quot;Itzel Streich&quot;,
-                &quot;email&quot;: &quot;pollich.jany@test.com&quot;,
-                &quot;gender&quot;: &quot;female&quot;,
-                &quot;date_of_birth&quot;: &quot;21/Dec/2006&quot;,
-                &quot;roles&quot;: []
-            },
-            &quot;permissions&quot;: []
-        }
-    ]
-}</code>
- </pre>
-    </span>
-<span id="execution-results-GETapi-v1-users-with-permissions" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-GETapi-v1-users-with-permissions"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-v1-users-with-permissions"></code></pre>
-</span>
-<span id="execution-error-GETapi-v1-users-with-permissions" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-v1-users-with-permissions"></code></pre>
-</span>
-<form id="form-GETapi-v1-users-with-permissions" data-method="GET"
-      data-path="api/v1/users/with-permissions"
-      data-authed="1"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      data-headers='{"Authorization":"Bearer {ACCESS_TOKEN}","Content-Type":"application\/json","Accept":"application\/json"}'
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-users-with-permissions', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-v1-users-with-permissions"
-                    onclick="tryItOut('GETapi-v1-users-with-permissions');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-v1-users-with-permissions"
-                    onclick="cancelTryOut('GETapi-v1-users-with-permissions');" hidden>Cancel
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-v1-users-with-permissions" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-green">GET</small>
-            <b><code>api/v1/users/with-permissions</code></b>
-        </p>
-                <p>
-            <label id="auth-GETapi-v1-users-with-permissions" hidden>Authorization header:
-                <b><code>Bearer </code></b><input type="text"
-                                                                name="Authorization"
-                                                                data-prefix="Bearer "
-                                                                data-endpoint="GETapi-v1-users-with-permissions"
-                                                                data-component="header"></label>
-        </p>
-                </form>
-
             <h2 id="users-GETapi-v1-all-students">Get all students&#039; info</h2>
 
 <p>
@@ -3759,25 +3965,25 @@ fetch(url, {
 <code class="language-json">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 480,
-            &quot;username&quot;: &quot;kali.smith&quot;,
-            &quot;first_name&quot;: &quot;Kacie&quot;,
-            &quot;last_name&quot;: &quot;Lueilwitz&quot;,
-            &quot;full_name&quot;: &quot;Kacie Lueilwitz&quot;,
-            &quot;email&quot;: &quot;kali.smith@test.com&quot;,
+            &quot;id&quot;: 509,
+            &quot;username&quot;: &quot;kkozey&quot;,
+            &quot;first_name&quot;: &quot;Rebecca&quot;,
+            &quot;last_name&quot;: &quot;Spencer&quot;,
+            &quot;full_name&quot;: &quot;Rebecca Spencer&quot;,
+            &quot;email&quot;: &quot;kkozey@test.com&quot;,
             &quot;gender&quot;: &quot;female&quot;,
-            &quot;date_of_birth&quot;: &quot;18/Dec/1988&quot;,
+            &quot;date_of_birth&quot;: &quot;27/Nov/2018&quot;,
             &quot;roles&quot;: []
         },
         {
-            &quot;id&quot;: 481,
-            &quot;username&quot;: &quot;sipes.wilhelm&quot;,
-            &quot;first_name&quot;: &quot;Angelita&quot;,
-            &quot;last_name&quot;: &quot;Luettgen&quot;,
-            &quot;full_name&quot;: &quot;Angelita Luettgen&quot;,
-            &quot;email&quot;: &quot;sipes.wilhelm@test.com&quot;,
+            &quot;id&quot;: 510,
+            &quot;username&quot;: &quot;berge.lisette&quot;,
+            &quot;first_name&quot;: &quot;Columbus&quot;,
+            &quot;last_name&quot;: &quot;Renner&quot;,
+            &quot;full_name&quot;: &quot;Columbus Renner&quot;,
+            &quot;email&quot;: &quot;berge.lisette@test.com&quot;,
             &quot;gender&quot;: &quot;male&quot;,
-            &quot;date_of_birth&quot;: &quot;17/Jan/1989&quot;,
+            &quot;date_of_birth&quot;: &quot;9/Feb/1975&quot;,
             &quot;roles&quot;: []
         }
     ]
@@ -3876,25 +4082,25 @@ fetch(url, {
 <code class="language-json">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 482,
-            &quot;username&quot;: &quot;florian79&quot;,
-            &quot;first_name&quot;: &quot;Robyn&quot;,
-            &quot;last_name&quot;: &quot;Weissnat&quot;,
-            &quot;full_name&quot;: &quot;Robyn Weissnat&quot;,
-            &quot;email&quot;: &quot;florian79@test.com&quot;,
-            &quot;gender&quot;: &quot;female&quot;,
-            &quot;date_of_birth&quot;: &quot;14/Dec/1972&quot;,
+            &quot;id&quot;: 511,
+            &quot;username&quot;: &quot;reynolds.jean&quot;,
+            &quot;first_name&quot;: &quot;Meghan&quot;,
+            &quot;last_name&quot;: &quot;Zieme&quot;,
+            &quot;full_name&quot;: &quot;Meghan Zieme&quot;,
+            &quot;email&quot;: &quot;reynolds.jean@test.com&quot;,
+            &quot;gender&quot;: &quot;male&quot;,
+            &quot;date_of_birth&quot;: &quot;5/Aug/1974&quot;,
             &quot;roles&quot;: []
         },
         {
-            &quot;id&quot;: 483,
-            &quot;username&quot;: &quot;benny.hayes&quot;,
-            &quot;first_name&quot;: &quot;Robin&quot;,
-            &quot;last_name&quot;: &quot;Powlowski&quot;,
-            &quot;full_name&quot;: &quot;Robin Powlowski&quot;,
-            &quot;email&quot;: &quot;benny.hayes@test.com&quot;,
+            &quot;id&quot;: 512,
+            &quot;username&quot;: &quot;imogene11&quot;,
+            &quot;first_name&quot;: &quot;Kelton&quot;,
+            &quot;last_name&quot;: &quot;Reichert&quot;,
+            &quot;full_name&quot;: &quot;Kelton Reichert&quot;,
+            &quot;email&quot;: &quot;imogene11@test.com&quot;,
             &quot;gender&quot;: &quot;male&quot;,
-            &quot;date_of_birth&quot;: &quot;24/Sep/2007&quot;,
+            &quot;date_of_birth&quot;: &quot;12/Dec/1981&quot;,
             &quot;roles&quot;: []
         }
     ]
@@ -3950,6 +4156,129 @@ fetch(url, {
         </p>
                 </form>
 
+            <h2 id="users-GETapi-v1-users-with-permissions">Get all users with permissions</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-GETapi-v1-users-with-permissions">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request GET \
+    --get "http://localhost:8000/api/v1/users/with-permissions" \
+    --header "Authorization: Bearer {ACCESS_TOKEN}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/v1/users/with-permissions"
+);
+
+const headers = {
+    "Authorization": "Bearer {ACCESS_TOKEN}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-GETapi-v1-users-with-permissions">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;data&quot;: [
+        {
+            &quot;user&quot;: {
+                &quot;id&quot;: 513,
+                &quot;username&quot;: &quot;cdonnelly&quot;,
+                &quot;first_name&quot;: &quot;Sherman&quot;,
+                &quot;last_name&quot;: &quot;Hirthe&quot;,
+                &quot;full_name&quot;: &quot;Sherman Hirthe&quot;,
+                &quot;email&quot;: &quot;cdonnelly@test.com&quot;,
+                &quot;gender&quot;: &quot;female&quot;,
+                &quot;date_of_birth&quot;: &quot;18/Jun/1988&quot;,
+                &quot;roles&quot;: []
+            },
+            &quot;permissions&quot;: []
+        },
+        {
+            &quot;user&quot;: {
+                &quot;id&quot;: 514,
+                &quot;username&quot;: &quot;sawayn.astrid&quot;,
+                &quot;first_name&quot;: &quot;Osbaldo&quot;,
+                &quot;last_name&quot;: &quot;Mayert&quot;,
+                &quot;full_name&quot;: &quot;Osbaldo Mayert&quot;,
+                &quot;email&quot;: &quot;sawayn.astrid@test.com&quot;,
+                &quot;gender&quot;: &quot;male&quot;,
+                &quot;date_of_birth&quot;: &quot;20/Jun/1986&quot;,
+                &quot;roles&quot;: []
+            },
+            &quot;permissions&quot;: []
+        }
+    ]
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-users-with-permissions" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-users-with-permissions"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-users-with-permissions"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-users-with-permissions" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-users-with-permissions"></code></pre>
+</span>
+<form id="form-GETapi-v1-users-with-permissions" data-method="GET"
+      data-path="api/v1/users/with-permissions"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Authorization":"Bearer {ACCESS_TOKEN}","Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-users-with-permissions', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-users-with-permissions"
+                    onclick="tryItOut('GETapi-v1-users-with-permissions');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-users-with-permissions"
+                    onclick="cancelTryOut('GETapi-v1-users-with-permissions');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-users-with-permissions" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/users/with-permissions</code></b>
+        </p>
+                <p>
+            <label id="auth-GETapi-v1-users-with-permissions" hidden>Authorization header:
+                <b><code>Bearer </code></b><input type="text"
+                                                                name="Authorization"
+                                                                data-prefix="Bearer "
+                                                                data-endpoint="GETapi-v1-users-with-permissions"
+                                                                data-component="header"></label>
+        </p>
+                </form>
+
             <h2 id="users-GETapi-v1-users">Get a list of all users</h2>
 
 <p>
@@ -3993,25 +4322,25 @@ fetch(url, {
 <code class="language-json">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 486,
-            &quot;username&quot;: &quot;gretchen.gerhold&quot;,
-            &quot;first_name&quot;: &quot;Dayna&quot;,
-            &quot;last_name&quot;: &quot;Hane&quot;,
-            &quot;full_name&quot;: &quot;Dayna Hane&quot;,
-            &quot;email&quot;: &quot;gretchen.gerhold@test.com&quot;,
-            &quot;gender&quot;: &quot;male&quot;,
-            &quot;date_of_birth&quot;: &quot;22/Aug/2000&quot;,
+            &quot;id&quot;: 515,
+            &quot;username&quot;: &quot;axel39&quot;,
+            &quot;first_name&quot;: &quot;Cordie&quot;,
+            &quot;last_name&quot;: &quot;White&quot;,
+            &quot;full_name&quot;: &quot;Cordie White&quot;,
+            &quot;email&quot;: &quot;axel39@test.com&quot;,
+            &quot;gender&quot;: &quot;female&quot;,
+            &quot;date_of_birth&quot;: &quot;27/Aug/2008&quot;,
             &quot;roles&quot;: []
         },
         {
-            &quot;id&quot;: 487,
-            &quot;username&quot;: &quot;hans97&quot;,
-            &quot;first_name&quot;: &quot;Heloise&quot;,
-            &quot;last_name&quot;: &quot;Koepp&quot;,
-            &quot;full_name&quot;: &quot;Heloise Koepp&quot;,
-            &quot;email&quot;: &quot;hans97@test.com&quot;,
-            &quot;gender&quot;: &quot;female&quot;,
-            &quot;date_of_birth&quot;: &quot;9/Mar/1982&quot;,
+            &quot;id&quot;: 516,
+            &quot;username&quot;: &quot;ramiro.walsh&quot;,
+            &quot;first_name&quot;: &quot;Keenan&quot;,
+            &quot;last_name&quot;: &quot;Schaden&quot;,
+            &quot;full_name&quot;: &quot;Keenan Schaden&quot;,
+            &quot;email&quot;: &quot;ramiro.walsh@test.com&quot;,
+            &quot;gender&quot;: &quot;male&quot;,
+            &quot;date_of_birth&quot;: &quot;9/Nov/2015&quot;,
             &quot;roles&quot;: []
         }
     ]
@@ -4086,14 +4415,14 @@ fetch(url, {
     --header "Accept: application/json" \
     --data "{
     \"username\": \"qui\",
-    \"email\": \"aut\",
-    \"first_name\": \"quod\",
-    \"last_name\": \"odio\",
-    \"gender\": \"nobis\",
+    \"email\": \"occaecati\",
+    \"first_name\": \"fugiat\",
+    \"last_name\": \"perferendis\",
+    \"gender\": \"qui\",
     \"date_of_birth\": \"2020-12-01\",
     \"role_ids\": [
-        20,
-        10
+        11,
+        8
     ]
 }"
 </code></pre>
@@ -4110,14 +4439,14 @@ const headers = {
 
 let body = {
     "username": "qui",
-    "email": "aut",
-    "first_name": "quod",
-    "last_name": "odio",
-    "gender": "nobis",
+    "email": "occaecati",
+    "first_name": "fugiat",
+    "last_name": "perferendis",
+    "gender": "qui",
     "date_of_birth": "2020-12-01",
     "role_ids": [
-        20,
-        10
+        11,
+        8
     ]
 }
 
@@ -4267,13 +4596,13 @@ fetch(url, {
 
 
 <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/v1/users/2" \
+    --get "http://localhost:8000/api/v1/users/7" \
     --header "Authorization: Bearer {ACCESS_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/users/2"
+    "http://localhost:8000/api/v1/users/7"
 );
 
 const headers = {
@@ -4296,14 +4625,14 @@ fetch(url, {
 
 <code class="language-json">{
     &quot;data&quot;: {
-        &quot;id&quot;: 488,
-        &quot;username&quot;: &quot;feil.maryjane&quot;,
-        &quot;first_name&quot;: &quot;Noemie&quot;,
-        &quot;last_name&quot;: &quot;Ortiz&quot;,
-        &quot;full_name&quot;: &quot;Noemie Ortiz&quot;,
-        &quot;email&quot;: &quot;feil.maryjane@test.com&quot;,
-        &quot;gender&quot;: &quot;female&quot;,
-        &quot;date_of_birth&quot;: &quot;1/Aug/1972&quot;,
+        &quot;id&quot;: 517,
+        &quot;username&quot;: &quot;ariel49&quot;,
+        &quot;first_name&quot;: &quot;Aileen&quot;,
+        &quot;last_name&quot;: &quot;Tromp&quot;,
+        &quot;full_name&quot;: &quot;Aileen Tromp&quot;,
+        &quot;email&quot;: &quot;ariel49@test.com&quot;,
+        &quot;gender&quot;: &quot;male&quot;,
+        &quot;date_of_birth&quot;: &quot;9/Feb/1999&quot;,
         &quot;roles&quot;: []
     }
 }</code>
@@ -4367,109 +4696,6 @@ fetch(url, {
 <p>The ID of the user.</p>            </p>
                     </form>
 
-            <h2 id="users-DELETEapi-v1-users--id-">Delete the specified user</h2>
-
-<p>
-<small class="badge badge-darkred">requires authentication</small>
-</p>
-
-
-
-<span id="example-requests-DELETEapi-v1-users--id-">
-<blockquote>Example request:</blockquote>
-
-
-<pre><code class="language-bash">curl --request DELETE \
-    "http://localhost:8000/api/v1/users/1" \
-    --header "Authorization: Bearer {ACCESS_TOKEN}" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre>
-
-<pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/users/1"
-);
-
-const headers = {
-    "Authorization": "Bearer {ACCESS_TOKEN}",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "DELETE",
-    headers,
-}).then(response =&gt; response.json());</code></pre>
-</span>
-
-<span id="example-responses-DELETEapi-v1-users--id-">
-            <blockquote>
-            <p>Example response (200):</p>
-        </blockquote>
-                <pre>
-
-<code class="language-json">{
-    &quot;message&quot;: &quot;Successfully deleted user!&quot;
-}</code>
- </pre>
-    </span>
-<span id="execution-results-DELETEapi-v1-users--id-" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-DELETEapi-v1-users--id-"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-DELETEapi-v1-users--id-"></code></pre>
-</span>
-<span id="execution-error-DELETEapi-v1-users--id-" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-DELETEapi-v1-users--id-"></code></pre>
-</span>
-<form id="form-DELETEapi-v1-users--id-" data-method="DELETE"
-      data-path="api/v1/users/{id}"
-      data-authed="1"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      data-headers='{"Authorization":"Bearer {ACCESS_TOKEN}","Content-Type":"application\/json","Accept":"application\/json"}'
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-v1-users--id-', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-DELETEapi-v1-users--id-"
-                    onclick="tryItOut('DELETEapi-v1-users--id-');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-DELETEapi-v1-users--id-"
-                    onclick="cancelTryOut('DELETEapi-v1-users--id-');" hidden>Cancel
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-DELETEapi-v1-users--id-" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-red">DELETE</small>
-            <b><code>api/v1/users/{id}</code></b>
-        </p>
-                <p>
-            <label id="auth-DELETEapi-v1-users--id-" hidden>Authorization header:
-                <b><code>Bearer </code></b><input type="text"
-                                                                name="Authorization"
-                                                                data-prefix="Bearer "
-                                                                data-endpoint="DELETEapi-v1-users--id-"
-                                                                data-component="header"></label>
-        </p>
-                <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <p>
-                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
-                <input type="number"
-               name="id"
-               data-endpoint="DELETEapi-v1-users--id-"
-               data-component="url" required  hidden>
-    <br>
-<p>The ID of the user.</p>            </p>
-                    </form>
-
             <h2 id="users-PUTapi-v1-users--id-">Update the specified user</h2>
 
 <p>
@@ -4483,26 +4709,26 @@ fetch(url, {
 
 
 <pre><code class="language-bash">curl --request PUT \
-    "http://localhost:8000/api/v1/users/10" \
+    "http://localhost:8000/api/v1/users/14" \
     --header "Authorization: Bearer {ACCESS_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"username\": \"ducimus\",
-    \"email\": \"amet\",
-    \"first_name\": \"quaerat\",
-    \"last_name\": \"atque\",
-    \"gender\": \"ducimus\",
+    \"username\": \"sed\",
+    \"email\": \"consequatur\",
+    \"first_name\": \"iure\",
+    \"last_name\": \"illum\",
+    \"gender\": \"earum\",
     \"date_of_birth\": \"2020-12-01\",
     \"role_ids\": [
-        17,
-        2
+        11,
+        6
     ]
 }"
 </code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/users/10"
+    "http://localhost:8000/api/v1/users/14"
 );
 
 const headers = {
@@ -4512,15 +4738,15 @@ const headers = {
 };
 
 let body = {
-    "username": "ducimus",
-    "email": "amet",
-    "first_name": "quaerat",
-    "last_name": "atque",
-    "gender": "ducimus",
+    "username": "sed",
+    "email": "consequatur",
+    "first_name": "iure",
+    "last_name": "illum",
+    "gender": "earum",
     "date_of_birth": "2020-12-01",
     "role_ids": [
-        17,
-        2
+        11,
+        6
     ]
 }
 
@@ -4665,6 +4891,109 @@ fetch(url, {
         </p>
     
     </form>
+
+            <h2 id="users-DELETEapi-v1-users--id-">Delete the specified user</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-DELETEapi-v1-users--id-">
+<blockquote>Example request:</blockquote>
+
+
+<pre><code class="language-bash">curl --request DELETE \
+    "http://localhost:8000/api/v1/users/16" \
+    --header "Authorization: Bearer {ACCESS_TOKEN}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre>
+
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/v1/users/16"
+);
+
+const headers = {
+    "Authorization": "Bearer {ACCESS_TOKEN}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+</span>
+
+<span id="example-responses-DELETEapi-v1-users--id-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json">{
+    &quot;message&quot;: &quot;Successfully deleted user!&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-DELETEapi-v1-users--id-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-v1-users--id-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-v1-users--id-"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-v1-users--id-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-v1-users--id-"></code></pre>
+</span>
+<form id="form-DELETEapi-v1-users--id-" data-method="DELETE"
+      data-path="api/v1/users/{id}"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      data-headers='{"Authorization":"Bearer {ACCESS_TOKEN}","Content-Type":"application\/json","Accept":"application\/json"}'
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-v1-users--id-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-v1-users--id-"
+                    onclick="tryItOut('DELETEapi-v1-users--id-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-v1-users--id-"
+                    onclick="cancelTryOut('DELETEapi-v1-users--id-');" hidden>Cancel
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-v1-users--id-" hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/v1/users/{id}</code></b>
+        </p>
+                <p>
+            <label id="auth-DELETEapi-v1-users--id-" hidden>Authorization header:
+                <b><code>Bearer </code></b><input type="text"
+                                                                name="Authorization"
+                                                                data-prefix="Bearer "
+                                                                data-endpoint="DELETEapi-v1-users--id-"
+                                                                data-component="header"></label>
+        </p>
+                <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <p>
+                <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+                <input type="number"
+               name="id"
+               data-endpoint="DELETEapi-v1-users--id-"
+               data-component="url" required  hidden>
+    <br>
+<p>The ID of the user.</p>            </p>
+                    </form>
 
     
 

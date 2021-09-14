@@ -23,13 +23,13 @@ endpoints:
         name: email
         description: 'The email of the user. Must be a valid email address.'
         required: true
-        example: itorp@example.net
+        example: dickens.dayton@example.org
         type: string
       password:
         name: password
         description: 'The password of the user.'
         required: true
-        example: repellat
+        example: maiores
         type: string
       remember_me:
         name: remember_me
@@ -84,43 +84,43 @@ endpoints:
         name: username
         description: 'The username user.'
         required: true
-        example: eum
+        example: optio
         type: string
       email:
         name: email
         description: 'A unique email address.'
         required: true
-        example: error
+        example: quis
         type: string
       password:
         name: password
         description: 'The password of the account. Must be at least 8 characters.'
         required: true
-        example: ''
+        example: wravue
         type: string
       password_confirmation:
         name: password_confirmation
         description: 'Same as password.'
         required: true
-        example: voluptas
+        example: illo
         type: string
       first_name:
         name: first_name
         description: 'First name of user.'
         required: true
-        example: et
+        example: nisi
         type: string
       last_name:
         name: last_name
         description: 'Last name of user.'
         required: true
-        example: id
+        example: occaecati
         type: string
       gender:
         name: gender
         description: 'Gender of the user.'
         required: true
-        example: et
+        example: dolore
         type: string
       date_of_birth:
         name: date_of_birth
