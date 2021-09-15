@@ -8,7 +8,6 @@ use App\Http\Controllers\Api\v1\RolePermission\PermissionController;
 use App\Http\Controllers\Api\v1\RolePermission\RoleController;
 use App\Http\Controllers\Api\v1\RolePermission\RolePermissionController;
 use App\Http\Controllers\Api\v1\User\UserController;
-use App\Http\Controllers\Api\v1\User\UserPermissionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,7 +37,6 @@ Route::prefix('v1')->group(function () {
         /**
          * Roles
          */
-        Route::get('roles/with-permissions', [RolePermissionController::class, 'getAllRolesWithPermissions']);
         Route::apiResource('roles', RoleController::class);
 
         /**
@@ -58,7 +56,6 @@ Route::prefix('v1')->group(function () {
         Route::get('my-info', [UserController::class, 'getLoggedInUserInfo']);
         Route::get('all-students', [UserController::class, 'getAllStudents']);
         Route::get('all-instructors', [UserController::class, 'getAllInstructors']);
-        Route::get('users/with-permissions', [UserPermissionController::class, 'getAllUsersWithPermissions']);
         Route::apiResource('users', UserController::class);
 
         /**

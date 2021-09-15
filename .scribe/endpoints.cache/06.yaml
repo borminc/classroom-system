@@ -23,7 +23,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":508,"username":"corene.conn","first_name":"Karen","last_name":"Sawayn","full_name":"Karen Sawayn","email":"corene.conn@test.com","gender":"male","date_of_birth":"6\/Oct\/1974","roles":[]}}'
+        content: '{"data":{"id":510,"username":"marquise.jerde","first_name":"Jeffery","last_name":"Turner","full_name":"Jeffery Turner","email":"marquise.jerde@test.com","gender":"female","date_of_birth":"19\/Feb\/1980","roles":[],"permissions":[]}}'
         headers: []
         description: null
     responseFields: []
@@ -45,7 +45,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":509,"username":"kkozey","first_name":"Rebecca","last_name":"Spencer","full_name":"Rebecca Spencer","email":"kkozey@test.com","gender":"female","date_of_birth":"27\/Nov\/2018","roles":[]},{"id":510,"username":"berge.lisette","first_name":"Columbus","last_name":"Renner","full_name":"Columbus Renner","email":"berge.lisette@test.com","gender":"male","date_of_birth":"9\/Feb\/1975","roles":[]}]}'
+        content: '{"data":[{"id":511,"username":"dakota48","first_name":"Evie","last_name":"Wilderman","full_name":"Evie Wilderman","email":"dakota48@test.com","gender":"female","date_of_birth":"4\/Nov\/1990","roles":[],"permissions":[]},{"id":512,"username":"ondricka.melissa","first_name":"Camren","last_name":"Heaney","full_name":"Camren Heaney","email":"ondricka.melissa@test.com","gender":"male","date_of_birth":"10\/Jan\/1971","roles":[],"permissions":[]}]}'
         headers: []
         description: null
     responseFields: []
@@ -67,29 +67,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":511,"username":"reynolds.jean","first_name":"Meghan","last_name":"Zieme","full_name":"Meghan Zieme","email":"reynolds.jean@test.com","gender":"male","date_of_birth":"5\/Aug\/1974","roles":[]},{"id":512,"username":"imogene11","first_name":"Kelton","last_name":"Reichert","full_name":"Kelton Reichert","email":"imogene11@test.com","gender":"male","date_of_birth":"12\/Dec\/1981","roles":[]}]}'
-        headers: []
-        description: null
-    responseFields: []
-  -
-    httpMethods:
-      - GET
-    uri: api/v1/users/with-permissions
-    metadata:
-      title: 'Get all users with permissions'
-      description: ''
-      authenticated: true
-    headers:
-      Authorization: 'Bearer {ACCESS_TOKEN}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    queryParameters: []
-    bodyParameters: []
-    responses:
-      -
-        status: 200
-        content: '{"data":[{"user":{"id":513,"username":"cdonnelly","first_name":"Sherman","last_name":"Hirthe","full_name":"Sherman Hirthe","email":"cdonnelly@test.com","gender":"female","date_of_birth":"18\/Jun\/1988","roles":[]},"permissions":[]},{"user":{"id":514,"username":"sawayn.astrid","first_name":"Osbaldo","last_name":"Mayert","full_name":"Osbaldo Mayert","email":"sawayn.astrid@test.com","gender":"male","date_of_birth":"20\/Jun\/1986","roles":[]},"permissions":[]}]}'
+        content: '{"data":[{"id":513,"username":"orlo.flatley","first_name":"Justina","last_name":"Quigley","full_name":"Justina Quigley","email":"orlo.flatley@test.com","gender":"male","date_of_birth":"27\/Mar\/1983","roles":[],"permissions":[]},{"id":514,"username":"valerie.feil","first_name":"Albert","last_name":"West","full_name":"Albert West","email":"valerie.feil@test.com","gender":"female","date_of_birth":"6\/Dec\/1986","roles":[],"permissions":[]}]}'
         headers: []
         description: null
     responseFields: []
@@ -111,7 +89,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":515,"username":"axel39","first_name":"Cordie","last_name":"White","full_name":"Cordie White","email":"axel39@test.com","gender":"female","date_of_birth":"27\/Aug\/2008","roles":[]},{"id":516,"username":"ramiro.walsh","first_name":"Keenan","last_name":"Schaden","full_name":"Keenan Schaden","email":"ramiro.walsh@test.com","gender":"male","date_of_birth":"9\/Nov\/2015","roles":[]}]}'
+        content: '{"data":[{"id":515,"username":"fokon","first_name":"Clint","last_name":"Schultz","full_name":"Clint Schultz","email":"fokon@test.com","gender":"female","date_of_birth":"11\/May\/2010","roles":[],"permissions":[]},{"id":516,"username":"tony.cummings","first_name":"Lauriane","last_name":"Bashirian","full_name":"Lauriane Bashirian","email":"tony.cummings@test.com","gender":"male","date_of_birth":"25\/Apr\/2004","roles":[],"permissions":[]}]}'
         headers: []
         description: null
     responseFields: []
@@ -134,31 +112,31 @@ endpoints:
         name: username
         description: 'A unique username.'
         required: true
-        example: qui
+        example: et
         type: string
       email:
         name: email
         description: 'A unique email address.'
         required: true
-        example: occaecati
+        example: voluptatem
         type: string
       first_name:
         name: first_name
         description: 'First name of user.'
         required: true
-        example: fugiat
+        example: numquam
         type: string
       last_name:
         name: last_name
         description: 'Last name of user.'
         required: true
-        example: perferendis
+        example: in
         type: string
       gender:
         name: gender
         description: 'Gender of the user.'
         required: true
-        example: qui
+        example: et
         type: string
       date_of_birth:
         name: date_of_birth
@@ -171,8 +149,8 @@ endpoints:
         description: ''
         required: true
         example:
-          - 11
-          - 8
+          - 15
+          - 13
         type: 'integer[]'
     responses:
       -
@@ -205,14 +183,14 @@ endpoints:
         name: id
         description: 'The ID of the user.'
         required: true
-        example: 7
+        example: 13
         type: integer
     queryParameters: []
     bodyParameters: []
     responses:
       -
         status: 200
-        content: '{"data":{"id":517,"username":"ariel49","first_name":"Aileen","last_name":"Tromp","full_name":"Aileen Tromp","email":"ariel49@test.com","gender":"male","date_of_birth":"9\/Feb\/1999","roles":[]}}'
+        content: '{"data":{"id":517,"username":"alfonzo20","first_name":"Tia","last_name":"Steuber","full_name":"Tia Steuber","email":"alfonzo20@test.com","gender":"male","date_of_birth":"31\/Mar\/2007","roles":[],"permissions":[]}}'
         headers: []
         description: null
     responseFields: []
@@ -234,7 +212,7 @@ endpoints:
         name: id
         description: 'The ID of the user.'
         required: true
-        example: 14
+        example: 12
         type: integer
     queryParameters: []
     bodyParameters:
@@ -242,31 +220,31 @@ endpoints:
         name: username
         description: 'A unique username.'
         required: true
-        example: sed
+        example: cupiditate
         type: string
       email:
         name: email
         description: 'A unique email address.'
         required: true
-        example: consequatur
+        example: perspiciatis
         type: string
       first_name:
         name: first_name
         description: 'First name of user.'
         required: true
-        example: iure
+        example: et
         type: string
       last_name:
         name: last_name
         description: 'Last name of user.'
         required: true
-        example: illum
+        example: nulla
         type: string
       gender:
         name: gender
         description: 'Gender of the user.'
         required: true
-        example: earum
+        example: voluptas
         type: string
       date_of_birth:
         name: date_of_birth
@@ -279,8 +257,8 @@ endpoints:
         description: ''
         required: true
         example:
-          - 11
-          - 6
+          - 15
+          - 18
         type: 'integer[]'
     responses:
       -
@@ -309,7 +287,7 @@ endpoints:
         name: id
         description: 'The ID of the user.'
         required: true
-        example: 16
+        example: 17
         type: integer
     queryParameters: []
     bodyParameters: []

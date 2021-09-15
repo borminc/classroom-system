@@ -24,6 +24,7 @@ class UserResource extends JsonResource
             'gender' => $this->gender,
             'date_of_birth' => $this->date_of_birth->format('j/M/Y'),
             'roles' => RoleResource::collection($this->roles),
+            'permissions' => PermissionResource::collection($this->getAllPermissions()),
         ];
     }
 }

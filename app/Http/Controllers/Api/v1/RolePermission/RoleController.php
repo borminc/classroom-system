@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Api\v1\RolePermission;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\v1\Role\StoreRoleRequest;
 use App\Http\Requests\v1\Role\UpdateRoleRequest;
-use App\Http\Resources\v1\RoleResource;
+use App\Http\Resources\v1\RolePermissionResource;
 use Illuminate\Http\Request;
 use Spatie\Permission\Models\Role;
 
@@ -21,13 +21,13 @@ class RoleController extends Controller
      *
      * @authenticated
      * @return \Illuminate\Http\Response
-     * @apiResourceCollection App\Http\Resources\v1\RoleResource
+     * @apiResourceCollection App\Http\Resources\v1\RolePermissionResource
      * @apiResourceModel Spatie\Permission\Models\Role
      */
     public function index()
     {
         $this->authorize('viewAny', Role::class);
-        return RoleResource::collection(Role::all());
+        return RolePermissionResource::collection(Role::all());
     }
 
     /**
@@ -54,14 +54,14 @@ class RoleController extends Controller
      * @authenticated
      * @param  int  $id
      * @return \Illuminate\Http\Response
-     * @apiResource App\Http\Resources\v1\RoleResource
+     * @apiResource App\Http\Resources\v1\RolePermissionResource
      * @apiResourceModel Spatie\Permission\Models\Role
      */
     public function show($id)
     {
         $role = Role::findOrFail($id);
         $this->authorize('view', $role);
-        return new RoleResource($role);
+        return new RolePermissionResource($role);
     }
 
     /**

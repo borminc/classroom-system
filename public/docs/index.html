@@ -51,7 +51,7 @@
                             <li><a href="http://github.com/knuckleswtf/scribe">Documentation powered by Scribe ✍</a></li>
                     </ul>
             <ul class="toc-footer" id="last-updated">
-            <li>Last updated: September 14 2021</li>
+            <li>Last updated: September 15 2021</li>
         </ul>
 </div>
 <div class="page-wrapper">
@@ -91,8 +91,8 @@ You can switch the language used with the tabs at the top right (or from the nav
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"dickens.dayton@example.org\",
-    \"password\": \"maiores\",
+    \"email\": \"hermiston.marcus@example.org\",
+    \"password\": \"provident\",
     \"remember_me\": false
 }"
 </code></pre>
@@ -107,8 +107,8 @@ const headers = {
 };
 
 let body = {
-    "email": "dickens.dayton@example.org",
-    "password": "maiores",
+    "email": "hermiston.marcus@example.org",
+    "password": "provident",
     "remember_me": false
 }
 
@@ -126,18 +126,33 @@ fetch(url, {
                 <pre>
 
 <code class="language-json">{
-    &quot;access_token&quot;: &quot;eyJ0eX...&quot;,
-    &quot;token_type&quot;: &quot;Bearer&quot;,
-    &quot;expires_at&quot;: &quot;2021-09-06 15:02:06&quot;,
-    &quot;user&quot;: {
-        &quot;id&quot;: 2,
-        &quot;username&quot;: &quot;i_1&quot;,
-        &quot;full_name&quot;: &quot;Instructor 1&quot;,
-        &quot;email&quot;: &quot;i_1@test.com&quot;,
-        &quot;gender&quot;: &quot;male&quot;,
-        &quot;date_of_birth&quot;: &quot;2000-02-03 14:23:35&quot;
-    },
-    &quot;verified&quot;: true
+ &quot;access_token&quot;: &quot;eyJ0eX...&quot;,
+ &quot;token_type&quot;: &quot;Bearer&quot;,
+ &quot;expires_at&quot;: &quot;2021-09-06 15:02:06&quot;,
+ &quot;user&quot;: {
+     &quot;id&quot;: 2,
+     &quot;username&quot;: &quot;i_1&quot;,
+     &quot;full_name&quot;: &quot;Instructor 1&quot;,
+     &quot;email&quot;: &quot;i_1@test.com&quot;,
+     &quot;gender&quot;: &quot;male&quot;,
+     &quot;date_of_birth&quot;: &quot;2000-02-03 14:23:35&quot;,
+     &quot;roles&quot;: [
+         {
+             &quot;id&quot;: 1,
+             &quot;name&quot;: &quot;admin&quot;,
+             &quot;display_name&quot;: &quot;admin&quot;
+         }
+     ],
+     &quot;permissions&quot;: [
+         {
+             &quot;id&quot;: 1,
+             &quot;name&quot;: &quot;create users&quot;,
+             &quot;display_name&quot;: &quot;create users&quot;,
+             &quot;group&quot;: &quot;123&quot;
+         },
+     ],
+ },
+ &quot;verified&quot;: true
 }</code>
  </pre>
             <blockquote>
@@ -243,13 +258,13 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"username\": \"optio\",
-    \"email\": \"quis\",
-    \"password\": \"wravue\",
-    \"password_confirmation\": \"illo\",
-    \"first_name\": \"nisi\",
-    \"last_name\": \"occaecati\",
-    \"gender\": \"dolore\",
+    \"username\": \"a\",
+    \"email\": \"aut\",
+    \"password\": \"\",
+    \"password_confirmation\": \"quae\",
+    \"first_name\": \"id\",
+    \"last_name\": \"officia\",
+    \"gender\": \"amet\",
     \"date_of_birth\": \"2020-12-01\"
 }"
 </code></pre>
@@ -264,13 +279,13 @@ const headers = {
 };
 
 let body = {
-    "username": "optio",
-    "email": "quis",
-    "password": "wravue",
-    "password_confirmation": "illo",
-    "first_name": "nisi",
-    "last_name": "occaecati",
-    "gender": "dolore",
+    "username": "a",
+    "email": "aut",
+    "password": "",
+    "password_confirmation": "quae",
+    "first_name": "id",
+    "last_name": "officia",
+    "gender": "amet",
     "date_of_birth": "2020-12-01"
 }
 
@@ -540,10 +555,53 @@ fetch(url, {
 <code class="language-json">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 31,
-            &quot;name&quot;: &quot;Intro to eius&quot;,
-            &quot;code&quot;: &quot;vO0s5&quot;,
-            &quot;description&quot;: &quot;Et eligendi natus qui veniam molestiae temporibus. Quam quibusdam reiciendis ipsum alias. Dolore explicabo quam placeat in.&quot;,
+            &quot;id&quot;: 40,
+            &quot;name&quot;: &quot;Intro to quo&quot;,
+            &quot;code&quot;: &quot;oGtRk&quot;,
+            &quot;description&quot;: &quot;Suscipit qui eaque commodi et totam quae architecto. Velit rerum nisi numquam veniam. Reiciendis qui perferendis nihil harum iure voluptatem.&quot;,
+            &quot;instructor&quot;: {
+                &quot;id&quot;: 3,
+                &quot;username&quot;: &quot;i_2&quot;,
+                &quot;first_name&quot;: &quot;Instructor&quot;,
+                &quot;last_name&quot;: &quot;2&quot;,
+                &quot;full_name&quot;: &quot;Instructor 2&quot;,
+                &quot;email&quot;: &quot;i_2@test.com&quot;,
+                &quot;gender&quot;: &quot;male&quot;,
+                &quot;date_of_birth&quot;: &quot;3/Feb/2000&quot;,
+                &quot;roles&quot;: [
+                    {
+                        &quot;id&quot;: 2,
+                        &quot;name&quot;: &quot;instructor&quot;,
+                        &quot;display_name&quot;: &quot;instructor&quot;
+                    }
+                ],
+                &quot;permissions&quot;: [
+                    {
+                        &quot;id&quot;: 1,
+                        &quot;name&quot;: &quot;create users&quot;,
+                        &quot;display_name&quot;: &quot;create usersssssss&quot;,
+                        &quot;group&quot;: &quot;123&quot;
+                    },
+                    {
+                        &quot;id&quot;: 22,
+                        &quot;name&quot;: &quot;teach courses&quot;,
+                        &quot;display_name&quot;: &quot;teach courses&quot;,
+                        &quot;group&quot;: &quot;Instructor permission&quot;
+                    },
+                    {
+                        &quot;id&quot;: 23,
+                        &quot;name&quot;: &quot;view own-instructor-courses&quot;,
+                        &quot;display_name&quot;: &quot;view own-instructor-courses&quot;,
+                        &quot;group&quot;: &quot;Instructor permission&quot;
+                    }
+                ]
+            }
+        },
+        {
+            &quot;id&quot;: 41,
+            &quot;name&quot;: &quot;Intro to at&quot;,
+            &quot;code&quot;: &quot;AEgmY&quot;,
+            &quot;description&quot;: &quot;Labore vitae ex eligendi sed. Consequatur ullam vero quia quas in nihil. Voluptatibus voluptas quis et ut ut.&quot;,
             &quot;instructor&quot;: {
                 &quot;id&quot;: 10,
                 &quot;username&quot;: &quot;i_9&quot;,
@@ -559,28 +617,19 @@ fetch(url, {
                         &quot;name&quot;: &quot;instructor&quot;,
                         &quot;display_name&quot;: &quot;instructor&quot;
                     }
-                ]
-            }
-        },
-        {
-            &quot;id&quot;: 32,
-            &quot;name&quot;: &quot;Intro to molestiae&quot;,
-            &quot;code&quot;: &quot;PP5d0&quot;,
-            &quot;description&quot;: &quot;Ipsa asperiores doloremque ea tempore. Impedit ea voluptatem molestiae doloribus. Ea deserunt qui quia quo.&quot;,
-            &quot;instructor&quot;: {
-                &quot;id&quot;: 11,
-                &quot;username&quot;: &quot;i_10&quot;,
-                &quot;first_name&quot;: &quot;Instructor&quot;,
-                &quot;last_name&quot;: &quot;10&quot;,
-                &quot;full_name&quot;: &quot;Instructor 10&quot;,
-                &quot;email&quot;: &quot;i_10@test.com&quot;,
-                &quot;gender&quot;: &quot;male&quot;,
-                &quot;date_of_birth&quot;: &quot;3/Feb/2000&quot;,
-                &quot;roles&quot;: [
+                ],
+                &quot;permissions&quot;: [
                     {
-                        &quot;id&quot;: 2,
-                        &quot;name&quot;: &quot;instructor&quot;,
-                        &quot;display_name&quot;: &quot;instructor&quot;
+                        &quot;id&quot;: 22,
+                        &quot;name&quot;: &quot;teach courses&quot;,
+                        &quot;display_name&quot;: &quot;teach courses&quot;,
+                        &quot;group&quot;: &quot;Instructor permission&quot;
+                    },
+                    {
+                        &quot;id&quot;: 23,
+                        &quot;name&quot;: &quot;view own-instructor-courses&quot;,
+                        &quot;display_name&quot;: &quot;view own-instructor-courses&quot;,
+                        &quot;group&quot;: &quot;Instructor permission&quot;
                     }
                 ]
             }
@@ -681,17 +730,17 @@ fetch(url, {
 <code class="language-json">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 33,
-            &quot;name&quot;: &quot;Intro to mollitia&quot;,
-            &quot;code&quot;: &quot;pxqic&quot;,
-            &quot;description&quot;: &quot;Quam quod illum unde voluptatem minus. Molestiae accusantium maxime quaerat fuga est.&quot;,
+            &quot;id&quot;: 42,
+            &quot;name&quot;: &quot;Intro to eius&quot;,
+            &quot;code&quot;: &quot;KW4rN&quot;,
+            &quot;description&quot;: &quot;Sit illo autem quam sed aut. Possimus laborum eligendi quia nam laudantium ut consequatur ea. Ratione cupiditate aut quae blanditiis.&quot;,
             &quot;instructor&quot;: {
-                &quot;id&quot;: 6,
-                &quot;username&quot;: &quot;i_5&quot;,
+                &quot;id&quot;: 4,
+                &quot;username&quot;: &quot;i_3&quot;,
                 &quot;first_name&quot;: &quot;Instructor&quot;,
-                &quot;last_name&quot;: &quot;5&quot;,
-                &quot;full_name&quot;: &quot;Instructor 5&quot;,
-                &quot;email&quot;: &quot;i_5@test.com&quot;,
+                &quot;last_name&quot;: &quot;3&quot;,
+                &quot;full_name&quot;: &quot;Instructor 3&quot;,
+                &quot;email&quot;: &quot;i_3@test.com&quot;,
                 &quot;gender&quot;: &quot;male&quot;,
                 &quot;date_of_birth&quot;: &quot;3/Feb/2000&quot;,
                 &quot;roles&quot;: [
@@ -700,28 +749,85 @@ fetch(url, {
                         &quot;name&quot;: &quot;instructor&quot;,
                         &quot;display_name&quot;: &quot;instructor&quot;
                     }
+                ],
+                &quot;permissions&quot;: [
+                    {
+                        &quot;id&quot;: 22,
+                        &quot;name&quot;: &quot;teach courses&quot;,
+                        &quot;display_name&quot;: &quot;teach courses&quot;,
+                        &quot;group&quot;: &quot;Instructor permission&quot;
+                    },
+                    {
+                        &quot;id&quot;: 23,
+                        &quot;name&quot;: &quot;view own-instructor-courses&quot;,
+                        &quot;display_name&quot;: &quot;view own-instructor-courses&quot;,
+                        &quot;group&quot;: &quot;Instructor permission&quot;
+                    }
                 ]
             }
         },
         {
-            &quot;id&quot;: 34,
-            &quot;name&quot;: &quot;Intro to libero&quot;,
-            &quot;code&quot;: &quot;B5tn5&quot;,
-            &quot;description&quot;: &quot;Reprehenderit harum optio enim sit dolores labore enim. Omnis porro illum vitae dolorem cum enim.&quot;,
+            &quot;id&quot;: 43,
+            &quot;name&quot;: &quot;Intro to odit&quot;,
+            &quot;code&quot;: &quot;Fm2v3&quot;,
+            &quot;description&quot;: &quot;Sint ducimus maiores ipsum sed eligendi ab nihil. Sed cum qui dolorem. Esse ullam quia est dignissimos eligendi enim cum.&quot;,
             &quot;instructor&quot;: {
-                &quot;id&quot;: 10,
-                &quot;username&quot;: &quot;i_9&quot;,
-                &quot;first_name&quot;: &quot;Instructor&quot;,
-                &quot;last_name&quot;: &quot;9&quot;,
-                &quot;full_name&quot;: &quot;Instructor 9&quot;,
-                &quot;email&quot;: &quot;i_9@test.com&quot;,
+                &quot;id&quot;: 477,
+                &quot;username&quot;: &quot;bormin chau&quot;,
+                &quot;first_name&quot;: &quot;bormin&quot;,
+                &quot;last_name&quot;: &quot;chau&quot;,
+                &quot;full_name&quot;: &quot;bormin chau&quot;,
+                &quot;email&quot;: &quot;borminchau@gmail.com&quot;,
                 &quot;gender&quot;: &quot;male&quot;,
-                &quot;date_of_birth&quot;: &quot;3/Feb/2000&quot;,
+                &quot;date_of_birth&quot;: &quot;1/Jan/2000&quot;,
                 &quot;roles&quot;: [
                     {
                         &quot;id&quot;: 2,
                         &quot;name&quot;: &quot;instructor&quot;,
                         &quot;display_name&quot;: &quot;instructor&quot;
+                    },
+                    {
+                        &quot;id&quot;: 3,
+                        &quot;name&quot;: &quot;student&quot;,
+                        &quot;display_name&quot;: &quot;student&quot;
+                    }
+                ],
+                &quot;permissions&quot;: [
+                    {
+                        &quot;id&quot;: 1,
+                        &quot;name&quot;: &quot;create users&quot;,
+                        &quot;display_name&quot;: &quot;create usersssssss&quot;,
+                        &quot;group&quot;: &quot;123&quot;
+                    },
+                    {
+                        &quot;id&quot;: 19,
+                        &quot;name&quot;: &quot;take courses&quot;,
+                        &quot;display_name&quot;: &quot;take courses&quot;,
+                        &quot;group&quot;: &quot;Student permission&quot;
+                    },
+                    {
+                        &quot;id&quot;: 20,
+                        &quot;name&quot;: &quot;self-register courses&quot;,
+                        &quot;display_name&quot;: &quot;self-register courses&quot;,
+                        &quot;group&quot;: &quot;Student permission&quot;
+                    },
+                    {
+                        &quot;id&quot;: 21,
+                        &quot;name&quot;: &quot;view own-student-courses&quot;,
+                        &quot;display_name&quot;: &quot;view own-student-courses&quot;,
+                        &quot;group&quot;: &quot;Student permission&quot;
+                    },
+                    {
+                        &quot;id&quot;: 22,
+                        &quot;name&quot;: &quot;teach courses&quot;,
+                        &quot;display_name&quot;: &quot;teach courses&quot;,
+                        &quot;group&quot;: &quot;Instructor permission&quot;
+                    },
+                    {
+                        &quot;id&quot;: 23,
+                        &quot;name&quot;: &quot;view own-instructor-courses&quot;,
+                        &quot;display_name&quot;: &quot;view own-instructor-courses&quot;,
+                        &quot;group&quot;: &quot;Instructor permission&quot;
                     }
                 ]
             }
@@ -797,7 +903,7 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"course_id\": 19
+    \"course_id\": 2
 }"
 </code></pre>
 
@@ -812,7 +918,7 @@ const headers = {
 };
 
 let body = {
-    "course_id": 19
+    "course_id": 2
 }
 
 fetch(url, {
@@ -919,8 +1025,8 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"user_id\": 4,
-    \"course_id\": 8
+    \"user_id\": 19,
+    \"course_id\": 19
 }"
 </code></pre>
 
@@ -935,8 +1041,8 @@ const headers = {
 };
 
 let body = {
-    "user_id": 4,
-    "course_id": 8
+    "user_id": 19,
+    "course_id": 19
 }
 
 fetch(url, {
@@ -1080,17 +1186,17 @@ fetch(url, {
 <code class="language-json">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 35,
-            &quot;name&quot;: &quot;Intro to qui&quot;,
-            &quot;code&quot;: &quot;CnCzA&quot;,
-            &quot;description&quot;: &quot;Voluptas tenetur sit consequatur dolores delectus voluptates. Est repellendus magnam qui perspiciatis dolorum. Fugit corporis eum temporibus.&quot;,
+            &quot;id&quot;: 44,
+            &quot;name&quot;: &quot;Intro to quos&quot;,
+            &quot;code&quot;: &quot;QNbCR&quot;,
+            &quot;description&quot;: &quot;Consectetur quia dolores ut architecto ex qui et. Suscipit eos tempora in. Illo commodi non corporis ea voluptatem praesentium.&quot;,
             &quot;instructor&quot;: {
-                &quot;id&quot;: 11,
-                &quot;username&quot;: &quot;i_10&quot;,
+                &quot;id&quot;: 6,
+                &quot;username&quot;: &quot;i_5&quot;,
                 &quot;first_name&quot;: &quot;Instructor&quot;,
-                &quot;last_name&quot;: &quot;10&quot;,
-                &quot;full_name&quot;: &quot;Instructor 10&quot;,
-                &quot;email&quot;: &quot;i_10@test.com&quot;,
+                &quot;last_name&quot;: &quot;5&quot;,
+                &quot;full_name&quot;: &quot;Instructor 5&quot;,
+                &quot;email&quot;: &quot;i_5@test.com&quot;,
                 &quot;gender&quot;: &quot;male&quot;,
                 &quot;date_of_birth&quot;: &quot;3/Feb/2000&quot;,
                 &quot;roles&quot;: [
@@ -1099,22 +1205,36 @@ fetch(url, {
                         &quot;name&quot;: &quot;instructor&quot;,
                         &quot;display_name&quot;: &quot;instructor&quot;
                     }
+                ],
+                &quot;permissions&quot;: [
+                    {
+                        &quot;id&quot;: 22,
+                        &quot;name&quot;: &quot;teach courses&quot;,
+                        &quot;display_name&quot;: &quot;teach courses&quot;,
+                        &quot;group&quot;: &quot;Instructor permission&quot;
+                    },
+                    {
+                        &quot;id&quot;: 23,
+                        &quot;name&quot;: &quot;view own-instructor-courses&quot;,
+                        &quot;display_name&quot;: &quot;view own-instructor-courses&quot;,
+                        &quot;group&quot;: &quot;Instructor permission&quot;
+                    }
                 ]
             },
             &quot;students&quot;: []
         },
         {
-            &quot;id&quot;: 36,
-            &quot;name&quot;: &quot;Intro to est&quot;,
-            &quot;code&quot;: &quot;FzVKJ&quot;,
-            &quot;description&quot;: &quot;Sit itaque accusantium totam dolore vel nam. Esse dicta vel accusantium quibusdam. Et in et commodi ipsum est.&quot;,
+            &quot;id&quot;: 45,
+            &quot;name&quot;: &quot;Intro to numquam&quot;,
+            &quot;code&quot;: &quot;QnJxt&quot;,
+            &quot;description&quot;: &quot;Explicabo unde assumenda sapiente et hic quisquam. Sunt sint ducimus porro suscipit.&quot;,
             &quot;instructor&quot;: {
-                &quot;id&quot;: 7,
-                &quot;username&quot;: &quot;i_6&quot;,
+                &quot;id&quot;: 6,
+                &quot;username&quot;: &quot;i_5&quot;,
                 &quot;first_name&quot;: &quot;Instructor&quot;,
-                &quot;last_name&quot;: &quot;6&quot;,
-                &quot;full_name&quot;: &quot;Instructor 6&quot;,
-                &quot;email&quot;: &quot;i_6@test.com&quot;,
+                &quot;last_name&quot;: &quot;5&quot;,
+                &quot;full_name&quot;: &quot;Instructor 5&quot;,
+                &quot;email&quot;: &quot;i_5@test.com&quot;,
                 &quot;gender&quot;: &quot;male&quot;,
                 &quot;date_of_birth&quot;: &quot;3/Feb/2000&quot;,
                 &quot;roles&quot;: [
@@ -1122,6 +1242,20 @@ fetch(url, {
                         &quot;id&quot;: 2,
                         &quot;name&quot;: &quot;instructor&quot;,
                         &quot;display_name&quot;: &quot;instructor&quot;
+                    }
+                ],
+                &quot;permissions&quot;: [
+                    {
+                        &quot;id&quot;: 22,
+                        &quot;name&quot;: &quot;teach courses&quot;,
+                        &quot;display_name&quot;: &quot;teach courses&quot;,
+                        &quot;group&quot;: &quot;Instructor permission&quot;
+                    },
+                    {
+                        &quot;id&quot;: 23,
+                        &quot;name&quot;: &quot;view own-instructor-courses&quot;,
+                        &quot;display_name&quot;: &quot;view own-instructor-courses&quot;,
+                        &quot;group&quot;: &quot;Instructor permission&quot;
                     }
                 ]
             },
@@ -1223,17 +1357,17 @@ fetch(url, {
 <code class="language-json">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 37,
-            &quot;name&quot;: &quot;Intro to est&quot;,
-            &quot;code&quot;: &quot;pZE8y&quot;,
-            &quot;description&quot;: &quot;Consequatur in blanditiis nihil iure. Et aliquam blanditiis possimus quasi ipsam. Rerum tempore deserunt quas rerum quae doloremque.&quot;,
+            &quot;id&quot;: 46,
+            &quot;name&quot;: &quot;Intro to labore&quot;,
+            &quot;code&quot;: &quot;xPUMd&quot;,
+            &quot;description&quot;: &quot;Porro voluptatum ut commodi. Ad aliquam tempore repellat inventore et ut. Sunt neque omnis quia optio nobis nihil officia eligendi.&quot;,
             &quot;instructor&quot;: {
-                &quot;id&quot;: 5,
-                &quot;username&quot;: &quot;i_4&quot;,
+                &quot;id&quot;: 7,
+                &quot;username&quot;: &quot;i_6&quot;,
                 &quot;first_name&quot;: &quot;Instructor&quot;,
-                &quot;last_name&quot;: &quot;4&quot;,
-                &quot;full_name&quot;: &quot;Instructor 4&quot;,
-                &quot;email&quot;: &quot;i_4@test.com&quot;,
+                &quot;last_name&quot;: &quot;6&quot;,
+                &quot;full_name&quot;: &quot;Instructor 6&quot;,
+                &quot;email&quot;: &quot;i_6@test.com&quot;,
                 &quot;gender&quot;: &quot;male&quot;,
                 &quot;date_of_birth&quot;: &quot;3/Feb/2000&quot;,
                 &quot;roles&quot;: [
@@ -1242,21 +1376,35 @@ fetch(url, {
                         &quot;name&quot;: &quot;instructor&quot;,
                         &quot;display_name&quot;: &quot;instructor&quot;
                     }
+                ],
+                &quot;permissions&quot;: [
+                    {
+                        &quot;id&quot;: 22,
+                        &quot;name&quot;: &quot;teach courses&quot;,
+                        &quot;display_name&quot;: &quot;teach courses&quot;,
+                        &quot;group&quot;: &quot;Instructor permission&quot;
+                    },
+                    {
+                        &quot;id&quot;: 23,
+                        &quot;name&quot;: &quot;view own-instructor-courses&quot;,
+                        &quot;display_name&quot;: &quot;view own-instructor-courses&quot;,
+                        &quot;group&quot;: &quot;Instructor permission&quot;
+                    }
                 ]
             }
         },
         {
-            &quot;id&quot;: 38,
-            &quot;name&quot;: &quot;Intro to et&quot;,
-            &quot;code&quot;: &quot;RexNm&quot;,
-            &quot;description&quot;: &quot;Eum fuga facere et nobis. Sapiente qui quia quisquam non voluptate expedita. Ex recusandae quisquam est.&quot;,
+            &quot;id&quot;: 47,
+            &quot;name&quot;: &quot;Intro to est&quot;,
+            &quot;code&quot;: &quot;8ybeY&quot;,
+            &quot;description&quot;: &quot;Omnis in consequatur temporibus. Velit qui quo dolores. Saepe error esse et saepe nulla. Sed assumenda qui laudantium ipsam distinctio.&quot;,
             &quot;instructor&quot;: {
-                &quot;id&quot;: 3,
-                &quot;username&quot;: &quot;i_2&quot;,
+                &quot;id&quot;: 6,
+                &quot;username&quot;: &quot;i_5&quot;,
                 &quot;first_name&quot;: &quot;Instructor&quot;,
-                &quot;last_name&quot;: &quot;2&quot;,
-                &quot;full_name&quot;: &quot;Instructor 2&quot;,
-                &quot;email&quot;: &quot;i_2@test.com&quot;,
+                &quot;last_name&quot;: &quot;5&quot;,
+                &quot;full_name&quot;: &quot;Instructor 5&quot;,
+                &quot;email&quot;: &quot;i_5@test.com&quot;,
                 &quot;gender&quot;: &quot;male&quot;,
                 &quot;date_of_birth&quot;: &quot;3/Feb/2000&quot;,
                 &quot;roles&quot;: [
@@ -1264,6 +1412,20 @@ fetch(url, {
                         &quot;id&quot;: 2,
                         &quot;name&quot;: &quot;instructor&quot;,
                         &quot;display_name&quot;: &quot;instructor&quot;
+                    }
+                ],
+                &quot;permissions&quot;: [
+                    {
+                        &quot;id&quot;: 22,
+                        &quot;name&quot;: &quot;teach courses&quot;,
+                        &quot;display_name&quot;: &quot;teach courses&quot;,
+                        &quot;group&quot;: &quot;Instructor permission&quot;
+                    },
+                    {
+                        &quot;id&quot;: 23,
+                        &quot;name&quot;: &quot;view own-instructor-courses&quot;,
+                        &quot;display_name&quot;: &quot;view own-instructor-courses&quot;,
+                        &quot;group&quot;: &quot;Instructor permission&quot;
                     }
                 ]
             }
@@ -1339,10 +1501,10 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"animi\",
-    \"code\": \"consequatur\",
-    \"description\": \"ut\",
-    \"instructor_id\": 2
+    \"name\": \"occaecati\",
+    \"code\": \"illum\",
+    \"description\": \"et\",
+    \"instructor_id\": 12
 }"
 </code></pre>
 
@@ -1357,10 +1519,10 @@ const headers = {
 };
 
 let body = {
-    "name": "animi",
-    "code": "consequatur",
-    "description": "ut",
-    "instructor_id": 2
+    "name": "occaecati",
+    "code": "illum",
+    "description": "et",
+    "instructor_id": 12
 }
 
 fetch(url, {
@@ -1477,13 +1639,13 @@ fetch(url, {
 
 
 <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/v1/courses/7" \
+    --get "http://localhost:8000/api/v1/courses/18" \
     --header "Authorization: Bearer {ACCESS_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/courses/7"
+    "http://localhost:8000/api/v1/courses/18"
 );
 
 const headers = {
@@ -1506,29 +1668,38 @@ fetch(url, {
 
 <code class="language-json">{
     &quot;data&quot;: {
-        &quot;id&quot;: 39,
-        &quot;name&quot;: &quot;Intro to blanditiis&quot;,
-        &quot;code&quot;: &quot;xekeT&quot;,
-        &quot;description&quot;: &quot;Rerum repudiandae laudantium ipsum laudantium sint. Officia tenetur optio maiores rem ipsam mollitia et inventore. Deleniti et saepe autem quae.&quot;,
+        &quot;id&quot;: 48,
+        &quot;name&quot;: &quot;Intro to eos&quot;,
+        &quot;code&quot;: &quot;dNHS6&quot;,
+        &quot;description&quot;: &quot;Repudiandae et dolores quisquam. Beatae doloremque et fuga voluptas veritatis sapiente.&quot;,
         &quot;instructor&quot;: {
-            &quot;id&quot;: 477,
-            &quot;username&quot;: &quot;bormin chau&quot;,
-            &quot;first_name&quot;: &quot;bormin&quot;,
-            &quot;last_name&quot;: &quot;chau&quot;,
-            &quot;full_name&quot;: &quot;bormin chau&quot;,
-            &quot;email&quot;: &quot;borminchau@gmail.com&quot;,
+            &quot;id&quot;: 9,
+            &quot;username&quot;: &quot;i_8&quot;,
+            &quot;first_name&quot;: &quot;Instructor&quot;,
+            &quot;last_name&quot;: &quot;8&quot;,
+            &quot;full_name&quot;: &quot;Instructor 8&quot;,
+            &quot;email&quot;: &quot;i_8@test.com&quot;,
             &quot;gender&quot;: &quot;male&quot;,
-            &quot;date_of_birth&quot;: &quot;1/Jan/2000&quot;,
+            &quot;date_of_birth&quot;: &quot;3/Feb/2000&quot;,
             &quot;roles&quot;: [
                 {
                     &quot;id&quot;: 2,
                     &quot;name&quot;: &quot;instructor&quot;,
                     &quot;display_name&quot;: &quot;instructor&quot;
+                }
+            ],
+            &quot;permissions&quot;: [
+                {
+                    &quot;id&quot;: 22,
+                    &quot;name&quot;: &quot;teach courses&quot;,
+                    &quot;display_name&quot;: &quot;teach courses&quot;,
+                    &quot;group&quot;: &quot;Instructor permission&quot;
                 },
                 {
-                    &quot;id&quot;: 3,
-                    &quot;name&quot;: &quot;student&quot;,
-                    &quot;display_name&quot;: &quot;student&quot;
+                    &quot;id&quot;: 23,
+                    &quot;name&quot;: &quot;view own-instructor-courses&quot;,
+                    &quot;display_name&quot;: &quot;view own-instructor-courses&quot;,
+                    &quot;group&quot;: &quot;Instructor permission&quot;
                 }
             ]
         }
@@ -1607,20 +1778,20 @@ fetch(url, {
 
 
 <pre><code class="language-bash">curl --request PUT \
-    "http://localhost:8000/api/v1/courses/13" \
+    "http://localhost:8000/api/v1/courses/8" \
     --header "Authorization: Bearer {ACCESS_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"qui\",
-    \"code\": \"pariatur\",
-    \"description\": \"id\",
-    \"instructor_id\": 14
+    \"name\": \"ducimus\",
+    \"code\": \"sapiente\",
+    \"description\": \"qui\",
+    \"instructor_id\": 17
 }"
 </code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/courses/13"
+    "http://localhost:8000/api/v1/courses/8"
 );
 
 const headers = {
@@ -1630,10 +1801,10 @@ const headers = {
 };
 
 let body = {
-    "name": "qui",
-    "code": "pariatur",
-    "description": "id",
-    "instructor_id": 14
+    "name": "ducimus",
+    "code": "sapiente",
+    "description": "qui",
+    "instructor_id": 17
 }
 
 fetch(url, {
@@ -2200,18 +2371,18 @@ fetch(url, {
 
 
 <pre><code class="language-bash">curl --request PUT \
-    "http://localhost:8000/api/v1/permissions/2" \
+    "http://localhost:8000/api/v1/permissions/10" \
     --header "Authorization: Bearer {ACCESS_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"quis\",
-    \"group\": \"et\"
+    \"name\": \"enim\",
+    \"group\": \"aliquid\"
 }"
 </code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/permissions/2"
+    "http://localhost:8000/api/v1/permissions/10"
 );
 
 const headers = {
@@ -2221,8 +2392,8 @@ const headers = {
 };
 
 let body = {
-    "name": "quis",
-    "group": "et"
+    "name": "enim",
+    "group": "aliquid"
 }
 
 fetch(url, {
@@ -2345,10 +2516,10 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"role_id\": 18,
+    \"role_id\": 15,
     \"permission_ids\": [
-        17,
-        14
+        1,
+        9
     ]
 }"
 </code></pre>
@@ -2364,10 +2535,10 @@ const headers = {
 };
 
 let body = {
-    "role_id": 18,
+    "role_id": 15,
     "permission_ids": [
-        17,
-        14
+        1,
+        9
     ]
 }
 
@@ -2495,10 +2666,10 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"user_id\": 5,
+    \"user_id\": 20,
     \"permission_ids\": [
-        16,
-        1
+        11,
+        14
     ]
 }"
 </code></pre>
@@ -2514,10 +2685,10 @@ const headers = {
 };
 
 let body = {
-    "user_id": 5,
+    "user_id": 20,
     "permission_ids": [
-        16,
-        1
+        11,
+        14
     ]
 }
 
@@ -2645,10 +2816,10 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"role_id\": 7,
+    \"role_id\": 16,
     \"permission_ids\": [
-        13,
-        11
+        6,
+        7
     ]
 }"
 </code></pre>
@@ -2664,10 +2835,10 @@ const headers = {
 };
 
 let body = {
-    "role_id": 7,
+    "role_id": 16,
     "permission_ids": [
-        13,
-        11
+        6,
+        7
     ]
 }
 
@@ -2795,10 +2966,10 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"user_id\": 1,
+    \"user_id\": 15,
     \"permission_ids\": [
-        2,
-        6
+        5,
+        15
     ]
 }"
 </code></pre>
@@ -2814,10 +2985,10 @@ const headers = {
 };
 
 let body = {
-    "user_id": 1,
+    "user_id": 15,
     "permission_ids": [
-        2,
-        6
+        5,
+        15
     ]
 }
 
@@ -2927,335 +3098,6 @@ fetch(url, {
     
     </form>
 
-            <h2 id="permission-assignment-GETapi-v1-roles-with-permissions">Get all roles with permissions</h2>
-
-<p>
-<small class="badge badge-darkred">requires authentication</small>
-</p>
-
-
-
-<span id="example-requests-GETapi-v1-roles-with-permissions">
-<blockquote>Example request:</blockquote>
-
-
-<pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/v1/roles/with-permissions" \
-    --header "Authorization: Bearer {ACCESS_TOKEN}" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre>
-
-<pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/roles/with-permissions"
-);
-
-const headers = {
-    "Authorization": "Bearer {ACCESS_TOKEN}",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre>
-</span>
-
-<span id="example-responses-GETapi-v1-roles-with-permissions">
-            <blockquote>
-            <p>Example response (200):</p>
-        </blockquote>
-                <pre>
-
-<code class="language-json">{
-    &quot;data&quot;: [
-        {
-            &quot;role&quot;: {
-                &quot;id&quot;: 1,
-                &quot;name&quot;: &quot;admin&quot;,
-                &quot;display_name&quot;: &quot;admin&quot;
-            },
-            &quot;permissions&quot;: [
-                {
-                    &quot;id&quot;: 1,
-                    &quot;name&quot;: &quot;create users&quot;,
-                    &quot;display_name&quot;: &quot;create usersssssss&quot;,
-                    &quot;group&quot;: &quot;123&quot;
-                },
-                {
-                    &quot;id&quot;: 2,
-                    &quot;name&quot;: &quot;view users&quot;,
-                    &quot;display_name&quot;: &quot;view users&quot;,
-                    &quot;group&quot;: &quot;Admin permission&quot;
-                },
-                {
-                    &quot;id&quot;: 3,
-                    &quot;name&quot;: &quot;view instructors&quot;,
-                    &quot;display_name&quot;: &quot;view instructors&quot;,
-                    &quot;group&quot;: &quot;Admin permission&quot;
-                },
-                {
-                    &quot;id&quot;: 4,
-                    &quot;name&quot;: &quot;view students&quot;,
-                    &quot;display_name&quot;: &quot;view students&quot;,
-                    &quot;group&quot;: &quot;Admin permission&quot;
-                },
-                {
-                    &quot;id&quot;: 5,
-                    &quot;name&quot;: &quot;edit users&quot;,
-                    &quot;display_name&quot;: &quot;edit users&quot;,
-                    &quot;group&quot;: &quot;Admin permission&quot;
-                },
-                {
-                    &quot;id&quot;: 6,
-                    &quot;name&quot;: &quot;delete users&quot;,
-                    &quot;display_name&quot;: &quot;delete users&quot;,
-                    &quot;group&quot;: &quot;Admin permission&quot;
-                },
-                {
-                    &quot;id&quot;: 7,
-                    &quot;name&quot;: &quot;register students-courses&quot;,
-                    &quot;display_name&quot;: &quot;register students-courses&quot;,
-                    &quot;group&quot;: &quot;Admin permission&quot;
-                },
-                {
-                    &quot;id&quot;: 8,
-                    &quot;name&quot;: &quot;create courses&quot;,
-                    &quot;display_name&quot;: &quot;create courses&quot;,
-                    &quot;group&quot;: &quot;Admin permission&quot;
-                },
-                {
-                    &quot;id&quot;: 9,
-                    &quot;name&quot;: &quot;edit courses&quot;,
-                    &quot;display_name&quot;: &quot;edit courses&quot;,
-                    &quot;group&quot;: &quot;Admin permission&quot;
-                },
-                {
-                    &quot;id&quot;: 10,
-                    &quot;name&quot;: &quot;delete courses&quot;,
-                    &quot;display_name&quot;: &quot;delete courses&quot;,
-                    &quot;group&quot;: &quot;Admin permission&quot;
-                },
-                {
-                    &quot;id&quot;: 11,
-                    &quot;name&quot;: &quot;view roles&quot;,
-                    &quot;display_name&quot;: &quot;view roles&quot;,
-                    &quot;group&quot;: &quot;Admin permission&quot;
-                },
-                {
-                    &quot;id&quot;: 12,
-                    &quot;name&quot;: &quot;create roles&quot;,
-                    &quot;display_name&quot;: &quot;create roles&quot;,
-                    &quot;group&quot;: &quot;Admin permission&quot;
-                },
-                {
-                    &quot;id&quot;: 13,
-                    &quot;name&quot;: &quot;edit roles&quot;,
-                    &quot;display_name&quot;: &quot;edit roles&quot;,
-                    &quot;group&quot;: &quot;Admin permission&quot;
-                },
-                {
-                    &quot;id&quot;: 14,
-                    &quot;name&quot;: &quot;delete roles&quot;,
-                    &quot;display_name&quot;: &quot;delete roles&quot;,
-                    &quot;group&quot;: &quot;Admin permission&quot;
-                },
-                {
-                    &quot;id&quot;: 15,
-                    &quot;name&quot;: &quot;view permissions&quot;,
-                    &quot;display_name&quot;: &quot;view permissions&quot;,
-                    &quot;group&quot;: &quot;Admin permission&quot;
-                },
-                {
-                    &quot;id&quot;: 16,
-                    &quot;name&quot;: &quot;edit permissions&quot;,
-                    &quot;display_name&quot;: &quot;edit permissions&quot;,
-                    &quot;group&quot;: &quot;Admin permission&quot;
-                },
-                {
-                    &quot;id&quot;: 17,
-                    &quot;name&quot;: &quot;assign permissions&quot;,
-                    &quot;display_name&quot;: &quot;assign permissions&quot;,
-                    &quot;group&quot;: &quot;Admin permission&quot;
-                },
-                {
-                    &quot;id&quot;: 18,
-                    &quot;name&quot;: &quot;revoke permissions&quot;,
-                    &quot;display_name&quot;: &quot;revoke permissions&quot;,
-                    &quot;group&quot;: &quot;Admin permission&quot;
-                }
-            ]
-        },
-        {
-            &quot;role&quot;: {
-                &quot;id&quot;: 1,
-                &quot;name&quot;: &quot;admin&quot;,
-                &quot;display_name&quot;: &quot;admin&quot;
-            },
-            &quot;permissions&quot;: [
-                {
-                    &quot;id&quot;: 1,
-                    &quot;name&quot;: &quot;create users&quot;,
-                    &quot;display_name&quot;: &quot;create usersssssss&quot;,
-                    &quot;group&quot;: &quot;123&quot;
-                },
-                {
-                    &quot;id&quot;: 2,
-                    &quot;name&quot;: &quot;view users&quot;,
-                    &quot;display_name&quot;: &quot;view users&quot;,
-                    &quot;group&quot;: &quot;Admin permission&quot;
-                },
-                {
-                    &quot;id&quot;: 3,
-                    &quot;name&quot;: &quot;view instructors&quot;,
-                    &quot;display_name&quot;: &quot;view instructors&quot;,
-                    &quot;group&quot;: &quot;Admin permission&quot;
-                },
-                {
-                    &quot;id&quot;: 4,
-                    &quot;name&quot;: &quot;view students&quot;,
-                    &quot;display_name&quot;: &quot;view students&quot;,
-                    &quot;group&quot;: &quot;Admin permission&quot;
-                },
-                {
-                    &quot;id&quot;: 5,
-                    &quot;name&quot;: &quot;edit users&quot;,
-                    &quot;display_name&quot;: &quot;edit users&quot;,
-                    &quot;group&quot;: &quot;Admin permission&quot;
-                },
-                {
-                    &quot;id&quot;: 6,
-                    &quot;name&quot;: &quot;delete users&quot;,
-                    &quot;display_name&quot;: &quot;delete users&quot;,
-                    &quot;group&quot;: &quot;Admin permission&quot;
-                },
-                {
-                    &quot;id&quot;: 7,
-                    &quot;name&quot;: &quot;register students-courses&quot;,
-                    &quot;display_name&quot;: &quot;register students-courses&quot;,
-                    &quot;group&quot;: &quot;Admin permission&quot;
-                },
-                {
-                    &quot;id&quot;: 8,
-                    &quot;name&quot;: &quot;create courses&quot;,
-                    &quot;display_name&quot;: &quot;create courses&quot;,
-                    &quot;group&quot;: &quot;Admin permission&quot;
-                },
-                {
-                    &quot;id&quot;: 9,
-                    &quot;name&quot;: &quot;edit courses&quot;,
-                    &quot;display_name&quot;: &quot;edit courses&quot;,
-                    &quot;group&quot;: &quot;Admin permission&quot;
-                },
-                {
-                    &quot;id&quot;: 10,
-                    &quot;name&quot;: &quot;delete courses&quot;,
-                    &quot;display_name&quot;: &quot;delete courses&quot;,
-                    &quot;group&quot;: &quot;Admin permission&quot;
-                },
-                {
-                    &quot;id&quot;: 11,
-                    &quot;name&quot;: &quot;view roles&quot;,
-                    &quot;display_name&quot;: &quot;view roles&quot;,
-                    &quot;group&quot;: &quot;Admin permission&quot;
-                },
-                {
-                    &quot;id&quot;: 12,
-                    &quot;name&quot;: &quot;create roles&quot;,
-                    &quot;display_name&quot;: &quot;create roles&quot;,
-                    &quot;group&quot;: &quot;Admin permission&quot;
-                },
-                {
-                    &quot;id&quot;: 13,
-                    &quot;name&quot;: &quot;edit roles&quot;,
-                    &quot;display_name&quot;: &quot;edit roles&quot;,
-                    &quot;group&quot;: &quot;Admin permission&quot;
-                },
-                {
-                    &quot;id&quot;: 14,
-                    &quot;name&quot;: &quot;delete roles&quot;,
-                    &quot;display_name&quot;: &quot;delete roles&quot;,
-                    &quot;group&quot;: &quot;Admin permission&quot;
-                },
-                {
-                    &quot;id&quot;: 15,
-                    &quot;name&quot;: &quot;view permissions&quot;,
-                    &quot;display_name&quot;: &quot;view permissions&quot;,
-                    &quot;group&quot;: &quot;Admin permission&quot;
-                },
-                {
-                    &quot;id&quot;: 16,
-                    &quot;name&quot;: &quot;edit permissions&quot;,
-                    &quot;display_name&quot;: &quot;edit permissions&quot;,
-                    &quot;group&quot;: &quot;Admin permission&quot;
-                },
-                {
-                    &quot;id&quot;: 17,
-                    &quot;name&quot;: &quot;assign permissions&quot;,
-                    &quot;display_name&quot;: &quot;assign permissions&quot;,
-                    &quot;group&quot;: &quot;Admin permission&quot;
-                },
-                {
-                    &quot;id&quot;: 18,
-                    &quot;name&quot;: &quot;revoke permissions&quot;,
-                    &quot;display_name&quot;: &quot;revoke permissions&quot;,
-                    &quot;group&quot;: &quot;Admin permission&quot;
-                }
-            ]
-        }
-    ]
-}</code>
- </pre>
-    </span>
-<span id="execution-results-GETapi-v1-roles-with-permissions" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-GETapi-v1-roles-with-permissions"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-v1-roles-with-permissions"></code></pre>
-</span>
-<span id="execution-error-GETapi-v1-roles-with-permissions" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-v1-roles-with-permissions"></code></pre>
-</span>
-<form id="form-GETapi-v1-roles-with-permissions" data-method="GET"
-      data-path="api/v1/roles/with-permissions"
-      data-authed="1"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      data-headers='{"Authorization":"Bearer {ACCESS_TOKEN}","Content-Type":"application\/json","Accept":"application\/json"}'
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-roles-with-permissions', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-v1-roles-with-permissions"
-                    onclick="tryItOut('GETapi-v1-roles-with-permissions');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-v1-roles-with-permissions"
-                    onclick="cancelTryOut('GETapi-v1-roles-with-permissions');" hidden>Cancel
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-v1-roles-with-permissions" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-green">GET</small>
-            <b><code>api/v1/roles/with-permissions</code></b>
-        </p>
-                <p>
-            <label id="auth-GETapi-v1-roles-with-permissions" hidden>Authorization header:
-                <b><code>Bearer </code></b><input type="text"
-                                                                name="Authorization"
-                                                                data-prefix="Bearer "
-                                                                data-endpoint="GETapi-v1-roles-with-permissions"
-                                                                data-component="header"></label>
-        </p>
-                </form>
-
         <h1 id="roles">Roles</h1>
 
     <p>API endpoints for managing roles</p>
@@ -3305,12 +3147,232 @@ fetch(url, {
         {
             &quot;id&quot;: 1,
             &quot;name&quot;: &quot;admin&quot;,
-            &quot;display_name&quot;: &quot;admin&quot;
+            &quot;display_name&quot;: &quot;admin&quot;,
+            &quot;permissions&quot;: [
+                {
+                    &quot;id&quot;: 1,
+                    &quot;name&quot;: &quot;create users&quot;,
+                    &quot;display_name&quot;: &quot;create usersssssss&quot;,
+                    &quot;group&quot;: &quot;123&quot;
+                },
+                {
+                    &quot;id&quot;: 2,
+                    &quot;name&quot;: &quot;view users&quot;,
+                    &quot;display_name&quot;: &quot;view users&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 3,
+                    &quot;name&quot;: &quot;view instructors&quot;,
+                    &quot;display_name&quot;: &quot;view instructors&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 4,
+                    &quot;name&quot;: &quot;view students&quot;,
+                    &quot;display_name&quot;: &quot;view students&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 5,
+                    &quot;name&quot;: &quot;edit users&quot;,
+                    &quot;display_name&quot;: &quot;edit users&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 6,
+                    &quot;name&quot;: &quot;delete users&quot;,
+                    &quot;display_name&quot;: &quot;delete users&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 7,
+                    &quot;name&quot;: &quot;register students-courses&quot;,
+                    &quot;display_name&quot;: &quot;register students-courses&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 8,
+                    &quot;name&quot;: &quot;create courses&quot;,
+                    &quot;display_name&quot;: &quot;create courses&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 9,
+                    &quot;name&quot;: &quot;edit courses&quot;,
+                    &quot;display_name&quot;: &quot;edit courses&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 10,
+                    &quot;name&quot;: &quot;delete courses&quot;,
+                    &quot;display_name&quot;: &quot;delete courses&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 11,
+                    &quot;name&quot;: &quot;view roles&quot;,
+                    &quot;display_name&quot;: &quot;view roles&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 12,
+                    &quot;name&quot;: &quot;create roles&quot;,
+                    &quot;display_name&quot;: &quot;create roles&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 13,
+                    &quot;name&quot;: &quot;edit roles&quot;,
+                    &quot;display_name&quot;: &quot;edit roles&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 14,
+                    &quot;name&quot;: &quot;delete roles&quot;,
+                    &quot;display_name&quot;: &quot;delete roles&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 15,
+                    &quot;name&quot;: &quot;view permissions&quot;,
+                    &quot;display_name&quot;: &quot;view permissions&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 16,
+                    &quot;name&quot;: &quot;edit permissions&quot;,
+                    &quot;display_name&quot;: &quot;edit permissions&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 17,
+                    &quot;name&quot;: &quot;assign permissions&quot;,
+                    &quot;display_name&quot;: &quot;assign permissions&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 18,
+                    &quot;name&quot;: &quot;revoke permissions&quot;,
+                    &quot;display_name&quot;: &quot;revoke permissions&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                }
+            ]
         },
         {
             &quot;id&quot;: 1,
             &quot;name&quot;: &quot;admin&quot;,
-            &quot;display_name&quot;: &quot;admin&quot;
+            &quot;display_name&quot;: &quot;admin&quot;,
+            &quot;permissions&quot;: [
+                {
+                    &quot;id&quot;: 1,
+                    &quot;name&quot;: &quot;create users&quot;,
+                    &quot;display_name&quot;: &quot;create usersssssss&quot;,
+                    &quot;group&quot;: &quot;123&quot;
+                },
+                {
+                    &quot;id&quot;: 2,
+                    &quot;name&quot;: &quot;view users&quot;,
+                    &quot;display_name&quot;: &quot;view users&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 3,
+                    &quot;name&quot;: &quot;view instructors&quot;,
+                    &quot;display_name&quot;: &quot;view instructors&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 4,
+                    &quot;name&quot;: &quot;view students&quot;,
+                    &quot;display_name&quot;: &quot;view students&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 5,
+                    &quot;name&quot;: &quot;edit users&quot;,
+                    &quot;display_name&quot;: &quot;edit users&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 6,
+                    &quot;name&quot;: &quot;delete users&quot;,
+                    &quot;display_name&quot;: &quot;delete users&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 7,
+                    &quot;name&quot;: &quot;register students-courses&quot;,
+                    &quot;display_name&quot;: &quot;register students-courses&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 8,
+                    &quot;name&quot;: &quot;create courses&quot;,
+                    &quot;display_name&quot;: &quot;create courses&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 9,
+                    &quot;name&quot;: &quot;edit courses&quot;,
+                    &quot;display_name&quot;: &quot;edit courses&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 10,
+                    &quot;name&quot;: &quot;delete courses&quot;,
+                    &quot;display_name&quot;: &quot;delete courses&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 11,
+                    &quot;name&quot;: &quot;view roles&quot;,
+                    &quot;display_name&quot;: &quot;view roles&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 12,
+                    &quot;name&quot;: &quot;create roles&quot;,
+                    &quot;display_name&quot;: &quot;create roles&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 13,
+                    &quot;name&quot;: &quot;edit roles&quot;,
+                    &quot;display_name&quot;: &quot;edit roles&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 14,
+                    &quot;name&quot;: &quot;delete roles&quot;,
+                    &quot;display_name&quot;: &quot;delete roles&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 15,
+                    &quot;name&quot;: &quot;view permissions&quot;,
+                    &quot;display_name&quot;: &quot;view permissions&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 16,
+                    &quot;name&quot;: &quot;edit permissions&quot;,
+                    &quot;display_name&quot;: &quot;edit permissions&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 17,
+                    &quot;name&quot;: &quot;assign permissions&quot;,
+                    &quot;display_name&quot;: &quot;assign permissions&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                },
+                {
+                    &quot;id&quot;: 18,
+                    &quot;name&quot;: &quot;revoke permissions&quot;,
+                    &quot;display_name&quot;: &quot;revoke permissions&quot;,
+                    &quot;group&quot;: &quot;Admin permission&quot;
+                }
+            ]
         }
     ]
 }</code>
@@ -3383,7 +3445,7 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"nesciunt\"
+    \"name\": \"at\"
 }"
 </code></pre>
 
@@ -3398,7 +3460,7 @@ const headers = {
 };
 
 let body = {
-    "name": "nesciunt"
+    "name": "at"
 }
 
 fetch(url, {
@@ -3491,13 +3553,13 @@ fetch(url, {
 
 
 <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/v1/roles/velit" \
+    --get "http://localhost:8000/api/v1/roles/eum" \
     --header "Authorization: Bearer {ACCESS_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/roles/velit"
+    "http://localhost:8000/api/v1/roles/eum"
 );
 
 const headers = {
@@ -3522,7 +3584,117 @@ fetch(url, {
     &quot;data&quot;: {
         &quot;id&quot;: 1,
         &quot;name&quot;: &quot;admin&quot;,
-        &quot;display_name&quot;: &quot;admin&quot;
+        &quot;display_name&quot;: &quot;admin&quot;,
+        &quot;permissions&quot;: [
+            {
+                &quot;id&quot;: 1,
+                &quot;name&quot;: &quot;create users&quot;,
+                &quot;display_name&quot;: &quot;create usersssssss&quot;,
+                &quot;group&quot;: &quot;123&quot;
+            },
+            {
+                &quot;id&quot;: 2,
+                &quot;name&quot;: &quot;view users&quot;,
+                &quot;display_name&quot;: &quot;view users&quot;,
+                &quot;group&quot;: &quot;Admin permission&quot;
+            },
+            {
+                &quot;id&quot;: 3,
+                &quot;name&quot;: &quot;view instructors&quot;,
+                &quot;display_name&quot;: &quot;view instructors&quot;,
+                &quot;group&quot;: &quot;Admin permission&quot;
+            },
+            {
+                &quot;id&quot;: 4,
+                &quot;name&quot;: &quot;view students&quot;,
+                &quot;display_name&quot;: &quot;view students&quot;,
+                &quot;group&quot;: &quot;Admin permission&quot;
+            },
+            {
+                &quot;id&quot;: 5,
+                &quot;name&quot;: &quot;edit users&quot;,
+                &quot;display_name&quot;: &quot;edit users&quot;,
+                &quot;group&quot;: &quot;Admin permission&quot;
+            },
+            {
+                &quot;id&quot;: 6,
+                &quot;name&quot;: &quot;delete users&quot;,
+                &quot;display_name&quot;: &quot;delete users&quot;,
+                &quot;group&quot;: &quot;Admin permission&quot;
+            },
+            {
+                &quot;id&quot;: 7,
+                &quot;name&quot;: &quot;register students-courses&quot;,
+                &quot;display_name&quot;: &quot;register students-courses&quot;,
+                &quot;group&quot;: &quot;Admin permission&quot;
+            },
+            {
+                &quot;id&quot;: 8,
+                &quot;name&quot;: &quot;create courses&quot;,
+                &quot;display_name&quot;: &quot;create courses&quot;,
+                &quot;group&quot;: &quot;Admin permission&quot;
+            },
+            {
+                &quot;id&quot;: 9,
+                &quot;name&quot;: &quot;edit courses&quot;,
+                &quot;display_name&quot;: &quot;edit courses&quot;,
+                &quot;group&quot;: &quot;Admin permission&quot;
+            },
+            {
+                &quot;id&quot;: 10,
+                &quot;name&quot;: &quot;delete courses&quot;,
+                &quot;display_name&quot;: &quot;delete courses&quot;,
+                &quot;group&quot;: &quot;Admin permission&quot;
+            },
+            {
+                &quot;id&quot;: 11,
+                &quot;name&quot;: &quot;view roles&quot;,
+                &quot;display_name&quot;: &quot;view roles&quot;,
+                &quot;group&quot;: &quot;Admin permission&quot;
+            },
+            {
+                &quot;id&quot;: 12,
+                &quot;name&quot;: &quot;create roles&quot;,
+                &quot;display_name&quot;: &quot;create roles&quot;,
+                &quot;group&quot;: &quot;Admin permission&quot;
+            },
+            {
+                &quot;id&quot;: 13,
+                &quot;name&quot;: &quot;edit roles&quot;,
+                &quot;display_name&quot;: &quot;edit roles&quot;,
+                &quot;group&quot;: &quot;Admin permission&quot;
+            },
+            {
+                &quot;id&quot;: 14,
+                &quot;name&quot;: &quot;delete roles&quot;,
+                &quot;display_name&quot;: &quot;delete roles&quot;,
+                &quot;group&quot;: &quot;Admin permission&quot;
+            },
+            {
+                &quot;id&quot;: 15,
+                &quot;name&quot;: &quot;view permissions&quot;,
+                &quot;display_name&quot;: &quot;view permissions&quot;,
+                &quot;group&quot;: &quot;Admin permission&quot;
+            },
+            {
+                &quot;id&quot;: 16,
+                &quot;name&quot;: &quot;edit permissions&quot;,
+                &quot;display_name&quot;: &quot;edit permissions&quot;,
+                &quot;group&quot;: &quot;Admin permission&quot;
+            },
+            {
+                &quot;id&quot;: 17,
+                &quot;name&quot;: &quot;assign permissions&quot;,
+                &quot;display_name&quot;: &quot;assign permissions&quot;,
+                &quot;group&quot;: &quot;Admin permission&quot;
+            },
+            {
+                &quot;id&quot;: 18,
+                &quot;name&quot;: &quot;revoke permissions&quot;,
+                &quot;display_name&quot;: &quot;revoke permissions&quot;,
+                &quot;group&quot;: &quot;Admin permission&quot;
+            }
+        ]
     }
 }</code>
  </pre>
@@ -3598,17 +3770,17 @@ fetch(url, {
 
 
 <pre><code class="language-bash">curl --request PUT \
-    "http://localhost:8000/api/v1/roles/18" \
+    "http://localhost:8000/api/v1/roles/16" \
     --header "Authorization: Bearer {ACCESS_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"cupiditate\"
+    \"name\": \"reprehenderit\"
 }"
 </code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/roles/18"
+    "http://localhost:8000/api/v1/roles/16"
 );
 
 const headers = {
@@ -3618,7 +3790,7 @@ const headers = {
 };
 
 let body = {
-    "name": "cupiditate"
+    "name": "reprehenderit"
 }
 
 fetch(url, {
@@ -3724,13 +3896,13 @@ fetch(url, {
 
 
 <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost:8000/api/v1/roles/20" \
+    "http://localhost:8000/api/v1/roles/4" \
     --header "Authorization: Bearer {ACCESS_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/roles/20"
+    "http://localhost:8000/api/v1/roles/4"
 );
 
 const headers = {
@@ -3860,15 +4032,16 @@ fetch(url, {
 
 <code class="language-json">{
     &quot;data&quot;: {
-        &quot;id&quot;: 508,
-        &quot;username&quot;: &quot;corene.conn&quot;,
-        &quot;first_name&quot;: &quot;Karen&quot;,
-        &quot;last_name&quot;: &quot;Sawayn&quot;,
-        &quot;full_name&quot;: &quot;Karen Sawayn&quot;,
-        &quot;email&quot;: &quot;corene.conn@test.com&quot;,
-        &quot;gender&quot;: &quot;male&quot;,
-        &quot;date_of_birth&quot;: &quot;6/Oct/1974&quot;,
-        &quot;roles&quot;: []
+        &quot;id&quot;: 510,
+        &quot;username&quot;: &quot;marquise.jerde&quot;,
+        &quot;first_name&quot;: &quot;Jeffery&quot;,
+        &quot;last_name&quot;: &quot;Turner&quot;,
+        &quot;full_name&quot;: &quot;Jeffery Turner&quot;,
+        &quot;email&quot;: &quot;marquise.jerde@test.com&quot;,
+        &quot;gender&quot;: &quot;female&quot;,
+        &quot;date_of_birth&quot;: &quot;19/Feb/1980&quot;,
+        &quot;roles&quot;: [],
+        &quot;permissions&quot;: []
     }
 }</code>
  </pre>
@@ -3965,26 +4138,28 @@ fetch(url, {
 <code class="language-json">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 509,
-            &quot;username&quot;: &quot;kkozey&quot;,
-            &quot;first_name&quot;: &quot;Rebecca&quot;,
-            &quot;last_name&quot;: &quot;Spencer&quot;,
-            &quot;full_name&quot;: &quot;Rebecca Spencer&quot;,
-            &quot;email&quot;: &quot;kkozey@test.com&quot;,
+            &quot;id&quot;: 511,
+            &quot;username&quot;: &quot;dakota48&quot;,
+            &quot;first_name&quot;: &quot;Evie&quot;,
+            &quot;last_name&quot;: &quot;Wilderman&quot;,
+            &quot;full_name&quot;: &quot;Evie Wilderman&quot;,
+            &quot;email&quot;: &quot;dakota48@test.com&quot;,
             &quot;gender&quot;: &quot;female&quot;,
-            &quot;date_of_birth&quot;: &quot;27/Nov/2018&quot;,
-            &quot;roles&quot;: []
+            &quot;date_of_birth&quot;: &quot;4/Nov/1990&quot;,
+            &quot;roles&quot;: [],
+            &quot;permissions&quot;: []
         },
         {
-            &quot;id&quot;: 510,
-            &quot;username&quot;: &quot;berge.lisette&quot;,
-            &quot;first_name&quot;: &quot;Columbus&quot;,
-            &quot;last_name&quot;: &quot;Renner&quot;,
-            &quot;full_name&quot;: &quot;Columbus Renner&quot;,
-            &quot;email&quot;: &quot;berge.lisette@test.com&quot;,
+            &quot;id&quot;: 512,
+            &quot;username&quot;: &quot;ondricka.melissa&quot;,
+            &quot;first_name&quot;: &quot;Camren&quot;,
+            &quot;last_name&quot;: &quot;Heaney&quot;,
+            &quot;full_name&quot;: &quot;Camren Heaney&quot;,
+            &quot;email&quot;: &quot;ondricka.melissa@test.com&quot;,
             &quot;gender&quot;: &quot;male&quot;,
-            &quot;date_of_birth&quot;: &quot;9/Feb/1975&quot;,
-            &quot;roles&quot;: []
+            &quot;date_of_birth&quot;: &quot;10/Jan/1971&quot;,
+            &quot;roles&quot;: [],
+            &quot;permissions&quot;: []
         }
     ]
 }</code>
@@ -4082,26 +4257,28 @@ fetch(url, {
 <code class="language-json">{
     &quot;data&quot;: [
         {
-            &quot;id&quot;: 511,
-            &quot;username&quot;: &quot;reynolds.jean&quot;,
-            &quot;first_name&quot;: &quot;Meghan&quot;,
-            &quot;last_name&quot;: &quot;Zieme&quot;,
-            &quot;full_name&quot;: &quot;Meghan Zieme&quot;,
-            &quot;email&quot;: &quot;reynolds.jean@test.com&quot;,
+            &quot;id&quot;: 513,
+            &quot;username&quot;: &quot;orlo.flatley&quot;,
+            &quot;first_name&quot;: &quot;Justina&quot;,
+            &quot;last_name&quot;: &quot;Quigley&quot;,
+            &quot;full_name&quot;: &quot;Justina Quigley&quot;,
+            &quot;email&quot;: &quot;orlo.flatley@test.com&quot;,
             &quot;gender&quot;: &quot;male&quot;,
-            &quot;date_of_birth&quot;: &quot;5/Aug/1974&quot;,
-            &quot;roles&quot;: []
+            &quot;date_of_birth&quot;: &quot;27/Mar/1983&quot;,
+            &quot;roles&quot;: [],
+            &quot;permissions&quot;: []
         },
         {
-            &quot;id&quot;: 512,
-            &quot;username&quot;: &quot;imogene11&quot;,
-            &quot;first_name&quot;: &quot;Kelton&quot;,
-            &quot;last_name&quot;: &quot;Reichert&quot;,
-            &quot;full_name&quot;: &quot;Kelton Reichert&quot;,
-            &quot;email&quot;: &quot;imogene11@test.com&quot;,
-            &quot;gender&quot;: &quot;male&quot;,
-            &quot;date_of_birth&quot;: &quot;12/Dec/1981&quot;,
-            &quot;roles&quot;: []
+            &quot;id&quot;: 514,
+            &quot;username&quot;: &quot;valerie.feil&quot;,
+            &quot;first_name&quot;: &quot;Albert&quot;,
+            &quot;last_name&quot;: &quot;West&quot;,
+            &quot;full_name&quot;: &quot;Albert West&quot;,
+            &quot;email&quot;: &quot;valerie.feil@test.com&quot;,
+            &quot;gender&quot;: &quot;female&quot;,
+            &quot;date_of_birth&quot;: &quot;6/Dec/1986&quot;,
+            &quot;roles&quot;: [],
+            &quot;permissions&quot;: []
         }
     ]
 }</code>
@@ -4156,129 +4333,6 @@ fetch(url, {
         </p>
                 </form>
 
-            <h2 id="users-GETapi-v1-users-with-permissions">Get all users with permissions</h2>
-
-<p>
-<small class="badge badge-darkred">requires authentication</small>
-</p>
-
-
-
-<span id="example-requests-GETapi-v1-users-with-permissions">
-<blockquote>Example request:</blockquote>
-
-
-<pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/v1/users/with-permissions" \
-    --header "Authorization: Bearer {ACCESS_TOKEN}" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre>
-
-<pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/users/with-permissions"
-);
-
-const headers = {
-    "Authorization": "Bearer {ACCESS_TOKEN}",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre>
-</span>
-
-<span id="example-responses-GETapi-v1-users-with-permissions">
-            <blockquote>
-            <p>Example response (200):</p>
-        </blockquote>
-                <pre>
-
-<code class="language-json">{
-    &quot;data&quot;: [
-        {
-            &quot;user&quot;: {
-                &quot;id&quot;: 513,
-                &quot;username&quot;: &quot;cdonnelly&quot;,
-                &quot;first_name&quot;: &quot;Sherman&quot;,
-                &quot;last_name&quot;: &quot;Hirthe&quot;,
-                &quot;full_name&quot;: &quot;Sherman Hirthe&quot;,
-                &quot;email&quot;: &quot;cdonnelly@test.com&quot;,
-                &quot;gender&quot;: &quot;female&quot;,
-                &quot;date_of_birth&quot;: &quot;18/Jun/1988&quot;,
-                &quot;roles&quot;: []
-            },
-            &quot;permissions&quot;: []
-        },
-        {
-            &quot;user&quot;: {
-                &quot;id&quot;: 514,
-                &quot;username&quot;: &quot;sawayn.astrid&quot;,
-                &quot;first_name&quot;: &quot;Osbaldo&quot;,
-                &quot;last_name&quot;: &quot;Mayert&quot;,
-                &quot;full_name&quot;: &quot;Osbaldo Mayert&quot;,
-                &quot;email&quot;: &quot;sawayn.astrid@test.com&quot;,
-                &quot;gender&quot;: &quot;male&quot;,
-                &quot;date_of_birth&quot;: &quot;20/Jun/1986&quot;,
-                &quot;roles&quot;: []
-            },
-            &quot;permissions&quot;: []
-        }
-    ]
-}</code>
- </pre>
-    </span>
-<span id="execution-results-GETapi-v1-users-with-permissions" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-GETapi-v1-users-with-permissions"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-v1-users-with-permissions"></code></pre>
-</span>
-<span id="execution-error-GETapi-v1-users-with-permissions" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-v1-users-with-permissions"></code></pre>
-</span>
-<form id="form-GETapi-v1-users-with-permissions" data-method="GET"
-      data-path="api/v1/users/with-permissions"
-      data-authed="1"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      data-headers='{"Authorization":"Bearer {ACCESS_TOKEN}","Content-Type":"application\/json","Accept":"application\/json"}'
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-users-with-permissions', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-v1-users-with-permissions"
-                    onclick="tryItOut('GETapi-v1-users-with-permissions');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-v1-users-with-permissions"
-                    onclick="cancelTryOut('GETapi-v1-users-with-permissions');" hidden>Cancel
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-v1-users-with-permissions" hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-green">GET</small>
-            <b><code>api/v1/users/with-permissions</code></b>
-        </p>
-                <p>
-            <label id="auth-GETapi-v1-users-with-permissions" hidden>Authorization header:
-                <b><code>Bearer </code></b><input type="text"
-                                                                name="Authorization"
-                                                                data-prefix="Bearer "
-                                                                data-endpoint="GETapi-v1-users-with-permissions"
-                                                                data-component="header"></label>
-        </p>
-                </form>
-
             <h2 id="users-GETapi-v1-users">Get a list of all users</h2>
 
 <p>
@@ -4323,25 +4377,27 @@ fetch(url, {
     &quot;data&quot;: [
         {
             &quot;id&quot;: 515,
-            &quot;username&quot;: &quot;axel39&quot;,
-            &quot;first_name&quot;: &quot;Cordie&quot;,
-            &quot;last_name&quot;: &quot;White&quot;,
-            &quot;full_name&quot;: &quot;Cordie White&quot;,
-            &quot;email&quot;: &quot;axel39@test.com&quot;,
+            &quot;username&quot;: &quot;fokon&quot;,
+            &quot;first_name&quot;: &quot;Clint&quot;,
+            &quot;last_name&quot;: &quot;Schultz&quot;,
+            &quot;full_name&quot;: &quot;Clint Schultz&quot;,
+            &quot;email&quot;: &quot;fokon@test.com&quot;,
             &quot;gender&quot;: &quot;female&quot;,
-            &quot;date_of_birth&quot;: &quot;27/Aug/2008&quot;,
-            &quot;roles&quot;: []
+            &quot;date_of_birth&quot;: &quot;11/May/2010&quot;,
+            &quot;roles&quot;: [],
+            &quot;permissions&quot;: []
         },
         {
             &quot;id&quot;: 516,
-            &quot;username&quot;: &quot;ramiro.walsh&quot;,
-            &quot;first_name&quot;: &quot;Keenan&quot;,
-            &quot;last_name&quot;: &quot;Schaden&quot;,
-            &quot;full_name&quot;: &quot;Keenan Schaden&quot;,
-            &quot;email&quot;: &quot;ramiro.walsh@test.com&quot;,
+            &quot;username&quot;: &quot;tony.cummings&quot;,
+            &quot;first_name&quot;: &quot;Lauriane&quot;,
+            &quot;last_name&quot;: &quot;Bashirian&quot;,
+            &quot;full_name&quot;: &quot;Lauriane Bashirian&quot;,
+            &quot;email&quot;: &quot;tony.cummings@test.com&quot;,
             &quot;gender&quot;: &quot;male&quot;,
-            &quot;date_of_birth&quot;: &quot;9/Nov/2015&quot;,
-            &quot;roles&quot;: []
+            &quot;date_of_birth&quot;: &quot;25/Apr/2004&quot;,
+            &quot;roles&quot;: [],
+            &quot;permissions&quot;: []
         }
     ]
 }</code>
@@ -4414,15 +4470,15 @@ fetch(url, {
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"username\": \"qui\",
-    \"email\": \"occaecati\",
-    \"first_name\": \"fugiat\",
-    \"last_name\": \"perferendis\",
-    \"gender\": \"qui\",
+    \"username\": \"et\",
+    \"email\": \"voluptatem\",
+    \"first_name\": \"numquam\",
+    \"last_name\": \"in\",
+    \"gender\": \"et\",
     \"date_of_birth\": \"2020-12-01\",
     \"role_ids\": [
-        11,
-        8
+        15,
+        13
     ]
 }"
 </code></pre>
@@ -4438,15 +4494,15 @@ const headers = {
 };
 
 let body = {
-    "username": "qui",
-    "email": "occaecati",
-    "first_name": "fugiat",
-    "last_name": "perferendis",
-    "gender": "qui",
+    "username": "et",
+    "email": "voluptatem",
+    "first_name": "numquam",
+    "last_name": "in",
+    "gender": "et",
     "date_of_birth": "2020-12-01",
     "role_ids": [
-        11,
-        8
+        15,
+        13
     ]
 }
 
@@ -4596,13 +4652,13 @@ fetch(url, {
 
 
 <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/v1/users/7" \
+    --get "http://localhost:8000/api/v1/users/13" \
     --header "Authorization: Bearer {ACCESS_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/users/7"
+    "http://localhost:8000/api/v1/users/13"
 );
 
 const headers = {
@@ -4626,14 +4682,15 @@ fetch(url, {
 <code class="language-json">{
     &quot;data&quot;: {
         &quot;id&quot;: 517,
-        &quot;username&quot;: &quot;ariel49&quot;,
-        &quot;first_name&quot;: &quot;Aileen&quot;,
-        &quot;last_name&quot;: &quot;Tromp&quot;,
-        &quot;full_name&quot;: &quot;Aileen Tromp&quot;,
-        &quot;email&quot;: &quot;ariel49@test.com&quot;,
+        &quot;username&quot;: &quot;alfonzo20&quot;,
+        &quot;first_name&quot;: &quot;Tia&quot;,
+        &quot;last_name&quot;: &quot;Steuber&quot;,
+        &quot;full_name&quot;: &quot;Tia Steuber&quot;,
+        &quot;email&quot;: &quot;alfonzo20@test.com&quot;,
         &quot;gender&quot;: &quot;male&quot;,
-        &quot;date_of_birth&quot;: &quot;9/Feb/1999&quot;,
-        &quot;roles&quot;: []
+        &quot;date_of_birth&quot;: &quot;31/Mar/2007&quot;,
+        &quot;roles&quot;: [],
+        &quot;permissions&quot;: []
     }
 }</code>
  </pre>
@@ -4709,26 +4766,26 @@ fetch(url, {
 
 
 <pre><code class="language-bash">curl --request PUT \
-    "http://localhost:8000/api/v1/users/14" \
+    "http://localhost:8000/api/v1/users/12" \
     --header "Authorization: Bearer {ACCESS_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"username\": \"sed\",
-    \"email\": \"consequatur\",
-    \"first_name\": \"iure\",
-    \"last_name\": \"illum\",
-    \"gender\": \"earum\",
+    \"username\": \"cupiditate\",
+    \"email\": \"perspiciatis\",
+    \"first_name\": \"et\",
+    \"last_name\": \"nulla\",
+    \"gender\": \"voluptas\",
     \"date_of_birth\": \"2020-12-01\",
     \"role_ids\": [
-        11,
-        6
+        15,
+        18
     ]
 }"
 </code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/users/14"
+    "http://localhost:8000/api/v1/users/12"
 );
 
 const headers = {
@@ -4738,15 +4795,15 @@ const headers = {
 };
 
 let body = {
-    "username": "sed",
-    "email": "consequatur",
-    "first_name": "iure",
-    "last_name": "illum",
-    "gender": "earum",
+    "username": "cupiditate",
+    "email": "perspiciatis",
+    "first_name": "et",
+    "last_name": "nulla",
+    "gender": "voluptas",
     "date_of_birth": "2020-12-01",
     "role_ids": [
-        11,
-        6
+        15,
+        18
     ]
 }
 
@@ -4905,13 +4962,13 @@ fetch(url, {
 
 
 <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost:8000/api/v1/users/16" \
+    "http://localhost:8000/api/v1/users/17" \
     --header "Authorization: Bearer {ACCESS_TOKEN}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
 
 <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/users/16"
+    "http://localhost:8000/api/v1/users/17"
 );
 
 const headers = {

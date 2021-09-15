@@ -55,7 +55,22 @@ class AuthController extends Controller
      *      "full_name": "Instructor 1",
      *      "email": "i_1@test.com",
      *      "gender": "male",
-     *      "date_of_birth": "2000-02-03 14:23:35"
+     *      "date_of_birth": "2000-02-03 14:23:35",
+     *      "roles": [
+     *          {
+     *              "id": 1,
+     *              "name": "admin",
+     *              "display_name": "admin"
+     *          }
+     *      ],
+     *      "permissions": [
+     *          {
+     *              "id": 1,
+     *              "name": "create users",
+     *              "display_name": "create users",
+     *              "group": "123"
+     *          },
+     *      ],
      *  },
      *  "verified": true
      * }

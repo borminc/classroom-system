@@ -21,7 +21,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":1,"name":"admin","display_name":"admin"},{"id":1,"name":"admin","display_name":"admin"}]}'
+        content: '{"data":[{"id":1,"name":"admin","display_name":"admin","permissions":[{"id":1,"name":"create users","display_name":"create usersssssss","group":"123"},{"id":2,"name":"view users","display_name":"view users","group":"Admin permission"},{"id":3,"name":"view instructors","display_name":"view instructors","group":"Admin permission"},{"id":4,"name":"view students","display_name":"view students","group":"Admin permission"},{"id":5,"name":"edit users","display_name":"edit users","group":"Admin permission"},{"id":6,"name":"delete users","display_name":"delete users","group":"Admin permission"},{"id":7,"name":"register students-courses","display_name":"register students-courses","group":"Admin permission"},{"id":8,"name":"create courses","display_name":"create courses","group":"Admin permission"},{"id":9,"name":"edit courses","display_name":"edit courses","group":"Admin permission"},{"id":10,"name":"delete courses","display_name":"delete courses","group":"Admin permission"},{"id":11,"name":"view roles","display_name":"view roles","group":"Admin permission"},{"id":12,"name":"create roles","display_name":"create roles","group":"Admin permission"},{"id":13,"name":"edit roles","display_name":"edit roles","group":"Admin permission"},{"id":14,"name":"delete roles","display_name":"delete roles","group":"Admin permission"},{"id":15,"name":"view permissions","display_name":"view permissions","group":"Admin permission"},{"id":16,"name":"edit permissions","display_name":"edit permissions","group":"Admin permission"},{"id":17,"name":"assign permissions","display_name":"assign permissions","group":"Admin permission"},{"id":18,"name":"revoke permissions","display_name":"revoke permissions","group":"Admin permission"}]},{"id":1,"name":"admin","display_name":"admin","permissions":[{"id":1,"name":"create users","display_name":"create usersssssss","group":"123"},{"id":2,"name":"view users","display_name":"view users","group":"Admin permission"},{"id":3,"name":"view instructors","display_name":"view instructors","group":"Admin permission"},{"id":4,"name":"view students","display_name":"view students","group":"Admin permission"},{"id":5,"name":"edit users","display_name":"edit users","group":"Admin permission"},{"id":6,"name":"delete users","display_name":"delete users","group":"Admin permission"},{"id":7,"name":"register students-courses","display_name":"register students-courses","group":"Admin permission"},{"id":8,"name":"create courses","display_name":"create courses","group":"Admin permission"},{"id":9,"name":"edit courses","display_name":"edit courses","group":"Admin permission"},{"id":10,"name":"delete courses","display_name":"delete courses","group":"Admin permission"},{"id":11,"name":"view roles","display_name":"view roles","group":"Admin permission"},{"id":12,"name":"create roles","display_name":"create roles","group":"Admin permission"},{"id":13,"name":"edit roles","display_name":"edit roles","group":"Admin permission"},{"id":14,"name":"delete roles","display_name":"delete roles","group":"Admin permission"},{"id":15,"name":"view permissions","display_name":"view permissions","group":"Admin permission"},{"id":16,"name":"edit permissions","display_name":"edit permissions","group":"Admin permission"},{"id":17,"name":"assign permissions","display_name":"assign permissions","group":"Admin permission"},{"id":18,"name":"revoke permissions","display_name":"revoke permissions","group":"Admin permission"}]}]}'
         headers: []
         description: null
     responseFields: []
@@ -44,7 +44,7 @@ endpoints:
         name: name
         description: 'The name of the role.'
         required: true
-        example: nesciunt
+        example: at
         type: string
     responses:
       -
@@ -73,14 +73,14 @@ endpoints:
         name: id
         description: 'The ID of the role.'
         required: true
-        example: velit
+        example: eum
         type: string
     queryParameters: []
     bodyParameters: []
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"name":"admin","display_name":"admin"}}'
+        content: '{"data":{"id":1,"name":"admin","display_name":"admin","permissions":[{"id":1,"name":"create users","display_name":"create usersssssss","group":"123"},{"id":2,"name":"view users","display_name":"view users","group":"Admin permission"},{"id":3,"name":"view instructors","display_name":"view instructors","group":"Admin permission"},{"id":4,"name":"view students","display_name":"view students","group":"Admin permission"},{"id":5,"name":"edit users","display_name":"edit users","group":"Admin permission"},{"id":6,"name":"delete users","display_name":"delete users","group":"Admin permission"},{"id":7,"name":"register students-courses","display_name":"register students-courses","group":"Admin permission"},{"id":8,"name":"create courses","display_name":"create courses","group":"Admin permission"},{"id":9,"name":"edit courses","display_name":"edit courses","group":"Admin permission"},{"id":10,"name":"delete courses","display_name":"delete courses","group":"Admin permission"},{"id":11,"name":"view roles","display_name":"view roles","group":"Admin permission"},{"id":12,"name":"create roles","display_name":"create roles","group":"Admin permission"},{"id":13,"name":"edit roles","display_name":"edit roles","group":"Admin permission"},{"id":14,"name":"delete roles","display_name":"delete roles","group":"Admin permission"},{"id":15,"name":"view permissions","display_name":"view permissions","group":"Admin permission"},{"id":16,"name":"edit permissions","display_name":"edit permissions","group":"Admin permission"},{"id":17,"name":"assign permissions","display_name":"assign permissions","group":"Admin permission"},{"id":18,"name":"revoke permissions","display_name":"revoke permissions","group":"Admin permission"}]}}'
         headers: []
         description: null
     responseFields: []
@@ -102,7 +102,7 @@ endpoints:
         name: id
         description: 'The ID of the role.'
         required: true
-        example: 18
+        example: 16
         type: integer
     queryParameters: []
     bodyParameters:
@@ -110,7 +110,7 @@ endpoints:
         name: name
         description: 'The name of the role.'
         required: true
-        example: cupiditate
+        example: reprehenderit
         type: string
     responses:
       -
@@ -139,7 +139,7 @@ endpoints:
         name: id
         description: 'The ID of the role.'
         required: true
-        example: 20
+        example: 4
         type: integer
     queryParameters: []
     bodyParameters: []

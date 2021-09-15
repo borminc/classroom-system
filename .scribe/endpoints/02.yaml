@@ -21,7 +21,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":35,"name":"Intro to qui","code":"CnCzA","description":"Voluptas tenetur sit consequatur dolores delectus voluptates. Est repellendus magnam qui perspiciatis dolorum. Fugit corporis eum temporibus.","instructor":{"id":11,"username":"i_10","first_name":"Instructor","last_name":"10","full_name":"Instructor 10","email":"i_10@test.com","gender":"male","date_of_birth":"3\/Feb\/2000","roles":[{"id":2,"name":"instructor","display_name":"instructor"}]},"students":[]},{"id":36,"name":"Intro to est","code":"FzVKJ","description":"Sit itaque accusantium totam dolore vel nam. Esse dicta vel accusantium quibusdam. Et in et commodi ipsum est.","instructor":{"id":7,"username":"i_6","first_name":"Instructor","last_name":"6","full_name":"Instructor 6","email":"i_6@test.com","gender":"male","date_of_birth":"3\/Feb\/2000","roles":[{"id":2,"name":"instructor","display_name":"instructor"}]},"students":[]}]}'
+        content: '{"data":[{"id":44,"name":"Intro to quos","code":"QNbCR","description":"Consectetur quia dolores ut architecto ex qui et. Suscipit eos tempora in. Illo commodi non corporis ea voluptatem praesentium.","instructor":{"id":6,"username":"i_5","first_name":"Instructor","last_name":"5","full_name":"Instructor 5","email":"i_5@test.com","gender":"male","date_of_birth":"3\/Feb\/2000","roles":[{"id":2,"name":"instructor","display_name":"instructor"}],"permissions":[{"id":22,"name":"teach courses","display_name":"teach courses","group":"Instructor permission"},{"id":23,"name":"view own-instructor-courses","display_name":"view own-instructor-courses","group":"Instructor permission"}]},"students":[]},{"id":45,"name":"Intro to numquam","code":"QnJxt","description":"Explicabo unde assumenda sapiente et hic quisquam. Sunt sint ducimus porro suscipit.","instructor":{"id":6,"username":"i_5","first_name":"Instructor","last_name":"5","full_name":"Instructor 5","email":"i_5@test.com","gender":"male","date_of_birth":"3\/Feb\/2000","roles":[{"id":2,"name":"instructor","display_name":"instructor"}],"permissions":[{"id":22,"name":"teach courses","display_name":"teach courses","group":"Instructor permission"},{"id":23,"name":"view own-instructor-courses","display_name":"view own-instructor-courses","group":"Instructor permission"}]},"students":[]}]}'
         headers: []
         description: null
     responseFields: []
@@ -43,7 +43,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":37,"name":"Intro to est","code":"pZE8y","description":"Consequatur in blanditiis nihil iure. Et aliquam blanditiis possimus quasi ipsam. Rerum tempore deserunt quas rerum quae doloremque.","instructor":{"id":5,"username":"i_4","first_name":"Instructor","last_name":"4","full_name":"Instructor 4","email":"i_4@test.com","gender":"male","date_of_birth":"3\/Feb\/2000","roles":[{"id":2,"name":"instructor","display_name":"instructor"}]}},{"id":38,"name":"Intro to et","code":"RexNm","description":"Eum fuga facere et nobis. Sapiente qui quia quisquam non voluptate expedita. Ex recusandae quisquam est.","instructor":{"id":3,"username":"i_2","first_name":"Instructor","last_name":"2","full_name":"Instructor 2","email":"i_2@test.com","gender":"male","date_of_birth":"3\/Feb\/2000","roles":[{"id":2,"name":"instructor","display_name":"instructor"}]}}]}'
+        content: '{"data":[{"id":46,"name":"Intro to labore","code":"xPUMd","description":"Porro voluptatum ut commodi. Ad aliquam tempore repellat inventore et ut. Sunt neque omnis quia optio nobis nihil officia eligendi.","instructor":{"id":7,"username":"i_6","first_name":"Instructor","last_name":"6","full_name":"Instructor 6","email":"i_6@test.com","gender":"male","date_of_birth":"3\/Feb\/2000","roles":[{"id":2,"name":"instructor","display_name":"instructor"}],"permissions":[{"id":22,"name":"teach courses","display_name":"teach courses","group":"Instructor permission"},{"id":23,"name":"view own-instructor-courses","display_name":"view own-instructor-courses","group":"Instructor permission"}]}},{"id":47,"name":"Intro to est","code":"8ybeY","description":"Omnis in consequatur temporibus. Velit qui quo dolores. Saepe error esse et saepe nulla. Sed assumenda qui laudantium ipsam distinctio.","instructor":{"id":6,"username":"i_5","first_name":"Instructor","last_name":"5","full_name":"Instructor 5","email":"i_5@test.com","gender":"male","date_of_birth":"3\/Feb\/2000","roles":[{"id":2,"name":"instructor","display_name":"instructor"}],"permissions":[{"id":22,"name":"teach courses","display_name":"teach courses","group":"Instructor permission"},{"id":23,"name":"view own-instructor-courses","display_name":"view own-instructor-courses","group":"Instructor permission"}]}}]}'
         headers: []
         description: null
     responseFields: []
@@ -66,25 +66,25 @@ endpoints:
         name: name
         description: 'The name of the course.'
         required: true
-        example: animi
+        example: occaecati
         type: string
       code:
         name: code
         description: 'The code of the course.'
         required: true
-        example: consequatur
+        example: illum
         type: string
       description:
         name: description
         description: 'The description of the course.'
         required: true
-        example: ut
+        example: et
         type: string
       instructor_id:
         name: instructor_id
         description: 'The id of the instructor.'
         required: true
-        example: 2
+        example: 12
         type: integer
     responses:
       -
@@ -113,14 +113,14 @@ endpoints:
         name: id
         description: 'The ID of the course.'
         required: true
-        example: 7
+        example: 18
         type: integer
     queryParameters: []
     bodyParameters: []
     responses:
       -
         status: 200
-        content: '{"data":{"id":39,"name":"Intro to blanditiis","code":"xekeT","description":"Rerum repudiandae laudantium ipsum laudantium sint. Officia tenetur optio maiores rem ipsam mollitia et inventore. Deleniti et saepe autem quae.","instructor":{"id":477,"username":"bormin chau","first_name":"bormin","last_name":"chau","full_name":"bormin chau","email":"borminchau@gmail.com","gender":"male","date_of_birth":"1\/Jan\/2000","roles":[{"id":2,"name":"instructor","display_name":"instructor"},{"id":3,"name":"student","display_name":"student"}]}}}'
+        content: '{"data":{"id":48,"name":"Intro to eos","code":"dNHS6","description":"Repudiandae et dolores quisquam. Beatae doloremque et fuga voluptas veritatis sapiente.","instructor":{"id":9,"username":"i_8","first_name":"Instructor","last_name":"8","full_name":"Instructor 8","email":"i_8@test.com","gender":"male","date_of_birth":"3\/Feb\/2000","roles":[{"id":2,"name":"instructor","display_name":"instructor"}],"permissions":[{"id":22,"name":"teach courses","display_name":"teach courses","group":"Instructor permission"},{"id":23,"name":"view own-instructor-courses","display_name":"view own-instructor-courses","group":"Instructor permission"}]}}}'
         headers: []
         description: null
     responseFields: []
@@ -142,7 +142,7 @@ endpoints:
         name: id
         description: 'The ID of the course.'
         required: true
-        example: 13
+        example: 8
         type: integer
     queryParameters: []
     bodyParameters:
@@ -150,25 +150,25 @@ endpoints:
         name: name
         description: 'The name of the course.'
         required: true
-        example: qui
+        example: ducimus
         type: string
       code:
         name: code
         description: 'The code of the course.'
         required: true
-        example: pariatur
+        example: sapiente
         type: string
       description:
         name: description
         description: 'The description of the course.'
         required: true
-        example: id
+        example: qui
         type: string
       instructor_id:
         name: instructor_id
         description: 'The id of the instructor.'
         required: true
-        example: 14
+        example: 17
         type: integer
     responses:
       -

@@ -23,13 +23,13 @@ endpoints:
         name: email
         description: 'The email of the user. Must be a valid email address.'
         required: true
-        example: dickens.dayton@example.org
+        example: hermiston.marcus@example.org
         type: string
       password:
         name: password
         description: 'The password of the user.'
         required: true
-        example: maiores
+        example: provident
         type: string
       remember_me:
         name: remember_me
@@ -51,7 +51,22 @@ endpoints:
                "full_name": "Instructor 1",
                "email": "i_1@test.com",
                "gender": "male",
-               "date_of_birth": "2000-02-03 14:23:35"
+               "date_of_birth": "2000-02-03 14:23:35",
+               "roles": [
+                   {
+                       "id": 1,
+                       "name": "admin",
+                       "display_name": "admin"
+                   }
+               ],
+               "permissions": [
+                   {
+                       "id": 1,
+                       "name": "create users",
+                       "display_name": "create users",
+                       "group": "123"
+                   },
+               ],
            },
            "verified": true
           }
@@ -84,43 +99,43 @@ endpoints:
         name: username
         description: 'The username user.'
         required: true
-        example: optio
+        example: a
         type: string
       email:
         name: email
         description: 'A unique email address.'
         required: true
-        example: quis
+        example: aut
         type: string
       password:
         name: password
         description: 'The password of the account. Must be at least 8 characters.'
         required: true
-        example: wravue
+        example: ''
         type: string
       password_confirmation:
         name: password_confirmation
         description: 'Same as password.'
         required: true
-        example: illo
+        example: quae
         type: string
       first_name:
         name: first_name
         description: 'First name of user.'
         required: true
-        example: nisi
+        example: id
         type: string
       last_name:
         name: last_name
         description: 'Last name of user.'
         required: true
-        example: occaecati
+        example: officia
         type: string
       gender:
         name: gender
         description: 'Gender of the user.'
         required: true
-        example: dolore
+        example: amet
         type: string
       date_of_birth:
         name: date_of_birth
