@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Api\v1\User;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Api\ApiController;
 use App\Http\Requests\v1\User\StoreUserRequest;
 use App\Http\Requests\v1\User\UpdateUserRequest;
 use App\Http\Resources\v1\UserResource;
@@ -17,33 +17,33 @@ use Spatie\Permission\Models\Role;
  *
  * API endpoints for creating user and getting user info
  */
-class UserController extends Controller
+class UserController extends ApiController
 {
     /**
      * Get a list of all users
      *
      * @authenticated
-     * @return \Illuminate\Http\Response
+     * @return Illuminate\Http\JsonResponse
      * @apiResourceCollection App\Http\Resources\v1\UserResource
      * @apiResourceModel App\Models\User
      */
     public function index()
     {
         $this->authorize('viewAny', User::class);
-        return UserResource::collection(User::all());
+        return $this->okWithData(UserResource::collection(User::all()));
     }
 
     /**
      * Get the logged in user's info
      *
      * @authenticated
-     * @return App\Http\Resources\v1\UserResource
+     * @return Illuminate\Http\JsonResponse
      * @apiResource App\Http\Resources\v1\UserResource
      * @apiResourceModel App\Models\User
      */
     public function getLoggedInUserInfo()
     {
-        return new UserResource(auth()->user());
+        return $this->okWithData(new UserResource(auth()->user()));
     }
 
     /**
@@ -51,14 +51,14 @@ class UserController extends Controller
      *
      * @authenticated
      * @param Request $request
-     * @return UserResource
+     * @return Illuminate\Http\JsonResponse
      * @apiResourceCollection App\Http\Resources\v1\UserResource
      * @apiResourceModel App\Models\User
      */
     public function getAllStudents(Request $request)
     {
         $students = User::role('student')->get();
-        return UserResource::collection($students);
+        return $this->okWithData(UserResource::collection($students));
     }
 
     /**
@@ -66,14 +66,14 @@ class UserController extends Controller
      *
      * @authenticated
      * @param Request $request
-     * @return UserResource
+     * @return Illuminate\Http\JsonResponse
      * @apiResourceCollection App\Http\Resources\v1\UserResource
      * @apiResourceModel App\Models\User
      */
     public function getAllInstructors(Request $request)
     {
         $instructor = User::role('instructor')->get();
-        return UserResource::collection($instructor);
+        return $this->okWithData(UserResource::collection($instructor));
     }
 
     /**
@@ -82,13 +82,6 @@ class UserController extends Controller
      * @authenticated
      * @param StoreUserRequest $request
      * @return Illuminate\Http\JsonResponse
-     * @response 201 {
-     *  "message": "Successfully created user!",
-     *  "credentials": {
-     *      "email": "user@test.com",
-     *      "password": "12345678"
-     *  }
-     * }
      */
     public function store(StoreUserRequest $request)
     {
@@ -104,14 +97,13 @@ class UserController extends Controller
             $user->assignRole($role);
         }
 
-        return response()->json([
-            'message' => 'Successfully created user!',
+        return $this->created([
             'credentials' => [
                 'email' => $user->email,
                 'password' => $password,
             ],
-        ], 201);
-
+            'user' => new UserResource($user),
+        ]);
     }
 
     /**
@@ -119,14 +111,14 @@ class UserController extends Controller
      *
      * @authenticated
      * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
+     * @return Illuminate\Http\JsonResponse
      * @apiResource App\Http\Resources\v1\UserResource
      * @apiResourceModel App\Models\User
      */
     public function show(User $user)
     {
         $this->authorize('view', $user);
-        return new UserResource($user);
+        return $this->okWithData(new UserResource($user));
     }
 
     /**
@@ -135,18 +127,13 @@ class UserController extends Controller
      * @authenticated
      * @param  UpdateUserRequest  $request
      * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
-     * @response {
-     *  "message": "Successfully updated user!"
-     * }
+     * @return Illuminate\Http\JsonResponse
      */
     public function update(UpdateUserRequest $request, User $user)
     {
         $user->update($request->except('role_ids'));
         $user->syncRoles($request->role_ids);
-        return response()->json([
-            "message" => "Successfully updated user!",
-        ], 200);
+        return $this->updated(new UserResource($user));
     }
 
     /**
@@ -154,17 +141,12 @@ class UserController extends Controller
      *
      * @authenticated
      * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
-     * @response {
-     *  "message": "Successfully deleted user!"
-     * }
+     * @return Illuminate\Http\JsonResponse
      */
     public function destroy(User $user)
     {
         $this->authorize('delete', $user);
         $user->delete();
-        return response()->json([
-            "message" => "Successfully deleted user!",
-        ], 200);
+        return $this->deleted(new UserResource($user));
     }
 }

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Api\v1\Auth;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Api\ApiController;
 use App\Http\Requests\v1\Auth\LoginRequest;
 use App\Http\Requests\v1\Auth\SelfRegisterRequest;
 use App\Http\Resources\v1\UserResource;
@@ -17,16 +17,13 @@ use Illuminate\Support\Facades\Hash;
  *
  * API endpoints for authentication such as login and registration
  */
-class AuthController extends Controller
+class AuthController extends ApiController
 {
     /**
      * Self-registration of new users
      *
      * @param SelfRegisterRequest $request
      * @return Illuminate\Http\JsonResponse
-     * @response 201 {
-     *  "message": "Successfully created user!"
-     * }
      */
     public function selfRegisterAsStudent(SelfRegisterRequest $request)
     {
@@ -35,9 +32,7 @@ class AuthController extends Controller
         );
         $user->assignRole('student');
 
-        return response()->json([
-            'message' => 'Successfully created user!',
-        ], 201);
+        return $this->created(new UserResource($user));
     }
 
     /**
@@ -45,38 +40,6 @@ class AuthController extends Controller
      *
      * @param LoginRequest $request
      * @return Illuminate\Http\JsonResponse
-     * @response 200 {
-     *  "access_token": "eyJ0eX...",
-     *  "token_type": "Bearer",
-     *  "expires_at": "2021-09-06 15:02:06",
-     *  "user": {
-     *      "id": 2,
-     *      "username": "i_1",
-     *      "full_name": "Instructor 1",
-     *      "email": "i_1@test.com",
-     *      "gender": "male",
-     *      "date_of_birth": "2000-02-03 14:23:35",
-     *      "roles": [
-     *          {
-     *              "id": 1,
-     *              "name": "admin",
-     *              "display_name": "admin"
-     *          }
-     *      ],
-     *      "permissions": [
-     *          {
-     *              "id": 1,
-     *              "name": "create users",
-     *              "display_name": "create users",
-     *              "group": "123"
-     *          },
-     *      ],
-     *  },
-     *  "verified": true
-     * }
-     * @response 401 {
-     *  "message": "Invalid username or password."
-     * }
      */
     public function login(LoginRequest $request)
     {
@@ -86,9 +49,7 @@ class AuthController extends Controller
         ];
 
         if (!Auth::attempt($credentials)) {
-            return response()->json([
-                'message' => 'Invalid username or password.',
-            ], 401);
+            return $this->unauthenticated('Invalid username or password');
         }
 
         $user = $request->user();
@@ -99,13 +60,13 @@ class AuthController extends Controller
         }
         $token->save();
 
-        return response()->json([
+        return $this->okWithData([
             'access_token' => $tokenResult->accessToken,
             'token_type' => 'Bearer',
             'expires_at' => Carbon::parse($tokenResult->token->expires_at)->toDateTimeString(),
             'user' => new UserResource($user),
             'verified' => !($user->email_verified_at == null),
-        ], 200);
+        ], 'Login successfully');
     }
 
     /**
@@ -114,15 +75,10 @@ class AuthController extends Controller
      * @authenticated
      * @param Request $request
      * @return Illuminate\Http\JsonResponse
-     * @response {
-     *  "message": "Successfully logged out"
-     * }
      */
     public function logout(Request $request)
     {
         $request->user()->token()->revoke();
-        return response()->json([
-            'message' => 'Successfully logged out',
-        ]);
+        return $this->okWithMessage('Successfully logged out');
     }
 }

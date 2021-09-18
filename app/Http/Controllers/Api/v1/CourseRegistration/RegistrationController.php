@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Api\v1\CourseRegistration;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Api\ApiController;
 use App\Http\Requests\v1\CourseRegistration\RegisterStudentsCoursesRequest;
 use App\Http\Requests\v1\CourseRegistration\SelfRegisterCoursesRequest;
 use App\Http\Resources\v1\CourseResource;
@@ -15,14 +15,14 @@ use Illuminate\Http\Request;
  *
  * API endpoints for registering courses
  */
-class RegistrationController extends Controller
+class RegistrationController extends ApiController
 {
     /**
      * Get students' registered courses
      *
      * @authenticated
      * @param Request $request
-     * @return CourseResource
+     * @return Illuminate\Http\JsonResponse
      * @apiResourceCollection App\Http\Resources\v1\CourseResource
      * @apiResourceModel App\Models\Course
      */
@@ -30,7 +30,7 @@ class RegistrationController extends Controller
     {
         $this->authorize('viewOwnStudentCourses', Course::class);
         $user = $request->user();
-        return CourseResource::collection($user->student_courses);
+        return $this->okWithData(CourseResource::collection($user->student_courses));
     }
 
     /**
@@ -46,7 +46,7 @@ class RegistrationController extends Controller
     {
         $this->authorize('viewOwnInstructorCourses', Course::class);
         $user = $request->user();
-        return CourseResource::collection($user->instructor_courses);
+        return $this->okWithData(CourseResource::collection($user->instructor_courses));
     }
 
     /**
@@ -55,12 +55,6 @@ class RegistrationController extends Controller
      * @authenticated
      * @param RegisterStudentsCoursesRequest $request
      * @return Illuminate\Http\JsonResponse
-     * @response 200 {
-     *  "message": "Successfully registered student!"
-     * }
-     * @response 405 {
-     *  "message": "User cannot take any courses."
-     * }
      */
     public function registerStudentsCourses(RegisterStudentsCoursesRequest $request)
     {
@@ -68,22 +62,16 @@ class RegistrationController extends Controller
         $student = User::findOrFail($request->user_id);
 
         if ($student->cannot('take courses')) {
-            return response()->json([
-                'message' => 'User cannot take any courses.',
-            ], 405);
+            return $this->errorMessage('User cannot take any courses.');
         }
 
         if ($student->student_courses->contains($request->course_id)) {
-            return response()->json([
-                'message' => 'Student is already enrolled in this course.',
-            ], 405);
+            return $this->errorMessage('Student is already enrolled in this course.');
         }
 
         $course->students()->attach($student->id);
 
-        return response()->json([
-            'message' => 'Successfully registered student!',
-        ], 200);
+        return $this->okWithMessage('Successfully registered student!');
     }
 
     /**
@@ -92,27 +80,17 @@ class RegistrationController extends Controller
      * @authenticated
      * @param SelfRegisterCoursesRequest $request
      * @return Illuminate\Http\JsonResponse
-     * @response 200 {
-     *  "message": "Successfully enrolled!"
-     * }
-     * @response 405 {
-     *  "message": "You are already enrolled in this course."
-     * }
      */
     public function selfRegisterCourses(SelfRegisterCoursesRequest $request)
     {
         $user = $request->user();
 
         if ($user->student_courses->contains($request->course_id)) {
-            return response()->json([
-                'message' => 'You are already enrolled in this course.',
-            ], 405);
+            return $this->errorMessage('You are already enrolled in this course.');
         }
 
         $user->student_courses()->attach($request->course_id);
 
-        return response()->json([
-            'message' => 'Successfully enrolled!',
-        ], 200);
+        return $this->okWithMessage('Successfully enrolled!');
     }
 }

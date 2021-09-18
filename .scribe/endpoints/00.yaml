@@ -21,13 +21,13 @@ endpoints:
         name: email
         description: 'The email of the user. Must be a valid email address.'
         required: true
-        example: hermiston.marcus@example.org
+        example: deven.jaskolski@example.net
         type: string
       password:
         name: password
         description: 'The password of the user.'
         required: true
-        example: provident
+        example: dolore
         type: string
       remember_me:
         name: remember_me
@@ -35,49 +35,7 @@ endpoints:
         required: false
         example: false
         type: boolean
-    responses:
-      -
-        status: 200
-        content: |-
-          {
-           "access_token": "eyJ0eX...",
-           "token_type": "Bearer",
-           "expires_at": "2021-09-06 15:02:06",
-           "user": {
-               "id": 2,
-               "username": "i_1",
-               "full_name": "Instructor 1",
-               "email": "i_1@test.com",
-               "gender": "male",
-               "date_of_birth": "2000-02-03 14:23:35",
-               "roles": [
-                   {
-                       "id": 1,
-                       "name": "admin",
-                       "display_name": "admin"
-                   }
-               ],
-               "permissions": [
-                   {
-                       "id": 1,
-                       "name": "create users",
-                       "display_name": "create users",
-                       "group": "123"
-                   },
-               ],
-           },
-           "verified": true
-          }
-        headers: []
-        description: '200'
-      -
-        status: 401
-        content: |-
-          {
-           "message": "Invalid username or password."
-          }
-        headers: []
-        description: '401'
+    responses: []
     responseFields: []
   -
     httpMethods:
@@ -97,43 +55,43 @@ endpoints:
         name: username
         description: 'The username user.'
         required: true
-        example: a
+        example: id
         type: string
       email:
         name: email
         description: 'A unique email address.'
         required: true
-        example: aut
+        example: eos
         type: string
       password:
         name: password
         description: 'The password of the account. Must be at least 8 characters.'
         required: true
-        example: ''
+        example: oqb
         type: string
       password_confirmation:
         name: password_confirmation
         description: 'Same as password.'
         required: true
-        example: quae
+        example: similique
         type: string
       first_name:
         name: first_name
         description: 'First name of user.'
         required: true
-        example: id
+        example: temporibus
         type: string
       last_name:
         name: last_name
         description: 'Last name of user.'
         required: true
-        example: officia
+        example: architecto
         type: string
       gender:
         name: gender
         description: 'Gender of the user.'
         required: true
-        example: amet
+        example: sit
         type: string
       date_of_birth:
         name: date_of_birth
@@ -141,15 +99,7 @@ endpoints:
         required: true
         example: '2020-12-01'
         type: string
-    responses:
-      -
-        status: 201
-        content: |-
-          {
-           "message": "Successfully created user!"
-          }
-        headers: []
-        description: '201'
+    responses: []
     responseFields: []
   -
     httpMethods:
@@ -168,11 +118,11 @@ endpoints:
     bodyParameters: []
     responses:
       -
-        status: 200
-        content: |-
-          {
-           "message": "Successfully logged out"
-          }
-        headers: []
-        description: '200'
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
     responseFields: []

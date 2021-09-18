@@ -21,7 +21,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":40,"name":"Intro to quo","code":"oGtRk","description":"Suscipit qui eaque commodi et totam quae architecto. Velit rerum nisi numquam veniam. Reiciendis qui perferendis nihil harum iure voluptatem.","instructor":{"id":3,"username":"i_2","first_name":"Instructor","last_name":"2","full_name":"Instructor 2","email":"i_2@test.com","gender":"male","date_of_birth":"3\/Feb\/2000","roles":[{"id":2,"name":"instructor","display_name":"instructor"}],"permissions":[{"id":1,"name":"create users","display_name":"create usersssssss","group":"123"},{"id":22,"name":"teach courses","display_name":"teach courses","group":"Instructor permission"},{"id":23,"name":"view own-instructor-courses","display_name":"view own-instructor-courses","group":"Instructor permission"}]}},{"id":41,"name":"Intro to at","code":"AEgmY","description":"Labore vitae ex eligendi sed. Consequatur ullam vero quia quas in nihil. Voluptatibus voluptas quis et ut ut.","instructor":{"id":10,"username":"i_9","first_name":"Instructor","last_name":"9","full_name":"Instructor 9","email":"i_9@test.com","gender":"male","date_of_birth":"3\/Feb\/2000","roles":[{"id":2,"name":"instructor","display_name":"instructor"}],"permissions":[{"id":22,"name":"teach courses","display_name":"teach courses","group":"Instructor permission"},{"id":23,"name":"view own-instructor-courses","display_name":"view own-instructor-courses","group":"Instructor permission"}]}}]}'
+        content: '{"data":[{"id":33,"name":"Intro to rem","code":"WVcWC","description":"Et cum quidem nisi et nihil ipsum corrupti. Eveniet beatae sunt distinctio temporibus soluta est. Ea harum qui ab in corrupti impedit.","instructor":{"id":8,"username":"i_7","first_name":"Instructor","last_name":"7","full_name":"Instructor 7","email":"i_7@test.com","gender":"male","date_of_birth":"3\/Feb\/2000","roles":[{"id":2,"name":"instructor","display_name":"instructor"}],"permissions":[{"id":22,"name":"teach courses","display_name":"teach courses","group":"Instructor permission"},{"id":23,"name":"view own-instructor-courses","display_name":"view own-instructor-courses","group":"Instructor permission"}]}},{"id":34,"name":"Intro to ut","code":"ExTxz","description":"Nostrum ratione veritatis porro aut iure aut. Adipisci et odit amet officia. Dignissimos aperiam recusandae omnis itaque ratione repellat iste quasi.","instructor":{"id":8,"username":"i_7","first_name":"Instructor","last_name":"7","full_name":"Instructor 7","email":"i_7@test.com","gender":"male","date_of_birth":"3\/Feb\/2000","roles":[{"id":2,"name":"instructor","display_name":"instructor"}],"permissions":[{"id":22,"name":"teach courses","display_name":"teach courses","group":"Instructor permission"},{"id":23,"name":"view own-instructor-courses","display_name":"view own-instructor-courses","group":"Instructor permission"}]}}]}'
         headers: []
         description: null
     responseFields: []
@@ -43,7 +43,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":42,"name":"Intro to eius","code":"KW4rN","description":"Sit illo autem quam sed aut. Possimus laborum eligendi quia nam laudantium ut consequatur ea. Ratione cupiditate aut quae blanditiis.","instructor":{"id":4,"username":"i_3","first_name":"Instructor","last_name":"3","full_name":"Instructor 3","email":"i_3@test.com","gender":"male","date_of_birth":"3\/Feb\/2000","roles":[{"id":2,"name":"instructor","display_name":"instructor"}],"permissions":[{"id":22,"name":"teach courses","display_name":"teach courses","group":"Instructor permission"},{"id":23,"name":"view own-instructor-courses","display_name":"view own-instructor-courses","group":"Instructor permission"}]}},{"id":43,"name":"Intro to odit","code":"Fm2v3","description":"Sint ducimus maiores ipsum sed eligendi ab nihil. Sed cum qui dolorem. Esse ullam quia est dignissimos eligendi enim cum.","instructor":{"id":477,"username":"bormin chau","first_name":"bormin","last_name":"chau","full_name":"bormin chau","email":"borminchau@gmail.com","gender":"male","date_of_birth":"1\/Jan\/2000","roles":[{"id":2,"name":"instructor","display_name":"instructor"},{"id":3,"name":"student","display_name":"student"}],"permissions":[{"id":1,"name":"create users","display_name":"create usersssssss","group":"123"},{"id":19,"name":"take courses","display_name":"take courses","group":"Student permission"},{"id":20,"name":"self-register courses","display_name":"self-register courses","group":"Student permission"},{"id":21,"name":"view own-student-courses","display_name":"view own-student-courses","group":"Student permission"},{"id":22,"name":"teach courses","display_name":"teach courses","group":"Instructor permission"},{"id":23,"name":"view own-instructor-courses","display_name":"view own-instructor-courses","group":"Instructor permission"}]}}]}'
+        content: '{"data":[{"id":35,"name":"Intro to tempora","code":"6iQkU","description":"Atque libero harum voluptatum magni porro praesentium ratione. Sed soluta labore dicta impedit veritatis.","instructor":{"id":10,"username":"i_9","first_name":"Instructor","last_name":"9","full_name":"Instructor 9","email":"i_9@test.com","gender":"male","date_of_birth":"3\/Feb\/2000","roles":[{"id":2,"name":"instructor","display_name":"instructor"}],"permissions":[{"id":22,"name":"teach courses","display_name":"teach courses","group":"Instructor permission"},{"id":23,"name":"view own-instructor-courses","display_name":"view own-instructor-courses","group":"Instructor permission"}]}},{"id":36,"name":"Intro to optio","code":"dUVIu","description":"Nulla aut repudiandae quas officiis qui. Quia magnam maiores dolor laborum at minus recusandae.","instructor":{"id":10,"username":"i_9","first_name":"Instructor","last_name":"9","full_name":"Instructor 9","email":"i_9@test.com","gender":"male","date_of_birth":"3\/Feb\/2000","roles":[{"id":2,"name":"instructor","display_name":"instructor"}],"permissions":[{"id":22,"name":"teach courses","display_name":"teach courses","group":"Instructor permission"},{"id":23,"name":"view own-instructor-courses","display_name":"view own-instructor-courses","group":"Instructor permission"}]}}]}'
         headers: []
         description: null
     responseFields: []
@@ -66,25 +66,9 @@ endpoints:
         name: course_id
         description: 'The id of the course.'
         required: true
-        example: 2
+        example: 16
         type: integer
-    responses:
-      -
-        status: 200
-        content: |-
-          {
-           "message": "Successfully enrolled!"
-          }
-        headers: []
-        description: '200'
-      -
-        status: 405
-        content: |-
-          {
-           "message": "You are already enrolled in this course."
-          }
-        headers: []
-        description: '405'
+    responses: []
     responseFields: []
   -
     httpMethods:
@@ -105,29 +89,13 @@ endpoints:
         name: user_id
         description: 'The user_id of the student to be registered.'
         required: true
-        example: 19
+        example: 16
         type: integer
       course_id:
         name: course_id
         description: 'The id of the course.'
         required: true
-        example: 19
+        example: 6
         type: integer
-    responses:
-      -
-        status: 200
-        content: |-
-          {
-           "message": "Successfully registered student!"
-          }
-        headers: []
-        description: '200'
-      -
-        status: 405
-        content: |-
-          {
-           "message": "User cannot take any courses."
-          }
-        headers: []
-        description: '405'
+    responses: []
     responseFields: []

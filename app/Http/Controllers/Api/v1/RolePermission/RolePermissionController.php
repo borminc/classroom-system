@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Api\v1\RolePermission;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Api\ApiController;
 use App\Http\Requests\v1\RolePermission\AssignPermissionToRoleRequest;
 use App\Http\Requests\v1\RolePermission\AssignPermissionToUserRequest;
 use App\Http\Requests\v1\RolePermission\RevokePermissionFromRoleRequest;
 use App\Http\Requests\v1\RolePermission\RevokePermissionFromUserRequest;
+use App\Http\Requests\v1\RolePermission\UpdateRolePermissionRequest;
 use App\Http\Resources\v1\PermissionResource;
 use App\Models\User;
 use Spatie\Permission\Models\Permission;
@@ -17,28 +18,14 @@ use Spatie\Permission\Models\Role;
  *
  * API endpoints for assigning permissions to roles and users
  */
-class RolePermissionController extends Controller
+class RolePermissionController extends ApiController
 {
     /**
      * Assign permission to role
      *
      * @authenticated
      * @param AssignPermissionToRoleRequest $request
-     * @return \Illuminate\Http\Response
-     * @response {
-     *  "message" => "Successfully assigned permissions to role",
-     *  "assigned_permissions" => [
-     *    {
-     *        "id": 1,
-     *        "name": "create users",
-     *        "display_name": "create users",
-     *        "group": "Admin permission"
-     *    }
-     *  ],
-     * }
-     * @response {
-     *  "message": "No permission was assigned to role",
-     * }
+     * @return Illuminate\Http\JsonResponse
      */
     public function assignPermissionsToRole(AssignPermissionToRoleRequest $request)
     {
@@ -54,15 +41,12 @@ class RolePermissionController extends Controller
         }
 
         if ($assignedPermissions->count() === 0) {
-            return response()->json([
-                'message' => 'No permission was assigned to role',
-            ], 200);
+            return $this->okWithMessage('No permission was assigned to role');
         }
 
-        return response()->json([
-            'message' => 'Successfully assigned permissions to role',
+        return $this->okWithData([
             'assigned_permissions' => PermissionResource::collection($assignedPermissions),
-        ], 200);
+        ], 'Successfully assigned permissions to role');
     }
 
     /**
@@ -70,21 +54,7 @@ class RolePermissionController extends Controller
      *
      * @authenticated
      * @param AssignPermissionToUserRequest $request
-     * @return \Illuminate\Http\Response
-     * @response {
-     *  "message" => "Successfully assigned permissions to user",
-     *  "assigned_permissions" => [
-     *    {
-     *        "id": 1,
-     *        "name": "create users",
-     *        "display_name": "create users",
-     *        "group": "Admin permission"
-     *    }
-     *  ],
-     * }
-     * @response {
-     *  "message": "No permission was assigned to user",
-     * }
+     * @return Illuminate\Http\JsonResponse
      */
     public function assignPermissionsToUser(AssignPermissionToUserRequest $request)
     {
@@ -100,15 +70,12 @@ class RolePermissionController extends Controller
         }
 
         if ($assignedPermissions->count() === 0) {
-            return response()->json([
-                'message' => 'No permission was assigned to user',
-            ], 200);
+            return $this->okWithMessage('No permission was assigned to user');
         }
 
-        return response()->json([
-            'message' => 'Successfully assigned permissions to user',
+        return $this->okWithData([
             'assigned_permissions' => PermissionResource::collection($assignedPermissions),
-        ], 200);
+        ], 'Successfully assigned permissions to user');
     }
 
     /**
@@ -116,21 +83,7 @@ class RolePermissionController extends Controller
      *
      * @authenticated
      * @param RevokePermissionFromRoleRequest $request
-     * @return \Illuminate\Http\Response
-     * @response {
-     *  "message" => "Successfully revoked permissions from role",
-     *  "revoked_permissions" => [
-     *    {
-     *        "id": 1,
-     *        "name": "create users",
-     *        "display_name": "create users",
-     *        "group": "Admin permission"
-     *    }
-     *  ],
-     * }
-     * @response {
-     *  "message": "No permission was revoked",
-     * }
+     * @return Illuminate\Http\JsonResponse
      */
     public function revokePermissionFromRole(RevokePermissionFromRoleRequest $request)
     {
@@ -146,15 +99,12 @@ class RolePermissionController extends Controller
         }
 
         if ($revokedPermissions->count() === 0) {
-            return response()->json([
-                'message' => 'No permission was revoked',
-            ], 200);
+            return $this->okWithMessage('No permission was revoked');
         }
 
-        return response()->json([
-            'message' => 'Successfully revoked permissions from role',
+        return $this->okWithData([
             'revoked_permissions' => PermissionResource::collection($revokedPermissions),
-        ], 200);
+        ], 'Successfully revoked permissions from role');
     }
 
     /**
@@ -162,21 +112,7 @@ class RolePermissionController extends Controller
      *
      * @authenticated
      * @param RevokePermissionFromUserRequest $request
-     * @return \Illuminate\Http\Response
-     * @response {
-     *  "message" => "Successfully revoked permissions from user",
-     *  "revoked_permissions" => [
-     *    {
-     *        "id": 1,
-     *        "name": "create users",
-     *        "display_name": "create users",
-     *        "group": "Admin permission"
-     *    }
-     *  ],
-     * }
-     * @response {
-     *  "message": "No permission was revoked",
-     * }
+     * @return Illuminate\Http\JsonResponse
      */
     public function revokePermissionFromUser(RevokePermissionFromUserRequest $request)
     {
@@ -192,14 +128,57 @@ class RolePermissionController extends Controller
         }
 
         if ($revokedPermissions->count() === 0) {
-            return response()->json([
-                'message' => 'No permission was revoked',
-            ], 200);
+            return $this->okWithMessage('No permission was revoked');
         }
 
-        return response()->json([
-            'message' => 'Successfully revoked permissions from user',
+        return $this->okWithData([
             'revoked_permissions' => PermissionResource::collection($revokedPermissions),
-        ], 200);
+        ], 'Successfully revoked permissions from user');
+    }
+
+    /**
+     * Update permissions of role
+     *
+     * @authenticated
+     * @param UpdateRolePermissionRequest $request
+     * @return Illuminate\Http\JsonResponse
+     */
+    public function updateRolePermissions(UpdateRolePermissionRequest $request)
+    {
+        // permission ids in the selected groups
+        $selected_permission_ids = Permission::whereIn('group', $request->groups)->pluck('id');
+
+        // verify that the permission ids provided are in the groups
+        foreach ($request->roles_permissions as $role_permissions) {
+            $updated_permission_ids = $role_permissions['permission_ids'];
+            if (array_intersect($updated_permission_ids, $selected_permission_ids->toArray()) != $updated_permission_ids) {
+                return $this->errors([
+                    'permission_ids' => 'The permission_ids are not in the selected groups.',
+                ]);
+            }
+        }
+
+        // for each role's permissions
+        foreach ($request->roles_permissions as $role_permissions) {
+            $role = Role::findOrFail($role_permissions['role_id']);
+
+            // permission ids that the role should have
+            $updated_permission_ids = collect($role_permissions['permission_ids']);
+
+            foreach ($selected_permission_ids as $permission_id) {
+                $permission = Permission::findOrFail($permission_id);
+
+                if ($updated_permission_ids->contains($permission_id)) {
+                    if (!$role->hasPermissionTo($permission)) {
+                        $role->givePermissionTo($permission);
+                    }
+                } else {
+                    if ($role->hasPermissionTo($permission)) {
+                        $role->revokePermissionTo($permission);
+                    }
+                }
+            }
+        }
+        return $this->okWithMessage('Successfully updated permissions!');
     }
 }

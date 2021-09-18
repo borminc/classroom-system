@@ -23,7 +23,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":{"id":510,"username":"marquise.jerde","first_name":"Jeffery","last_name":"Turner","full_name":"Jeffery Turner","email":"marquise.jerde@test.com","gender":"female","date_of_birth":"19\/Feb\/1980","roles":[],"permissions":[]}}'
+        content: '{"data":{"id":509,"username":"koss.mathilde","first_name":"Rae","last_name":"Kling","full_name":"Rae Kling","email":"koss.mathilde@test.com","gender":"male","date_of_birth":"4\/Jan\/1979","roles":[],"permissions":[]}}'
         headers: []
         description: null
     responseFields: []
@@ -45,7 +45,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":511,"username":"dakota48","first_name":"Evie","last_name":"Wilderman","full_name":"Evie Wilderman","email":"dakota48@test.com","gender":"female","date_of_birth":"4\/Nov\/1990","roles":[],"permissions":[]},{"id":512,"username":"ondricka.melissa","first_name":"Camren","last_name":"Heaney","full_name":"Camren Heaney","email":"ondricka.melissa@test.com","gender":"male","date_of_birth":"10\/Jan\/1971","roles":[],"permissions":[]}]}'
+        content: '{"data":[{"id":510,"username":"brau","first_name":"Tremaine","last_name":"Spinka","full_name":"Tremaine Spinka","email":"brau@test.com","gender":"male","date_of_birth":"18\/Nov\/2004","roles":[],"permissions":[]},{"id":511,"username":"wilkinson.conor","first_name":"Crawford","last_name":"Grady","full_name":"Crawford Grady","email":"wilkinson.conor@test.com","gender":"male","date_of_birth":"4\/Oct\/1977","roles":[],"permissions":[]}]}'
         headers: []
         description: null
     responseFields: []
@@ -67,7 +67,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":513,"username":"orlo.flatley","first_name":"Justina","last_name":"Quigley","full_name":"Justina Quigley","email":"orlo.flatley@test.com","gender":"male","date_of_birth":"27\/Mar\/1983","roles":[],"permissions":[]},{"id":514,"username":"valerie.feil","first_name":"Albert","last_name":"West","full_name":"Albert West","email":"valerie.feil@test.com","gender":"female","date_of_birth":"6\/Dec\/1986","roles":[],"permissions":[]}]}'
+        content: '{"data":[{"id":512,"username":"brennon42","first_name":"Nels","last_name":"Dibbert","full_name":"Nels Dibbert","email":"brennon42@test.com","gender":"female","date_of_birth":"2\/Aug\/2017","roles":[],"permissions":[]},{"id":513,"username":"ngoyette","first_name":"Ashleigh","last_name":"Bergstrom","full_name":"Ashleigh Bergstrom","email":"ngoyette@test.com","gender":"male","date_of_birth":"11\/Aug\/2004","roles":[],"permissions":[]}]}'
         headers: []
         description: null
     responseFields: []
@@ -89,7 +89,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":515,"username":"fokon","first_name":"Clint","last_name":"Schultz","full_name":"Clint Schultz","email":"fokon@test.com","gender":"female","date_of_birth":"11\/May\/2010","roles":[],"permissions":[]},{"id":516,"username":"tony.cummings","first_name":"Lauriane","last_name":"Bashirian","full_name":"Lauriane Bashirian","email":"tony.cummings@test.com","gender":"male","date_of_birth":"25\/Apr\/2004","roles":[],"permissions":[]}]}'
+        content: '{"data":[{"id":514,"username":"johnston.hobart","first_name":"Jordon","last_name":"Ratke","full_name":"Jordon Ratke","email":"johnston.hobart@test.com","gender":"female","date_of_birth":"15\/Jun\/2006","roles":[],"permissions":[]},{"id":515,"username":"ondricka.braden","first_name":"Jerrold","last_name":"Crist","full_name":"Jerrold Crist","email":"ondricka.braden@test.com","gender":"male","date_of_birth":"4\/Mar\/1989","roles":[],"permissions":[]}]}'
         headers: []
         description: null
     responseFields: []
@@ -112,31 +112,31 @@ endpoints:
         name: username
         description: 'A unique username.'
         required: true
-        example: et
+        example: doloribus
         type: string
       email:
         name: email
         description: 'A unique email address.'
         required: true
-        example: voluptatem
+        example: quasi
         type: string
       first_name:
         name: first_name
         description: 'First name of user.'
         required: true
-        example: numquam
+        example: error
         type: string
       last_name:
         name: last_name
         description: 'Last name of user.'
         required: true
-        example: in
+        example: qui
         type: string
       gender:
         name: gender
         description: 'Gender of the user.'
         required: true
-        example: et
+        example: similique
         type: string
       date_of_birth:
         name: date_of_birth
@@ -149,22 +149,10 @@ endpoints:
         description: ''
         required: true
         example:
-          - 15
-          - 13
+          - 6
+          - 19
         type: 'integer[]'
-    responses:
-      -
-        status: 201
-        content: |-
-          {
-           "message": "Successfully created user!",
-           "credentials": {
-               "email": "user@test.com",
-               "password": "12345678"
-           }
-          }
-        headers: []
-        description: '201'
+    responses: []
     responseFields: []
   -
     httpMethods:
@@ -183,14 +171,14 @@ endpoints:
         name: id
         description: 'The ID of the user.'
         required: true
-        example: 13
+        example: 19
         type: integer
     queryParameters: []
     bodyParameters: []
     responses:
       -
         status: 200
-        content: '{"data":{"id":517,"username":"alfonzo20","first_name":"Tia","last_name":"Steuber","full_name":"Tia Steuber","email":"alfonzo20@test.com","gender":"male","date_of_birth":"31\/Mar\/2007","roles":[],"permissions":[]}}'
+        content: '{"data":{"id":516,"username":"ayana.schowalter","first_name":"Jeanette","last_name":"Hessel","full_name":"Jeanette Hessel","email":"ayana.schowalter@test.com","gender":"female","date_of_birth":"23\/May\/1971","roles":[],"permissions":[]}}'
         headers: []
         description: null
     responseFields: []
@@ -212,7 +200,7 @@ endpoints:
         name: id
         description: 'The ID of the user.'
         required: true
-        example: 12
+        example: 9
         type: integer
     queryParameters: []
     bodyParameters:
@@ -220,31 +208,31 @@ endpoints:
         name: username
         description: 'A unique username.'
         required: true
-        example: cupiditate
+        example: rerum
         type: string
       email:
         name: email
         description: 'A unique email address.'
         required: true
-        example: perspiciatis
+        example: sint
         type: string
       first_name:
         name: first_name
         description: 'First name of user.'
         required: true
-        example: et
+        example: quia
         type: string
       last_name:
         name: last_name
         description: 'Last name of user.'
         required: true
-        example: nulla
+        example: qui
         type: string
       gender:
         name: gender
         description: 'Gender of the user.'
         required: true
-        example: voluptas
+        example: quis
         type: string
       date_of_birth:
         name: date_of_birth
@@ -257,18 +245,10 @@ endpoints:
         description: ''
         required: true
         example:
-          - 15
-          - 18
+          - 14
+          - 1
         type: 'integer[]'
-    responses:
-      -
-        status: 200
-        content: |-
-          {
-           "message": "Successfully updated user!"
-          }
-        headers: []
-        description: '200'
+    responses: []
     responseFields: []
   -
     httpMethods:
@@ -287,17 +267,9 @@ endpoints:
         name: id
         description: 'The ID of the user.'
         required: true
-        example: 17
+        example: 9
         type: integer
     queryParameters: []
     bodyParameters: []
-    responses:
-      -
-        status: 200
-        content: |-
-          {
-           "message": "Successfully deleted user!"
-          }
-        headers: []
-        description: '200'
+    responses: []
     responseFields: []

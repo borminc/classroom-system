@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Api\v1\RolePermission;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Api\ApiController;
 use App\Http\Requests\v1\Role\StoreRoleRequest;
 use App\Http\Requests\v1\Role\UpdateRoleRequest;
 use App\Http\Resources\v1\RolePermissionResource;
@@ -14,20 +14,20 @@ use Spatie\Permission\Models\Role;
  *
  * API endpoints for managing roles
  */
-class RoleController extends Controller
+class RoleController extends ApiController
 {
     /**
      * Display all roles.
      *
      * @authenticated
-     * @return \Illuminate\Http\Response
+     * @return Illuminate\Http\JsonResponse
      * @apiResourceCollection App\Http\Resources\v1\RolePermissionResource
      * @apiResourceModel Spatie\Permission\Models\Role
      */
     public function index()
     {
         $this->authorize('viewAny', Role::class);
-        return RolePermissionResource::collection(Role::all());
+        return $this->okWithData(RolePermissionResource::collection(Role::all()));
     }
 
     /**
@@ -35,52 +35,41 @@ class RoleController extends Controller
      *
      * @authenticated
      * @param  StoreRoleRequest  $request
-     * @return \Illuminate\Http\Response
-     * @response 201 {
-     *  "message": "Successfully created role!"
-     * }
+     * @return Illuminate\Http\JsonResponse
      */
     public function store(StoreRoleRequest $request)
     {
-        Role::create($request->validated());
-        return response()->json([
-            'message' => 'Successfully created role!',
-        ], 201);
+        $role = Role::create($request->validated());
+        return $this->created(new RolePermissionResource($role));
     }
 
     /**
      * Display a specific role.
      *
      * @authenticated
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param  Spatie\Permission\Models\Role $role
+     * @return Illuminate\Http\JsonResponse
      * @apiResource App\Http\Resources\v1\RolePermissionResource
      * @apiResourceModel Spatie\Permission\Models\Role
      */
-    public function show($id)
+    public function show(Role $role)
     {
-        $role = Role::findOrFail($id);
         $this->authorize('view', $role);
-        return new RolePermissionResource($role);
+        return $this->okWithData(new RolePermissionResource($role));
     }
 
     /**
      * Update a specific role.
      *
      * @authenticated
-     * @param  \Illuminate\Http\Request  $request
+     * @param  UpdateRoleRequest  $request
      * @param  Spatie\Permission\Models\Role $role
-     * @return \Illuminate\Http\Response
-     * @response {
-     *  "message": "Successfully updated role!"
-     * }
+     * @return Illuminate\Http\JsonResponse
      */
     public function update(UpdateRoleRequest $request, Role $role)
     {
         $role->update(['display_name' => $request->name]);
-        return response()->json([
-            'message' => 'Successfully updated role!',
-        ], 200);
+        return $this->updated(new RolePermissionResource($role));
     }
 
     /**
@@ -88,18 +77,12 @@ class RoleController extends Controller
      *
      * @authenticated
      * @param  Spatie\Permission\Models\Role $role
-     * @return \Illuminate\Http\Response
-     * @response {
-     *  "message": "Successfully deleted role!"
-     * }
+     * @return Illuminate\Http\JsonResponse
      */
     public function destroy(Role $role)
     {
         $this->authorize('delete', $role);
         $role->delete();
-        return response()->json([
-            'message' => 'Successfully deleted role!',
-        ], 200);
-
+        return $this->deleted(new RolePermissionResource($role));
     }
 }

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Api\v1\RolePermission;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Api\ApiController;
 use App\Http\Requests\v1\Permission\UpdatePermissionRequest;
 use App\Http\Resources\v1\PermissionResource;
 use Illuminate\Http\Request;
@@ -13,20 +13,20 @@ use Spatie\Permission\Models\Permission;
  *
  * API endpoints for managing permission
  */
-class PermissionController extends Controller
+class PermissionController extends ApiController
 {
     /**
      * Display a listing of permissions.
      *
      * @authenticated
-     * @return PermissionResource
+     * @return Illuminate\Http\JsonResponse
      * @apiResourceCollection App\Http\Resources\v1\PermissionResource
      * @apiResourceModel Spatie\Permission\Models\Permission
      */
     public function index()
     {
         $this->authorize('viewAny', Permission::class);
-        return PermissionResource::collection(Permission::all());
+        return $this->okWithData(PermissionResource::collection(Permission::all()));
     }
 
     /**
@@ -34,14 +34,14 @@ class PermissionController extends Controller
      *
      * @authenticated
      * @param  Permission $permission
-     * @return PermissionResource
+     * @return Illuminate\Http\JsonResponse
      * @apiResource App\Http\Resources\v1\PermissionResource
      * @apiResourceModel Spatie\Permission\Models\Permission
      */
     public function show(Permission $permission)
     {
         $this->authorize('view', $permission);
-        return new PermissionResource($permission);
+        return $this->okWithData(new PermissionResource($permission));
     }
 
     /**
@@ -50,11 +50,7 @@ class PermissionController extends Controller
      * @authenticated
      * @param  UpdatePermissionRequest  $request
      * @param  Permission $permission
-     *
-     * @return \Illuminate\Http\Response
-     * @response {
-     *  "message": "Successfully updated permission!"
-     * }
+     * @return Illuminate\Http\JsonResponse
      */
     public function update(UpdatePermissionRequest $request, Permission $permission)
     {
@@ -62,40 +58,15 @@ class PermissionController extends Controller
             'display_name' => $request->name,
             'group' => $request->group,
         ]);
-        return response()->json([
-            'message' => 'Successfully updated permission!',
-        ], 200);
+
+        return $this->updated(new PermissionResource($permission));
     }
 
     /**
      * Get all permissions by groups
      *
      * @authenticated
-     * @return \Illuminate\Database\Eloquent\Collection
-     * @response {
-     *  "Student permission": [
-     *        {
-     *            "id": 19,
-     *            "name": "take courses",
-     *            "display_name": "take courses",
-     *            "group": "Student permission"
-     *        }
-     *    ],
-     *    "Instructor permission": [
-     *        {
-     *            "id": 22,
-     *            "name": "teach courses",
-     *            "display_name": "teach courses",
-     *            "group": "Instructor permission"
-     *        },
-     *        {
-     *            "id": 23,
-     *            "name": "view own-instructor-courses",
-     *            "display_name": "view own-instructor-courses",
-     *            "group": "Instructor permission"
-     *        }
-     *    ]
-     *}
+     * @return Illuminate\Http\JsonResponse
      */
     public function getPermissionsByGroups()
     {
@@ -107,6 +78,7 @@ class PermissionController extends Controller
                 $permission->display_name = $permission->name;
             }
         }
-        return $permissions->groupBy('group');
+
+        return $this->okWithData($permissions->groupBy('group'));
     }
 }

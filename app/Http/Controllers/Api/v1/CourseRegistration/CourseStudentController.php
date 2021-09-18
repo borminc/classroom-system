@@ -2,20 +2,20 @@
 
 namespace App\Http\Controllers\Api\v1\CourseRegistration;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Api\ApiController;
 use App\Http\Resources\v1\CourseStudentResource;
 use App\Models\Course;
 
 /**
  * @group Courses
  */
-class CourseStudentController extends Controller
+class CourseStudentController extends ApiController
 {
     /**
      * Get a list of all courses with students
      *
      * @authenticated
-     * @return CourseStudentResource
+     * @return Illuminate\Http\JsonResponse
      * @apiResourceCollection App\Http\Resources\v1\CourseStudentResource
      * @apiResourceModel App\Models\Course
      */
@@ -23,6 +23,6 @@ class CourseStudentController extends Controller
     {
         $this->authorize('viewAny', Course::class);
         $courses = Course::all();
-        return CourseStudentResource::collection($courses);
+        return $this->okWithData(CourseStudentResource::collection($courses));
     }
 }

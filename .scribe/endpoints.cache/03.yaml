@@ -22,34 +22,13 @@ endpoints:
     bodyParameters: []
     responses:
       -
-        status: 200
-        content: |-
-          {
-           "Student permission": [
-                 {
-                     "id": 19,
-                     "name": "take courses",
-                     "display_name": "take courses",
-                     "group": "Student permission"
-                 }
-             ],
-             "Instructor permission": [
-                 {
-                     "id": 22,
-                     "name": "teach courses",
-                     "display_name": "teach courses",
-                     "group": "Instructor permission"
-                 },
-                 {
-                     "id": 23,
-                     "name": "view own-instructor-courses",
-                     "display_name": "view own-instructor-courses",
-                     "group": "Instructor permission"
-                 }
-             ]
-          }
-        headers: []
-        description: '200'
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
     responseFields: []
   -
     httpMethods:
@@ -69,7 +48,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":1,"name":"create users","display_name":"create usersssssss","group":"123"},{"id":1,"name":"create users","display_name":"create usersssssss","group":"123"}]}'
+        content: '{"data":[{"id":1,"name":"create users","display_name":"create users","group":"Admin  permission"},{"id":1,"name":"create users","display_name":"create users","group":"Admin  permission"}]}'
         headers: []
         description: null
     responseFields: []
@@ -90,14 +69,14 @@ endpoints:
         name: id
         description: 'The ID of the permission.'
         required: true
-        example: 19
+        example: 17
         type: integer
     queryParameters: []
     bodyParameters: []
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"name":"create users","display_name":"create usersssssss","group":"123"}}'
+        content: '{"data":{"id":1,"name":"create users","display_name":"create users","group":"Admin  permission"}}'
         headers: []
         description: null
     responseFields: []
@@ -119,7 +98,7 @@ endpoints:
         name: id
         description: 'The ID of the permission.'
         required: true
-        example: 10
+        example: 11
         type: integer
     queryParameters: []
     bodyParameters:
@@ -127,21 +106,13 @@ endpoints:
         name: name
         description: 'A unique name of the permission.'
         required: true
-        example: enim
+        example: consequatur
         type: string
       group:
         name: group
         description: 'The group the permission belongs to.'
         required: true
-        example: aliquid
+        example: quia
         type: string
-    responses:
-      -
-        status: 200
-        content: |-
-          {
-           "message": "Successfully updated permission!"
-          }
-        headers: []
-        description: '200'
+    responses: []
     responseFields: []

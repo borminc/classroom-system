@@ -26,26 +26,7 @@ paths:
           example: application/json
           schema:
             type: string
-      responses:
-        200:
-          description: ''
-          content:
-            text/plain:
-              schema:
-                type: string
-                example: "{\n \"access_token\": \"eyJ0eX...\",\n \"token_type\": \"Bearer\",\n \"expires_at\": \"2021-09-06 15:02:06\",\n \"user\": {\n     \"id\": 2,\n     \"username\": \"i_1\",\n     \"full_name\": \"Instructor 1\",\n     \"email\": \"i_1@test.com\",\n     \"gender\": \"male\",\n     \"date_of_birth\": \"2000-02-03 14:23:35\",\n     \"roles\": [\n         {\n             \"id\": 1,\n             \"name\": \"admin\",\n             \"display_name\": \"admin\"\n         }\n     ],\n     \"permissions\": [\n         {\n             \"id\": 1,\n             \"name\": \"create users\",\n             \"display_name\": \"create users\",\n             \"group\": \"123\"\n         },\n     ],\n },\n \"verified\": true\n}"
-        401:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: 'Invalid username or password.'
-                properties:
-                  message:
-                    type: string
-                    example: 'Invalid username or password.'
+      responses: {  }
       tags:
         - Authentication
       requestBody:
@@ -58,11 +39,11 @@ paths:
                 email:
                   type: string
                   description: 'The email of the user. Must be a valid email address.'
-                  example: hermiston.marcus@example.org
+                  example: deven.jaskolski@example.net
                 password:
                   type: string
                   description: 'The password of the user.'
-                  example: provident
+                  example: dolore
                 remember_me:
                   type: boolean
                   description: ''
@@ -90,19 +71,7 @@ paths:
           example: application/json
           schema:
             type: string
-      responses:
-        201:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: 'Successfully created user!'
-                properties:
-                  message:
-                    type: string
-                    example: 'Successfully created user!'
+      responses: {  }
       tags:
         - Authentication
       requestBody:
@@ -115,31 +84,31 @@ paths:
                 username:
                   type: string
                   description: 'The username user.'
-                  example: a
+                  example: id
                 email:
                   type: string
                   description: 'A unique email address.'
-                  example: aut
+                  example: eos
                 password:
                   type: string
                   description: 'The password of the account. Must be at least 8 characters.'
-                  example: ''
+                  example: oqb
                 password_confirmation:
                   type: string
                   description: 'Same as password.'
-                  example: quae
+                  example: similique
                 first_name:
                   type: string
                   description: 'First name of user.'
-                  example: id
+                  example: temporibus
                 last_name:
                   type: string
                   description: 'Last name of user.'
-                  example: officia
+                  example: architecto
                 gender:
                   type: string
                   description: 'Gender of the user.'
-                  example: amet
+                  example: sit
                 date_of_birth:
                   type: string
                   description: 'The date of birth of user. Must be a valid date.'
@@ -181,18 +150,18 @@ paths:
           schema:
             type: string
       responses:
-        200:
+        401:
           description: ''
           content:
             application/json:
               schema:
                 type: object
                 example:
-                  message: 'Successfully logged out'
+                  message: Unauthenticated.
                 properties:
                   message:
                     type: string
-                    example: 'Successfully logged out'
+                    example: Unauthenticated.
       tags:
         - Authentication
   /api/v1/courses/view-student-registered:
@@ -231,17 +200,17 @@ paths:
                 example:
                   data:
                     -
-                      id: 40
-                      name: 'Intro to quo'
-                      code: oGtRk
-                      description: 'Suscipit qui eaque commodi et totam quae architecto. Velit rerum nisi numquam veniam. Reiciendis qui perferendis nihil harum iure voluptatem.'
+                      id: 33
+                      name: 'Intro to rem'
+                      code: WVcWC
+                      description: 'Et cum quidem nisi et nihil ipsum corrupti. Eveniet beatae sunt distinctio temporibus soluta est. Ea harum qui ab in corrupti impedit.'
                       instructor:
-                        id: 3
-                        username: i_2
+                        id: 8
+                        username: i_7
                         first_name: Instructor
-                        last_name: '2'
-                        full_name: 'Instructor 2'
-                        email: i_2@test.com
+                        last_name: '7'
+                        full_name: 'Instructor 7'
+                        email: i_7@test.com
                         gender: male
                         date_of_birth: 3/Feb/2000
                         roles:
@@ -250,11 +219,6 @@ paths:
                             name: instructor
                             display_name: instructor
                         permissions:
-                          -
-                            id: 1
-                            name: 'create users'
-                            display_name: 'create usersssssss'
-                            group: '123'
                           -
                             id: 22
                             name: 'teach courses'
@@ -266,17 +230,17 @@ paths:
                             display_name: 'view own-instructor-courses'
                             group: 'Instructor permission'
                     -
-                      id: 41
-                      name: 'Intro to at'
-                      code: AEgmY
-                      description: 'Labore vitae ex eligendi sed. Consequatur ullam vero quia quas in nihil. Voluptatibus voluptas quis et ut ut.'
+                      id: 34
+                      name: 'Intro to ut'
+                      code: ExTxz
+                      description: 'Nostrum ratione veritatis porro aut iure aut. Adipisci et odit amet officia. Dignissimos aperiam recusandae omnis itaque ratione repellat iste quasi.'
                       instructor:
-                        id: 10
-                        username: i_9
+                        id: 8
+                        username: i_7
                         first_name: Instructor
-                        last_name: '9'
-                        full_name: 'Instructor 9'
-                        email: i_9@test.com
+                        last_name: '7'
+                        full_name: 'Instructor 7'
+                        email: i_7@test.com
                         gender: male
                         date_of_birth: 3/Feb/2000
                         roles:
@@ -300,17 +264,17 @@ paths:
                     type: array
                     example:
                       -
-                        id: 40
-                        name: 'Intro to quo'
-                        code: oGtRk
-                        description: 'Suscipit qui eaque commodi et totam quae architecto. Velit rerum nisi numquam veniam. Reiciendis qui perferendis nihil harum iure voluptatem.'
+                        id: 33
+                        name: 'Intro to rem'
+                        code: WVcWC
+                        description: 'Et cum quidem nisi et nihil ipsum corrupti. Eveniet beatae sunt distinctio temporibus soluta est. Ea harum qui ab in corrupti impedit.'
                         instructor:
-                          id: 3
-                          username: i_2
+                          id: 8
+                          username: i_7
                           first_name: Instructor
-                          last_name: '2'
-                          full_name: 'Instructor 2'
-                          email: i_2@test.com
+                          last_name: '7'
+                          full_name: 'Instructor 7'
+                          email: i_7@test.com
                           gender: male
                           date_of_birth: 3/Feb/2000
                           roles:
@@ -319,11 +283,6 @@ paths:
                               name: instructor
                               display_name: instructor
                           permissions:
-                            -
-                              id: 1
-                              name: 'create users'
-                              display_name: 'create usersssssss'
-                              group: '123'
                             -
                               id: 22
                               name: 'teach courses'
@@ -335,17 +294,17 @@ paths:
                               display_name: 'view own-instructor-courses'
                               group: 'Instructor permission'
                       -
-                        id: 41
-                        name: 'Intro to at'
-                        code: AEgmY
-                        description: 'Labore vitae ex eligendi sed. Consequatur ullam vero quia quas in nihil. Voluptatibus voluptas quis et ut ut.'
+                        id: 34
+                        name: 'Intro to ut'
+                        code: ExTxz
+                        description: 'Nostrum ratione veritatis porro aut iure aut. Adipisci et odit amet officia. Dignissimos aperiam recusandae omnis itaque ratione repellat iste quasi.'
                         instructor:
-                          id: 10
-                          username: i_9
+                          id: 8
+                          username: i_7
                           first_name: Instructor
-                          last_name: '9'
-                          full_name: 'Instructor 9'
-                          email: i_9@test.com
+                          last_name: '7'
+                          full_name: 'Instructor 7'
+                          email: i_7@test.com
                           gender: male
                           date_of_birth: 3/Feb/2000
                           roles:
@@ -404,17 +363,17 @@ paths:
                 example:
                   data:
                     -
-                      id: 42
-                      name: 'Intro to eius'
-                      code: KW4rN
-                      description: 'Sit illo autem quam sed aut. Possimus laborum eligendi quia nam laudantium ut consequatur ea. Ratione cupiditate aut quae blanditiis.'
+                      id: 35
+                      name: 'Intro to tempora'
+                      code: 6iQkU
+                      description: 'Atque libero harum voluptatum magni porro praesentium ratione. Sed soluta labore dicta impedit veritatis.'
                       instructor:
-                        id: 4
-                        username: i_3
+                        id: 10
+                        username: i_9
                         first_name: Instructor
-                        last_name: '3'
-                        full_name: 'Instructor 3'
-                        email: i_3@test.com
+                        last_name: '9'
+                        full_name: 'Instructor 9'
+                        email: i_9@test.com
                         gender: male
                         date_of_birth: 3/Feb/2000
                         roles:
@@ -434,49 +393,25 @@ paths:
                             display_name: 'view own-instructor-courses'
                             group: 'Instructor permission'
                     -
-                      id: 43
-                      name: 'Intro to odit'
-                      code: Fm2v3
-                      description: 'Sint ducimus maiores ipsum sed eligendi ab nihil. Sed cum qui dolorem. Esse ullam quia est dignissimos eligendi enim cum.'
+                      id: 36
+                      name: 'Intro to optio'
+                      code: dUVIu
+                      description: 'Nulla aut repudiandae quas officiis qui. Quia magnam maiores dolor laborum at minus recusandae.'
                       instructor:
-                        id: 477
-                        username: 'bormin chau'
-                        first_name: bormin
-                        last_name: chau
-                        full_name: 'bormin chau'
-                        email: borminchau@gmail.com
+                        id: 10
+                        username: i_9
+                        first_name: Instructor
+                        last_name: '9'
+                        full_name: 'Instructor 9'
+                        email: i_9@test.com
                         gender: male
-                        date_of_birth: 1/Jan/2000
+                        date_of_birth: 3/Feb/2000
                         roles:
                           -
                             id: 2
                             name: instructor
                             display_name: instructor
-                          -
-                            id: 3
-                            name: student
-                            display_name: student
                         permissions:
-                          -
-                            id: 1
-                            name: 'create users'
-                            display_name: 'create usersssssss'
-                            group: '123'
-                          -
-                            id: 19
-                            name: 'take courses'
-                            display_name: 'take courses'
-                            group: 'Student permission'
-                          -
-                            id: 20
-                            name: 'self-register courses'
-                            display_name: 'self-register courses'
-                            group: 'Student permission'
-                          -
-                            id: 21
-                            name: 'view own-student-courses'
-                            display_name: 'view own-student-courses'
-                            group: 'Student permission'
                           -
                             id: 22
                             name: 'teach courses'
@@ -492,17 +427,17 @@ paths:
                     type: array
                     example:
                       -
-                        id: 42
-                        name: 'Intro to eius'
-                        code: KW4rN
-                        description: 'Sit illo autem quam sed aut. Possimus laborum eligendi quia nam laudantium ut consequatur ea. Ratione cupiditate aut quae blanditiis.'
+                        id: 35
+                        name: 'Intro to tempora'
+                        code: 6iQkU
+                        description: 'Atque libero harum voluptatum magni porro praesentium ratione. Sed soluta labore dicta impedit veritatis.'
                         instructor:
-                          id: 4
-                          username: i_3
+                          id: 10
+                          username: i_9
                           first_name: Instructor
-                          last_name: '3'
-                          full_name: 'Instructor 3'
-                          email: i_3@test.com
+                          last_name: '9'
+                          full_name: 'Instructor 9'
+                          email: i_9@test.com
                           gender: male
                           date_of_birth: 3/Feb/2000
                           roles:
@@ -522,49 +457,25 @@ paths:
                               display_name: 'view own-instructor-courses'
                               group: 'Instructor permission'
                       -
-                        id: 43
-                        name: 'Intro to odit'
-                        code: Fm2v3
-                        description: 'Sint ducimus maiores ipsum sed eligendi ab nihil. Sed cum qui dolorem. Esse ullam quia est dignissimos eligendi enim cum.'
+                        id: 36
+                        name: 'Intro to optio'
+                        code: dUVIu
+                        description: 'Nulla aut repudiandae quas officiis qui. Quia magnam maiores dolor laborum at minus recusandae.'
                         instructor:
-                          id: 477
-                          username: 'bormin chau'
-                          first_name: bormin
-                          last_name: chau
-                          full_name: 'bormin chau'
-                          email: borminchau@gmail.com
+                          id: 10
+                          username: i_9
+                          first_name: Instructor
+                          last_name: '9'
+                          full_name: 'Instructor 9'
+                          email: i_9@test.com
                           gender: male
-                          date_of_birth: 1/Jan/2000
+                          date_of_birth: 3/Feb/2000
                           roles:
                             -
                               id: 2
                               name: instructor
                               display_name: instructor
-                            -
-                              id: 3
-                              name: student
-                              display_name: student
                           permissions:
-                            -
-                              id: 1
-                              name: 'create users'
-                              display_name: 'create usersssssss'
-                              group: '123'
-                            -
-                              id: 19
-                              name: 'take courses'
-                              display_name: 'take courses'
-                              group: 'Student permission'
-                            -
-                              id: 20
-                              name: 'self-register courses'
-                              display_name: 'self-register courses'
-                              group: 'Student permission'
-                            -
-                              id: 21
-                              name: 'view own-student-courses'
-                              display_name: 'view own-student-courses'
-                              group: 'Student permission'
                             -
                               id: 22
                               name: 'teach courses'
@@ -605,31 +516,7 @@ paths:
           example: application/json
           schema:
             type: string
-      responses:
-        200:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: 'Successfully enrolled!'
-                properties:
-                  message:
-                    type: string
-                    example: 'Successfully enrolled!'
-        405:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: 'You are already enrolled in this course.'
-                properties:
-                  message:
-                    type: string
-                    example: 'You are already enrolled in this course.'
+      responses: {  }
       tags:
         - 'Course Registration'
       requestBody:
@@ -642,7 +529,7 @@ paths:
                 course_id:
                   type: integer
                   description: 'The id of the course.'
-                  example: 2
+                  example: 16
               required:
                 - course_id
   /api/v1/courses/register-student:
@@ -671,31 +558,7 @@ paths:
           example: application/json
           schema:
             type: string
-      responses:
-        200:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: 'Successfully registered student!'
-                properties:
-                  message:
-                    type: string
-                    example: 'Successfully registered student!'
-        405:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: 'User cannot take any courses.'
-                properties:
-                  message:
-                    type: string
-                    example: 'User cannot take any courses.'
+      responses: {  }
       tags:
         - 'Course Registration'
       requestBody:
@@ -708,11 +571,11 @@ paths:
                 user_id:
                   type: integer
                   description: 'The user_id of the student to be registered.'
-                  example: 19
+                  example: 16
                 course_id:
                   type: integer
                   description: 'The id of the course.'
-                  example: 19
+                  example: 6
               required:
                 - user_id
                 - course_id
@@ -752,17 +615,17 @@ paths:
                 example:
                   data:
                     -
-                      id: 44
-                      name: 'Intro to quos'
-                      code: QNbCR
-                      description: 'Consectetur quia dolores ut architecto ex qui et. Suscipit eos tempora in. Illo commodi non corporis ea voluptatem praesentium.'
+                      id: 37
+                      name: 'Intro to in'
+                      code: wqbJU
+                      description: 'Ex voluptatum id quia magni illo. Quo et dignissimos amet omnis. Qui nulla natus soluta et rerum itaque dolorem est.'
                       instructor:
-                        id: 6
-                        username: i_5
+                        id: 2
+                        username: i_1
                         first_name: Instructor
-                        last_name: '5'
-                        full_name: 'Instructor 5'
-                        email: i_5@test.com
+                        last_name: '1'
+                        full_name: 'Instructor 1'
+                        email: i_1@test.com
                         gender: male
                         date_of_birth: 3/Feb/2000
                         roles:
@@ -783,17 +646,17 @@ paths:
                             group: 'Instructor permission'
                       students: []
                     -
-                      id: 45
-                      name: 'Intro to numquam'
-                      code: QnJxt
-                      description: 'Explicabo unde assumenda sapiente et hic quisquam. Sunt sint ducimus porro suscipit.'
+                      id: 38
+                      name: 'Intro to exercitationem'
+                      code: flEGV
+                      description: 'Et sunt velit quasi ea harum ut aut. Accusamus praesentium ipsam necessitatibus.'
                       instructor:
-                        id: 6
-                        username: i_5
+                        id: 7
+                        username: i_6
                         first_name: Instructor
-                        last_name: '5'
-                        full_name: 'Instructor 5'
-                        email: i_5@test.com
+                        last_name: '6'
+                        full_name: 'Instructor 6'
+                        email: i_6@test.com
                         gender: male
                         date_of_birth: 3/Feb/2000
                         roles:
@@ -818,17 +681,17 @@ paths:
                     type: array
                     example:
                       -
-                        id: 44
-                        name: 'Intro to quos'
-                        code: QNbCR
-                        description: 'Consectetur quia dolores ut architecto ex qui et. Suscipit eos tempora in. Illo commodi non corporis ea voluptatem praesentium.'
+                        id: 37
+                        name: 'Intro to in'
+                        code: wqbJU
+                        description: 'Ex voluptatum id quia magni illo. Quo et dignissimos amet omnis. Qui nulla natus soluta et rerum itaque dolorem est.'
                         instructor:
-                          id: 6
-                          username: i_5
+                          id: 2
+                          username: i_1
                           first_name: Instructor
-                          last_name: '5'
-                          full_name: 'Instructor 5'
-                          email: i_5@test.com
+                          last_name: '1'
+                          full_name: 'Instructor 1'
+                          email: i_1@test.com
                           gender: male
                           date_of_birth: 3/Feb/2000
                           roles:
@@ -849,17 +712,17 @@ paths:
                               group: 'Instructor permission'
                         students: []
                       -
-                        id: 45
-                        name: 'Intro to numquam'
-                        code: QnJxt
-                        description: 'Explicabo unde assumenda sapiente et hic quisquam. Sunt sint ducimus porro suscipit.'
+                        id: 38
+                        name: 'Intro to exercitationem'
+                        code: flEGV
+                        description: 'Et sunt velit quasi ea harum ut aut. Accusamus praesentium ipsam necessitatibus.'
                         instructor:
-                          id: 6
-                          username: i_5
+                          id: 7
+                          username: i_6
                           first_name: Instructor
-                          last_name: '5'
-                          full_name: 'Instructor 5'
-                          email: i_5@test.com
+                          last_name: '6'
+                          full_name: 'Instructor 6'
+                          email: i_6@test.com
                           gender: male
                           date_of_birth: 3/Feb/2000
                           roles:
@@ -919,17 +782,17 @@ paths:
                 example:
                   data:
                     -
-                      id: 46
-                      name: 'Intro to labore'
-                      code: xPUMd
-                      description: 'Porro voluptatum ut commodi. Ad aliquam tempore repellat inventore et ut. Sunt neque omnis quia optio nobis nihil officia eligendi.'
+                      id: 39
+                      name: 'Intro to ratione'
+                      code: TIioX
+                      description: 'Tenetur eaque distinctio autem tempore. Accusamus ut corrupti voluptatibus laudantium non accusamus.'
                       instructor:
-                        id: 7
-                        username: i_6
+                        id: 4
+                        username: i_3
                         first_name: Instructor
-                        last_name: '6'
-                        full_name: 'Instructor 6'
-                        email: i_6@test.com
+                        last_name: '3'
+                        full_name: 'Instructor 3'
+                        email: i_3@test.com
                         gender: male
                         date_of_birth: 3/Feb/2000
                         roles:
@@ -949,17 +812,17 @@ paths:
                             display_name: 'view own-instructor-courses'
                             group: 'Instructor permission'
                     -
-                      id: 47
+                      id: 40
                       name: 'Intro to est'
-                      code: 8ybeY
-                      description: 'Omnis in consequatur temporibus. Velit qui quo dolores. Saepe error esse et saepe nulla. Sed assumenda qui laudantium ipsam distinctio.'
+                      code: BWK6m
+                      description: 'Quam facere ut est occaecati quod nemo pariatur. Et et aliquid animi eum. Ipsa modi sit porro vitae. Aut praesentium nemo eaque nisi alias qui.'
                       instructor:
-                        id: 6
-                        username: i_5
+                        id: 9
+                        username: i_8
                         first_name: Instructor
-                        last_name: '5'
-                        full_name: 'Instructor 5'
-                        email: i_5@test.com
+                        last_name: '8'
+                        full_name: 'Instructor 8'
+                        email: i_8@test.com
                         gender: male
                         date_of_birth: 3/Feb/2000
                         roles:
@@ -983,17 +846,17 @@ paths:
                     type: array
                     example:
                       -
-                        id: 46
-                        name: 'Intro to labore'
-                        code: xPUMd
-                        description: 'Porro voluptatum ut commodi. Ad aliquam tempore repellat inventore et ut. Sunt neque omnis quia optio nobis nihil officia eligendi.'
+                        id: 39
+                        name: 'Intro to ratione'
+                        code: TIioX
+                        description: 'Tenetur eaque distinctio autem tempore. Accusamus ut corrupti voluptatibus laudantium non accusamus.'
                         instructor:
-                          id: 7
-                          username: i_6
+                          id: 4
+                          username: i_3
                           first_name: Instructor
-                          last_name: '6'
-                          full_name: 'Instructor 6'
-                          email: i_6@test.com
+                          last_name: '3'
+                          full_name: 'Instructor 3'
+                          email: i_3@test.com
                           gender: male
                           date_of_birth: 3/Feb/2000
                           roles:
@@ -1013,17 +876,17 @@ paths:
                               display_name: 'view own-instructor-courses'
                               group: 'Instructor permission'
                       -
-                        id: 47
+                        id: 40
                         name: 'Intro to est'
-                        code: 8ybeY
-                        description: 'Omnis in consequatur temporibus. Velit qui quo dolores. Saepe error esse et saepe nulla. Sed assumenda qui laudantium ipsam distinctio.'
+                        code: BWK6m
+                        description: 'Quam facere ut est occaecati quod nemo pariatur. Et et aliquid animi eum. Ipsa modi sit porro vitae. Aut praesentium nemo eaque nisi alias qui.'
                         instructor:
-                          id: 6
-                          username: i_5
+                          id: 9
+                          username: i_8
                           first_name: Instructor
-                          last_name: '5'
-                          full_name: 'Instructor 5'
-                          email: i_5@test.com
+                          last_name: '8'
+                          full_name: 'Instructor 8'
+                          email: i_8@test.com
                           gender: male
                           date_of_birth: 3/Feb/2000
                           roles:
@@ -1071,19 +934,7 @@ paths:
           example: application/json
           schema:
             type: string
-      responses:
-        201:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: 'Successfully created course!'
-                properties:
-                  message:
-                    type: string
-                    example: 'Successfully created course!'
+      responses: {  }
       tags:
         - Courses
       requestBody:
@@ -1096,19 +947,19 @@ paths:
                 name:
                   type: string
                   description: 'The name of the course.'
-                  example: occaecati
+                  example: nostrum
                 code:
                   type: string
                   description: 'The code of the course.'
-                  example: illum
+                  example: vero
                 description:
                   type: string
                   description: 'The description of the course.'
-                  example: et
+                  example: illo
                 instructor_id:
                   type: integer
                   description: 'The id of the instructor.'
-                  example: 12
+                  example: 19
               required:
                 - name
                 - code
@@ -1149,17 +1000,17 @@ paths:
                 type: object
                 example:
                   data:
-                    id: 48
-                    name: 'Intro to eos'
-                    code: dNHS6
-                    description: 'Repudiandae et dolores quisquam. Beatae doloremque et fuga voluptas veritatis sapiente.'
+                    id: 41
+                    name: 'Intro to nulla'
+                    code: clEyD
+                    description: 'Tempora architecto quos eos culpa perferendis ut quisquam. Et ut quo et consectetur ut.'
                     instructor:
-                      id: 9
-                      username: i_8
+                      id: 11
+                      username: i_10
                       first_name: Instructor
-                      last_name: '8'
-                      full_name: 'Instructor 8'
-                      email: i_8@test.com
+                      last_name: '10'
+                      full_name: 'Instructor 10'
+                      email: i_10@test.com
                       gender: male
                       date_of_birth: 3/Feb/2000
                       roles:
@@ -1182,17 +1033,17 @@ paths:
                   data:
                     type: object
                     example:
-                      id: 48
-                      name: 'Intro to eos'
-                      code: dNHS6
-                      description: 'Repudiandae et dolores quisquam. Beatae doloremque et fuga voluptas veritatis sapiente.'
+                      id: 41
+                      name: 'Intro to nulla'
+                      code: clEyD
+                      description: 'Tempora architecto quos eos culpa perferendis ut quisquam. Et ut quo et consectetur ut.'
                       instructor:
-                        id: 9
-                        username: i_8
+                        id: 11
+                        username: i_10
                         first_name: Instructor
-                        last_name: '8'
-                        full_name: 'Instructor 8'
-                        email: i_8@test.com
+                        last_name: '10'
+                        full_name: 'Instructor 10'
+                        email: i_10@test.com
                         gender: male
                         date_of_birth: 3/Feb/2000
                         roles:
@@ -1238,19 +1089,7 @@ paths:
           example: application/json
           schema:
             type: string
-      responses:
-        200:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: 'Successfully updated course!'
-                properties:
-                  message:
-                    type: string
-                    example: 'Successfully updated course!'
+      responses: {  }
       tags:
         - Courses
       requestBody:
@@ -1263,19 +1102,19 @@ paths:
                 name:
                   type: string
                   description: 'The name of the course.'
-                  example: ducimus
+                  example: repellendus
                 code:
                   type: string
                   description: 'The code of the course.'
-                  example: sapiente
+                  example: temporibus
                 description:
                   type: string
                   description: 'The description of the course.'
-                  example: qui
+                  example: perferendis
                 instructor_id:
                   type: integer
                   description: 'The id of the instructor.'
-                  example: 17
+                  example: 8
               required:
                 - name
                 - code
@@ -1306,19 +1145,7 @@ paths:
           example: application/json
           schema:
             type: string
-      responses:
-        200:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: 'Successfully deleted user!'
-                properties:
-                  message:
-                    type: string
-                    example: 'Successfully deleted user!'
+      responses: {  }
       tags:
         - Courses
     parameters:
@@ -1326,7 +1153,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the course.'
-        example: 18
+        example: 1
         required: true
         schema:
           type: integer
@@ -1357,56 +1184,18 @@ paths:
           schema:
             type: string
       responses:
-        200:
+        401:
           description: ''
           content:
             application/json:
               schema:
                 type: object
                 example:
-                  'Student permission':
-                    -
-                      id: 19
-                      name: 'take courses'
-                      display_name: 'take courses'
-                      group: 'Student permission'
-                  'Instructor permission':
-                    -
-                      id: 22
-                      name: 'teach courses'
-                      display_name: 'teach courses'
-                      group: 'Instructor permission'
-                    -
-                      id: 23
-                      name: 'view own-instructor-courses'
-                      display_name: 'view own-instructor-courses'
-                      group: 'Instructor permission'
+                  message: Unauthenticated.
                 properties:
-                  'Student permission':
-                    type: array
-                    example:
-                      -
-                        id: 19
-                        name: 'take courses'
-                        display_name: 'take courses'
-                        group: 'Student permission'
-                    items:
-                      type: object
-                  'Instructor permission':
-                    type: array
-                    example:
-                      -
-                        id: 22
-                        name: 'teach courses'
-                        display_name: 'teach courses'
-                        group: 'Instructor permission'
-                      -
-                        id: 23
-                        name: 'view own-instructor-courses'
-                        display_name: 'view own-instructor-courses'
-                        group: 'Instructor permission'
-                    items:
-                      type: object
+                  message:
+                    type: string
+                    example: Unauthenticated.
       tags:
         - Permission
   /api/v1/permissions:
@@ -1447,13 +1236,13 @@ paths:
                     -
                       id: 1
                       name: 'create users'
-                      display_name: 'create usersssssss'
-                      group: '123'
+                      display_name: 'create users'
+                      group: 'Admin  permission'
                     -
                       id: 1
                       name: 'create users'
-                      display_name: 'create usersssssss'
-                      group: '123'
+                      display_name: 'create users'
+                      group: 'Admin  permission'
                 properties:
                   data:
                     type: array
@@ -1461,13 +1250,13 @@ paths:
                       -
                         id: 1
                         name: 'create users'
-                        display_name: 'create usersssssss'
-                        group: '123'
+                        display_name: 'create users'
+                        group: 'Admin  permission'
                       -
                         id: 1
                         name: 'create users'
-                        display_name: 'create usersssssss'
-                        group: '123'
+                        display_name: 'create users'
+                        group: 'Admin  permission'
                     items:
                       type: object
       tags:
@@ -1509,16 +1298,16 @@ paths:
                   data:
                     id: 1
                     name: 'create users'
-                    display_name: 'create usersssssss'
-                    group: '123'
+                    display_name: 'create users'
+                    group: 'Admin  permission'
                 properties:
                   data:
                     type: object
                     example:
                       id: 1
                       name: 'create users'
-                      display_name: 'create usersssssss'
-                      group: '123'
+                      display_name: 'create users'
+                      group: 'Admin  permission'
       tags:
         - Permission
     put:
@@ -1546,19 +1335,7 @@ paths:
           example: application/json
           schema:
             type: string
-      responses:
-        200:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: 'Successfully updated permission!'
-                properties:
-                  message:
-                    type: string
-                    example: 'Successfully updated permission!'
+      responses: {  }
       tags:
         - Permission
       requestBody:
@@ -1571,11 +1348,11 @@ paths:
                 name:
                   type: string
                   description: 'A unique name of the permission.'
-                  example: enim
+                  example: consequatur
                 group:
                   type: string
                   description: 'The group the permission belongs to.'
-                  example: aliquid
+                  example: quia
               required:
                 - name
                 - group
@@ -1584,7 +1361,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the permission.'
-        example: 19
+        example: 17
         required: true
         schema:
           type: integer
@@ -1614,14 +1391,7 @@ paths:
           example: application/json
           schema:
             type: string
-      responses:
-        200:
-          description: ''
-          content:
-            text/plain:
-              schema:
-                type: string
-                example: "{\n \"message\": \"No permission was assigned to role\",\n}"
+      responses: {  }
       tags:
         - 'Permission assignment'
       requestBody:
@@ -1634,13 +1404,13 @@ paths:
                 role_id:
                   type: integer
                   description: 'The id of the role.'
-                  example: 15
+                  example: 19
                 permission_ids:
                   type: array
                   description: ''
                   example:
-                    - 1
-                    - 9
+                    - 11
+                    - 10
                   items:
                     type: integer
               required:
@@ -1672,14 +1442,7 @@ paths:
           example: application/json
           schema:
             type: string
-      responses:
-        200:
-          description: ''
-          content:
-            text/plain:
-              schema:
-                type: string
-                example: "{\n \"message\": \"No permission was assigned to user\",\n}"
+      responses: {  }
       tags:
         - 'Permission assignment'
       requestBody:
@@ -1692,13 +1455,13 @@ paths:
                 user_id:
                   type: integer
                   description: 'The id of the user.'
-                  example: 20
+                  example: 8
                 permission_ids:
                   type: array
                   description: ''
                   example:
-                    - 11
-                    - 14
+                    - 20
+                    - 6
                   items:
                     type: integer
               required:
@@ -1730,14 +1493,7 @@ paths:
           example: application/json
           schema:
             type: string
-      responses:
-        200:
-          description: ''
-          content:
-            text/plain:
-              schema:
-                type: string
-                example: "{\n \"message\": \"No permission was revoked\",\n}"
+      responses: {  }
       tags:
         - 'Permission assignment'
       requestBody:
@@ -1750,13 +1506,13 @@ paths:
                 role_id:
                   type: integer
                   description: 'The id of the role.'
-                  example: 16
+                  example: 13
                 permission_ids:
                   type: array
                   description: ''
                   example:
-                    - 6
-                    - 7
+                    - 14
+                    - 16
                   items:
                     type: integer
               required:
@@ -1788,14 +1544,7 @@ paths:
           example: application/json
           schema:
             type: string
-      responses:
-        200:
-          description: ''
-          content:
-            text/plain:
-              schema:
-                type: string
-                example: "{\n \"message\": \"No permission was revoked\",\n}"
+      responses: {  }
       tags:
         - 'Permission assignment'
       requestBody:
@@ -1808,18 +1557,86 @@ paths:
                 user_id:
                   type: integer
                   description: 'The id of the user.'
-                  example: 15
+                  example: 11
                 permission_ids:
                   type: array
                   description: ''
                   example:
-                    - 5
-                    - 15
+                    - 6
+                    - 9
                   items:
                     type: integer
               required:
                 - user_id
                 - permission_ids
+  /api/v1/permissions/update-role:
+    post:
+      summary: 'Update permissions of role'
+      description: ''
+      parameters:
+        -
+          in: header
+          name: Authorization
+          description: ''
+          example: 'Bearer {ACCESS_TOKEN}'
+          schema:
+            type: string
+        -
+          in: header
+          name: Content-Type
+          description: ''
+          example: application/json
+          schema:
+            type: string
+        -
+          in: header
+          name: Accept
+          description: ''
+          example: application/json
+          schema:
+            type: string
+      responses: {  }
+      tags:
+        - 'Permission assignment'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                groups:
+                  type: array
+                  description: ''
+                  example:
+                    - perspiciatis
+                    - voluptas
+                  items:
+                    type: string
+                roles_permissions:
+                  type: array
+                  description: ''
+                  example:
+                    - []
+                  items:
+                    type: object
+                    properties:
+                      role_id:
+                        type: integer
+                        description: ''
+                        example: 10
+                      permission_ids:
+                        type: array
+                        description: ''
+                        example:
+                          - 18
+                          - 10
+                        items:
+                          type: integer
+                    required:
+                      - role_id
+              required:
+                - groups
   /api/v1/roles:
     get:
       summary: 'Display all roles.'
@@ -1863,8 +1680,8 @@ paths:
                         -
                           id: 1
                           name: 'create users'
-                          display_name: 'create usersssssss'
-                          group: '123'
+                          display_name: 'create users'
+                          group: 'Admin  permission'
                         -
                           id: 2
                           name: 'view users'
@@ -1958,8 +1775,8 @@ paths:
                         -
                           id: 1
                           name: 'create users'
-                          display_name: 'create usersssssss'
-                          group: '123'
+                          display_name: 'create users'
+                          group: 'Admin  permission'
                         -
                           id: 2
                           name: 'view users'
@@ -2057,8 +1874,8 @@ paths:
                           -
                             id: 1
                             name: 'create users'
-                            display_name: 'create usersssssss'
-                            group: '123'
+                            display_name: 'create users'
+                            group: 'Admin  permission'
                           -
                             id: 2
                             name: 'view users'
@@ -2152,8 +1969,8 @@ paths:
                           -
                             id: 1
                             name: 'create users'
-                            display_name: 'create usersssssss'
-                            group: '123'
+                            display_name: 'create users'
+                            group: 'Admin  permission'
                           -
                             id: 2
                             name: 'view users'
@@ -2268,19 +2085,7 @@ paths:
           example: application/json
           schema:
             type: string
-      responses:
-        201:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: 'Successfully created role!'
-                properties:
-                  message:
-                    type: string
-                    example: 'Successfully created role!'
+      responses: {  }
       tags:
         - Roles
       requestBody:
@@ -2293,7 +2098,7 @@ paths:
                 name:
                   type: string
                   description: 'The name of the role.'
-                  example: at
+                  example: praesentium
               required:
                 - name
   '/api/v1/roles/{id}':
@@ -2338,8 +2143,8 @@ paths:
                       -
                         id: 1
                         name: 'create users'
-                        display_name: 'create usersssssss'
-                        group: '123'
+                        display_name: 'create users'
+                        group: 'Admin  permission'
                       -
                         id: 2
                         name: 'view users'
@@ -2436,8 +2241,8 @@ paths:
                         -
                           id: 1
                           name: 'create users'
-                          display_name: 'create usersssssss'
-                          group: '123'
+                          display_name: 'create users'
+                          group: 'Admin  permission'
                         -
                           id: 2
                           name: 'view users'
@@ -2550,19 +2355,7 @@ paths:
           example: application/json
           schema:
             type: string
-      responses:
-        200:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: 'Successfully updated role!'
-                properties:
-                  message:
-                    type: string
-                    example: 'Successfully updated role!'
+      responses: {  }
       tags:
         - Roles
       requestBody:
@@ -2575,7 +2368,7 @@ paths:
                 name:
                   type: string
                   description: 'The name of the role.'
-                  example: reprehenderit
+                  example: quisquam
               required:
                 - name
     delete:
@@ -2603,19 +2396,7 @@ paths:
           example: application/json
           schema:
             type: string
-      responses:
-        200:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: 'Successfully deleted role!'
-                properties:
-                  message:
-                    type: string
-                    example: 'Successfully deleted role!'
+      responses: {  }
       tags:
         - Roles
     parameters:
@@ -2623,10 +2404,10 @@ paths:
         in: path
         name: id
         description: 'The ID of the role.'
-        example: eum
+        example: 14
         required: true
         schema:
-          type: string
+          type: integer
   /api/v1/my-info:
     get:
       summary: 'Get the logged in user''s info'
@@ -2662,28 +2443,28 @@ paths:
                 type: object
                 example:
                   data:
-                    id: 510
-                    username: marquise.jerde
-                    first_name: Jeffery
-                    last_name: Turner
-                    full_name: 'Jeffery Turner'
-                    email: marquise.jerde@test.com
-                    gender: female
-                    date_of_birth: 19/Feb/1980
+                    id: 509
+                    username: koss.mathilde
+                    first_name: Rae
+                    last_name: Kling
+                    full_name: 'Rae Kling'
+                    email: koss.mathilde@test.com
+                    gender: male
+                    date_of_birth: 4/Jan/1979
                     roles: []
                     permissions: []
                 properties:
                   data:
                     type: object
                     example:
-                      id: 510
-                      username: marquise.jerde
-                      first_name: Jeffery
-                      last_name: Turner
-                      full_name: 'Jeffery Turner'
-                      email: marquise.jerde@test.com
-                      gender: female
-                      date_of_birth: 19/Feb/1980
+                      id: 509
+                      username: koss.mathilde
+                      first_name: Rae
+                      last_name: Kling
+                      full_name: 'Rae Kling'
+                      email: koss.mathilde@test.com
+                      gender: male
+                      date_of_birth: 4/Jan/1979
                       roles: []
                       permissions: []
       tags:
@@ -2724,25 +2505,25 @@ paths:
                 example:
                   data:
                     -
-                      id: 511
-                      username: dakota48
-                      first_name: Evie
-                      last_name: Wilderman
-                      full_name: 'Evie Wilderman'
-                      email: dakota48@test.com
-                      gender: female
-                      date_of_birth: 4/Nov/1990
+                      id: 510
+                      username: brau
+                      first_name: Tremaine
+                      last_name: Spinka
+                      full_name: 'Tremaine Spinka'
+                      email: brau@test.com
+                      gender: male
+                      date_of_birth: 18/Nov/2004
                       roles: []
                       permissions: []
                     -
-                      id: 512
-                      username: ondricka.melissa
-                      first_name: Camren
-                      last_name: Heaney
-                      full_name: 'Camren Heaney'
-                      email: ondricka.melissa@test.com
+                      id: 511
+                      username: wilkinson.conor
+                      first_name: Crawford
+                      last_name: Grady
+                      full_name: 'Crawford Grady'
+                      email: wilkinson.conor@test.com
                       gender: male
-                      date_of_birth: 10/Jan/1971
+                      date_of_birth: 4/Oct/1977
                       roles: []
                       permissions: []
                 properties:
@@ -2750,25 +2531,25 @@ paths:
                     type: array
                     example:
                       -
-                        id: 511
-                        username: dakota48
-                        first_name: Evie
-                        last_name: Wilderman
-                        full_name: 'Evie Wilderman'
-                        email: dakota48@test.com
-                        gender: female
-                        date_of_birth: 4/Nov/1990
+                        id: 510
+                        username: brau
+                        first_name: Tremaine
+                        last_name: Spinka
+                        full_name: 'Tremaine Spinka'
+                        email: brau@test.com
+                        gender: male
+                        date_of_birth: 18/Nov/2004
                         roles: []
                         permissions: []
                       -
-                        id: 512
-                        username: ondricka.melissa
-                        first_name: Camren
-                        last_name: Heaney
-                        full_name: 'Camren Heaney'
-                        email: ondricka.melissa@test.com
+                        id: 511
+                        username: wilkinson.conor
+                        first_name: Crawford
+                        last_name: Grady
+                        full_name: 'Crawford Grady'
+                        email: wilkinson.conor@test.com
                         gender: male
-                        date_of_birth: 10/Jan/1971
+                        date_of_birth: 4/Oct/1977
                         roles: []
                         permissions: []
                     items:
@@ -2811,25 +2592,25 @@ paths:
                 example:
                   data:
                     -
-                      id: 513
-                      username: orlo.flatley
-                      first_name: Justina
-                      last_name: Quigley
-                      full_name: 'Justina Quigley'
-                      email: orlo.flatley@test.com
-                      gender: male
-                      date_of_birth: 27/Mar/1983
+                      id: 512
+                      username: brennon42
+                      first_name: Nels
+                      last_name: Dibbert
+                      full_name: 'Nels Dibbert'
+                      email: brennon42@test.com
+                      gender: female
+                      date_of_birth: 2/Aug/2017
                       roles: []
                       permissions: []
                     -
-                      id: 514
-                      username: valerie.feil
-                      first_name: Albert
-                      last_name: West
-                      full_name: 'Albert West'
-                      email: valerie.feil@test.com
-                      gender: female
-                      date_of_birth: 6/Dec/1986
+                      id: 513
+                      username: ngoyette
+                      first_name: Ashleigh
+                      last_name: Bergstrom
+                      full_name: 'Ashleigh Bergstrom'
+                      email: ngoyette@test.com
+                      gender: male
+                      date_of_birth: 11/Aug/2004
                       roles: []
                       permissions: []
                 properties:
@@ -2837,25 +2618,25 @@ paths:
                     type: array
                     example:
                       -
-                        id: 513
-                        username: orlo.flatley
-                        first_name: Justina
-                        last_name: Quigley
-                        full_name: 'Justina Quigley'
-                        email: orlo.flatley@test.com
-                        gender: male
-                        date_of_birth: 27/Mar/1983
+                        id: 512
+                        username: brennon42
+                        first_name: Nels
+                        last_name: Dibbert
+                        full_name: 'Nels Dibbert'
+                        email: brennon42@test.com
+                        gender: female
+                        date_of_birth: 2/Aug/2017
                         roles: []
                         permissions: []
                       -
-                        id: 514
-                        username: valerie.feil
-                        first_name: Albert
-                        last_name: West
-                        full_name: 'Albert West'
-                        email: valerie.feil@test.com
-                        gender: female
-                        date_of_birth: 6/Dec/1986
+                        id: 513
+                        username: ngoyette
+                        first_name: Ashleigh
+                        last_name: Bergstrom
+                        full_name: 'Ashleigh Bergstrom'
+                        email: ngoyette@test.com
+                        gender: male
+                        date_of_birth: 11/Aug/2004
                         roles: []
                         permissions: []
                     items:
@@ -2898,25 +2679,25 @@ paths:
                 example:
                   data:
                     -
-                      id: 515
-                      username: fokon
-                      first_name: Clint
-                      last_name: Schultz
-                      full_name: 'Clint Schultz'
-                      email: fokon@test.com
+                      id: 514
+                      username: johnston.hobart
+                      first_name: Jordon
+                      last_name: Ratke
+                      full_name: 'Jordon Ratke'
+                      email: johnston.hobart@test.com
                       gender: female
-                      date_of_birth: 11/May/2010
+                      date_of_birth: 15/Jun/2006
                       roles: []
                       permissions: []
                     -
-                      id: 516
-                      username: tony.cummings
-                      first_name: Lauriane
-                      last_name: Bashirian
-                      full_name: 'Lauriane Bashirian'
-                      email: tony.cummings@test.com
+                      id: 515
+                      username: ondricka.braden
+                      first_name: Jerrold
+                      last_name: Crist
+                      full_name: 'Jerrold Crist'
+                      email: ondricka.braden@test.com
                       gender: male
-                      date_of_birth: 25/Apr/2004
+                      date_of_birth: 4/Mar/1989
                       roles: []
                       permissions: []
                 properties:
@@ -2924,25 +2705,25 @@ paths:
                     type: array
                     example:
                       -
-                        id: 515
-                        username: fokon
-                        first_name: Clint
-                        last_name: Schultz
-                        full_name: 'Clint Schultz'
-                        email: fokon@test.com
+                        id: 514
+                        username: johnston.hobart
+                        first_name: Jordon
+                        last_name: Ratke
+                        full_name: 'Jordon Ratke'
+                        email: johnston.hobart@test.com
                         gender: female
-                        date_of_birth: 11/May/2010
+                        date_of_birth: 15/Jun/2006
                         roles: []
                         permissions: []
                       -
-                        id: 516
-                        username: tony.cummings
-                        first_name: Lauriane
-                        last_name: Bashirian
-                        full_name: 'Lauriane Bashirian'
-                        email: tony.cummings@test.com
+                        id: 515
+                        username: ondricka.braden
+                        first_name: Jerrold
+                        last_name: Crist
+                        full_name: 'Jerrold Crist'
+                        email: ondricka.braden@test.com
                         gender: male
-                        date_of_birth: 25/Apr/2004
+                        date_of_birth: 4/Mar/1989
                         roles: []
                         permissions: []
                     items:
@@ -2974,27 +2755,7 @@ paths:
           example: application/json
           schema:
             type: string
-      responses:
-        201:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: 'Successfully created user!'
-                  credentials:
-                    email: user@test.com
-                    password: '12345678'
-                properties:
-                  message:
-                    type: string
-                    example: 'Successfully created user!'
-                  credentials:
-                    type: object
-                    example:
-                      email: user@test.com
-                      password: '12345678'
+      responses: {  }
       tags:
         - Users
       requestBody:
@@ -3007,23 +2768,23 @@ paths:
                 username:
                   type: string
                   description: 'A unique username.'
-                  example: et
+                  example: doloribus
                 email:
                   type: string
                   description: 'A unique email address.'
-                  example: voluptatem
+                  example: quasi
                 first_name:
                   type: string
                   description: 'First name of user.'
-                  example: numquam
+                  example: error
                 last_name:
                   type: string
                   description: 'Last name of user.'
-                  example: in
+                  example: qui
                 gender:
                   type: string
                   description: 'Gender of the user.'
-                  example: et
+                  example: similique
                 date_of_birth:
                   type: string
                   description: 'The date of birth of user. Must be a valid date.'
@@ -3032,8 +2793,8 @@ paths:
                   type: array
                   description: ''
                   example:
-                    - 15
-                    - 13
+                    - 6
+                    - 19
                   items:
                     type: integer
               required:
@@ -3079,28 +2840,28 @@ paths:
                 type: object
                 example:
                   data:
-                    id: 517
-                    username: alfonzo20
-                    first_name: Tia
-                    last_name: Steuber
-                    full_name: 'Tia Steuber'
-                    email: alfonzo20@test.com
-                    gender: male
-                    date_of_birth: 31/Mar/2007
+                    id: 516
+                    username: ayana.schowalter
+                    first_name: Jeanette
+                    last_name: Hessel
+                    full_name: 'Jeanette Hessel'
+                    email: ayana.schowalter@test.com
+                    gender: female
+                    date_of_birth: 23/May/1971
                     roles: []
                     permissions: []
                 properties:
                   data:
                     type: object
                     example:
-                      id: 517
-                      username: alfonzo20
-                      first_name: Tia
-                      last_name: Steuber
-                      full_name: 'Tia Steuber'
-                      email: alfonzo20@test.com
-                      gender: male
-                      date_of_birth: 31/Mar/2007
+                      id: 516
+                      username: ayana.schowalter
+                      first_name: Jeanette
+                      last_name: Hessel
+                      full_name: 'Jeanette Hessel'
+                      email: ayana.schowalter@test.com
+                      gender: female
+                      date_of_birth: 23/May/1971
                       roles: []
                       permissions: []
       tags:
@@ -3130,19 +2891,7 @@ paths:
           example: application/json
           schema:
             type: string
-      responses:
-        200:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: 'Successfully updated user!'
-                properties:
-                  message:
-                    type: string
-                    example: 'Successfully updated user!'
+      responses: {  }
       tags:
         - Users
       requestBody:
@@ -3155,23 +2904,23 @@ paths:
                 username:
                   type: string
                   description: 'A unique username.'
-                  example: cupiditate
+                  example: rerum
                 email:
                   type: string
                   description: 'A unique email address.'
-                  example: perspiciatis
+                  example: sint
                 first_name:
                   type: string
                   description: 'First name of user.'
-                  example: et
+                  example: quia
                 last_name:
                   type: string
                   description: 'Last name of user.'
-                  example: nulla
+                  example: qui
                 gender:
                   type: string
                   description: 'Gender of the user.'
-                  example: voluptas
+                  example: quis
                 date_of_birth:
                   type: string
                   description: 'The date of birth of user. Must be a valid date.'
@@ -3180,8 +2929,8 @@ paths:
                   type: array
                   description: ''
                   example:
-                    - 15
-                    - 18
+                    - 14
+                    - 1
                   items:
                     type: integer
               required:
@@ -3217,19 +2966,7 @@ paths:
           example: application/json
           schema:
             type: string
-      responses:
-        200:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: 'Successfully deleted user!'
-                properties:
-                  message:
-                    type: string
-                    example: 'Successfully deleted user!'
+      responses: {  }
       tags:
         - Users
     parameters:
@@ -3237,7 +2974,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the user.'
-        example: 13
+        example: 19
         required: true
         schema:
           type: integer

@@ -24,41 +24,17 @@ endpoints:
         name: role_id
         description: 'The id of the role.'
         required: true
-        example: 15
+        example: 19
         type: integer
       permission_ids:
         name: permission_ids
         description: ''
         required: true
         example:
-          - 1
-          - 9
+          - 11
+          - 10
         type: 'integer[]'
-    responses:
-      -
-        status: 200
-        content: |-
-          {
-           "message" => "Successfully assigned permissions to role",
-           "assigned_permissions" => [
-             {
-                 "id": 1,
-                 "name": "create users",
-                 "display_name": "create users",
-                 "group": "Admin permission"
-             }
-           ],
-          }
-        headers: []
-        description: '200'
-      -
-        status: 200
-        content: |-
-          {
-           "message": "No permission was assigned to role",
-          }
-        headers: []
-        description: '200'
+    responses: []
     responseFields: []
   -
     httpMethods:
@@ -79,41 +55,17 @@ endpoints:
         name: user_id
         description: 'The id of the user.'
         required: true
-        example: 20
+        example: 8
         type: integer
       permission_ids:
         name: permission_ids
         description: ''
         required: true
         example:
-          - 11
-          - 14
+          - 20
+          - 6
         type: 'integer[]'
-    responses:
-      -
-        status: 200
-        content: |-
-          {
-           "message" => "Successfully assigned permissions to user",
-           "assigned_permissions" => [
-             {
-                 "id": 1,
-                 "name": "create users",
-                 "display_name": "create users",
-                 "group": "Admin permission"
-             }
-           ],
-          }
-        headers: []
-        description: '200'
-      -
-        status: 200
-        content: |-
-          {
-           "message": "No permission was assigned to user",
-          }
-        headers: []
-        description: '200'
+    responses: []
     responseFields: []
   -
     httpMethods:
@@ -134,41 +86,17 @@ endpoints:
         name: role_id
         description: 'The id of the role.'
         required: true
-        example: 16
+        example: 13
         type: integer
       permission_ids:
         name: permission_ids
         description: ''
         required: true
         example:
-          - 6
-          - 7
+          - 14
+          - 16
         type: 'integer[]'
-    responses:
-      -
-        status: 200
-        content: |-
-          {
-           "message" => "Successfully revoked permissions from role",
-           "revoked_permissions" => [
-             {
-                 "id": 1,
-                 "name": "create users",
-                 "display_name": "create users",
-                 "group": "Admin permission"
-             }
-           ],
-          }
-        headers: []
-        description: '200'
-      -
-        status: 200
-        content: |-
-          {
-           "message": "No permission was revoked",
-          }
-        headers: []
-        description: '200'
+    responses: []
     responseFields: []
   -
     httpMethods:
@@ -189,39 +117,61 @@ endpoints:
         name: user_id
         description: 'The id of the user.'
         required: true
-        example: 15
+        example: 11
         type: integer
       permission_ids:
         name: permission_ids
         description: ''
         required: true
         example:
-          - 5
-          - 15
+          - 6
+          - 9
         type: 'integer[]'
-    responses:
-      -
-        status: 200
-        content: |-
-          {
-           "message" => "Successfully revoked permissions from user",
-           "revoked_permissions" => [
-             {
-                 "id": 1,
-                 "name": "create users",
-                 "display_name": "create users",
-                 "group": "Admin permission"
-             }
-           ],
-          }
-        headers: []
-        description: '200'
-      -
-        status: 200
-        content: |-
-          {
-           "message": "No permission was revoked",
-          }
-        headers: []
-        description: '200'
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/permissions/update-role
+    metadata:
+      title: 'Update permissions of role'
+      description: ''
+      authenticated: true
+    headers:
+      Authorization: 'Bearer {ACCESS_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters:
+      groups:
+        name: groups
+        description: ''
+        required: true
+        example:
+          - perspiciatis
+          - voluptas
+        type: 'string[]'
+      roles_permissions:
+        name: roles_permissions
+        description: ''
+        required: false
+        example:
+          - []
+        type: 'object[]'
+      'roles_permissions[].role_id':
+        name: 'roles_permissions[].role_id'
+        description: ''
+        required: true
+        example: 10
+        type: integer
+      'roles_permissions[].permission_ids':
+        name: 'roles_permissions[].permission_ids'
+        description: ''
+        required: false
+        example:
+          - 18
+          - 10
+        type: 'integer[]'
+    responses: []
     responseFields: []

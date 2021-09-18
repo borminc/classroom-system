@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Api\v1\CourseRegistration;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Api\ApiController;
 use App\Http\Requests\v1\Course\StoreCourseRequest;
 use App\Http\Requests\v1\Course\UpdateCourseRequest;
 use App\Http\Resources\v1\CourseResource;
@@ -14,22 +14,21 @@ use Illuminate\Http\Request;
  *
  * API endpoints for getting info about courses and creating courses
  */
-class CourseController extends Controller
+class CourseController extends ApiController
 {
     /**
      * Get a list of all courses
      *
      * @authenticated
-     * @return CourseResource
+     * @return Illuminate\Http\JsonResponse
      * @apiResourceCollection App\Http\Resources\v1\CourseResource
      * @apiResourceModel App\Models\Course
      */
     public function index()
     {
         $this->authorize('viewAny', Course::class);
-
         $courses = Course::all();
-        return CourseResource::collection($courses);
+        return $this->okWithData(CourseResource::collection($courses));
     }
 
     /**
@@ -38,16 +37,11 @@ class CourseController extends Controller
      * @authenticated
      * @param StoreCourseRequest $request
      * @return Illuminate\Http\JsonResponse
-     * @response 201 {
-     *  "message": "Successfully created course!"
-     * }
      */
     public function store(StoreCourseRequest $request)
     {
-        Course::create($request->validated());
-        return response()->json([
-            'message' => 'Successfully created course!',
-        ], 201);
+        $course = Course::create($request->validated());
+        return $this->created(new CourseResource($course));
     }
 
     /**
@@ -55,14 +49,14 @@ class CourseController extends Controller
      *
      * @authenticated
      * @param  \App\Models\Course  $course
-     * @return \Illuminate\Http\Response
+     * @return Illuminate\Http\JsonResponse
      * @apiResource App\Http\Resources\v1\CourseResource
      * @apiResourceModel App\Models\Course
      */
     public function show(Course $course)
     {
         $this->authorize('view', $course);
-        return new CourseResource($course);
+        return $this->okWithData(new CourseResource($course));
     }
 
     /**
@@ -71,17 +65,12 @@ class CourseController extends Controller
      * @authenticated
      * @param  UpdateCourseRequest  $request
      * @param  \App\Models\Course  $course
-     * @return \Illuminate\Http\Response
-     * @response {
-     *  "message": "Successfully updated course!"
-     * }
+     * @return Illuminate\Http\JsonResponse
      */
     public function update(UpdateCourseRequest $request, Course $course)
     {
         $course->update($request->validated());
-        return response()->json([
-            'message' => 'Successfully updated course!',
-        ], 200);
+        return $this->updated(new CourseResource($course));
     }
 
     /**
@@ -89,18 +78,12 @@ class CourseController extends Controller
      *
      * @authenticated
      * @param  \App\Models\Course  $course
-     * @return \Illuminate\Http\Response
-     * @response {
-     *  "message": "Successfully deleted user!"
-     * }
+     * @return Illuminate\Http\JsonResponse
      */
     public function destroy(Course $course)
     {
         $this->authorize('delete', $course);
-
         $course->delete();
-        return response()->json([
-            'message' => 'Successfully deleted course!',
-        ], 200);
+        return $this->deleted(new CourseResource($course));
     }
 }
