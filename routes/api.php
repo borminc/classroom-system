@@ -42,6 +42,7 @@ Route::prefix('v1')->group(function () {
         /**
          * Permission
          */
+        Route::post('permissions/selected-groups-roles', [RolePermissionController::class, 'getPermissionsByGroupsRoles']);
         Route::post('permissions/update-role', [RolePermissionController::class, 'updateRolePermissions']);
         Route::post('permissions/assign-to-role', [RolePermissionController::class, 'assignPermissionsToRole']);
         Route::post('permissions/assign-to-user', [RolePermissionController::class, 'assignPermissionsToUser']);

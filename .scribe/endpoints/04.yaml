@@ -29,8 +29,8 @@ endpoints:
         description: ''
         required: true
         example:
-          - 11
-          - 10
+          - 9
+          - 13
         type: 'integer[]'
     responses: []
     responseFields: []
@@ -53,15 +53,15 @@ endpoints:
         name: user_id
         description: 'The id of the user.'
         required: true
-        example: 8
+        example: 18
         type: integer
       permission_ids:
         name: permission_ids
         description: ''
         required: true
         example:
-          - 20
-          - 6
+          - 16
+          - 14
         type: 'integer[]'
     responses: []
     responseFields: []
@@ -84,15 +84,15 @@ endpoints:
         name: role_id
         description: 'The id of the role.'
         required: true
-        example: 13
+        example: 17
         type: integer
       permission_ids:
         name: permission_ids
         description: ''
         required: true
         example:
-          - 14
           - 16
+          - 13
         type: 'integer[]'
     responses: []
     responseFields: []
@@ -115,15 +115,15 @@ endpoints:
         name: user_id
         description: 'The id of the user.'
         required: true
-        example: 11
+        example: 4
         type: integer
       permission_ids:
         name: permission_ids
         description: ''
         required: true
         example:
-          - 6
-          - 9
+          - 19
+          - 16
         type: 'integer[]'
     responses: []
     responseFields: []
@@ -147,8 +147,8 @@ endpoints:
         description: ''
         required: true
         example:
-          - perspiciatis
-          - voluptas
+          - vel
+          - omnis
         type: 'string[]'
       roles_permissions:
         name: roles_permissions
@@ -161,15 +161,48 @@ endpoints:
         name: 'roles_permissions[].role_id'
         description: ''
         required: true
-        example: 10
+        example: 14
         type: integer
       'roles_permissions[].permission_ids':
         name: 'roles_permissions[].permission_ids'
         description: ''
         required: false
         example:
-          - 18
-          - 10
+          - 2
+          - 7
+        type: 'integer[]'
+    responses: []
+    responseFields: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/permissions/selected-groups-roles
+    metadata:
+      title: 'Get permissions in groups and roles'
+      description: ''
+      authenticated: true
+    headers:
+      Authorization: 'Bearer {ACCESS_TOKEN}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    queryParameters: []
+    bodyParameters:
+      groups:
+        name: groups
+        description: ''
+        required: true
+        example:
+          - placeat
+          - omnis
+        type: 'string[]'
+      role_ids:
+        name: role_ids
+        description: ''
+        required: true
+        example:
+          - 4
+          - 20
         type: 'integer[]'
     responses: []
     responseFields: []

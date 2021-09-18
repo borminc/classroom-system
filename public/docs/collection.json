@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "901d0651-274a-4a1d-a200-d61e60adb0c9",
+        "_postman_id": "23bb2c84-8371-4096-a642-93725e7861ed",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -42,7 +42,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"deven.jaskolski@example.net\",\"password\":\"dolore\",\"remember_me\":false}"
+                            "raw": "{\"email\":\"israel90@example.net\",\"password\":\"consequuntur\",\"remember_me\":false}"
                         },
                         "description": "",
                         "auth": {
@@ -74,7 +74,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"username\":\"id\",\"email\":\"eos\",\"password\":\"oqb\",\"password_confirmation\":\"similique\",\"first_name\":\"temporibus\",\"last_name\":\"architecto\",\"gender\":\"sit\",\"date_of_birth\":\"2020-12-01\"}"
+                            "raw": "{\"username\":\"molestiae\",\"email\":\"ad\",\"password\":\"gsblt\",\"password_confirmation\":\"nisi\",\"first_name\":\"qui\",\"last_name\":\"harum\",\"gender\":\"odit\",\"date_of_birth\":\"2020-12-01\"}"
                         },
                         "description": "",
                         "auth": {
@@ -163,7 +163,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":33,\"name\":\"Intro to rem\",\"code\":\"WVcWC\",\"description\":\"Et cum quidem nisi et nihil ipsum corrupti. Eveniet beatae sunt distinctio temporibus soluta est. Ea harum qui ab in corrupti impedit.\",\"instructor\":{\"id\":8,\"username\":\"i_7\",\"first_name\":\"Instructor\",\"last_name\":\"7\",\"full_name\":\"Instructor 7\",\"email\":\"i_7@test.com\",\"gender\":\"male\",\"date_of_birth\":\"3\\\/Feb\\\/2000\",\"roles\":[{\"id\":2,\"name\":\"instructor\",\"display_name\":\"instructor\"}],\"permissions\":[{\"id\":22,\"name\":\"teach courses\",\"display_name\":\"teach courses\",\"group\":\"Instructor permission\"},{\"id\":23,\"name\":\"view own-instructor-courses\",\"display_name\":\"view own-instructor-courses\",\"group\":\"Instructor permission\"}]}},{\"id\":34,\"name\":\"Intro to ut\",\"code\":\"ExTxz\",\"description\":\"Nostrum ratione veritatis porro aut iure aut. Adipisci et odit amet officia. Dignissimos aperiam recusandae omnis itaque ratione repellat iste quasi.\",\"instructor\":{\"id\":8,\"username\":\"i_7\",\"first_name\":\"Instructor\",\"last_name\":\"7\",\"full_name\":\"Instructor 7\",\"email\":\"i_7@test.com\",\"gender\":\"male\",\"date_of_birth\":\"3\\\/Feb\\\/2000\",\"roles\":[{\"id\":2,\"name\":\"instructor\",\"display_name\":\"instructor\"}],\"permissions\":[{\"id\":22,\"name\":\"teach courses\",\"display_name\":\"teach courses\",\"group\":\"Instructor permission\"},{\"id\":23,\"name\":\"view own-instructor-courses\",\"display_name\":\"view own-instructor-courses\",\"group\":\"Instructor permission\"}]}}]}",
+                            "body": "{\"data\":[{\"id\":40,\"name\":\"Intro to beatae\",\"code\":\"dJNIG\",\"description\":\"Est ea sint voluptatem amet esse cupiditate neque. Voluptas aliquid in et aut sed. Vitae non molestiae cumque occaecati sequi.\",\"instructor\":{\"id\":2,\"username\":\"i_1\",\"first_name\":\"Instructor\",\"last_name\":\"1\",\"full_name\":\"Instructor 1\",\"email\":\"i_1@test.com\",\"gender\":\"male\",\"date_of_birth\":\"3\\\/Feb\\\/2000\",\"roles\":[{\"id\":2,\"name\":\"instructor\",\"display_name\":\"instructor\"}],\"permissions\":[{\"id\":22,\"name\":\"teach courses\",\"display_name\":\"teach courses\",\"group\":\"Instructor permission\"},{\"id\":23,\"name\":\"view own-instructor-courses\",\"display_name\":\"view own-instructor-courses\",\"group\":\"Instructor permission\"}]}},{\"id\":41,\"name\":\"Intro to et\",\"code\":\"b1wVl\",\"description\":\"Eum quae officia est non autem. Non est cumque modi praesentium.\",\"instructor\":{\"id\":5,\"username\":\"i_4\",\"first_name\":\"Instructor\",\"last_name\":\"4\",\"full_name\":\"Instructor 4\",\"email\":\"i_4@test.com\",\"gender\":\"male\",\"date_of_birth\":\"3\\\/Feb\\\/2000\",\"roles\":[{\"id\":2,\"name\":\"instructor\",\"display_name\":\"instructor\"}],\"permissions\":[{\"id\":22,\"name\":\"teach courses\",\"display_name\":\"teach courses\",\"group\":\"Instructor permission\"},{\"id\":23,\"name\":\"view own-instructor-courses\",\"display_name\":\"view own-instructor-courses\",\"group\":\"Instructor permission\"}]}}]}",
                             "name": ""
                         }
                     ]
@@ -196,7 +196,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":35,\"name\":\"Intro to tempora\",\"code\":\"6iQkU\",\"description\":\"Atque libero harum voluptatum magni porro praesentium ratione. Sed soluta labore dicta impedit veritatis.\",\"instructor\":{\"id\":10,\"username\":\"i_9\",\"first_name\":\"Instructor\",\"last_name\":\"9\",\"full_name\":\"Instructor 9\",\"email\":\"i_9@test.com\",\"gender\":\"male\",\"date_of_birth\":\"3\\\/Feb\\\/2000\",\"roles\":[{\"id\":2,\"name\":\"instructor\",\"display_name\":\"instructor\"}],\"permissions\":[{\"id\":22,\"name\":\"teach courses\",\"display_name\":\"teach courses\",\"group\":\"Instructor permission\"},{\"id\":23,\"name\":\"view own-instructor-courses\",\"display_name\":\"view own-instructor-courses\",\"group\":\"Instructor permission\"}]}},{\"id\":36,\"name\":\"Intro to optio\",\"code\":\"dUVIu\",\"description\":\"Nulla aut repudiandae quas officiis qui. Quia magnam maiores dolor laborum at minus recusandae.\",\"instructor\":{\"id\":10,\"username\":\"i_9\",\"first_name\":\"Instructor\",\"last_name\":\"9\",\"full_name\":\"Instructor 9\",\"email\":\"i_9@test.com\",\"gender\":\"male\",\"date_of_birth\":\"3\\\/Feb\\\/2000\",\"roles\":[{\"id\":2,\"name\":\"instructor\",\"display_name\":\"instructor\"}],\"permissions\":[{\"id\":22,\"name\":\"teach courses\",\"display_name\":\"teach courses\",\"group\":\"Instructor permission\"},{\"id\":23,\"name\":\"view own-instructor-courses\",\"display_name\":\"view own-instructor-courses\",\"group\":\"Instructor permission\"}]}}]}",
+                            "body": "{\"data\":[{\"id\":42,\"name\":\"Intro to laudantium\",\"code\":\"kzqB8\",\"description\":\"Culpa neque molestias aperiam facere aut perferendis. Numquam earum sint vitae quis natus. Assumenda omnis quidem culpa qui molestias et.\",\"instructor\":{\"id\":9,\"username\":\"i_8\",\"first_name\":\"Instructor\",\"last_name\":\"8\",\"full_name\":\"Instructor 8\",\"email\":\"i_8@test.com\",\"gender\":\"male\",\"date_of_birth\":\"3\\\/Feb\\\/2000\",\"roles\":[{\"id\":2,\"name\":\"instructor\",\"display_name\":\"instructor\"}],\"permissions\":[{\"id\":22,\"name\":\"teach courses\",\"display_name\":\"teach courses\",\"group\":\"Instructor permission\"},{\"id\":23,\"name\":\"view own-instructor-courses\",\"display_name\":\"view own-instructor-courses\",\"group\":\"Instructor permission\"}]}},{\"id\":43,\"name\":\"Intro to commodi\",\"code\":\"clGcD\",\"description\":\"Iste non animi voluptate consequatur. Vel omnis est consequuntur dolor aut.\",\"instructor\":{\"id\":9,\"username\":\"i_8\",\"first_name\":\"Instructor\",\"last_name\":\"8\",\"full_name\":\"Instructor 8\",\"email\":\"i_8@test.com\",\"gender\":\"male\",\"date_of_birth\":\"3\\\/Feb\\\/2000\",\"roles\":[{\"id\":2,\"name\":\"instructor\",\"display_name\":\"instructor\"}],\"permissions\":[{\"id\":22,\"name\":\"teach courses\",\"display_name\":\"teach courses\",\"group\":\"Instructor permission\"},{\"id\":23,\"name\":\"view own-instructor-courses\",\"display_name\":\"view own-instructor-courses\",\"group\":\"Instructor permission\"}]}}]}",
                             "name": ""
                         }
                     ]
@@ -224,7 +224,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"course_id\":16}"
+                            "raw": "{\"course_id\":11}"
                         },
                         "description": ""
                     },
@@ -253,7 +253,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"user_id\":16,\"course_id\":6}"
+                            "raw": "{\"user_id\":4,\"course_id\":3}"
                         },
                         "description": ""
                     },
@@ -293,7 +293,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":37,\"name\":\"Intro to in\",\"code\":\"wqbJU\",\"description\":\"Ex voluptatum id quia magni illo. Quo et dignissimos amet omnis. Qui nulla natus soluta et rerum itaque dolorem est.\",\"instructor\":{\"id\":2,\"username\":\"i_1\",\"first_name\":\"Instructor\",\"last_name\":\"1\",\"full_name\":\"Instructor 1\",\"email\":\"i_1@test.com\",\"gender\":\"male\",\"date_of_birth\":\"3\\\/Feb\\\/2000\",\"roles\":[{\"id\":2,\"name\":\"instructor\",\"display_name\":\"instructor\"}],\"permissions\":[{\"id\":22,\"name\":\"teach courses\",\"display_name\":\"teach courses\",\"group\":\"Instructor permission\"},{\"id\":23,\"name\":\"view own-instructor-courses\",\"display_name\":\"view own-instructor-courses\",\"group\":\"Instructor permission\"}]},\"students\":[]},{\"id\":38,\"name\":\"Intro to exercitationem\",\"code\":\"flEGV\",\"description\":\"Et sunt velit quasi ea harum ut aut. Accusamus praesentium ipsam necessitatibus.\",\"instructor\":{\"id\":7,\"username\":\"i_6\",\"first_name\":\"Instructor\",\"last_name\":\"6\",\"full_name\":\"Instructor 6\",\"email\":\"i_6@test.com\",\"gender\":\"male\",\"date_of_birth\":\"3\\\/Feb\\\/2000\",\"roles\":[{\"id\":2,\"name\":\"instructor\",\"display_name\":\"instructor\"}],\"permissions\":[{\"id\":22,\"name\":\"teach courses\",\"display_name\":\"teach courses\",\"group\":\"Instructor permission\"},{\"id\":23,\"name\":\"view own-instructor-courses\",\"display_name\":\"view own-instructor-courses\",\"group\":\"Instructor permission\"}]},\"students\":[]}]}",
+                            "body": "{\"data\":[{\"id\":44,\"name\":\"Intro to veniam\",\"code\":\"M7CnL\",\"description\":\"Sint beatae corporis consectetur reprehenderit consequatur ut voluptas. Voluptatem voluptatum ex modi quia est optio.\",\"instructor\":{\"id\":2,\"username\":\"i_1\",\"first_name\":\"Instructor\",\"last_name\":\"1\",\"full_name\":\"Instructor 1\",\"email\":\"i_1@test.com\",\"gender\":\"male\",\"date_of_birth\":\"3\\\/Feb\\\/2000\",\"roles\":[{\"id\":2,\"name\":\"instructor\",\"display_name\":\"instructor\"}],\"permissions\":[{\"id\":22,\"name\":\"teach courses\",\"display_name\":\"teach courses\",\"group\":\"Instructor permission\"},{\"id\":23,\"name\":\"view own-instructor-courses\",\"display_name\":\"view own-instructor-courses\",\"group\":\"Instructor permission\"}]},\"students\":[]},{\"id\":45,\"name\":\"Intro to qui\",\"code\":\"WYcEl\",\"description\":\"Qui repellendus quis incidunt nobis. Provident facere ut doloribus. Et quod dolores est molestiae. Voluptates unde quisquam quia et et excepturi.\",\"instructor\":{\"id\":9,\"username\":\"i_8\",\"first_name\":\"Instructor\",\"last_name\":\"8\",\"full_name\":\"Instructor 8\",\"email\":\"i_8@test.com\",\"gender\":\"male\",\"date_of_birth\":\"3\\\/Feb\\\/2000\",\"roles\":[{\"id\":2,\"name\":\"instructor\",\"display_name\":\"instructor\"}],\"permissions\":[{\"id\":22,\"name\":\"teach courses\",\"display_name\":\"teach courses\",\"group\":\"Instructor permission\"},{\"id\":23,\"name\":\"view own-instructor-courses\",\"display_name\":\"view own-instructor-courses\",\"group\":\"Instructor permission\"}]},\"students\":[]}]}",
                             "name": ""
                         }
                     ]
@@ -326,7 +326,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":39,\"name\":\"Intro to ratione\",\"code\":\"TIioX\",\"description\":\"Tenetur eaque distinctio autem tempore. Accusamus ut corrupti voluptatibus laudantium non accusamus.\",\"instructor\":{\"id\":4,\"username\":\"i_3\",\"first_name\":\"Instructor\",\"last_name\":\"3\",\"full_name\":\"Instructor 3\",\"email\":\"i_3@test.com\",\"gender\":\"male\",\"date_of_birth\":\"3\\\/Feb\\\/2000\",\"roles\":[{\"id\":2,\"name\":\"instructor\",\"display_name\":\"instructor\"}],\"permissions\":[{\"id\":22,\"name\":\"teach courses\",\"display_name\":\"teach courses\",\"group\":\"Instructor permission\"},{\"id\":23,\"name\":\"view own-instructor-courses\",\"display_name\":\"view own-instructor-courses\",\"group\":\"Instructor permission\"}]}},{\"id\":40,\"name\":\"Intro to est\",\"code\":\"BWK6m\",\"description\":\"Quam facere ut est occaecati quod nemo pariatur. Et et aliquid animi eum. Ipsa modi sit porro vitae. Aut praesentium nemo eaque nisi alias qui.\",\"instructor\":{\"id\":9,\"username\":\"i_8\",\"first_name\":\"Instructor\",\"last_name\":\"8\",\"full_name\":\"Instructor 8\",\"email\":\"i_8@test.com\",\"gender\":\"male\",\"date_of_birth\":\"3\\\/Feb\\\/2000\",\"roles\":[{\"id\":2,\"name\":\"instructor\",\"display_name\":\"instructor\"}],\"permissions\":[{\"id\":22,\"name\":\"teach courses\",\"display_name\":\"teach courses\",\"group\":\"Instructor permission\"},{\"id\":23,\"name\":\"view own-instructor-courses\",\"display_name\":\"view own-instructor-courses\",\"group\":\"Instructor permission\"}]}}]}",
+                            "body": "{\"data\":[{\"id\":46,\"name\":\"Intro to est\",\"code\":\"tFVYu\",\"description\":\"Est minus magni magni illo minima excepturi. Corporis quae aperiam vel reprehenderit aut. Ipsa temporibus esse non dolorem veritatis.\",\"instructor\":{\"id\":7,\"username\":\"i_6\",\"first_name\":\"Instructor\",\"last_name\":\"6\",\"full_name\":\"Instructor 6\",\"email\":\"i_6@test.com\",\"gender\":\"male\",\"date_of_birth\":\"3\\\/Feb\\\/2000\",\"roles\":[{\"id\":2,\"name\":\"instructor\",\"display_name\":\"instructor\"}],\"permissions\":[{\"id\":22,\"name\":\"teach courses\",\"display_name\":\"teach courses\",\"group\":\"Instructor permission\"},{\"id\":23,\"name\":\"view own-instructor-courses\",\"display_name\":\"view own-instructor-courses\",\"group\":\"Instructor permission\"}]}},{\"id\":47,\"name\":\"Intro to enim\",\"code\":\"OsdXA\",\"description\":\"Atque voluptatibus aspernatur amet. Quasi minima explicabo aut consequuntur odio. Quas laudantium enim eaque.\",\"instructor\":{\"id\":7,\"username\":\"i_6\",\"first_name\":\"Instructor\",\"last_name\":\"6\",\"full_name\":\"Instructor 6\",\"email\":\"i_6@test.com\",\"gender\":\"male\",\"date_of_birth\":\"3\\\/Feb\\\/2000\",\"roles\":[{\"id\":2,\"name\":\"instructor\",\"display_name\":\"instructor\"}],\"permissions\":[{\"id\":22,\"name\":\"teach courses\",\"display_name\":\"teach courses\",\"group\":\"Instructor permission\"},{\"id\":23,\"name\":\"view own-instructor-courses\",\"display_name\":\"view own-instructor-courses\",\"group\":\"Instructor permission\"}]}}]}",
                             "name": ""
                         }
                     ]
@@ -354,7 +354,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"nostrum\",\"code\":\"vero\",\"description\":\"illo\",\"instructor_id\":19}"
+                            "raw": "{\"name\":\"distinctio\",\"code\":\"eos\",\"description\":\"reiciendis\",\"instructor_id\":7}"
                         },
                         "description": ""
                     },
@@ -373,7 +373,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "1",
+                                    "value": "10",
                                     "description": "The ID of the course."
                                 }
                             ]
@@ -396,7 +396,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":41,\"name\":\"Intro to nulla\",\"code\":\"clEyD\",\"description\":\"Tempora architecto quos eos culpa perferendis ut quisquam. Et ut quo et consectetur ut.\",\"instructor\":{\"id\":11,\"username\":\"i_10\",\"first_name\":\"Instructor\",\"last_name\":\"10\",\"full_name\":\"Instructor 10\",\"email\":\"i_10@test.com\",\"gender\":\"male\",\"date_of_birth\":\"3\\\/Feb\\\/2000\",\"roles\":[{\"id\":2,\"name\":\"instructor\",\"display_name\":\"instructor\"}],\"permissions\":[{\"id\":22,\"name\":\"teach courses\",\"display_name\":\"teach courses\",\"group\":\"Instructor permission\"},{\"id\":23,\"name\":\"view own-instructor-courses\",\"display_name\":\"view own-instructor-courses\",\"group\":\"Instructor permission\"}]}}}",
+                            "body": "{\"data\":{\"id\":48,\"name\":\"Intro to tenetur\",\"code\":\"he9bc\",\"description\":\"Aut facilis voluptatem fugit soluta. Hic saepe voluptatibus et quisquam ipsam est magnam. Iusto dicta hic maxime excepturi illo quibusdam.\",\"instructor\":{\"id\":7,\"username\":\"i_6\",\"first_name\":\"Instructor\",\"last_name\":\"6\",\"full_name\":\"Instructor 6\",\"email\":\"i_6@test.com\",\"gender\":\"male\",\"date_of_birth\":\"3\\\/Feb\\\/2000\",\"roles\":[{\"id\":2,\"name\":\"instructor\",\"display_name\":\"instructor\"}],\"permissions\":[{\"id\":22,\"name\":\"teach courses\",\"display_name\":\"teach courses\",\"group\":\"Instructor permission\"},{\"id\":23,\"name\":\"view own-instructor-courses\",\"display_name\":\"view own-instructor-courses\",\"group\":\"Instructor permission\"}]}}}",
                             "name": ""
                         }
                     ]
@@ -414,7 +414,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "6",
+                                    "value": "1",
                                     "description": "The ID of the course."
                                 }
                             ]
@@ -432,7 +432,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"repellendus\",\"code\":\"temporibus\",\"description\":\"perferendis\",\"instructor_id\":8}"
+                            "raw": "{\"name\":\"rerum\",\"code\":\"explicabo\",\"description\":\"eos\",\"instructor_id\":11}"
                         },
                         "description": ""
                     },
@@ -451,7 +451,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "20",
+                                    "value": "1",
                                     "description": "The ID of the course."
                                 }
                             ]
@@ -552,7 +552,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":1,\"name\":\"create users\",\"display_name\":\"create users\",\"group\":\"Admin  permission\"},{\"id\":1,\"name\":\"create users\",\"display_name\":\"create users\",\"group\":\"Admin  permission\"}]}",
+                            "body": "{\"data\":[{\"id\":1,\"name\":\"create users\",\"display_name\":\"create users\",\"group\":\"Admin permission\"},{\"id\":1,\"name\":\"create users\",\"display_name\":\"create users\",\"group\":\"Admin permission\"}]}",
                             "name": ""
                         }
                     ]
@@ -570,7 +570,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "17",
+                                    "value": "9",
                                     "description": "The ID of the permission."
                                 }
                             ]
@@ -593,7 +593,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":1,\"name\":\"create users\",\"display_name\":\"create users\",\"group\":\"Admin  permission\"}}",
+                            "body": "{\"data\":{\"id\":1,\"name\":\"create users\",\"display_name\":\"create users\",\"group\":\"Admin permission\"}}",
                             "name": ""
                         }
                     ]
@@ -629,7 +629,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"consequatur\",\"group\":\"quia\"}"
+                            "raw": "{\"name\":\"ad\",\"group\":\"enim\"}"
                         },
                         "description": ""
                     },
@@ -664,7 +664,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"role_id\":19,\"permission_ids\":[11,10]}"
+                            "raw": "{\"role_id\":19,\"permission_ids\":[9,13]}"
                         },
                         "description": ""
                     },
@@ -693,7 +693,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"user_id\":8,\"permission_ids\":[20,6]}"
+                            "raw": "{\"user_id\":18,\"permission_ids\":[16,14]}"
                         },
                         "description": ""
                     },
@@ -722,7 +722,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"role_id\":13,\"permission_ids\":[14,16]}"
+                            "raw": "{\"role_id\":17,\"permission_ids\":[16,13]}"
                         },
                         "description": ""
                     },
@@ -751,7 +751,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"user_id\":11,\"permission_ids\":[6,9]}"
+                            "raw": "{\"user_id\":4,\"permission_ids\":[19,16]}"
                         },
                         "description": ""
                     },
@@ -780,7 +780,36 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"groups\":[\"perspiciatis\",\"voluptas\"],\"roles_permissions\":[{\"role_id\":10,\"permission_ids\":[18,10]}]}"
+                            "raw": "{\"groups\":[\"vel\",\"omnis\"],\"roles_permissions\":[{\"role_id\":14,\"permission_ids\":[2,7]}]}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Get permissions in groups and roles",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/permissions\/selected-groups-roles",
+                            "query": [],
+                            "raw": "http:\/\/{{baseUrl}}\/api\/v1\/permissions\/selected-groups-roles"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"groups\":[\"placeat\",\"omnis\"],\"role_ids\":[4,20]}"
                         },
                         "description": ""
                     },
@@ -820,7 +849,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":1,\"name\":\"admin\",\"display_name\":\"admin\",\"permissions\":[{\"id\":1,\"name\":\"create users\",\"display_name\":\"create users\",\"group\":\"Admin  permission\"},{\"id\":2,\"name\":\"view users\",\"display_name\":\"view users\",\"group\":\"Admin permission\"},{\"id\":3,\"name\":\"view instructors\",\"display_name\":\"view instructors\",\"group\":\"Admin permission\"},{\"id\":4,\"name\":\"view students\",\"display_name\":\"view students\",\"group\":\"Admin permission\"},{\"id\":5,\"name\":\"edit users\",\"display_name\":\"edit users\",\"group\":\"Admin permission\"},{\"id\":6,\"name\":\"delete users\",\"display_name\":\"delete users\",\"group\":\"Admin permission\"},{\"id\":7,\"name\":\"register students-courses\",\"display_name\":\"register students-courses\",\"group\":\"Admin permission\"},{\"id\":8,\"name\":\"create courses\",\"display_name\":\"create courses\",\"group\":\"Admin permission\"},{\"id\":9,\"name\":\"edit courses\",\"display_name\":\"edit courses\",\"group\":\"Admin permission\"},{\"id\":10,\"name\":\"delete courses\",\"display_name\":\"delete courses\",\"group\":\"Admin permission\"},{\"id\":11,\"name\":\"view roles\",\"display_name\":\"view roles\",\"group\":\"Admin permission\"},{\"id\":12,\"name\":\"create roles\",\"display_name\":\"create roles\",\"group\":\"Admin permission\"},{\"id\":13,\"name\":\"edit roles\",\"display_name\":\"edit roles\",\"group\":\"Admin permission\"},{\"id\":14,\"name\":\"delete roles\",\"display_name\":\"delete roles\",\"group\":\"Admin permission\"},{\"id\":15,\"name\":\"view permissions\",\"display_name\":\"view permissions\",\"group\":\"Admin permission\"},{\"id\":16,\"name\":\"edit permissions\",\"display_name\":\"edit permissions\",\"group\":\"Admin permission\"},{\"id\":17,\"name\":\"assign permissions\",\"display_name\":\"assign permissions\",\"group\":\"Admin permission\"},{\"id\":18,\"name\":\"revoke permissions\",\"display_name\":\"revoke permissions\",\"group\":\"Admin permission\"}]},{\"id\":1,\"name\":\"admin\",\"display_name\":\"admin\",\"permissions\":[{\"id\":1,\"name\":\"create users\",\"display_name\":\"create users\",\"group\":\"Admin  permission\"},{\"id\":2,\"name\":\"view users\",\"display_name\":\"view users\",\"group\":\"Admin permission\"},{\"id\":3,\"name\":\"view instructors\",\"display_name\":\"view instructors\",\"group\":\"Admin permission\"},{\"id\":4,\"name\":\"view students\",\"display_name\":\"view students\",\"group\":\"Admin permission\"},{\"id\":5,\"name\":\"edit users\",\"display_name\":\"edit users\",\"group\":\"Admin permission\"},{\"id\":6,\"name\":\"delete users\",\"display_name\":\"delete users\",\"group\":\"Admin permission\"},{\"id\":7,\"name\":\"register students-courses\",\"display_name\":\"register students-courses\",\"group\":\"Admin permission\"},{\"id\":8,\"name\":\"create courses\",\"display_name\":\"create courses\",\"group\":\"Admin permission\"},{\"id\":9,\"name\":\"edit courses\",\"display_name\":\"edit courses\",\"group\":\"Admin permission\"},{\"id\":10,\"name\":\"delete courses\",\"display_name\":\"delete courses\",\"group\":\"Admin permission\"},{\"id\":11,\"name\":\"view roles\",\"display_name\":\"view roles\",\"group\":\"Admin permission\"},{\"id\":12,\"name\":\"create roles\",\"display_name\":\"create roles\",\"group\":\"Admin permission\"},{\"id\":13,\"name\":\"edit roles\",\"display_name\":\"edit roles\",\"group\":\"Admin permission\"},{\"id\":14,\"name\":\"delete roles\",\"display_name\":\"delete roles\",\"group\":\"Admin permission\"},{\"id\":15,\"name\":\"view permissions\",\"display_name\":\"view permissions\",\"group\":\"Admin permission\"},{\"id\":16,\"name\":\"edit permissions\",\"display_name\":\"edit permissions\",\"group\":\"Admin permission\"},{\"id\":17,\"name\":\"assign permissions\",\"display_name\":\"assign permissions\",\"group\":\"Admin permission\"},{\"id\":18,\"name\":\"revoke permissions\",\"display_name\":\"revoke permissions\",\"group\":\"Admin permission\"}]}]}",
+                            "body": "{\"data\":[{\"id\":1,\"name\":\"admin\",\"display_name\":\"admin\",\"permissions\":[{\"id\":1,\"name\":\"create users\",\"display_name\":\"create users\",\"group\":\"Admin permission\"},{\"id\":2,\"name\":\"view users\",\"display_name\":\"view users\",\"group\":\"Admin permission\"},{\"id\":3,\"name\":\"view instructors\",\"display_name\":\"view instructors\",\"group\":\"Admin permission\"},{\"id\":4,\"name\":\"view students\",\"display_name\":\"view students\",\"group\":\"Admin permission\"},{\"id\":5,\"name\":\"edit users\",\"display_name\":\"edit users\",\"group\":\"Admin permission\"},{\"id\":6,\"name\":\"delete users\",\"display_name\":\"delete users\",\"group\":\"Admin permission\"},{\"id\":7,\"name\":\"register students-courses\",\"display_name\":\"register students-courses\",\"group\":\"Admin permission\"},{\"id\":8,\"name\":\"create courses\",\"display_name\":\"create courses\",\"group\":\"Admin permission\"},{\"id\":9,\"name\":\"edit courses\",\"display_name\":\"edit courses\",\"group\":\"Admin permission\"},{\"id\":10,\"name\":\"delete courses\",\"display_name\":\"delete courses\",\"group\":\"Admin permission\"},{\"id\":11,\"name\":\"view roles\",\"display_name\":\"view roles\",\"group\":\"Admin permission\"},{\"id\":12,\"name\":\"create roles\",\"display_name\":\"create roles\",\"group\":\"Admin permission\"},{\"id\":13,\"name\":\"edit roles\",\"display_name\":\"edit roles\",\"group\":\"Admin permission\"},{\"id\":14,\"name\":\"delete roles\",\"display_name\":\"delete roles\",\"group\":\"Admin permission\"},{\"id\":15,\"name\":\"view permissions\",\"display_name\":\"view permissions\",\"group\":\"Admin permission\"},{\"id\":16,\"name\":\"edit permissions\",\"display_name\":\"edit permissions\",\"group\":\"Admin permission\"},{\"id\":17,\"name\":\"assign permissions\",\"display_name\":\"assign permissions\",\"group\":\"Admin permission\"},{\"id\":18,\"name\":\"revoke permissions\",\"display_name\":\"revoke permissions\",\"group\":\"Admin permission\"}]},{\"id\":1,\"name\":\"admin\",\"display_name\":\"admin\",\"permissions\":[{\"id\":1,\"name\":\"create users\",\"display_name\":\"create users\",\"group\":\"Admin permission\"},{\"id\":2,\"name\":\"view users\",\"display_name\":\"view users\",\"group\":\"Admin permission\"},{\"id\":3,\"name\":\"view instructors\",\"display_name\":\"view instructors\",\"group\":\"Admin permission\"},{\"id\":4,\"name\":\"view students\",\"display_name\":\"view students\",\"group\":\"Admin permission\"},{\"id\":5,\"name\":\"edit users\",\"display_name\":\"edit users\",\"group\":\"Admin permission\"},{\"id\":6,\"name\":\"delete users\",\"display_name\":\"delete users\",\"group\":\"Admin permission\"},{\"id\":7,\"name\":\"register students-courses\",\"display_name\":\"register students-courses\",\"group\":\"Admin permission\"},{\"id\":8,\"name\":\"create courses\",\"display_name\":\"create courses\",\"group\":\"Admin permission\"},{\"id\":9,\"name\":\"edit courses\",\"display_name\":\"edit courses\",\"group\":\"Admin permission\"},{\"id\":10,\"name\":\"delete courses\",\"display_name\":\"delete courses\",\"group\":\"Admin permission\"},{\"id\":11,\"name\":\"view roles\",\"display_name\":\"view roles\",\"group\":\"Admin permission\"},{\"id\":12,\"name\":\"create roles\",\"display_name\":\"create roles\",\"group\":\"Admin permission\"},{\"id\":13,\"name\":\"edit roles\",\"display_name\":\"edit roles\",\"group\":\"Admin permission\"},{\"id\":14,\"name\":\"delete roles\",\"display_name\":\"delete roles\",\"group\":\"Admin permission\"},{\"id\":15,\"name\":\"view permissions\",\"display_name\":\"view permissions\",\"group\":\"Admin permission\"},{\"id\":16,\"name\":\"edit permissions\",\"display_name\":\"edit permissions\",\"group\":\"Admin permission\"},{\"id\":17,\"name\":\"assign permissions\",\"display_name\":\"assign permissions\",\"group\":\"Admin permission\"},{\"id\":18,\"name\":\"revoke permissions\",\"display_name\":\"revoke permissions\",\"group\":\"Admin permission\"}]}]}",
                             "name": ""
                         }
                     ]
@@ -848,7 +877,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"praesentium\"}"
+                            "raw": "{\"name\":\"exercitationem\"}"
                         },
                         "description": ""
                     },
@@ -867,7 +896,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "14",
+                                    "value": "5",
                                     "description": "The ID of the role."
                                 }
                             ]
@@ -890,7 +919,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":1,\"name\":\"admin\",\"display_name\":\"admin\",\"permissions\":[{\"id\":1,\"name\":\"create users\",\"display_name\":\"create users\",\"group\":\"Admin  permission\"},{\"id\":2,\"name\":\"view users\",\"display_name\":\"view users\",\"group\":\"Admin permission\"},{\"id\":3,\"name\":\"view instructors\",\"display_name\":\"view instructors\",\"group\":\"Admin permission\"},{\"id\":4,\"name\":\"view students\",\"display_name\":\"view students\",\"group\":\"Admin permission\"},{\"id\":5,\"name\":\"edit users\",\"display_name\":\"edit users\",\"group\":\"Admin permission\"},{\"id\":6,\"name\":\"delete users\",\"display_name\":\"delete users\",\"group\":\"Admin permission\"},{\"id\":7,\"name\":\"register students-courses\",\"display_name\":\"register students-courses\",\"group\":\"Admin permission\"},{\"id\":8,\"name\":\"create courses\",\"display_name\":\"create courses\",\"group\":\"Admin permission\"},{\"id\":9,\"name\":\"edit courses\",\"display_name\":\"edit courses\",\"group\":\"Admin permission\"},{\"id\":10,\"name\":\"delete courses\",\"display_name\":\"delete courses\",\"group\":\"Admin permission\"},{\"id\":11,\"name\":\"view roles\",\"display_name\":\"view roles\",\"group\":\"Admin permission\"},{\"id\":12,\"name\":\"create roles\",\"display_name\":\"create roles\",\"group\":\"Admin permission\"},{\"id\":13,\"name\":\"edit roles\",\"display_name\":\"edit roles\",\"group\":\"Admin permission\"},{\"id\":14,\"name\":\"delete roles\",\"display_name\":\"delete roles\",\"group\":\"Admin permission\"},{\"id\":15,\"name\":\"view permissions\",\"display_name\":\"view permissions\",\"group\":\"Admin permission\"},{\"id\":16,\"name\":\"edit permissions\",\"display_name\":\"edit permissions\",\"group\":\"Admin permission\"},{\"id\":17,\"name\":\"assign permissions\",\"display_name\":\"assign permissions\",\"group\":\"Admin permission\"},{\"id\":18,\"name\":\"revoke permissions\",\"display_name\":\"revoke permissions\",\"group\":\"Admin permission\"}]}}",
+                            "body": "{\"data\":{\"id\":1,\"name\":\"admin\",\"display_name\":\"admin\",\"permissions\":[{\"id\":1,\"name\":\"create users\",\"display_name\":\"create users\",\"group\":\"Admin permission\"},{\"id\":2,\"name\":\"view users\",\"display_name\":\"view users\",\"group\":\"Admin permission\"},{\"id\":3,\"name\":\"view instructors\",\"display_name\":\"view instructors\",\"group\":\"Admin permission\"},{\"id\":4,\"name\":\"view students\",\"display_name\":\"view students\",\"group\":\"Admin permission\"},{\"id\":5,\"name\":\"edit users\",\"display_name\":\"edit users\",\"group\":\"Admin permission\"},{\"id\":6,\"name\":\"delete users\",\"display_name\":\"delete users\",\"group\":\"Admin permission\"},{\"id\":7,\"name\":\"register students-courses\",\"display_name\":\"register students-courses\",\"group\":\"Admin permission\"},{\"id\":8,\"name\":\"create courses\",\"display_name\":\"create courses\",\"group\":\"Admin permission\"},{\"id\":9,\"name\":\"edit courses\",\"display_name\":\"edit courses\",\"group\":\"Admin permission\"},{\"id\":10,\"name\":\"delete courses\",\"display_name\":\"delete courses\",\"group\":\"Admin permission\"},{\"id\":11,\"name\":\"view roles\",\"display_name\":\"view roles\",\"group\":\"Admin permission\"},{\"id\":12,\"name\":\"create roles\",\"display_name\":\"create roles\",\"group\":\"Admin permission\"},{\"id\":13,\"name\":\"edit roles\",\"display_name\":\"edit roles\",\"group\":\"Admin permission\"},{\"id\":14,\"name\":\"delete roles\",\"display_name\":\"delete roles\",\"group\":\"Admin permission\"},{\"id\":15,\"name\":\"view permissions\",\"display_name\":\"view permissions\",\"group\":\"Admin permission\"},{\"id\":16,\"name\":\"edit permissions\",\"display_name\":\"edit permissions\",\"group\":\"Admin permission\"},{\"id\":17,\"name\":\"assign permissions\",\"display_name\":\"assign permissions\",\"group\":\"Admin permission\"},{\"id\":18,\"name\":\"revoke permissions\",\"display_name\":\"revoke permissions\",\"group\":\"Admin permission\"}]}}",
                             "name": ""
                         }
                     ]
@@ -908,7 +937,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "11",
+                                    "value": "2",
                                     "description": "The ID of the role."
                                 }
                             ]
@@ -926,7 +955,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"quisquam\"}"
+                            "raw": "{\"name\":\"fugiat\"}"
                         },
                         "description": ""
                     },
@@ -945,7 +974,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "15",
+                                    "value": "12",
                                     "description": "The ID of the role."
                                 }
                             ]
@@ -1000,7 +1029,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":509,\"username\":\"koss.mathilde\",\"first_name\":\"Rae\",\"last_name\":\"Kling\",\"full_name\":\"Rae Kling\",\"email\":\"koss.mathilde@test.com\",\"gender\":\"male\",\"date_of_birth\":\"4\\\/Jan\\\/1979\",\"roles\":[],\"permissions\":[]}}",
+                            "body": "{\"data\":{\"id\":54,\"username\":\"ernesto16\",\"first_name\":\"Gabrielle\",\"last_name\":\"Kreiger\",\"full_name\":\"Gabrielle Kreiger\",\"email\":\"ernesto16@test.com\",\"gender\":\"female\",\"date_of_birth\":\"21\\\/Jan\\\/1976\",\"roles\":[],\"permissions\":[]}}",
                             "name": ""
                         }
                     ]
@@ -1033,7 +1062,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":510,\"username\":\"brau\",\"first_name\":\"Tremaine\",\"last_name\":\"Spinka\",\"full_name\":\"Tremaine Spinka\",\"email\":\"brau@test.com\",\"gender\":\"male\",\"date_of_birth\":\"18\\\/Nov\\\/2004\",\"roles\":[],\"permissions\":[]},{\"id\":511,\"username\":\"wilkinson.conor\",\"first_name\":\"Crawford\",\"last_name\":\"Grady\",\"full_name\":\"Crawford Grady\",\"email\":\"wilkinson.conor@test.com\",\"gender\":\"male\",\"date_of_birth\":\"4\\\/Oct\\\/1977\",\"roles\":[],\"permissions\":[]}]}",
+                            "body": "{\"data\":[{\"id\":55,\"username\":\"tavares89\",\"first_name\":\"Kelton\",\"last_name\":\"Schulist\",\"full_name\":\"Kelton Schulist\",\"email\":\"tavares89@test.com\",\"gender\":\"male\",\"date_of_birth\":\"16\\\/Aug\\\/1992\",\"roles\":[],\"permissions\":[]},{\"id\":56,\"username\":\"varmstrong\",\"first_name\":\"Lea\",\"last_name\":\"Davis\",\"full_name\":\"Lea Davis\",\"email\":\"varmstrong@test.com\",\"gender\":\"female\",\"date_of_birth\":\"16\\\/Oct\\\/1996\",\"roles\":[],\"permissions\":[]}]}",
                             "name": ""
                         }
                     ]
@@ -1066,7 +1095,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":512,\"username\":\"brennon42\",\"first_name\":\"Nels\",\"last_name\":\"Dibbert\",\"full_name\":\"Nels Dibbert\",\"email\":\"brennon42@test.com\",\"gender\":\"female\",\"date_of_birth\":\"2\\\/Aug\\\/2017\",\"roles\":[],\"permissions\":[]},{\"id\":513,\"username\":\"ngoyette\",\"first_name\":\"Ashleigh\",\"last_name\":\"Bergstrom\",\"full_name\":\"Ashleigh Bergstrom\",\"email\":\"ngoyette@test.com\",\"gender\":\"male\",\"date_of_birth\":\"11\\\/Aug\\\/2004\",\"roles\":[],\"permissions\":[]}]}",
+                            "body": "{\"data\":[{\"id\":57,\"username\":\"okuneva.nina\",\"first_name\":\"Roman\",\"last_name\":\"Bashirian\",\"full_name\":\"Roman Bashirian\",\"email\":\"okuneva.nina@test.com\",\"gender\":\"male\",\"date_of_birth\":\"15\\\/Aug\\\/2018\",\"roles\":[],\"permissions\":[]},{\"id\":58,\"username\":\"lind.jorge\",\"first_name\":\"Madie\",\"last_name\":\"Lakin\",\"full_name\":\"Madie Lakin\",\"email\":\"lind.jorge@test.com\",\"gender\":\"female\",\"date_of_birth\":\"7\\\/Jan\\\/1988\",\"roles\":[],\"permissions\":[]}]}",
                             "name": ""
                         }
                     ]
@@ -1099,7 +1128,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":[{\"id\":514,\"username\":\"johnston.hobart\",\"first_name\":\"Jordon\",\"last_name\":\"Ratke\",\"full_name\":\"Jordon Ratke\",\"email\":\"johnston.hobart@test.com\",\"gender\":\"female\",\"date_of_birth\":\"15\\\/Jun\\\/2006\",\"roles\":[],\"permissions\":[]},{\"id\":515,\"username\":\"ondricka.braden\",\"first_name\":\"Jerrold\",\"last_name\":\"Crist\",\"full_name\":\"Jerrold Crist\",\"email\":\"ondricka.braden@test.com\",\"gender\":\"male\",\"date_of_birth\":\"4\\\/Mar\\\/1989\",\"roles\":[],\"permissions\":[]}]}",
+                            "body": "{\"data\":[{\"id\":59,\"username\":\"ellsworth17\",\"first_name\":\"Brock\",\"last_name\":\"Halvorson\",\"full_name\":\"Brock Halvorson\",\"email\":\"ellsworth17@test.com\",\"gender\":\"male\",\"date_of_birth\":\"15\\\/Apr\\\/2019\",\"roles\":[],\"permissions\":[]},{\"id\":60,\"username\":\"vturcotte\",\"first_name\":\"Marian\",\"last_name\":\"Berge\",\"full_name\":\"Marian Berge\",\"email\":\"vturcotte@test.com\",\"gender\":\"female\",\"date_of_birth\":\"25\\\/Mar\\\/1990\",\"roles\":[],\"permissions\":[]}]}",
                             "name": ""
                         }
                     ]
@@ -1127,7 +1156,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"username\":\"doloribus\",\"email\":\"quasi\",\"first_name\":\"error\",\"last_name\":\"qui\",\"gender\":\"similique\",\"date_of_birth\":\"2020-12-01\",\"role_ids\":[6,19]}"
+                            "raw": "{\"username\":\"et\",\"email\":\"quidem\",\"first_name\":\"aut\",\"last_name\":\"reiciendis\",\"gender\":\"quaerat\",\"date_of_birth\":\"2020-12-01\",\"role_ids\":[11,1]}"
                         },
                         "description": ""
                     },
@@ -1146,7 +1175,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "19",
+                                    "value": "10",
                                     "description": "The ID of the user."
                                 }
                             ]
@@ -1169,7 +1198,7 @@
                         {
                             "header": [],
                             "code": 200,
-                            "body": "{\"data\":{\"id\":516,\"username\":\"ayana.schowalter\",\"first_name\":\"Jeanette\",\"last_name\":\"Hessel\",\"full_name\":\"Jeanette Hessel\",\"email\":\"ayana.schowalter@test.com\",\"gender\":\"female\",\"date_of_birth\":\"23\\\/May\\\/1971\",\"roles\":[],\"permissions\":[]}}",
+                            "body": "{\"data\":{\"id\":61,\"username\":\"stark.bernita\",\"first_name\":\"Arturo\",\"last_name\":\"Stark\",\"full_name\":\"Arturo Stark\",\"email\":\"stark.bernita@test.com\",\"gender\":\"female\",\"date_of_birth\":\"24\\\/Jan\\\/1989\",\"roles\":[],\"permissions\":[]}}",
                             "name": ""
                         }
                     ]
@@ -1187,7 +1216,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "9",
+                                    "value": "12",
                                     "description": "The ID of the user."
                                 }
                             ]
@@ -1205,7 +1234,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"username\":\"rerum\",\"email\":\"sint\",\"first_name\":\"quia\",\"last_name\":\"qui\",\"gender\":\"quis\",\"date_of_birth\":\"2020-12-01\",\"role_ids\":[14,1]}"
+                            "raw": "{\"username\":\"incidunt\",\"email\":\"saepe\",\"first_name\":\"est\",\"last_name\":\"quia\",\"gender\":\"sed\",\"date_of_birth\":\"2020-12-01\",\"role_ids\":[12,3]}"
                         },
                         "description": ""
                     },
@@ -1224,7 +1253,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "9",
+                                    "value": "18",
                                     "description": "The ID of the user."
                                 }
                             ]

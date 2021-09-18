@@ -71,14 +71,6 @@ class PermissionController extends ApiController
     public function getPermissionsByGroups()
     {
         $this->authorize('viewAny', Permission::class);
-        $permissions = Permission::all();
-        $permissions->makeHidden(['guard_name', 'created_at', 'updated_at']);
-        foreach ($permissions as $permission) {
-            if (!$permission->display_name) {
-                $permission->display_name = $permission->name;
-            }
-        }
-
-        return $this->okWithData($permissions->groupBy('group'));
+        return $this->okWithData(PermissionResource::collection(Permission::all())->groupBy('group'));
     }
 }

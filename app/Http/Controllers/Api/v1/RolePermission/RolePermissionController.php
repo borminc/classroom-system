@@ -5,10 +5,12 @@ namespace App\Http\Controllers\Api\v1\RolePermission;
 use App\Http\Controllers\Api\ApiController;
 use App\Http\Requests\v1\RolePermission\AssignPermissionToRoleRequest;
 use App\Http\Requests\v1\RolePermission\AssignPermissionToUserRequest;
+use App\Http\Requests\v1\RolePermission\GetPermissionByGroupsRolesRequest;
 use App\Http\Requests\v1\RolePermission\RevokePermissionFromRoleRequest;
 use App\Http\Requests\v1\RolePermission\RevokePermissionFromUserRequest;
 use App\Http\Requests\v1\RolePermission\UpdateRolePermissionRequest;
 use App\Http\Resources\v1\PermissionResource;
+use App\Http\Resources\v1\RoleResource;
 use App\Models\User;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
@@ -134,6 +136,42 @@ class RolePermissionController extends ApiController
         return $this->okWithData([
             'revoked_permissions' => PermissionResource::collection($revokedPermissions),
         ], 'Successfully revoked permissions from user');
+    }
+
+    /**
+     * Get permissions in groups and roles
+     *
+     * @authenticated
+     * @param GetPermissionByGroupsRolesRequest $request
+     * @return Illuminate\Http\JsonResponse
+     */
+    public function getPermissionsByGroupsRoles(GetPermissionByGroupsRolesRequest $request)
+    {
+        $permissions = Permission::whereIn('group', $request->groups)->get();
+        $roles = Role::whereIn('id', $request->role_ids)->get();
+
+        $permission_ids = collect($permissions->pluck('id'));
+        $role_ids = collect($roles->pluck('id'));
+
+        // construct permission-role matrix
+        $permission_role_matrix = [];
+        foreach ($permission_ids as $permission_id) {
+            $_permission = Permission::findOrFail($permission_id);
+            foreach ($role_ids as $role_id) {
+                $_role = Role::findOrFail($role_id);
+                if ($_role->hasPermissionTo($_permission)) {
+                    $permission_role_matrix[$permission_id][$role_id] = 1;
+                } else {
+                    $permission_role_matrix[$permission_id][$role_id] = 0;
+                }
+            }
+        }
+
+        return $this->okWithData([
+            'group_permissions' => PermissionResource::collection($permissions)->groupBy('group'),
+            'roles' => RoleResource::collection($roles),
+            'permission_role_matrix' => $permission_role_matrix,
+        ]);
     }
 
     /**

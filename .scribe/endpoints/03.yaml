@@ -46,7 +46,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"data":[{"id":1,"name":"create users","display_name":"create users","group":"Admin  permission"},{"id":1,"name":"create users","display_name":"create users","group":"Admin  permission"}]}'
+        content: '{"data":[{"id":1,"name":"create users","display_name":"create users","group":"Admin permission"},{"id":1,"name":"create users","display_name":"create users","group":"Admin permission"}]}'
         headers: []
         description: null
     responseFields: []
@@ -67,14 +67,14 @@ endpoints:
         name: id
         description: 'The ID of the permission.'
         required: true
-        example: 17
+        example: 9
         type: integer
     queryParameters: []
     bodyParameters: []
     responses:
       -
         status: 200
-        content: '{"data":{"id":1,"name":"create users","display_name":"create users","group":"Admin  permission"}}'
+        content: '{"data":{"id":1,"name":"create users","display_name":"create users","group":"Admin permission"}}'
         headers: []
         description: null
     responseFields: []
@@ -104,13 +104,13 @@ endpoints:
         name: name
         description: 'A unique name of the permission.'
         required: true
-        example: consequatur
+        example: ad
         type: string
       group:
         name: group
         description: 'The group the permission belongs to.'
         required: true
-        example: quia
+        example: enim
         type: string
     responses: []
     responseFields: []
