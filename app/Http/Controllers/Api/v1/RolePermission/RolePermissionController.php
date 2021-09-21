@@ -167,8 +167,11 @@ class RolePermissionController extends ApiController
             }
         }
 
+        $group_permissions = PermissionResource::collection($permissions)->groupBy('group');
+
         return $this->okWithData([
-            'group_permissions' => PermissionResource::collection($permissions)->groupBy('group'),
+            'groups' => array_keys($group_permissions->toArray()),
+            'group_permissions' => $group_permissions,
             'roles' => RoleResource::collection($roles),
             'permission_role_matrix' => $permission_role_matrix,
         ]);
